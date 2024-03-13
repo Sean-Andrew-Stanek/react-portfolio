@@ -1,0 +1,17 @@
+$profile-image-size: 100px;
+
+.nb-image-holder {
+    position: absolute;
+    width: $profile-image-size;
+    height: $profile-image-size;
+    top: 20px;
+    left: 20vw;
+}
+
+.nb-profile-image {
+    width: $profile-image-size;
+    height: $profile-image-size;
+    position: absolute;
+    top: 20px;
+    left: 20vw;
+}

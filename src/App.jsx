@@ -1,13 +1,22 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import {React} from 'react';
+import {React, useEffect} from 'react';
 import { NavBar } from './components/nav-bar/nav-bar';
 
 function App() {
+
+    useEffect(() => {
+        //Transition background overlay
+        document.body.classList.add('loaded');
+
+        return() => {
+            document.body.classList.remove('loaded');
+        };
+    }, []);
     
     return (
         <div className='App'>
-            <NavBar/>
+            <NavBar />
             <Router>
                 <Routes>
                     <Route path='/' element={<Home />} />
@@ -15,6 +24,11 @@ function App() {
             </Router>
         </div>
     );
+}
+
+
+function Home() {
+    return <></>;
 }
 
 
