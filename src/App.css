@@ -13,3 +13,8 @@
     top: 0;
     left: 0;
 }
+
+.tintable {
+    filter: grayscale(100%);
+    mix-blend-mode: overlay;
+}
