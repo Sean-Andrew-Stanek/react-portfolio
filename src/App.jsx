@@ -18,7 +18,11 @@ function App() {
 function Home() {
     return (
         <div>
-            This is my main page.
+            <div className='image-holder'>
+                <img src='./Perlin-Background-300-300.png' className='profile-image' />
+                <img src='./Portrait-300-300.png' className='profile-image' />
+                <img src='./Gold-Ring-300-300.png' className='profile-image' />
+            </div>
         </div>
     );
 }
