@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {React, useEffect} from 'react';
 import { NavBar } from './components/nav-bar/nav-bar';
@@ -16,12 +16,14 @@ function App() {
     
     return (
         <div className='App'>
+            <div className='intro-cover' />
             <NavBar />
             <Router>
                 <Routes>
                     <Route path='/' element={<Home />} />
                 </Routes>
             </Router>
+            
         </div>
     );
 }
