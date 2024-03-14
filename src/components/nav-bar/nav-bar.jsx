@@ -21,7 +21,12 @@ export const NavBar = () => {
         setHealthBarIndex(healthBarIndex+1);
     };
 
-    let updateDimensions = () => {
+    let iterateColorIndex = () => {
+        setColorIndex(colorIndex+1);
+    };
+
+    //Tied to a window resize listener
+    let updateHealthBarWidth = () => {
         if(healthBarContainerRef.current) {
             setHealthBarWidth(healthBarContainerRef.current.offsetWidth);
         }
@@ -35,13 +40,12 @@ export const NavBar = () => {
     // useEffects
     /*****************/
 
-    //This dynamically listens window width.
-    //Now the health bar moves the correct length irregardless of window width.
+    //The health bar animates to the correct length according to the window size.
     useEffect(() => {
-        updateDimensions();
-        window.addEventListener('resize', updateDimensions);
+        updateHealthBarWidth();
+        window.addEventListener('resize', updateHealthBarWidth);
         
-        return() => window.removeEventListener('resize', updateDimensions);
+        return() => window.removeEventListener('resize', updateHealthBarWidth);
 
     },[]);
 
@@ -80,7 +84,8 @@ export const NavBar = () => {
                 {healthBar()}
                 {profileImage()}
             </div>
-            <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Color</button>
+            <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Health</button>
+            <button onClick={iterateColorIndex} style={{position:'absolute', bottom:'60px'}}>Change Color</button>
         </>
     );
 
