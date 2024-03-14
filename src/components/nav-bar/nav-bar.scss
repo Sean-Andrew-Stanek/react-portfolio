@@ -1,17 +1,38 @@
-$profile-image-size: 100px;
+$profile-image-size: 125px;
+$profile-health-length: 600px;
+$nav-left: 20vw;
+$nav-top: 20px;
+
+.nb-healthbar-container {
+    width: $profile-health-length;
+    height: $profile-health-length/12;
+    overflow: hidden;
+    position: absolute;
+    top: calc($nav-top + $profile-image-size/2 - $profile-health-length/24);
+    left: calc($nav-left + 30px);
+}
+
+.health-bar {
+    top: 0px;
+    left: 0px;
+    width: $profile-health-length;
+    height: $profile-health-length/12;
+    position: absolute;
+    transition: left 0.5s ease;
+}
 
 .nb-image-holder {
     position: absolute;
     width: $profile-image-size;
     height: $profile-image-size;
-    top: 20px;
-    left: 20vw;
+    top: $nav-top;
+    left: $nav-left;
 }
 
 .nb-profile-image {
     width: $profile-image-size;
     height: $profile-image-size;
     position: absolute;
-    top: 20px;
-    left: 20vw;
+    top: $nav-top;
+    left: $nav-left;
 }

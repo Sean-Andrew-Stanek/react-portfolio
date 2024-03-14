@@ -17,10 +17,10 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(0,0,0,0);
     transition: background-color 3s ease-in;
 }
 
 body.loaded::before {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.2);
 }
