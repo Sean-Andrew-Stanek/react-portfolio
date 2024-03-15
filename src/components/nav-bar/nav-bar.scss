@@ -1,20 +1,21 @@
 $profile-image-size: 125px;
-$profile-health-length: 600px;
+$profile-health-length: calc($profile-image-size * 5);
+$profile-health-height: calc($profile-health-length/12);
 $nav-left: 20vw;
 $nav-top: 20px;
 
 .nb-healthbar-container {
     width: $profile-health-length;
-    height: $profile-health-length/12;
+    height: $profile-health-height;
     overflow: hidden;
     position: absolute;
-    top: calc($nav-top + $profile-image-size/2 - $profile-health-length/24);
+    top: calc($nav-top + $profile-image-size/2 - $profile-health-height/2);
     left: calc($nav-left + 30px);
 }
 
 .nb-health-bar {
     width: $profile-health-length;
-    height: $profile-health-length/12;
+    height: $profile-health-height;
     position: absolute;
     transition: left 0.5s ease;
 }
