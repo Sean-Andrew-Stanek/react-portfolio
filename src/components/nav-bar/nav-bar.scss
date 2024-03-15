@@ -68,6 +68,8 @@ $nav-top: 20px;
 
 .nb-name-plate-color-overlay {
     mix-blend-mode: overlay;
+    mask-image: url('/public/Name-Plate-Background-250-25.png');
+    mask-size: cover;
     transition: background-color 1s ease;
 }
 
