@@ -57,9 +57,9 @@ export const NavBar = () => {
     let healthBar = () => {
         return (
             <div ref={healthBarContainerRef} className='nb-healthbar-container'>
-                <img src='./Red-Health-600-50.png' className='health-bar'/>
-                <img src='./Green-Health-600-50.png' className='health-bar' style = {{left: `${moveHealthBarLeft()}px`}}/>
-                <img src='./Health-Outline-600-50.png' className='health-bar'/>
+                <img src='./Red-Health-600-50.png' className='nb-health-bar'/>
+                <img src='./Green-Health-600-50.png' className='nb-health-bar' style = {{left: `${moveHealthBarLeft()}px`}}/>
+                <img src='./Health-Outline-600-50.png' className='nb-health-bar'/>
             </div>
         );
     };
@@ -67,10 +67,10 @@ export const NavBar = () => {
     let profileImage = () => {
         return(
             <>
-                <img src='./Perlin-Background-300-300.png' className='nb-profile-image nb-tintable'/>
-                <div className='nb-profile-image' style={{borderRadius: '50%', backgroundColor: colors[colorIndex%colors.length], opacity: .4}} />
+                <img src='./Perlin-Background-300-300.png' className='nb-profile-image'/>
+                <div className='nb-profile-image nb-profile-background-color' style={{borderRadius: '50%', backgroundColor: colors[colorIndex%colors.length], opacity: .4}} />
                 <img src='./Portrait-300-300.png' className='nb-profile-image' />
-                <img src='./Gold-Ring-300-300.png' className='nb-profile-image' />
+                <img src='./Gold-Ring-300-300.png' className='nb-profile-image nb-profile-border' />
             </>
         );
     };

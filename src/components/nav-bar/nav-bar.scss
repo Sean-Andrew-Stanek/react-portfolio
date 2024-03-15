@@ -12,7 +12,7 @@ $nav-top: 20px;
     left: calc($nav-left + 30px);
 }
 
-.health-bar {
+.nb-health-bar {
     width: $profile-health-length;
     height: $profile-health-length/12;
     position: absolute;
@@ -33,4 +33,21 @@ $nav-top: 20px;
     position: absolute;
     top: $nav-top;
     left: $nav-left;
+}
+
+.nb-profile-background-color {
+    transition: background-color 1s ease;
+}
+
+.nb-profile-border {
+    animation: rotate-border 2s ease-in-out infinite;
+}
+
+@keyframes rotate-border {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
