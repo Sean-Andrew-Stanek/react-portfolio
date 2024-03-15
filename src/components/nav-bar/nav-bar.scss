@@ -1,32 +1,41 @@
-$profile-image-size: 125px;
-$profile-health-length: calc($profile-image-size * 5);
-$profile-health-height: calc($profile-health-length/12);
-$nav-left: 20vw;
+//Profile Image
+$profile-image-size: min(13vw, 125px);
+
+//Health Bar
+$health-bar-width: calc($profile-image-size * 5);
+$health-bar-height: calc($health-bar-width/12);
+
+//Name Plate
+$name-plate-width: calc($profile-image-size *2);
+$name-plate-height: calc($profile-image-size/5);
+
+//Navbar Offset
+$nav-left: max(10px, $profile-image-size);
 $nav-top: 20px;
 
+/*
+*   Health Bar
+*/
+
 .nb-healthbar-container {
-    width: $profile-health-length;
-    height: $profile-health-height;
+    width: $health-bar-width;
+    height: $health-bar-height;
     overflow: hidden;
     position: absolute;
-    top: calc($nav-top + $profile-image-size/2 - $profile-health-height/2);
+    top: calc($nav-top + $profile-image-size/2 - $health-bar-height/2);
     left: calc($nav-left + 30px);
 }
 
 .nb-health-bar {
-    width: $profile-health-length;
-    height: $profile-health-height;
+    width: $health-bar-width;
+    height: $health-bar-height;
     position: absolute;
     transition: left 0.5s ease;
 }
 
-.nb-image-holder {
-    position: absolute;
-    width: $profile-image-size;
-    height: $profile-image-size;
-    top: $nav-top;
-    left: $nav-left;
-}
+/*
+*   Profile Image
+*/
 
 .nb-profile-image {
     width: $profile-image-size;
@@ -36,7 +45,7 @@ $nav-top: 20px;
     left: $nav-left;
 }
 
-.nb-profile-background-color {
+.nb-profile-background-color{
     transition: background-color 1s ease;
 }
 
@@ -51,4 +60,22 @@ $nav-top: 20px;
     to {
         transform: rotate(360deg);
     }
+}
+
+/*
+*   Name Plate
+*/
+
+.nb-name-plate-color-overlay {
+    mix-blend-mode: overlay;
+    transition: background-color 1s ease;
+}
+
+.nb-name-plate {
+    width: $name-plate-width;
+    height: $name-plate-height;
+    overflow: hidden;
+    position: absolute;
+    top: calc($nav-top + $profile-image-size/2 - $health-bar-height/2 - $name-plate-height);;
+    left: calc($nav-left + calc(3*$profile-image-size/4));
 }

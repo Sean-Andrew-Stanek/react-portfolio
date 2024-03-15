@@ -54,6 +54,17 @@ export const NavBar = () => {
     /*****************/
     // Sub-Components
     /*****************/
+    let namePlate = () => {
+        return (
+            <>
+                
+                <img src='./Name-Plate-Background-250-25.png' className='nb-name-plate'/>
+                <div className='nb-name-plate nb-name-plate-color-overlay' style={{backgroundColor: colors[colorIndex%colors.length], opacity: .4}}/>
+                <img src='./Name-Plate-250-25.png' className='nb-name-plate' />
+            </>
+        );
+    };
+
     let healthBar = () => {
         return (
             <div ref={healthBarContainerRef} className='nb-healthbar-container'>
@@ -80,10 +91,9 @@ export const NavBar = () => {
     /*****************/
     return (
         <>
-            <div className='image-holder'>
-                {healthBar()}
-                {profileImage()}
-            </div>
+            {namePlate()}
+            {healthBar()}
+            {profileImage()}
             <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Health</button>
             <button onClick={iterateColorIndex} style={{position:'absolute', bottom:'60px'}}>Change Color</button>
         </>
