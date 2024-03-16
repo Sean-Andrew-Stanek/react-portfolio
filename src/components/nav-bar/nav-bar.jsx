@@ -84,11 +84,25 @@ export const NavBar = () => {
         );
     };
 
+    let rightNavBar = () => {
+        return (
+            <>
+                <div className='nb-right-skillbar'>
+                    <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon'/>
+                    <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon'/>
+                    <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon'/>
+                    <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon'/>
+                </div>                
+            </>
+        );
+    };
+
     /*****************/
     // Main Component
     /*****************/
     return (
         <>
+            {rightNavBar()}
             {namePlate()}
             {healthBar()}
             {profileImage()}
