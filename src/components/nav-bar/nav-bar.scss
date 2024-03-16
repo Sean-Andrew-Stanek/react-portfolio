@@ -14,7 +14,7 @@ $nav-left: max(10px, $profile-image-size);
 $nav-top: 20px;
 
 //Skillbar Icon
-$skillbar-icon-size: calc($profile-image-size * 2 / 6);
+$skillbar-icon-size: calc($profile-image-size * 2 / 4);
 
 /*
 *   Health Bar
@@ -95,19 +95,27 @@ $skillbar-icon-size: calc($profile-image-size * 2 / 6);
     top: calc($nav-top + $profile-image-size);
     left: calc($nav-left + 30px + calc($profile-image-size * 5));
     //Temporary Dimensions
-    width: calc($skillbar-icon-size + 8px);
+    width: calc($skillbar-icon-size + 10px);
     height: calc($skillbar-icon-size * 5);
-    border: black 5px solid;
+    border: white 1px solid;
     border-radius: 5px;
 }
 
 .nb-skillbar-icon {
     position: relative;
-    left: 2px;
+    left: 3px;
     top: 2px;
     bottom: 0px;
     width: $skillbar-icon-size;
     height: $skillbar-icon-size;
     border: 2px black solid;
     background-color: rgba(150,100,0,1);
+    border-radius: 5px;
+    transition: background-color .5s ease-out, border .5s ease-out;
+}
+
+.nb-skillbar-icon:hover {
+    background-color: rgba(50, 50, 50, 1);
+    border: 2px rgba(50, 50, 50, 1) solid;
+    cursor: pointer;
 }
