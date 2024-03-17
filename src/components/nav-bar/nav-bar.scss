@@ -119,3 +119,15 @@ $skillbar-icon-size: calc($profile-image-size * 2 / 4);
     border: 2px rgba(50, 50, 50, 1) solid;
     cursor: pointer;
 }
+
+/*
+*   Right Side Skill Bar
+*/
+
+.nb-bottom-skillbar {
+    position: absolute;
+    bottom: $nav-top;
+    left: $nav-left;
+    height: calc($skillbar-icon-size + 10px);
+    width: calc($skillbar-icon-size * 5);
+}
