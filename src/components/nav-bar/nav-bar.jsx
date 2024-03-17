@@ -88,10 +88,10 @@ export const NavBar = () => {
         return (
             <>
                 <div className='nb-right-skillbar'>
-                    <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon'/>
-                    <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon'/>
-                    <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon'/>
-                    <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon'/>
+                    <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
                 </div>                
             </>
         );
@@ -101,10 +101,10 @@ export const NavBar = () => {
         return (
             <>
                 <div className='nb-bottom-skillbar'>
-                    <img src='./Discord-Icon-300-300.png' className='nb-skillbar-icon'/>
-                    <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon'/>
-                    <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon'/>
-                    <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon'/>
+                    <img src='./Discord-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom'/>
+                    <img src='./Twitter-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom'/>
+                    <img src='./Linked-In-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom'/>
+                    <img src='./GitHub-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom'/>
                 </div>
             </>
         );

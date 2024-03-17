@@ -1,5 +1,5 @@
 //Profile Image
-$profile-image-size: min(13vw, 125px);
+$profile-image-size: min(10vw, 100px);
 
 //Health Bar
 $health-bar-width: calc($profile-image-size * 5);
@@ -10,11 +10,11 @@ $name-plate-width: calc($profile-image-size *2);
 $name-plate-height: calc($profile-image-size/5);
 
 //Navbar Offset
-$nav-left: max(10px, $profile-image-size);
-$nav-top: 20px;
+$nav-left: max(10px, 15vw);
+$nav-top: 10px;
 
 //Skillbar Icon
-$skillbar-icon-size: calc($profile-image-size * 2 / 4);
+$skillbar-icon-size: calc($profile-image-size * 3 / 7);
 
 /*
 *   Health Bar
@@ -86,6 +86,20 @@ $skillbar-icon-size: calc($profile-image-size * 2 / 4);
 }
 
 /*
+*   Skill Bar Icons
+*/
+
+.nb-skillbar-icon {
+    position: relative;
+    width: $skillbar-icon-size;
+    height: $skillbar-icon-size;
+    border: 2px black solid;
+    background-color: rgba(150,100,0,1);
+    border-radius: 5px;
+    transition: background-color .5s ease-out, border .5s ease-out;
+}
+
+/*
 *   Right Side Skill Bar
 */
 
@@ -93,7 +107,7 @@ $skillbar-icon-size: calc($profile-image-size * 2 / 4);
     position: absolute;
     background-color: rgba(100,100,100,.5);
     top: calc($nav-top + $profile-image-size);
-    left: calc($nav-left + 30px + calc($profile-image-size * 5));
+    right: calc($nav-left + $skillbar-icon-size + 10px);
     //Temporary Dimensions
     width: calc($skillbar-icon-size + 10px);
     height: calc($skillbar-icon-size * 5);
@@ -101,17 +115,9 @@ $skillbar-icon-size: calc($profile-image-size * 2 / 4);
     border-radius: 5px;
 }
 
-.nb-skillbar-icon {
-    position: relative;
+.nb-icon-right {
     left: 3px;
     top: 2px;
-    bottom: 0px;
-    width: $skillbar-icon-size;
-    height: $skillbar-icon-size;
-    border: 2px black solid;
-    background-color: rgba(150,100,0,1);
-    border-radius: 5px;
-    transition: background-color .5s ease-out, border .5s ease-out;
 }
 
 .nb-skillbar-icon:hover {
@@ -121,13 +127,23 @@ $skillbar-icon-size: calc($profile-image-size * 2 / 4);
 }
 
 /*
-*   Right Side Skill Bar
+*   Bottom Skill Bar
 */
+
+.nb-icon-bottom {
+    margin-left: 2px;
+    top: 3px;
+
+}
 
 .nb-bottom-skillbar {
     position: absolute;
+    display: flex;
     bottom: $nav-top;
     left: $nav-left;
     height: calc($skillbar-icon-size + 10px);
     width: calc($skillbar-icon-size * 5);
+    border: white 1px solid;
+    background-color: rgba(100,100,100,.5);
+    border-radius: 5px;
 }
