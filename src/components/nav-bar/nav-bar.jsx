@@ -39,7 +39,7 @@ export const NavBar = () => {
     
     let cancelDefaultDrag = (event) => {
         event.preventDefault();
-    }
+    };
 
     /*****************/
     // useEffects
@@ -89,9 +89,44 @@ export const NavBar = () => {
         );
     };
 
+    let routes = ['home', 'contact', 'skills', 'portfolio'];
+
     let rightNavBar = () => {
         return (
+            <div className='nb-right-skillbar'>
+                {
+                //Adhere to format rules for image and path
+                }
+                {routes.map((path, index)=> {
+                    let capPath = path.charAt(0).toUpperCase() + path.slice(1);
+                    return (
+                        <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
+                            <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
+                        </Link>
+                    );
+                })}
+            </div>
+        );        
+    };
+
+
+    let bottomNavBar = () => {
+        return (
             <>
+                <div className='nb-bottom-skillbar'>
+                    <img src='./Discord-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
+                    <img src='./Twitter-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
+                    <img src='./Linked-In-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
+                    <img src='./GitHub-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
+                </div>
+            </>
+        );
+    };
+    
+    /*
+    <>
+
+                
                 <div className='nb-right-skillbar'>
                     <Link to='./' aria-label='Navigate to Home'>
                         <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right' onDragStart={cancelDefaultDrag}/>
@@ -107,21 +142,7 @@ export const NavBar = () => {
                     </Link>
                 </div>                
             </>
-        );
-    };
-
-    let bottomNavBar = () => {
-        return (
-            <>
-                <div className='nb-bottom-skillbar'>
-                    <img src='./Discord-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                    <img src='./Twitter-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                    <img src='./Linked-In-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                    <img src='./GitHub-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                </div>
-            </>
-        );
-    };
+    */
 
     /*****************/
     // Main Component
