@@ -1,5 +1,5 @@
 import './App.scss';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import {React, useEffect} from 'react';
 import { NavBar } from './components/nav-bar/nav-bar';
 import { MainView } from './components/main-view/main-view';
@@ -28,6 +28,7 @@ function App() {
                     <Route path='/skills' element={<SkillsView />} />
                     <Route path='/contact' element={<ContactView />} />
                     <Route path='/portfolio' element={<PortfolioView />} />
+                    <Route path='/*' element={<Navigate to='/' />} />
                 </Routes>
             </Router>
             
