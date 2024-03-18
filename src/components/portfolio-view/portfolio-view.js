@@ -1,12 +1,12 @@
 import {React} from 'react';
-import './main-view.scss';
+import './portfolio-view.scss';
 
-export const MainView = () => {
+export const PortfolioView = () => {
 
     return (
         <>
             <div style={{backgroundColor:'white'}}>
-                This is the main view
+                This is the portfolio view.
             </div>
         </>
     );

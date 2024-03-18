@@ -1,15 +1,14 @@
 import {React} from 'react';
-import './main-view.scss';
+import './skills-view.scss';
 
-export const MainView = () => {
+export const SkillsView = () => {
 
     return (
         <>
             <div style={{backgroundColor:'white'}}>
-                This is the main view
+                This is the about view
             </div>
         </>
     );
 
-    
 };

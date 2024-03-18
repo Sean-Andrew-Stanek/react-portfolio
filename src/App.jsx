@@ -2,6 +2,7 @@ import './App.scss';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {React, useEffect} from 'react';
 import { NavBar } from './components/nav-bar/nav-bar';
+import { MainView } from './components/main-view/main-view';
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
             <NavBar />
             <Router>
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<MainView />} />
+                    
                 </Routes>
             </Router>
             
@@ -28,10 +30,7 @@ function App() {
     );
 }
 
-
-function Home() {
-    return <></>;
-}
+//<Route path='/portfolio' element={}/>
 
 
 export default App;
