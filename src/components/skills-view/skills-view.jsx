@@ -6,7 +6,7 @@ export const SkillsView = () => {
     return (
         <>
             <div style={{backgroundColor:'white'}}>
-                This is the about view
+                This is the skills view
             </div>
         </>
     );

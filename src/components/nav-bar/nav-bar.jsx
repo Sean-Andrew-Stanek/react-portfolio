@@ -97,52 +97,47 @@ export const NavBar = () => {
                 {
                 //Adhere to format rules for image and path
                 }
-                {routes.map((path, index)=> {
-                    let capPath = path.charAt(0).toUpperCase() + path.slice(1);
-                    return (
-                        <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
-                            <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
-                        </Link>
-                    );
-                })}
+                {
+                    routes.map((path, index)=> {
+                        let capPath = path.charAt(0).toUpperCase() + path.slice(1);
+                        return (
+                            <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
+                                <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
+                            </Link>
+                        );
+                    })
+                }
             </div>
         );        
     };
 
 
+    let contactRoutes = [
+        ['Discord', 'https://discordapp.com/users/dartimos'],
+        ['Twitter', 'https://twitter.com/stanek_sean'],
+        ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
+        ['Linked-In', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
+    ];
+    
     let bottomNavBar = () => {
         return (
-            <>
-                <div className='nb-bottom-skillbar'>
-                    <img src='./Discord-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                    <img src='./Twitter-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                    <img src='./Linked-In-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                    <img src='./GitHub-Icon-300-300.png' className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
-                </div>
-            </>
+            <div className='nb-bottom-skillbar'>
+                {
+                    //Adhere to format rules for image and outbound link
+                }
+                {
+                    contactRoutes.map((info, index) => {
+                        return (
+                            <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}>
+                                <img src={`${info[0]}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
+                            </Link>
+                        );
+                    })
+                }
+                
+            </div>
         );
     };
-    
-    /*
-    <>
-
-                
-                <div className='nb-right-skillbar'>
-                    <Link to='./' aria-label='Navigate to Home'>
-                        <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right' onDragStart={cancelDefaultDrag}/>
-                    </Link>
-                    <Link to='./contact' aria-label='Navigate to Contact'>
-                        <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right' onDragStart={cancelDefaultDrag}/>
-                    </Link>
-                    <Link to='./skills' aria-label='Navigate to Skills'>
-                        <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right' onDragStart={cancelDefaultDrag}/>
-                    </Link>
-                    <Link to='./portfolio' aria-label='Navigate to Portfolio'>
-                        <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right' onDragStart={cancelDefaultDrag}/>
-                    </Link>
-                </div>                
-            </>
-    */
 
     /*****************/
     // Main Component
