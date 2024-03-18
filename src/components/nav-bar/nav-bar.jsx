@@ -1,5 +1,6 @@
 import {React, useEffect, useState, useRef} from 'react';
 import './nav-bar.scss';
+import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
 
@@ -36,6 +37,7 @@ export const NavBar = () => {
         return 0-healthBarWidth*(percentageHealthBar[healthBarIndex%percentageHealthBar.length]);
     };
     
+
     /*****************/
     // useEffects
     /*****************/
@@ -88,10 +90,18 @@ export const NavBar = () => {
         return (
             <>
                 <div className='nb-right-skillbar'>
-                    <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
-                    <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
-                    <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
-                    <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    <Link to='./' aria-label='Navigate to Home'>
+                        <img src='./Home-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    </Link>
+                    <Link to='./contact' aria-label='Navigate to Contact'>
+                        <img src='./Contact-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    </Link>
+                    <Link to='./skills' aria-label='Navigate to Skills'>
+                        <img src='./Skills-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    </Link>
+                    <Link to='./portfolio' aria-label='Navigate to Portfolio'>
+                        <img src='./Portfolio-Icon-300-300.png' className='nb-skillbar-icon nb-icon-right'/>
+                    </Link>
                 </div>                
             </>
         );
