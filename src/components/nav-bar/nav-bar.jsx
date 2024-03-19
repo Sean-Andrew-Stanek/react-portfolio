@@ -93,7 +93,8 @@ export const NavBar = () => {
 
     let rightNavBar = () => {
         return (
-            <div className='nb-right-skillbar'>
+            <div className='nb-right-skillbar' style={{transform: 'rotate(90deg)'}}>
+                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {
                 //Adhere to format rules for image and path
                 }
@@ -101,12 +102,16 @@ export const NavBar = () => {
                     routes.map((path, index)=> {
                         let capPath = path.charAt(0).toUpperCase() + path.slice(1);
                         return (
-                            <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
-                                <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
-                            </Link>
+                            <div className='nb-skillbar-border-right'  key={index}>
+                                <img src={'Nav-Bar-Icon-Border-100-200.png'} />
+                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
+                                    <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right'  style={{transform: 'rotate(-90deg)'}} alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
+                                </Link>
+                            </div>
                         );
                     })
                 }
+                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>
             </div>
         );        
     };
