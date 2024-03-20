@@ -36,6 +36,8 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
     transition: left 0.5s ease;
 }
 
+
+
 /*
 *   Profile Image
 */
@@ -158,14 +160,35 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
     position:absolute;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 .nb-skillbar-border > img{
     position:absolute;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
 .nb-skillbar-end {
     height:calc($skillbar-icon-size * 2.5);
+}
+
+.nb-skillbar-border:hover .nb-tooltip {
+    bottom: calc(100% + 5px);
+    opacity: 1;
+    visibility: visible;
+}
+
+.nb-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-in, bottom 0.5s ease;
+    z-index: 0;
 }

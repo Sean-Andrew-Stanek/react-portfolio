@@ -78,6 +78,7 @@ export const NavBar = () => {
         );
     };
 
+
     let profileImage = () => {
         return(
             <>
@@ -139,6 +140,9 @@ export const NavBar = () => {
                                 <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}>
                                     <img src={`${info[0]}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
                                 </Link>
+                                <div className='nb-tooltip'>
+                                    {info[0]}
+                                </div>
                             </div>
                         );
                     })
