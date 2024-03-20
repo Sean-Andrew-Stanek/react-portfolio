@@ -1,4 +1,4 @@
-import {React, useEffect, useState, useRef} from 'react';
+import {React, Fragment, useEffect, useState, useRef} from 'react';
 import './nav-bar.scss';
 import { Link } from 'react-router-dom';
 
@@ -57,6 +57,18 @@ export const NavBar = () => {
     /*****************/
     // Sub-Components
     /*****************/
+
+    //Link and Image strings
+
+    let routes = ['home', 'contact', 'skills', 'portfolio'];
+
+    let contactRoutes = [
+        ['Discord', 'https://discordapp.com/users/dartimos'],
+        ['Twitter', 'https://twitter.com/stanek_sean'],
+        ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
+        ['Linked-In', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
+    ];
+
     let namePlate = () => {
         return (
             <>
@@ -77,7 +89,29 @@ export const NavBar = () => {
             </div>
         );
     };
+    
+    let buffBar = () => {
+        return (
+            <div className='nb-buffbar'>
+                {
+                    routes.map((path, index)=> {
+                        let capPath = path.charAt(0).toUpperCase() + path.slice(1);
+                        return (
+                            <Fragment key={index}>
+                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor'>
+                                    <img src={`${capPath}-Icon-300-300.png`} className='nb-buffbar-image' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
+                                    <div className='nb-tooltip-down'>
+                                        {capPath}
+                                    </div>
+                                </Link>
 
+                            </Fragment>
+                        );
+                    })
+                }
+            </div>
+        );
+    };
 
     let profileImage = () => {
         return(
@@ -90,9 +124,8 @@ export const NavBar = () => {
         );
     };
 
-    let routes = ['home', 'contact', 'skills', 'portfolio'];
 
-    let rightNavBar = () => {
+    /*     let rightNavBar = () => {
         return (
             <div className='nb-right-skillbar' style={{transform: 'rotate(90deg)'}}>
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
@@ -115,15 +148,10 @@ export const NavBar = () => {
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>
             </div>
         );        
-    };
+    }; */
 
 
-    let contactRoutes = [
-        ['Discord', 'https://discordapp.com/users/dartimos'],
-        ['Twitter', 'https://twitter.com/stanek_sean'],
-        ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
-        ['Linked-In', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
-    ];
+
     
     let bottomNavBar = () => {
         return (
@@ -140,8 +168,8 @@ export const NavBar = () => {
                                 <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}>
                                     <img src={`${info[0]}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
                                 </Link>
-                                <div className='nb-tooltip'>
-                                    {info[0]}
+                                <div className='nb-tooltip-up'>
+                                    {info[0].replace('-', '')}
                                 </div>
                             </div>
                         );
@@ -158,8 +186,8 @@ export const NavBar = () => {
     return (
         <>
             {bottomNavBar()}
-            {rightNavBar()}
             {namePlate()}
+            {buffBar()}
             {healthBar()}
             {profileImage()}
             <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Health</button>
