@@ -103,7 +103,7 @@ export const NavBar = () => {
                         let capPath = path.charAt(0).toUpperCase() + path.slice(1);
                         return (
                             <div className='nb-skillbar-border-right'  key={index}>
-                                <img src={'Nav-Bar-Icon-Border-100-200.png'} />
+                                <img src={'Nav-Bar-Icon-Border-150-200.png'} />
                                 <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
                                     <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right'  style={{transform: 'rotate(-90deg)'}} alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
                                 </Link>
@@ -135,7 +135,7 @@ export const NavBar = () => {
                     contactRoutes.map((info, index) => {
                         return (
                             <div className='nb-skillbar-border'  key={index}>
-                                <img src={'Nav-Bar-Icon-Border-100-200.png'}/>
+                                <img src={'Nav-Bar-Icon-Border-150-200.png'}/>
                                 <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}>
                                     <img src={`${info[0]}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
                                 </Link>
