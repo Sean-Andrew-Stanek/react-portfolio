@@ -75,8 +75,11 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
 }
 
 .nb-profile-border {
+    width: $profile-image-size;
+    height: $profile-image-size;
     animation: rotate-border 2s ease-in-out infinite;
 }
+
 
 @keyframes rotate-border {
     from {
@@ -122,22 +125,13 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
     transition: background-color .5s ease-out, border .5s ease-out;
 }
 
-/*
-*   Right Side Skill Bar
-*/
-
-.nb-right-skillbar {
-    position: absolute;
-    display: flex;
-    top: calc($nav-top + $profile-image-size + 250px);
-    right: calc($nav-left + $skillbar-icon-size - 200px);
-}
-
 .nb-skillbar-icon:hover {
     background-color: rgba(50, 50, 50, 1);
     border: 2px rgba(50, 50, 50, 1) solid;
     cursor: pointer;
 }
+
+
 
 /*
 *   Bottom Skill Bar
@@ -155,15 +149,6 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
 *   Skillbar borders
 */
 
-
-.nb-skillbar-border-right {
-    height:calc($skillbar-icon-size * 2.5);
-    width:calc($skillbar-icon-size * 1.5);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .nb-skillbar-border {
     width:calc($skillbar-icon-size * 1.5);

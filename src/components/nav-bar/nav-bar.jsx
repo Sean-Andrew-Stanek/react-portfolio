@@ -98,13 +98,12 @@ export const NavBar = () => {
                         let capPath = path.charAt(0).toUpperCase() + path.slice(1);
                         return (
                             <Fragment key={index}>
-                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor'>
+                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => setHealthBarIndex(index)}>
                                     <img src={`${capPath}-Icon-300-300.png`} className='nb-buffbar-image' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
                                     <div className='nb-tooltip-down'>
                                         {capPath}
                                     </div>
                                 </Link>
-
                             </Fragment>
                         );
                     })
@@ -123,32 +122,6 @@ export const NavBar = () => {
             </>
         );
     };
-
-
-    /*     let rightNavBar = () => {
-        return (
-            <div className='nb-right-skillbar' style={{transform: 'rotate(90deg)'}}>
-                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
-                {
-                //Adhere to format rules for image and path
-                }
-                {
-                    routes.map((path, index)=> {
-                        let capPath = path.charAt(0).toUpperCase() + path.slice(1);
-                        return (
-                            <div className='nb-skillbar-border-right'  key={index}>
-                                <img src={'Nav-Bar-Icon-Border-150-200.png'} />
-                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} key={index}>
-                                    <img src={`${capPath}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-right'  style={{transform: 'rotate(-90deg)'}} alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
-                                </Link>
-                            </div>
-                        );
-                    })
-                }
-                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>
-            </div>
-        );        
-    }; */
 
 
 
@@ -184,7 +157,7 @@ export const NavBar = () => {
     // Main Component
     /*****************/
     return (
-        <>
+        <div id='navbar-container'>
             {bottomNavBar()}
             {namePlate()}
             {buffBar()}
@@ -192,7 +165,7 @@ export const NavBar = () => {
             {profileImage()}
             <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Health</button>
             <button onClick={iterateColorIndex} style={{position:'absolute', bottom:'60px'}}>Change Color</button>
-        </>
+        </div>
     );
 
 };

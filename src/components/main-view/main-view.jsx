@@ -4,11 +4,11 @@ import './main-view.scss';
 export const MainView = () => {
 
     return (
-        <>
-            <div style={{backgroundColor:'white'}}>
+        <div className='main-view-container'>
+            <div className='placeholder'>
                 This is the main view
             </div>
-        </>
+        </div>
     );
 
     

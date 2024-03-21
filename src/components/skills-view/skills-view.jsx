@@ -4,11 +4,11 @@ import './skills-view.scss';
 export const SkillsView = () => {
 
     return (
-        <>
-            <div style={{backgroundColor:'white'}}>
+        <div className='skills-view-container'>
+            <div className='placeholder'>
                 This is the skills view
             </div>
-        </>
+        </div>
     );
 
 };

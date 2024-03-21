@@ -4,11 +4,11 @@ import './contact-view.scss';
 export const ContactView = () => {
 
     return (
-        <>
-            <div style={{backgroundColor:'white'}}>
+        <div className='contact-view-container'>
+            <div className='placeholder'>
                 This is the contact view
             </div>
-        </>
+        </div>
     );
 
     

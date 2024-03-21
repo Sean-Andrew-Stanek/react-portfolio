@@ -4,12 +4,11 @@ import './portfolio-view.scss';
 export const PortfolioView = () => {
 
     return (
-        <>
-            <div style={{backgroundColor:'white'}}>
-                This is the portfolio view.
+        <div className='portfolio-view-container'>
+            <div className='placeholder'>
+                This is the portfolio view
             </div>
-        </>
+        </div>
     );
-
     
 };
