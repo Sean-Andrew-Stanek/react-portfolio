@@ -11,7 +11,7 @@ export const NavBar = () => {
     const healthBarContainerRef = useRef(null);
 
     //These are enums disguised as an array.
-    let colors = ['red', 'yellow', 'green', 'blue'];
+    let colors = ['black', 'red', 'yellow', 'green', 'blue'];
     let percentageHealthBar = [0, .25, .5, .75, 1];
 
     /*****************/
@@ -61,6 +61,7 @@ export const NavBar = () => {
     //Link and Image strings
 
     let routes = ['home', 'contact', 'skills', 'portfolio'];
+    let routeDetails = ['Return to the intro screen.', 'Contact me for information!', 'My skill set.', 'My projects and achievements.'];
 
     let contactRoutes = [
         ['Discord', 'https://discordapp.com/users/dartimos'],
@@ -100,8 +101,14 @@ export const NavBar = () => {
                             <Fragment key={index}>
                                 <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => setHealthBarIndex(index)}>
                                     <img src={`${capPath}-Icon-300-300.png`} className='nb-buffbar-image' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
-                                    <div className='nb-tooltip-down'>
-                                        {capPath}
+                                    <div className='nb-tooltip-down  nb-tooltip'>
+                                        <div>
+                                            {capPath}
+                                        </div>
+                                        <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
+                                            {routeDetails[index]}
+                                        </div>
+                                        
                                     </div>
                                 </Link>
                             </Fragment>
@@ -142,7 +149,12 @@ export const NavBar = () => {
                                     <img src={`${info[0]}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
                                 </Link>
                                 <div className='nb-tooltip-up nb-tooltip'>
-                                    {info[0].replace('-', '')}
+                                    <div>
+                                        {info[0].replace('-', '')}
+                                    </div>
+                                    <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
+                                        Contact me on {info[0]}!
+                                    </div>
                                 </div>
                             </div>
                         );
