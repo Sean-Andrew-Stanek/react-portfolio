@@ -3,6 +3,7 @@ import './main-view.scss';
 import '../../styles/avatar.scss';
 import { mainViewStrings as strings} from '../../utils/strings';
 import PropTypes from 'prop-types';
+import TypeWriter from '../../utils/typewriter';
 
 export const MainView = ({iterateColor}) => {
 
@@ -14,7 +15,7 @@ export const MainView = ({iterateColor}) => {
             </div>
             <div className='mv-text-bubble'>
                 <div style={{margin: '0 auto'}}>
-                    {strings.greeting}
+                    <TypeWriter text={strings.greeting} />
                 </div>
                 <div style={{margin: '0 10px'}}>
                     {strings.body}
