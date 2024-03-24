@@ -18,17 +18,21 @@ $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
     position: absolute;
     bottom: 10px; 
     left: 10px;
-    width: 10vw;
+    width: min(100px, 30%);
 }
 
 .mv-text-bubble {
     position: absolute;
-    left: calc(15px + 10vw);
+    left: calc(20px + min(100px, 30%));
     bottom: calc(10px + 20vw);
-    width: 50vw;
-    height: 30vh;
+    top: min(25px, 5%);
+    width: 70%;
     background-color: rgba(255,255,255, .2);
     color: white;
     border-radius: 10px;
 
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: space-around;
 }

@@ -1,0 +1,19 @@
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 10px; 
+    left: 10px;
+    width: min(100px, 30%);
+}
+
+.avatar-image {
+    width: 100%
+}
+
+.avatar-above-image {
+    width: 50%;
+    margin-bottom: 5px
+}
