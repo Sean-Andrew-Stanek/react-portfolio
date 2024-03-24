@@ -45,7 +45,7 @@ export const NavBar = ({colorIndex}) => {
         updateHealthBarWidth();
         window.addEventListener('resize', updateHealthBarWidth);
         
-        return() => window.removeEventListener('resize', updateHealthBarWidth);
+        return () => window.removeEventListener('resize', updateHealthBarWidth);
 
     },[]);
 
