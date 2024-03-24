@@ -12,7 +12,7 @@ export const MainView = ({iterateColor}) => {
     return (
         <div className='main-view-container'>
             <div className='avatar-container'>
-                <img src = 'Question-200-350.png' className='avatar-above-image'/>
+                <img src = 'Exclaim-200-350.png' className='avatar-above-image'/>
                 <img src = 'Avatar-150-450.png'  className='avatar-image' onClick={iterateColor}/>
             </div>
             <div className='mv-text-bubble'>
