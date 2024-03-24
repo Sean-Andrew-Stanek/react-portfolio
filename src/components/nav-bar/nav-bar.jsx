@@ -1,11 +1,10 @@
 import {React, Fragment, useEffect, useState, useRef} from 'react';
 import './nav-bar.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export const NavBar = () => {
+export const NavBar = ({colorIndex}) => {
 
-    // eslint-disable-next-line no-unused-vars
-    const [colorIndex, setColorIndex] = useState(0);
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
     const healthBarContainerRef = useRef(null);
@@ -20,10 +19,6 @@ export const NavBar = () => {
 
     let iterateHealthBar = () => {
         setHealthBarIndex(healthBarIndex+1);
-    };
-
-    let iterateColorIndex = () => {
-        setColorIndex(colorIndex+1);
     };
 
     //Tied to a window resize listener
@@ -176,9 +171,11 @@ export const NavBar = () => {
             {healthBar()}
             {profileImage()}
             <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Health</button>
-            <button onClick={iterateColorIndex} style={{position:'absolute', bottom:'60px'}}>Change Color</button>
         </div>
     );
 
 };
 
+NavBar.propTypes = {
+    colorIndex: PropTypes.number.isRequired,
+};
