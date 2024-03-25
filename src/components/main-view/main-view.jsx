@@ -11,11 +11,7 @@ export const MainView = ({iterateColor}) => {
 
     return (
         <div className='main-view-container'>
-            <div className='avatar-container'>
-                <img src = '/react-portfolio/Exclaim-200-350.png' className='avatar-above-image'/>
-                <img src = '/react-portfolio/Avatar-150-450.png'  className='avatar-image' onClick={iterateColor}/>
-            </div>
-            <div className='mv-text-bubble'>
+            <div className='mv-text-bubble' style={{backgroundImage:'url(./Drake-Quest-Border-650-600.png)', backgroundSize:'100% 100%', backgroundPosition: 'center'}}>
                 <div style={{margin: '0 auto'}}>
                     <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
                     
@@ -26,6 +22,10 @@ export const MainView = ({iterateColor}) => {
                 <div style={{margin: '0 10px'}}>
                     {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={10}/>}
                 </div>
+            </div>
+            <div className='avatar-container'>
+                <img src = '/react-portfolio/Exclaim-200-350.png' className='avatar-above-image'/>
+                <img src = '/react-portfolio/Avatar-150-450.png'  className='avatar-image' onClick={iterateColor}/>
             </div>
         </div>
     );

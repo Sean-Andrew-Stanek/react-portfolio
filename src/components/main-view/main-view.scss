@@ -23,11 +23,11 @@ $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
 
 .mv-text-bubble {
     position: absolute;
-    left: calc(20px + min(100px, 30%));
+    //left: calc(20px + min(100px, 30%));
+    left: 20px;
     bottom: calc(10px + 20vw);
     top: min(25px, 5%);
-    width: 70%;
-    background-color: rgba(255,255,255, .2);
+    width: 100%;
     color: white;
     border-radius: 10px;
 
