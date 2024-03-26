@@ -170,7 +170,6 @@ export const NavBar = ({colorIndex}) => {
             {buffBar()}
             {healthBar()}
             {profileImage()}
-            <button onClick={iterateHealthBar} style={{position:'absolute', bottom:'20px'}}>Change Health</button>
         </div>
     );
 
