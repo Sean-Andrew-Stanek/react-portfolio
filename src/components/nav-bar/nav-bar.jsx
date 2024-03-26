@@ -17,9 +17,9 @@ export const NavBar = ({colorIndex}) => {
     // Functions
     /*****************/
 
-    let iterateHealthBar = () => {
+    /*let iterateHealthBar = () => {
         setHealthBarIndex(healthBarIndex+1);
-    };
+    }; */
 
     //Tied to a window resize listener
     let updateHealthBarWidth = () => {

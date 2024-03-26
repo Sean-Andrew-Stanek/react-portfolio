@@ -18,21 +18,21 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img src='Drake-Quest-Border-700-650.png' className='mv-quest-background' />
+                <img className='mv-quest-background' src='Drake-Quest-Border-700-650.png'/>
                 {
                 // Text Intro
                 }
-                <div className='mv-quest-text-intro' style={{margin: '0 auto'}}>
+                <div className='mv-quest-text-intro'>
                     <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
                 </div>
                 {
                 // Text Body
                 }
                 <div className='mv-quest-text-body'>
-                    <div style={{margin: '0 10px'}}>
+                    <div>
                         {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={10} onComplete={()=>setTypeWriterIndex(2)} />}
                     </div>
-                    <div style={{margin: '0 10px'}}>
+                    <div>
                         {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={10}/>}
                     </div>
                 </div>
