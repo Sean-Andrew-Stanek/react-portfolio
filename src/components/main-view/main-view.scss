@@ -8,10 +8,11 @@ $margin-sides: max(10px, 15vw);
     @return ($portion / $whole) * 100%;
 }
 
+$avatar-container-width:  min(100px, 30%);
+
 //Quest Background
 $quest-background-height: 650px;  //ratio will be 100%
 $quest-background-width: 700px;   //ratio will be 100%
-
 //Intro
 $quest-intro-height: ratio(80px, $quest-background-height);
 $quest-intro-width: ratio(310px, $quest-background-width);
@@ -25,7 +26,7 @@ $quest-text-height: ratio(390px, $quest-background-height);
 $quest-text-width: ratio(380px, $quest-background-width);
 
 $quest-text-margin: ratio(20px, $quest-background-height);
-$quest-text-top: $quest-intro-height + $quest-intro-height + $quest-text-margin;
+$quest-text-top: $quest-intro-top + $quest-intro-height + $quest-text-margin;
 $quest-text-left: ratio(160px, $quest-background-width);
 
 .main-view-container {
@@ -43,12 +44,18 @@ $quest-text-left: ratio(160px, $quest-background-width);
     position: absolute;
     bottom: 10px; 
     left: 10px;
-    width: min(100px, 30%);
+    width: $avatar-container-width;
 }
 
+
+//ALL QUEST SIZE IS CHANGED HERE
 .mv-quest-container {
     position: absolute;
-    inset: 10px 25px;
+    top: 10px;
+    bottom: 20%;
+    left: calc($avatar-container-width + 10px);
+    right: 10%;
+
 }
 
 .mv-quest-background {
@@ -61,11 +68,22 @@ $quest-text-left: ratio(160px, $quest-background-width);
 }
 
 .mv-quest-text-intro, .mv-quest-text-body {
-    position: relative;
+    position: absolute;
     z-index: 2;
 }
 
 .mv-quest-text-intro {
+    //Responsive, large, bold
+    font-size: clamp(18px, 2.5vw, 27px);
+    font-weight: 600;
+
+    //Center all
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    //Position
     top: $quest-intro-top;
     left: $quest-intro-left;
     width: $quest-intro-width;
@@ -73,6 +91,15 @@ $quest-text-left: ratio(160px, $quest-background-width);
 }
 
 .mv-quest-text-body {
+    //Responsive, medium
+    font-size: clamp(12px, 2vw, 18px);
+
+    //Column
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    //Position
     top: $quest-text-top;
     left: $quest-text-left;
     width: $quest-text-width;
