@@ -3,7 +3,7 @@ import './nav-bar.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const NavBar = ({colorIndex}) => {
+export const NavBar = ({colorIndex, setBackgroundTop, setBackgroundLeft}) => {
 
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
@@ -12,14 +12,17 @@ export const NavBar = ({colorIndex}) => {
     //These are enums disguised as an array.
     let colors = ['black', 'red', 'yellow', 'green', 'blue'];
     let percentageHealthBar = [0, .25, .5, .75, 1];
+    let backgroundLocations = [[0,0], [-20,-20], [-40,-40], [-35,-35]];
 
     /*****************/
     // Functions
     /*****************/
 
-    /*let iterateHealthBar = () => {
-        setHealthBarIndex(healthBarIndex+1);
-    }; */
+    let updateBackgroundLocation = (index) => {
+        console.log(backgroundLocations[index][0]);
+        setBackgroundLeft(backgroundLocations[index][0]);
+        setBackgroundTop(backgroundLocations[index][1]);
+    };
 
     //Tied to a window resize listener
     let updateHealthBarWidth = () => {
@@ -94,7 +97,7 @@ export const NavBar = ({colorIndex}) => {
                         let capPath = path.charAt(0).toUpperCase() + path.slice(1);
                         return (
                             <Fragment key={index}>
-                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => setHealthBarIndex(index)}>
+                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => {setHealthBarIndex(index); updateBackgroundLocation(index);}}>
                                     <img src={`${capPath}-Icon-300-300.png`} className='nb-buffbar-image' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
                                     <div className='nb-tooltip-down  nb-tooltip'>
                                         <div>
@@ -177,4 +180,6 @@ export const NavBar = ({colorIndex}) => {
 
 NavBar.propTypes = {
     colorIndex: PropTypes.number.isRequired,
+    setBackgroundTop: PropTypes.func.isRequired,
+    setBackgroundLeft: PropTypes.func.isRequired
 };
