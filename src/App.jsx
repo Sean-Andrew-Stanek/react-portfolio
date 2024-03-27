@@ -6,6 +6,7 @@ import { MainView } from './components/main-view/main-view';
 import { SkillsView } from './components/skills-view/skills-view';
 import { ContactView } from './components/contact-view/contact-view';
 import { PortfolioView } from './components/portfolio-view/portfolio-view';
+import { Background } from './components/background/background';
 
 function App() {
 
@@ -21,8 +22,9 @@ function App() {
     }, []);
     
     return (
-        <div className='App'>
+        <div className='app-container'>
             <div className='intro-cover' />
+            <Background />
             <Router basename='/react-portfolio/'>
                 <NavBar colorIndex = {colorIndex}/>
                 <Routes>

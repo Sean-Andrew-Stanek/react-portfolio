@@ -1,0 +1,22 @@
+.background-container {
+    position: fixed;
+    inset: 0 0;
+    overflow: hi;
+}
+
+.background-image {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -9999;
+}
+
+.shadow-image {
+    position: fixed;
+    background-color: rgba(0,0,0,.8);
+    width: 100vw;
+    height: 100vh;
+}
