@@ -12,14 +12,13 @@ export const NavBar = ({colorIndex, setBackgroundTop, setBackgroundLeft}) => {
     //These are enums disguised as an array.
     let colors = ['black', 'red', 'yellow', 'green', 'blue'];
     let percentageHealthBar = [0, .25, .5, .75, 1];
-    let backgroundLocations = [[0,0], [-20,-20], [-40,-40], [-35,-35]];
+    let backgroundLocations = [[0,0], [-35,-60], [-40,-40], [-35,-35]];
 
     /*****************/
     // Functions
     /*****************/
 
     let updateBackgroundLocation = (index) => {
-        console.log(backgroundLocations[index][0]);
         setBackgroundLeft(backgroundLocations[index][0]);
         setBackgroundTop(backgroundLocations[index][1]);
     };
