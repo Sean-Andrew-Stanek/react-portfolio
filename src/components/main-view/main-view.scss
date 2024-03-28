@@ -1,18 +1,20 @@
+@use 'sass:math';
+
+@function ratio($portion, $whole) {
+    @return math.div($portion, $whole) * 100%;
+}
+
 //Navbar
 $navbar-top-buffer: calc(min(10vw, 100px) + 20px);
 $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
 $margin-sides: max(10px, 15vw);
-
-
-@function ratio($portion, $whole) {
-    @return ($portion / $whole) * 100%;
-}
 
 $avatar-container-width:  min(100px, 30%);
 
 //Quest Background
 $quest-background-height: 650px;  //ratio will be 100%
 $quest-background-width: 700px;   //ratio will be 100%
+
 //Intro
 $quest-intro-height: ratio(80px, $quest-background-height);
 $quest-intro-width: ratio(310px, $quest-background-width);
