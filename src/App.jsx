@@ -12,8 +12,7 @@ function App() {
 
     const [colorIndex, setColorIndex] = useState(0);
 
-    const [backgroundTop, setBackgroundTop] = useState(0);
-    const [backgroundLeft, setBackgroundLeft] = useState(0);
+    const [backgroundIndex, setBackgroundIndex] = useState(0);
 
     useEffect(() => {
         //Transition background overlay
@@ -27,9 +26,9 @@ function App() {
     return (
         <div className='app-container'>
             <div className='intro-cover' />
-            <Background backgroundLeft={backgroundLeft} backgroundTop={backgroundTop}/>
+            <Background backgroundIndex={backgroundIndex}/>
             <Router basename='/react-portfolio/'>
-                <NavBar colorIndex = {colorIndex} setBackgroundLeft={setBackgroundLeft} setBackgroundTop={setBackgroundTop}/>
+                <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex}/>
                 <Routes>
                     <Route path='/' element={<MainView iterateColor={()=>setColorIndex(colorIndex+1)}/>} />
                     <Route path='/skills' element={<SkillsView />} />

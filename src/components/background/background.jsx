@@ -1,26 +1,57 @@
 
 
-import {React} from 'react';
-import backgroundImage from '/background-image-v2.png';
+import {React, useEffect, useState, useMemo} from 'react';
 import './background.scss';
 import PropTypes from 'prop-types';
 
-export const Background = ({backgroundTop, backgroundLeft}) => {
+export const Background = ({backgroundIndex}) => {
 
-    const scaleValue = 1 + Math.max(-backgroundTop, -backgroundLeft) / 100;
+    const backgrounds = useMemo(() => ['./background-image-v2.png', './Signpost-Background-450-300.png'], []);
+    const bgPositions = [ 'center', 'top left' ];
+
+    const [currentBackground, setCurrentBackground] = useState(backgrounds[backgroundIndex%backgrounds.length]);
+    const [currentPosition, setCurrentPosition] = useState(bgPositions[backgroundIndex%bgPositions.length]);
+    const [fadeOut, setFadeOut] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+
+        setFadeOut(true);
+
+        const timeout = setTimeout(() => {
+            setCurrentBackground(backgrounds[backgroundIndex%backgrounds.length]);
+            setCurrentPosition(bgPositions[backgroundIndex%bgPositions.length]);
+            setFadeOut(false);
+        }, 1000);
+
+        return () => clearTimeout(timeout);
+    }, [backgroundIndex, backgrounds]);
+
+    useEffect(() => {
+        const timeout = setTimeout(() =>{
+            setIsLoading(false);
+        },250);
+
+        return() => clearTimeout(timeout);
+
+    }, []);
 
     return (
         <div className='background-container'>
-            <img className='background-image' style={{transform: `scale(${scaleValue})`, top: `${backgroundTop}%`, left: `${backgroundLeft}%`}} src={backgroundImage} />
-            <div className='shadow-image'/>
+            <div 
+                className={`background-image ${fadeOut && 'fade-out'}`} 
+                style= {{ 
+                    backgroundImage: `url(${currentBackground})`, 
+                    backgroundPosition: currentPosition
+                }} />
+            <div className={`shadow-image ${isLoading && 'is-loading'}`}/>
         </div>
     );
 
 };
-//
+//backgroundIndex%backgrounds.length
 
 Background.propTypes = 
 {
-    backgroundTop: PropTypes.number.isRequired,
-    backgroundLeft: PropTypes.number.isRequired
+    backgroundIndex: PropTypes.number.isRequired
 };

@@ -3,24 +3,21 @@ import './nav-bar.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const NavBar = ({colorIndex, setBackgroundTop, setBackgroundLeft}) => {
+export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
     const healthBarContainerRef = useRef(null);
-
-    //These are enums disguised as an array.
+    
     let colors = ['black', 'red', 'yellow', 'green', 'blue'];
     let percentageHealthBar = [0, .25, .5, .75, 1];
-    let backgroundLocations = [[0,0], [-35,-60], [-40,-40], [-35,-35]];
 
     /*****************/
     // Functions
     /*****************/
 
     let updateBackgroundLocation = (index) => {
-        setBackgroundLeft(backgroundLocations[index][0]);
-        setBackgroundTop(backgroundLocations[index][1]);
+        setBackgroundIndex(index);
     };
 
     //Tied to a window resize listener
@@ -179,6 +176,5 @@ export const NavBar = ({colorIndex, setBackgroundTop, setBackgroundLeft}) => {
 
 NavBar.propTypes = {
     colorIndex: PropTypes.number.isRequired,
-    setBackgroundTop: PropTypes.func.isRequired,
-    setBackgroundLeft: PropTypes.func.isRequired
+    setBackgroundIndex: PropTypes.func.isRequired,
 };

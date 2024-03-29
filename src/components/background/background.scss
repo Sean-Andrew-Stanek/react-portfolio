@@ -8,13 +8,14 @@
 
 .background-image {
     position:fixed;
-    right: 0;
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
     z-index: -9999;
-    transform-origin: top left;
-    transition: top 1s ease-in-out, left 1s ease-in-out, transform 1s ease-in-out;
+    transition: opacity 2s ease-out;
+    opacity: 1;
+    transform: scale(1.1);
+    
 }
 
 .shadow-image {
@@ -22,5 +23,28 @@
     background-color: rgba(0,0,0,.8);
     width: 100vw;
     height: 100vh;
+    z-index: 1;
+    transition: background-color 1s ease-out;
+}
+
+.is-loading {
+    background-color: rgba(0,0,0,1);
+}
+
+.fade-out {
+    opacity: 0;
+    animation: zoomIn 2s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(2.0);
+    }
+    100% {
+        transform: scale(1.0);
+    }
 }
 
