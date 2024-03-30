@@ -9,25 +9,37 @@ export const Background = ({backgroundIndex}) => {
     const backgrounds = useMemo(() => ['./background-image-v2.png', './Signpost-Background-450-300.png'], []);
     const bgPositions = [ 'center', 'top left' ];
 
-    const [currentBackground, setCurrentBackground] = useState(backgrounds[backgroundIndex%backgrounds.length]);
-    const [currentPosition, setCurrentPosition] = useState(bgPositions[backgroundIndex%bgPositions.length]);
-    const [fadeOut, setFadeOut] = useState(false);
+    const [firstBackground, setFirstBackground] = useState('');
+    const [secondBackground, setSecondBackground] = useState('');
+    const [firstBackgroundPosition, setFirstBackgroundPosition] = useState(bgPositions[backgroundIndex%bgPositions.length]);
+    const [secondBackgroundPosition, setSecondBackgroundPosition] = useState(bgPositions[backgroundIndex%bgPositions.length]);
+    const [firstImageShown, setFirstImageShown] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
 
-        setFadeOut(true);
+        setFirstImageShown(!firstImageShown);
+        
+        if(!firstImageShown) {
+            setFirstBackground(backgrounds[backgroundIndex%backgrounds.length]);
+            setFirstBackgroundPosition(bgPositions[backgroundIndex%bgPositions.length]);
+        } else {
+            setSecondBackground(backgrounds[backgroundIndex%backgrounds.length]);
+            setSecondBackgroundPosition(bgPositions[backgroundIndex%bgPositions.length]);
+        }
 
-        const timeout = setTimeout(() => {
-            setCurrentBackground(backgrounds[backgroundIndex%backgrounds.length]);
-            setCurrentPosition(bgPositions[backgroundIndex%bgPositions.length]);
-            setFadeOut(false);
+        /* const timeout = setTimeout(() => {
+
         }, 1000);
 
-        return () => clearTimeout(timeout);
+        return () => clearTimeout(timeout); */
+
     }, [backgroundIndex, backgrounds]);
 
     useEffect(() => {
+        
+        setFirstBackground(backgrounds[backgroundIndex%backgrounds.length]);
+
         const timeout = setTimeout(() =>{
             setIsLoading(false);
         },250);
@@ -37,14 +49,23 @@ export const Background = ({backgroundIndex}) => {
     }, []);
 
     return (
-        <div className='background-container'>
+        <div className='bg-background-container'>
             <div 
-                className={`background-image ${fadeOut && 'fade-out'}`} 
+                className={`bg-background-image ${firstImageShown ? '' : 'bg-fade-out'}`} 
+                style= {{
+                    backgroundImage: `url(${firstBackground})`, 
+                    backgroundPosition: firstBackgroundPosition
+                }} 
+            />
+            <div 
+                className={`bg-background-image ${firstImageShown ? 'bg-fade-out' : ''}`} 
                 style= {{ 
-                    backgroundImage: `url(${currentBackground})`, 
-                    backgroundPosition: currentPosition
-                }} />
-            <div className={`shadow-image ${isLoading && 'is-loading'}`}/>
+                    backgroundColor: 'rgba(0,0,0,1)',
+                    backgroundImage: `url(${secondBackground})`, 
+                    backgroundPosition: secondBackgroundPosition,
+                }} 
+            />
+            <div className={`bg-shadow-image ${isLoading && 'bg-is-loading'}`}/>
         </div>
     );
 

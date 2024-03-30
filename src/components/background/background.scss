@@ -1,4 +1,4 @@
-.background-container {
+.bg-background-container {
     position: fixed;
     inset: 0 0;
     width: 100%;
@@ -6,45 +6,35 @@
     overflow: hidden;
 }
 
-.background-image {
+.bg-background-image {
     position:fixed;
     height: 100%;
     width: 100%;
     background-size: cover;
     z-index: -9999;
-    transition: opacity 2s ease-out;
+    transition: opacity 1s ease-out, transform 2s ease-out;
     opacity: 1;
-    transform: scale(1.1);
-    
+    transform: scale(1.0);
 }
 
-.shadow-image {
+.bg-shadow-image {
     position: fixed;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,0,0.85);
     width: 100vw;
     height: 100vh;
     z-index: 1;
-    transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out, background-position 1s ease-out;
 }
 
-.is-loading {
+.bg-is-loading {
     background-color: rgba(0,0,0,1);
 }
 
-.fade-out {
-    opacity: 0;
-    animation: zoomIn 2s ease-in-out forwards;
+.bg-fade-out {
+    transform: scale(1.2);
+    opacity: 0
 }
 
-@keyframes zoomIn {
-    0% {
-        transform: scale(1.1);
-    }
-    50% {
-        transform: scale(2.0);
-    }
-    100% {
-        transform: scale(1.0);
-    }
+.bg-is-shown {
+    transform: scale(1.0);
 }
-
