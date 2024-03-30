@@ -12,6 +12,13 @@ export const ContactView = () => {
                 <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
             </div>
 
+            <div className='cv-button-container'>
+                <div className= 'cv-gradient-border' />
+                <div className='cv-button'>
+                </div>
+                <img className='cv-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+            </div>
+
         </div>
     );
 
