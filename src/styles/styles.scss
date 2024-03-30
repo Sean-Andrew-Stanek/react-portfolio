@@ -1,0 +1,40 @@
+
+$avatar-container-width:  min(100px, 30%);
+
+$navbar-top-buffer: calc(min(10vw, 100px) + 20px);
+$margin-sides: max(10px, 15vw);
+$navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
+
+/*
+*  Container for all views
+*/
+
+.main-container {
+    position: absolute;
+    top: $navbar-top-buffer;
+    bottom: $navbar-bottom-buffer;
+    left: $margin-sides;
+    right: $margin-sides;
+}
+
+/*
+*  AVATAR
+*/
+
+.avatar-image {
+    width: 100%
+}
+
+.avatar-above-image {
+    width: 50%;
+    margin-bottom: 5px;
+    opacity: 70%;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: $avatar-container-width;
+}

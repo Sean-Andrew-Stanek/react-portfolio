@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import './main-view.scss';
-import '../../styles/avatar.scss';
+import '../../styles/styles.scss';
 import { mainViewStrings as strings} from '../../utils/strings';
 import PropTypes from 'prop-types';
 import TypeWriter from '../../utils/typewriter';
@@ -10,7 +10,7 @@ export const MainView = ({iterateColor}) => {
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     return (
-        <div className='main-view-container'>
+        <div className='main-container'>
             {
             // Quest Bubble
             }
@@ -38,9 +38,9 @@ export const MainView = ({iterateColor}) => {
                 </div>
             </div>
 
-            <div className='avatar-container'>
-                <img src = '/react-portfolio/Exclaim-200-350.png' className='avatar-above-image'/>
-                <img src = '/react-portfolio/Avatar-150-450.png'  className='avatar-image' onClick={iterateColor}/>
+            <div className='avatar-container' style={{left: '10px', bottom: '10px'}}>
+                <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
+                <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' onClick={iterateColor}/>
             </div>
         </div>
     );

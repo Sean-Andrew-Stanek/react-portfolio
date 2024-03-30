@@ -9,8 +9,6 @@ $navbar-top-buffer: calc(min(10vw, 100px) + 20px);
 $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
 $margin-sides: max(10px, 15vw);
 
-$avatar-container-width:  min(100px, 30%);
-
 //Quest Background
 $quest-background-height: 650px;  //ratio will be 100%
 $quest-background-width: 700px;   //ratio will be 100%
@@ -22,6 +20,7 @@ $quest-intro-width: ratio(310px, $quest-background-width);
 $quest-intro-top: ratio(125px, $quest-background-height);
 $quest-intro-left: ratio(195px, $quest-background-width);
 
+$avatar-container-width:  min(100px, 30%);
 
 //Text
 $quest-text-height: ratio(390px, $quest-background-height);
@@ -31,23 +30,7 @@ $quest-text-margin: ratio(20px, $quest-background-height);
 $quest-text-top: $quest-intro-top + $quest-intro-height + $quest-text-margin;
 $quest-text-left: ratio(160px, $quest-background-width);
 
-.main-view-container {
-    position: absolute;
-    top: $navbar-top-buffer;
-    bottom: $navbar-bottom-buffer;
-    left: $margin-sides;
-    right: $margin-sides;
-}
 
-.mv-avatar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    bottom: 10px; 
-    left: 10px;
-    width: $avatar-container-width;
-}
 
 
 //ALL QUEST SIZE IS CHANGED HERE

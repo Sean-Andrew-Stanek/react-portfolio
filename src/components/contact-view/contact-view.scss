@@ -1,16 +1,5 @@
 //Profile Image
-$navbar-top-buffer: calc(min(10vw, 100px) + 20px);
-$margin-sides: max(10px, 15vw);
-$navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
 
-.contact-view-container {
-    position: absolute;
-    top: $navbar-top-buffer;
-    bottom: $navbar-bottom-buffer;
-    left: $margin-sides;
-    right: $margin-sides;
-    background-color: rgba(255, 255, 255, 0.5);
-}
 
 .placeholder {
     position: relative;
