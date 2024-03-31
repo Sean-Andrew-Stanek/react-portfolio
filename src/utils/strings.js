@@ -8,3 +8,18 @@ export const mainViewStrings = {
     'has given me soft-skills such as problem solving, empathy and team-communication.',
     closing: 'Click the buttons above to start to see how I can help you fulfill your projects.  You can also click the buttons below to contact me.'
 };
+
+export const skills = {
+    'frontEndSkills': [
+        'skill1', 'skill2', 'skill3'
+    ],
+    'backEndSkills': [
+        'skill1', 'skill2', 'skill3'
+    ],
+    'dataSkills': [
+        'skill1', 'skill2', 'skill3'
+    ],
+    'devSkills': [
+        'skill1', 'skill2', 'skill3'
+    ]
+};
