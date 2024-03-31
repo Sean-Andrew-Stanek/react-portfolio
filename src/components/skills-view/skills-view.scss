@@ -1,7 +1,9 @@
 .skill-container {
+    position: absolute;
+    margin: 10px;
+    height: 80%;
     background-color: rgba(255, 255, 255, 0.5);
     border: black 2px solid;
-    height: 100%;
     overflow: hidden;
     font-size: 20px;
 }
