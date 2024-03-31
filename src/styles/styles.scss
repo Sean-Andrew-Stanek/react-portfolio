@@ -37,4 +37,5 @@ $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
     align-items: center;
     position: absolute;
     width: $avatar-container-width;
+    z-index: 9999;
 }
