@@ -22,22 +22,30 @@ export const SkillsView = () => {
             <div className='skill-container'>
                 <div className = 'skill-tree-header'>
                     Front End Skills
-                    <div className = 'skill-tree-expander' onClick={() => setFrontEndVisible(!frontEndVisible)} style={{backgroundColor: 'black', width:'10px', height: '10px', color: 'white'}}>+</div>
+                    <div className = 'skill-tree-expander' onClick={() => setFrontEndVisible(!frontEndVisible)} >
+                        <div className='skill-plus-sign' />
+                    </div>
                 </div>
                 {mapSkills(skills.frontEndSkills, frontEndVisible)}
                 <div className = 'skill-tree-header'>
                     Back End Skills
-                    <div className = 'skill-tree-expander' onClick={() => setBackEndVisible(!backEndVisible)}></div>
+                    <div className = 'skill-tree-expander' onClick={() => setBackEndVisible(!backEndVisible)}>
+                        <div className='skill-plus-sign' />
+                    </div>
                 </div>
                 {mapSkills(skills.backEndSkills, backEndVisible)}
                 <div className = 'skill-tree-header'>
                     Data Skills
-                    <div className = 'skill-tree-expander' onClick={() => setDataVisible(!dataVisible)}></div>
+                    <div className = 'skill-tree-expander' onClick={() => setDataVisible(!dataVisible)}>
+                        <div className='skill-plus-sign' />
+                    </div>
                 </div>
                 {mapSkills(skills.dataSkills, dataVisible)}
                 <div className = 'skill-tree-header'>
                     Development Skills
-                    <div className = 'skill-tree-expander' onClick={() => setDevVisible(!devVisible)}></div>
+                    <div className = 'skill-tree-expander' onClick={() => setDevVisible(!devVisible)}>
+                        <div className='skill-plus-sign' />
+                    </div>
                 </div>
                 {mapSkills(skills.devSkills, devVisible)}
             </div>
