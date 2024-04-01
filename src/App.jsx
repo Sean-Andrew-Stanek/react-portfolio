@@ -12,7 +12,7 @@ import { ModalManager } from './components/modal-manager/modal-manager';
 function App() {
 
     const [colorIndex, setColorIndex] = useState(0);
-    const [modalTarget, setModalTarget] = useState({});
+    const [modalData, setModalData] = useState({});
 
     const [backgroundIndex, setBackgroundIndex] = useState(0);
 
@@ -32,8 +32,8 @@ function App() {
             <Background backgroundIndex={backgroundIndex}/>
             
             {/* Modal Management */}
-            {modalTarget !== '' && 
-                <ModalManager modalTarget={modalTarget} setModalTarget={setModalTarget}/>
+            {modalData !== '' && 
+                <ModalManager modalTarget={modalData} setModalTarget={setModalData}/>
             }
             
             {/* Routes */}

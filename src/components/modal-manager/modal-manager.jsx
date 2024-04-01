@@ -5,24 +5,24 @@ import {React} from 'react';
 import { SkillsModal } from '../skills-modal/skills-modal';
 import PropTypes from 'prop-types';
 
-export const ModalManager = (modalTarget, setModalTarget) => {
+export const ModalManager = (modalData, setModalData) => {
 
     const closeModal = (e) => {
         if(e.target === e.currentTarget) {
-            setModalTarget({});
+            setModalData({});
         }
     };
 
     const modalContent = () => {
-        switch(modalTarget.type) {
+        switch(modalData.type) {
             case 'skills':
-                return <SkillsModal modalTarget={modalTarget}/>;
+                return <SkillsModal modalTarget={modalData}/>;
             default:
-                console.error(`Modal Type Not Found: ${modalTarget.type}`);
-                setModalTarget({});
+                console.error(`Modal Type Not Found: ${modalData.type}`);
+                setModalData({});
                 return null;
         }
-    }
+    };
 
     return (
         <div 
