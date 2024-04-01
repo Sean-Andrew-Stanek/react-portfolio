@@ -31,33 +31,38 @@
     cursor: pointer;
 }
 
+
+/////
+/// Expand Button Plus Sign
+/////
 .skill-plus-sign {
     position: relative;
-    width: 80%; /* Width of the plus sign */
-    height: 80%; /* Height of the plus sign */
+    width: 80%; 
+    height: 80%; 
 }
 
 .skill-plus-sign::before,
 .skill-plus-sign::after {
     content: '';
     position: absolute;
-    background-color: rgba(0,0,0,0.8); /* Color of the plus sign */
+    background-color: rgba(0,0,0,0.8); 
 }
 
+/* Vertical line */
 .skill-plus-sign::before {
-    /* Vertical line */
     top: 0;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px; /* Thickness of the plus sign */
+    width: 4px;
 }
 
+/* Horizontal line */
 .skill-plus-sign::after {
-    /* Horizontal line */
+
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    height: 4px; /* Thickness of the plus sign */
+    height: 4px; 
 }
