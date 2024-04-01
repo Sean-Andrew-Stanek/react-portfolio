@@ -12,7 +12,7 @@ import { ModalManager } from './components/modal-manager/modal-manager';
 function App() {
 
     const [colorIndex, setColorIndex] = useState(0);
-    const [modalTarget, setModalTarget] = useState('');
+    const [modalTarget, setModalTarget] = useState({});
 
     const [backgroundIndex, setBackgroundIndex] = useState(0);
 
