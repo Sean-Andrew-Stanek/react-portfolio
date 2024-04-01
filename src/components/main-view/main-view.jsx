@@ -37,7 +37,10 @@ export const MainView = ({iterateColor}) => {
                     </div>
                 </div>
             </div>
-
+            
+            {
+            //Avatar
+            }
             <div className='avatar-container' style={{left: '10px', bottom: '10px'}}>
                 <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
                 <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' onClick={iterateColor}/>
