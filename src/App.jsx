@@ -32,8 +32,8 @@ function App() {
             <Background backgroundIndex={backgroundIndex}/>
             
             {/* Modal Management */}
-            {modalData !== '' && 
-                <ModalManager modalTarget={modalData} setModalTarget={setModalData}/>
+            {Object.keys(modalData).length > 0 && 
+                <ModalManager modalData={modalData} setModalData={setModalData}/>
             }
             
             {/* Routes */}
@@ -41,7 +41,7 @@ function App() {
                 <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex}/>
                 <Routes>
                     <Route path='/' element={<MainView iterateColor={()=>setColorIndex(colorIndex+1)}/>} />
-                    <Route path='/skills' element={<SkillsView />} />
+                    <Route path='/skills' element={<SkillsView setModalData={setModalData}/>} />
                     <Route path='/contact' element={<ContactView />} />
                     <Route path='/portfolio' element={<PortfolioView />} />
                     <Route path='/*' element={<Navigate to='/' />} />

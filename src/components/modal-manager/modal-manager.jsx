@@ -5,7 +5,7 @@ import {React} from 'react';
 import { SkillsModal } from '../skills-modal/skills-modal';
 import PropTypes from 'prop-types';
 
-export const ModalManager = (modalData, setModalData) => {
+export const ModalManager = ({modalData, setModalData}) => {
 
     const closeModal = (e) => {
         if(e.target === e.currentTarget) {
@@ -16,11 +16,10 @@ export const ModalManager = (modalData, setModalData) => {
     const modalContent = () => {
         switch(modalData.type) {
             case 'skills':
-                return <SkillsModal modalTarget={modalData}/>;
+                return <SkillsModal modalData={modalData}/>;
             default:
                 console.error(`Modal Type Not Found: ${modalData.type}`);
-                setModalData({});
-                return null;
+                return <div>Something went wrong!</div>;
         }
     };
 
@@ -33,13 +32,13 @@ export const ModalManager = (modalData, setModalData) => {
             }}
             onClick={closeModal}
         >
-            {modalContent}            
+            {modalContent()}            
         </div>
     );
 
 };
 
 ModalManager.propTypes = {
-    modalTarget: PropTypes.object.isRequired,
-    setModalTarget: PropTypes.func.isRequired,
+    modalData: PropTypes.object.isRequired,
+    setModalData: PropTypes.func.isRequired,
 };

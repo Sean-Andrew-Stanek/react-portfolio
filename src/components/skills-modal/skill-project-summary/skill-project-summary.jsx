@@ -9,22 +9,23 @@
 
 import {React} from 'react';
 import PropTypes from 'prop-types';
+import './skill-project-summary.scss';
 
-export const SkillProjectSummary = (projectData) => {
+export const SkillProjectSummary = ({project}) => {
 
-    
+    console.log(project);
     return (
         <div className='sps-container'>
-            <div className='sps-image'></div>
+            <img src={project.image} className='sps-image' />
             <div className='sps-details'>
                 <div className='sps-subdetails'>
-                    {projectData.name}
+                    {project.name}
                 </div>
                 <div className='sps-subdetails'>
-                    {projectData.skills}
+                    {project.skills}
                 </div>
                 <div className='sps-subdetails'>
-                    {projectData.links[0]}
+                    {`${project.links.repository}`}
                 </div>
             </div>
         </div>
@@ -32,5 +33,5 @@ export const SkillProjectSummary = (projectData) => {
 };
 
 SkillProjectSummary.propTypes = {
-    projectData: PropTypes.object.isRequired,
+    project: PropTypes.object.isRequired,
 };

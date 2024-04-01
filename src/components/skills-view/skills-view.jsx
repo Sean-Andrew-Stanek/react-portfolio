@@ -1,8 +1,10 @@
 import {React, useState} from 'react';
 import './skills-view.scss';
 import { skills } from '../../utils/strings';
+import PropTypes from 'prop-types';
+import { projects } from '../../utils/strings';
 
-export const SkillsView = () => {
+export const SkillsView = ({setModalData}) => {
 
     const [frontEndVisible, setFrontEndVisible] = useState(true);
     const [backEndVisible, setBackEndVisible] = useState(true);
@@ -20,7 +22,9 @@ export const SkillsView = () => {
                 </div>
                 {
                     skillList.map((skill, index) => {
-                        {return visibilityToggle && <div key={`${skill}+${index}`}>{skill}</div>;}
+                        return visibilityToggle && <div key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
+                            {skill}
+                        </div>;
                     })
                 }
             </>
@@ -38,4 +42,8 @@ export const SkillsView = () => {
         </div>
     );
 
+};
+
+SkillsView.propTypes = {
+    setModalData: PropTypes.func.isRequired,
 };
