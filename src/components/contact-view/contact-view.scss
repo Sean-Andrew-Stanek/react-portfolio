@@ -3,7 +3,13 @@
 .cv-button-column {
     position: absolute;
     inset: 10px;
+    width: 25%;
     display: flex;
     flex-flow: column;
     
+}
+
+.cv-quest-container {
+    right: calc(min(100px, 30%) + 10px);
+    left: calc(25% + 10px);
 }

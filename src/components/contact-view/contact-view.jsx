@@ -4,6 +4,8 @@ import '../../styles/styles.scss';
 
 export const ContactView = () => {
 
+
+
     return (
         <div className='main-container'>
 
@@ -37,13 +39,30 @@ export const ContactView = () => {
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
                 </div>
             </div>
+
+            <div className='quest-container cv-quest-container'>
+                {
+                // Background Image
+                }
+                <img className='quest-background' src='Drake-Quest-Border-700-650.png'/>
+                {
+                // Text Intro
+                }
+                <div className='quest-text-intro'>
+                    Intro
+                </div>
+                {
+                // Text Body
+                }
+                <div className='quest-text-body'>
+                    body
+                </div>
+            </div>
             
-            <div className='avatar-container' style={{right: '10px', bottom: '10px'}}>
+            <div className='avatar-container'  style={{right: '10px', bottom: '10px'}}>
                 <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
                 <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
             </div>
-
-
 
         </div>
     );
