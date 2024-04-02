@@ -14,21 +14,21 @@ export const MainView = ({iterateColor}) => {
             {
             // Quest Bubble
             }
-            <div className='mv-quest-container'>
+            <div className='quest-container'>
                 {
                 // Background Image
                 }
-                <img className='mv-quest-background' src='Drake-Quest-Border-700-650.png'/>
+                <img className='quest-background' src='Drake-Quest-Border-700-650.png'/>
                 {
                 // Text Intro
                 }
-                <div className='mv-quest-text-intro'>
+                <div className='quest-text-intro'>
                     <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
                 </div>
                 {
                 // Text Body
                 }
-                <div className='mv-quest-text-body'>
+                <div className='quest-text-body'>
                     <div>
                         {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
                     </div>
