@@ -30,10 +30,10 @@ export const MainView = ({iterateColor}) => {
                 }
                 <div className='mv-quest-text-body'>
                     <div>
-                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={10} onComplete={()=>setTypeWriterIndex(2)} />}
+                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
                     </div>
                     <div>
-                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={10}/>}
+                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
                     </div>
                 </div>
             </div>

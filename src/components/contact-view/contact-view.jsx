@@ -8,33 +8,33 @@ export const ContactView = () => {
         <div className='main-container'>
 
             <div className='cv-button-column'>
-                <div className='cv-button-container'>
-                    <div className= 'cv-gradient-border' />
-                    <div className='cv-button'>
+                <div className='text-box-container'>
+                    <div className= 'text-box-border' />
+                    <div className='text-box-content'>
                         Contact me on Discord
                     </div>
-                    <img className='cv-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
                 </div>
-                <div className='cv-button-container'>
-                    <div className= 'cv-gradient-border' />
-                    <div className='cv-button'>
+                <div className='text-box-container'>
+                    <div className= 'text-box-border' />
+                    <div className='text-box-content'>
                         Contact me on Twitter
                     </div>
-                    <img className='cv-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
                 </div>
-                <div className='cv-button-container'>
-                    <div className= 'cv-gradient-border' />
-                    <div className='cv-button'>
+                <div className='text-box-container'>
+                    <div className= 'text-box-border' />
+                    <div className='text-box-content'>
                         Contact me on LinkedIn
                     </div>
-                    <img className='cv-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
                 </div>
-                <div className='cv-button-container'>
-                    <div className= 'cv-gradient-border' />
-                    <div className='cv-button'>
+                <div className='text-box-container'>
+                    <div className= 'text-box-border' />
+                    <div className='text-box-content'>
                         Contact me through e-mail
                     </div>
-                    <img className='cv-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
                 </div>
             </div>
             

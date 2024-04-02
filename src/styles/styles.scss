@@ -40,3 +40,45 @@ $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
     z-index: 9999;
 }
 
+
+/////
+/// Text Box with Border
+/////
+
+
+.text-box-container {
+    position: relative;
+    margin: 10px;
+    height: 100px;
+    width: 25%;
+}
+
+.text-box-border {
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(to right, #E8E8E8 0%, #A9A9A9 50%, #E8E8E8 100%);
+    border-radius: 10px;
+    opacity: .5;
+    
+}
+
+.text-box-content {
+    background-color: black;
+    color: white;
+    position: absolute;
+    inset: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    opacity: .8;
+}
+
+.text-box-charm {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    border-radius: 50%;
+    width:15%;
+    transform: translate(-40%, -60%);
+}
