@@ -41,6 +41,16 @@ $quest-text-left: ratio(160px, $quest-background-width);
     bottom: $navbar-bottom-buffer;
     left: $margin-sides;
     right: $margin-sides;
+    animation: mainContainerFadeIn 2s ease-out forwards;
+}
+
+@keyframes mainContainerFadeIn {
+    from {
+        opacity: 0;
+    }    
+    to {
+        opacity: 1;
+    }
 }
 
 /*
