@@ -1,9 +1,3 @@
-@use 'sass:math';
-
-@function ratio($portion, $whole) {
-    @return math.div($portion, $whole) * 100%;
-}
-
 //Navbar
 $navbar-top-buffer: calc(min(10vw, 100px) + 20px);
 $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
