@@ -15,7 +15,7 @@ export const SkillProjectSummary = ({project}) => {
 
     return (
         <div className='sps-container'>
-            <img src={project.image} className='sps-image' />
+            <img src={`/react-portfolio/${project.image}`} className='sps-image' />
             <div className='sps-details'>
                 <div className='sps-subdetails'>
                     {project.name}
