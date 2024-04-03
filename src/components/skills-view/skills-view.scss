@@ -6,6 +6,10 @@
     border: black 2px solid;
     overflow: hidden;
     font-size: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+    align-items: start;
 }
 
 .skill-tree-header {
@@ -29,6 +33,19 @@
     font-family: monospace;
     user-select: none;
     cursor: pointer;
+}
+
+.skill-tree-expander:hover {
+    border: blue 1px solid;
+}
+
+.skill-tree-skill {
+    cursor: pointer;
+}
+
+.skill-tree-skill:hover {
+    color: black;
+    background-color: white;
 }
 
 
@@ -59,7 +76,6 @@
 
 /* Horizontal line */
 .skill-plus-sign::after {
-
     left: 0;
     right: 0;
     top: 50%;

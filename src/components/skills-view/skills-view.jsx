@@ -22,9 +22,15 @@ export const SkillsView = ({setModalData}) => {
                 </div>
                 {
                     skillList.map((skill, index) => {
-                        return visibilityToggle && <div key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
-                            {skill}
-                        </div>;
+                        return visibilityToggle && 
+                            <div key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
+                                <div className= 'text-box-border' style={{position:'relative'}}/>
+                                <div className='text-box-content' style={{position:'relative'}}>
+                                    <div className='skill-tree-skill'>
+                                        {skill}
+                                    </div>
+                                </div>
+                            </div>;
                     })
                 }
             </>
