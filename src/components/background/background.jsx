@@ -28,12 +28,6 @@ export const Background = ({backgroundIndex}) => {
             setSecondBackgroundPosition(bgPositions[backgroundIndex%bgPositions.length]);
         }
 
-        /* const timeout = setTimeout(() => {
-
-        }, 1000);
-
-        return () => clearTimeout(timeout); */
-
     }, [backgroundIndex, backgrounds]);
 
     useEffect(() => {
