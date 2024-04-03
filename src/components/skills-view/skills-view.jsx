@@ -85,7 +85,6 @@ export const SkillsView = ({setModalData}) => {
                 //Avatar
             }
             <div className='avatar-container'  style={{right: '0px', bottom: '0px'}}>
-                <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
                 <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
             </div>
         </div>

@@ -2,7 +2,7 @@
 $midpoint: 70%;
 
 .skill-quest-container {
-    right: calc(min(100px, 30%));
+    right: 0;
     left: calc((100% - $midpoint) + 10px);
 }
 
