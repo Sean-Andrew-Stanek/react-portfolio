@@ -1,8 +1,8 @@
 .skill-container {
     position: absolute;
-    margin: 10px;
-    height: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
+    margin: 15px;
+    height: 90%;
+    width: 90%;
     border: black 2px solid;
     overflow: hidden;
     font-size: 20px;
@@ -20,7 +20,7 @@
 .skill-tree-expander {
     height: 30px;
     width: 30px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.5);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -33,11 +33,22 @@ export const SkillsView = ({setModalData}) => {
 
     return (
         <div className='main-container'>
-            <div className='skill-container'>
-                {skillTree(skills.frontEndSkills, frontEndVisible, setFrontEndVisible, 'Front End Skills')}
-                {skillTree(skills.backEndSkills, backEndVisible, setBackEndVisible, 'Back End Skills')}
-                {skillTree(skills.dataSkills, dataVisible, setDataVisible, 'Data Skills')}
-                {skillTree(skills.devSkills, devVisible, setDevVisible, 'Development Skills')}
+            <div className='text-box-container' 
+                style={{
+                    top: '10%',
+                    width: '50%',
+                    height: '80%',
+                }}>
+                <div className= 'text-box-border' />
+                <div className='text-box-content'>
+                    <div className='skill-container'>
+                        {skillTree(skills.frontEndSkills, frontEndVisible, setFrontEndVisible, 'Front End Skills')}
+                        {skillTree(skills.backEndSkills, backEndVisible, setBackEndVisible, 'Back End Skills')}
+                        {skillTree(skills.dataSkills, dataVisible, setDataVisible, 'Data Skills')}
+                        {skillTree(skills.devSkills, devVisible, setDevVisible, 'Development Skills')}
+                    </div>
+                </div>
+                <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
             </div>
         </div>
     );
