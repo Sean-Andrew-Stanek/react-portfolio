@@ -39,6 +39,9 @@ export const SkillsView = ({setModalData}) => {
 
     return (
         <div className='main-container'>
+            {
+                //Skills
+            }
             <div className='text-box-container' 
                 style={{
                     top: '10%',
@@ -55,6 +58,13 @@ export const SkillsView = ({setModalData}) => {
                     </div>
                 </div>
                 <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+            </div>
+            {
+                //Avatar
+            }
+            <div className='avatar-container'  style={{right: '10px', bottom: '10px'}}>
+                <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
+                <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
             </div>
         </div>
     );
