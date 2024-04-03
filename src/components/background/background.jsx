@@ -16,6 +16,7 @@ export const Background = ({backgroundIndex}) => {
     const [firstImageShown, setFirstImageShown] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
+    // Swaps the backgrounds
     useEffect(() => {
 
         setFirstImageShown(!firstImageShown);
@@ -30,6 +31,7 @@ export const Background = ({backgroundIndex}) => {
 
     }, [backgroundIndex, backgrounds]);
 
+    // Initial background
     useEffect(() => {
         
         setFirstBackground(backgrounds[backgroundIndex%backgrounds.length]);
@@ -42,8 +44,10 @@ export const Background = ({backgroundIndex}) => {
 
     }, []);
 
+    //Has two backgrounds which take turns displaying and then a front image of translucent black to darken the background
     return (
         <div className='bg-background-container'>
+            {/* First Background */}
             <div 
                 className={`bg-background-image ${firstImageShown ? '' : 'bg-fade-out'}`} 
                 style= {{
@@ -51,6 +55,7 @@ export const Background = ({backgroundIndex}) => {
                     backgroundPosition: firstBackgroundPosition
                 }} 
             />
+            {/* Second Background */}
             <div 
                 className={`bg-background-image ${firstImageShown ? 'bg-fade-out' : ''}`} 
                 style= {{ 
@@ -59,12 +64,12 @@ export const Background = ({backgroundIndex}) => {
                     backgroundPosition: secondBackgroundPosition,
                 }} 
             />
+            {/* Black Translucent Background */}
             <div className={`bg-shadow-image ${isLoading && 'bg-is-loading'}`}/>
         </div>
     );
 
 };
-//backgroundIndex%backgrounds.length
 
 Background.propTypes = 
 {
