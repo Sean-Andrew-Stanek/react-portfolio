@@ -107,6 +107,7 @@ $quest-text-left: ratio(160px, $quest-background-width);
     justify-content: center;
     border-radius: 10px;
     opacity: .8;
+    font-size: clamp(12px, 2vw, 18px);
 }
 
 .text-box-charm {
