@@ -1,15 +1,17 @@
+
+$midpoint: 70%;
+
+.skill-quest-container {
+    right: calc(min(100px, 30%));
+    left: calc((100% - $midpoint) + 10px);
+}
+
 .skill-container {
     position: absolute;
-    margin: 15px;
-    height: 90%;
-    width: 90%;
-    border: black 2px solid;
-    overflow: hidden;
-    font-size: 20px;
-    display: flex;
-    flex-flow: column;
-    justify-content: start;
-    align-items: start;
+    left: 0;
+    right: calc($midpoint - 5px);
+    top: 5%;
+    bottom: 0
 }
 
 .skill-tree-header {
