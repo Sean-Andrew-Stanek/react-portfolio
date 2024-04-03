@@ -13,7 +13,6 @@ import './skill-project-summary.scss';
 
 export const SkillProjectSummary = ({project}) => {
 
-    console.log(project);
     return (
         <div className='sps-container'>
             <img src={project.image} className='sps-image' />
