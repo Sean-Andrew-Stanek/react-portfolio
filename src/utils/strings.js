@@ -36,7 +36,7 @@ export const skills = {
 export const projects = [
     {
         'name': 'Pokedex Viewer',
-        'image': 'react-portfolio/pokemonsearch.PNG',
+        'image': 'pokemonsearch.PNG',
         'skills': ['HTML', 'CSS', 'JavaScript', 'APIs', 'Bootstrap'],
         'summary': 'Created a dynamic Pokémon information app leveraging the Pokémon API, showcasing proficiency in DOM manipulation, Ajax, and asynchronous behavior. Developed using Bootstrap, the app ensures frontloading of data for a seamless user experience—delivering instant results for all future searches.',
         'links': {

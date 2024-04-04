@@ -12,6 +12,7 @@
 import {React} from 'react';
 import PropTypes from 'prop-types';
 import { SkillProjectSummary } from './skill-project-summary/skill-project-summary';
+import './skills-modal.scss';
 
 export const SkillsModal = ({modalData}) => {
 
