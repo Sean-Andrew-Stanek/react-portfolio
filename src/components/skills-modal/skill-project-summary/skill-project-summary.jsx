@@ -17,10 +17,19 @@ export const SkillProjectSummary = ({project}) => {
         console.log('TODO: This will open to the new modal target.');
     };
 
-    const skillButton = (skill) => {
+    const skillButton = (skill, index) => {
         return (
-            <div className='sps-skill' onClick={() => setModalData()}>
+            <div className='sps-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
                 {skill}
+            </div>
+        );
+    };
+
+    const linkButton = (text, target, index) => {
+
+        return (
+            <div className='sps-skill' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+                {text}
             </div>
         );
     };
@@ -36,10 +45,10 @@ export const SkillProjectSummary = ({project}) => {
                     {project.name}
                 </div>
                 <div className='sps-skill-container'>
-                    {project.skills.map((skill) => { return skillButton(skill);})}
+                    {project.skills.map((skill, index) => { return skillButton(skill, index);})}
                 </div>
                 <div className='sps-subdetails'>
-                    {`${project.links.repository}`}
+                    {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
                 </div>
             </div>
         </div>
