@@ -13,6 +13,18 @@ import './skill-project-summary.scss';
 
 export const SkillProjectSummary = ({project}) => {
 
+    const setModalData = () => {
+        console.log('TODO: This will open to the new modal target.');
+    };
+
+    const skillButton = (skill) => {
+        return (
+            <div className='sps-skill' onClick={() => setModalData()}>
+                {skill}
+            </div>
+        );
+    };
+
     return (
         <div className='sps-container'>
             <div className='sps-image-container'>
@@ -23,8 +35,8 @@ export const SkillProjectSummary = ({project}) => {
                 <div className='sps-project-name'>
                     {project.name}
                 </div>
-                <div className='sps-subdetails'>
-                    {project.skills}
+                <div className='sps-skill-container'>
+                    {project.skills.map((skill) => { return skillButton(skill);})}
                 </div>
                 <div className='sps-subdetails'>
                     {`${project.links.repository}`}
