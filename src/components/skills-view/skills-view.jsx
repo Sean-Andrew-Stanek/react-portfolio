@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import './skills-view.scss';
 import { skills } from '../../utils/strings';
 import PropTypes from 'prop-types';
-import { projects } from '../../utils/strings';
+import { projects } from '../../utils/porfolio-projects';
 
 export const SkillsView = ({setModalData}) => {
 
