@@ -24,24 +24,3 @@ export const skills = {
     ]
 };
 
-//modalData
-//type: skill
-//data: filtered object array of projects matching skill
-//-name: name of project
-//-image: image-src 
-//-skills: array of skills
-//-summary: short project summary
-//-links: object with key being the name of the link and the value being the address
-
-export const projects = [
-    {
-        'name': 'Pokedex Viewer',
-        'image': 'pokemonsearch.PNG',
-        'skills': ['HTML', 'CSS', 'JavaScript', 'APIs', 'Bootstrap'],
-        'summary': 'Created a dynamic Pokémon information app leveraging the Pokémon API, showcasing proficiency in DOM manipulation, Ajax, and asynchronous behavior. Developed using Bootstrap, the app ensures frontloading of data for a seamless user experience—delivering instant results for all future searches.',
-        'links': {
-            'repository': 'https://github.com/Sean-Andrew-Stanek/pokedex-viewer',
-            'deployed': 'https://sean-andrew-stanek.github.io/pokedex-viewer/'
-        }
-    }
-];
