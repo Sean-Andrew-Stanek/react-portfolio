@@ -91,7 +91,7 @@ export const projects = [
     {
         'name': 'Personal Portfolio - React',
         'image': 'Under-Construction.PNG',
-        'skills': ['Node.js', 'React', 'Vise', 'JavaScript', 'SPA'],
+        'skills': ['Node.js', 'React', 'Vite', 'JavaScript', 'SPA'],
         'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.  As my first independent project outside of the bootcamp, it was designed to shore up my biggest weakness: SCSS/CSS.',
         'links': {
             'repository': 'https://github.com/Sean-Andrew-Stanek/react-portfolio',

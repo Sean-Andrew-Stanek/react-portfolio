@@ -1,12 +1,24 @@
 import {React} from 'react';
 import './portfolio-view.scss';
+import { projects } from '../../utils/porfolio-projects';
 
 export const PortfolioView = () => {
 
     let portfolioOptions = () => {
-        //TODO: GET HIGHLIGHTED PROJECTS AND TURN THEM INTO BUTTONS!
-        return <></>;
-    };
+        let filteredProjects = projects.filter(project => project.capstone==='true');
+
+        return (<>
+            {
+                filteredProjects.map((project, index) => {
+                    return(
+                        <div key={`${project}${index}`}>
+                            {project.name}
+                        </div>
+                    );
+                })
+            }
+        </>);
+};
 
     return (
         <div className='main-container'>
