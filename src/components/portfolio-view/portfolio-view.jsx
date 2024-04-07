@@ -4,22 +4,29 @@ import { projects } from '../../utils/porfolio-projects';
 
 export const PortfolioView = () => {
 
-    let portfolioOptions = () => {
+    let portfolioCapstones = () => {
         let filteredProjects = projects.filter(project => project.capstone==='true');
 
-        return (<>
-            {
-                filteredProjects.map((project, index) => {
-                    return(
-                        <div key={`${project}${index}`}>
-                            {project.name}
-                        </div>
-                    );
-                })
-            }
-        </>);
-};
-
+        return (
+            <>
+                {
+                    filteredProjects.map((project, index) => {
+                        return(
+                            <div className='portfolio-project' key={`${project}${index}`}>
+                                <div className='portfolio-project-title'>
+                                    {project.name}
+                                </div>
+                                <div className='portfolio-project-image-container'>
+                                    <img src={`${project.image}`} />
+                                </div>
+                            </div>
+                        );
+                    })
+                }
+            </>
+        );
+    };
+    
     return (
         <div className='main-container'>
             {
@@ -33,8 +40,8 @@ export const PortfolioView = () => {
                     }}>
                     <div className= 'text-box-border' />
                     <div className='text-box-content' style={{alignItems:'flex-start'}}>
-                        <div style={{display:'flex', flexFlow:'column', alignItems:'flex-start', overflow: 'hidden'}}>
-                            {portfolioOptions()}
+                        <div className='portfolio-capstone-container'>
+                            {portfolioCapstones()}
                         </div>
                     </div>
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
@@ -53,7 +60,7 @@ export const PortfolioView = () => {
                 }
                 <div className='quest-text-intro'>
                     Intro
-                </div>s
+                </div>
                 {
                 // Text Body
                 }
