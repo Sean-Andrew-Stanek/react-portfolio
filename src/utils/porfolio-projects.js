@@ -41,7 +41,7 @@ export const projects = [
     //LetsMeet
     {
         'name': 'LetsMeet',
-        'image': 'Under-Construction.PNG',
+        'image': 'Project-LetsMeet-512-512.png',
         'skills': ['React', 'Node', 'oAuth', 'Serverless', 'PWA', 'Jest', 'Gherkin', 'Puppeteer'],
         'summary': 'A serverless React app with OAuth integration, featuring Lambda functions for reading and organizing conference meeting times from a calendar. Implements a searchable data format and incorporated charts for a user-friendly display. Utilized a comprehensive testing approach, including Test-Driven Development (TDD), Behavior-Driven Development (BDD), and End-to-End Acceptance Tests. While the app may not boast flashy visuals, the repository reveals extensive behind-the-scenes work, resulting in a responsive, robust, and easily maintainable solution.',
         'links': {
@@ -53,7 +53,7 @@ export const projects = [
     //Movie API, Client using React
     {
         'name': 'Movie Database, API and Client - React',
-        'image': 'Under-Construction.PNG',
+        'image': 'Project-ReactMovie-512-512.png',
         'skills': ['Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Passport.js', 'JWT', 'bcrypt', 'React.js', 'React Bootstrap', 'JavaScript', 'HTML', 'SCSS'],
         'summary': 'Designed and implemented a Full Stack Movie Database Application, showcasing a blend of backend and frontend expertise. Leveraging Node.js and Express.js on the backend, I created RESTful API endpoints and integrated non-relational (MongoDB) databases to manage movie and user data. Robust user authentication and authorization, implemented using Passport.js and JWT, ensured secure access. On the frontend, I employed React.js and React Bootstrap for a dynamic, responsive, and visually appealing user interface. The project highlights my proficiency in technologies such as Node.js, Express.js, MongoDB, and React.js, demonstrating my ability to deliver a comprehensive and user-friendly web application.',
         'links': {
@@ -66,7 +66,7 @@ export const projects = [
     //Movie API, Client using Angular
     {
         'name': 'Movie Database, API and Client - Angular',
-        'image': 'Under-Construction.PNG',
+        'image': 'Project-AngularMovie-512-256.png',
         'skills': ['Angular', 'Angular Material', 'TypeScript', 'RxJS', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Passport.js', 'JWT', 'bcrypt'],
         'summary': 'Developed an Angular client for the Movie API, demonstrating expertise in Angular, Angular Material, and reactive programming with RxJS. The one-page layout offers a seamless user experience, presenting movie data in an intuitive interface. Leveraged Angular Material for a visually appealing and responsive design. This project highlights my proficiency in Angular development and showcases a clean and modern user interface.',
         'links': {
@@ -79,7 +79,7 @@ export const projects = [
     //Chatter
     {
         'name': 'Chatter - Chat App',
-        'image': 'Under-Construction.PNG',
+        'image': 'Project-Chatter-512-256.png',
         'skills': ['React Native', 'Expo', 'Firebase', 'Node.js' ],
         'summary': 'Developed a cross-platform chat application using React Native and Expo. Chatter enables real-time text conversations, photo sharing, image capture from the camera, and location exchange. Leveraged Firebase for message storage and image hosting, ensuring seamless communication. The user-friendly interface, coupled with features like photo sharing and location sharing, provides an engaging chat experience. Proficiently used React Native, Expo, Firebase, and React Navigation, demonstrating skills in mobile app development.',
         'links': {
@@ -90,7 +90,7 @@ export const projects = [
     //React Portfolio
     {
         'name': 'Personal Portfolio - React',
-        'image': 'Under-Construction.PNG',
+        'image': 'Project-ReactPortfolio-512-512.png',
         'skills': ['Node.js', 'React', 'Vite', 'JavaScript', 'SPA'],
         'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.  As my first independent project outside of the bootcamp, it was designed to shore up my biggest weakness: SCSS/CSS.',
         'links': {
