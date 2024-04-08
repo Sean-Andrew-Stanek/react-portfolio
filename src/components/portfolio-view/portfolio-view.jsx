@@ -39,7 +39,7 @@ export const PortfolioView = () => {
                         height: '100%',
                     }}>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content' style={{alignItems:'flex-start'}}>
+                    <div className='text-box-content portfolio-scroller' style={{alignItems:'flex-start'}}>
                         <div className='portfolio-capstone-container'>
                             {portfolioCapstones()}
                         </div>
