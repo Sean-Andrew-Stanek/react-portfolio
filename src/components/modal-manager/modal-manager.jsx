@@ -3,6 +3,7 @@
 
 import {React} from 'react';
 import { SkillsModal } from '../skills-modal/skills-modal';
+import { PortfolioModal } from '../portfolio-modal/portfolio-modal';
 import PropTypes from 'prop-types';
 
 export const ModalManager = ({modalData, setModalData}) => {
@@ -17,6 +18,8 @@ export const ModalManager = ({modalData, setModalData}) => {
         switch(modalData.type) {
             case 'skills':
                 return <SkillsModal modalData={modalData}/>;
+            case 'project':
+                return <PortfolioModal modalData={modalData}/>;
             default:
                 console.error(`Modal Type Not Found: ${modalData.type}`);
                 return <div>Something went wrong!</div>;
