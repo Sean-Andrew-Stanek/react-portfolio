@@ -1,8 +1,9 @@
 import {React} from 'react';
 import './portfolio-view.scss';
 import { projects } from '../../utils/porfolio-projects';
+import PropTypes from 'prop-types';
 
-export const PortfolioView = () => {
+export const PortfolioView = ({setModalData}) => {
 
     let portfolioCapstones = () => {
         let filteredProjects = projects.filter(project => project.capstone==='true');
@@ -12,7 +13,7 @@ export const PortfolioView = () => {
                 {
                     filteredProjects.map((project, index) => {
                         return(
-                            <div className='portfolio-project' key={`${project}${index}`}>
+                            <div className='portfolio-project' key={`${project}${index}`} onClick={()=>setModalData({'type':'project', 'data':{'name':`${project.name}`}})}>
                                 <div className='portfolio-project-title'>
                                     {project.name}
                                 </div>
@@ -76,4 +77,8 @@ export const PortfolioView = () => {
             </div>
         </div>
     );
+};
+
+PortfolioView.propTypes = {
+    setModalData: PropTypes.func.isRequired,
 };

@@ -43,7 +43,7 @@ function App() {
                     <Route path='/' element={<MainView iterateColor={()=>setColorIndex(colorIndex+1)}/>} />
                     <Route path='/skills' element={<SkillsView setModalData={setModalData}/>} />
                     <Route path='/contact' element={<ContactView />} />
-                    <Route path='/portfolio' element={<PortfolioView />} />
+                    <Route path='/portfolio' element={<PortfolioView  setModalData={setModalData}/>} />
                     <Route path='/*' element={<Navigate to='/' />} />
                 </Routes>
             </Router>
