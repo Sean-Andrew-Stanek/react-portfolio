@@ -31,7 +31,7 @@ export const ModalManager = ({modalData, setModalData}) => {
             style={{
                 position: 'absolute',
                 inset: 0,
-                zIndex: 9999
+                zIndex: 100
             }}
             onClick={closeModal}
         >
