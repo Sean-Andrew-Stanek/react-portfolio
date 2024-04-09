@@ -9,14 +9,26 @@
 import { React } from 'react';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
+import './portfolio-modal.scss';
 
 export const PortfolioModal = ({modalData}) => {
 
     const project = projects.find(obj => obj.name === modalData.data.name);
 
     return (
+        
         <div className='portfolio-modal-container'>
-            {project.name}
+            <div className='portfolio-modal-image-container'>
+                <img src={project.image}/>
+            </div>
+            <div className = 'portfolio-modal-title'>
+                {project.name}    
+            </div>
+            <div className='portfolio-modal-info'>
+                {project.summary}    
+            </div>
+
+            
         </div>
     );
 };

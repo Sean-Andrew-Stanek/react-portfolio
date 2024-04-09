@@ -2,7 +2,7 @@
 
 .portfolio-modal-container {
     position: absolute;
-    left: 40%;
+    right: 40%;
     width: 50%;
     top: 20%;
     height: 60%;
@@ -11,4 +11,45 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    color: white;
+}
+
+.portfolio-modal-title {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: clamp(18px, 3rem, 36px);
+    background-color: rgba(0, 0, 0, .8);
+    top: 0;
+    bottom: 80%;
+    font-weight: 800;
+
+}
+
+.portfolio-modal-info {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    top: 20%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.portfolio-modal-image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    opacity: 0.8;
+    
+    img {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+    }
 }
