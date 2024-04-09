@@ -54,7 +54,7 @@ export const PortfolioModal = ({modalData}) => {
     const linkButton = (text, target, index) => {
 
         return (
-            <div className='TODO-portfolio-skill' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+            <div className='portfolio-skill' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
                 {text}
             </div>
         );
@@ -70,7 +70,7 @@ export const PortfolioModal = ({modalData}) => {
                 {project.name}    
             </div>
             <div className='portfolio-modal-info'>
-                <div className='TODO-portfolio-modal-links'>
+                <div className='portfolio-modal-skills'>
                     {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
                 </div>
                 <div className='TODO-portfolio-modal-summary'>
