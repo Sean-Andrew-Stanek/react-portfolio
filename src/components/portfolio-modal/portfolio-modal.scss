@@ -53,3 +53,26 @@
         min-height: 100%;
     }
 }
+
+.portfolio-modal-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    //height: clamp(100px, 15vh, 200px);
+    font-size: clamp(18px, 1.5rem, 36px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.portfolio-modal-skills::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolio-skill {
+    margin: 10px;
+    background-color: rgba(0, 0, 0, .8);
+    border: 2px white double;
+}

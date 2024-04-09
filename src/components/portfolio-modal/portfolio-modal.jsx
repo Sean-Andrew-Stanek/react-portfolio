@@ -6,12 +6,36 @@
 //'data': {OBJECT}
 //- name: name of project
 
-import { React } from 'react';
+import { React, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
 import './portfolio-modal.scss';
 
 export const PortfolioModal = ({modalData}) => {
+
+    const horizontalScrollRef = useRef(null);
+
+    useEffect(() => {
+        const scrollContainer = horizontalScrollRef.current;
+
+        const handleWheel = (e) => {
+            //prevent vertical scrolling
+            e.preventDefault();
+
+            //horizontal scroll
+            scrollContainer.scrollLeft += e.deltaY;
+        };
+
+        if(scrollContainer) {
+            scrollContainer.addEventListener('wheel', handleWheel);
+        }
+        
+
+        return () => {
+            if(scrollContainer)
+                scrollContainer.removeEventListener('wheel', handleWheel);
+        };
+    }, []);
 
     const project = projects.find(obj => obj.name === modalData.data.name);
 
@@ -21,7 +45,7 @@ export const PortfolioModal = ({modalData}) => {
 
     const skillButton = (skill, index) => {
         return (
-            <div className='TODO-portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
+            <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
                 {skill}
             </div>
         );
@@ -52,7 +76,7 @@ export const PortfolioModal = ({modalData}) => {
                 <div className='TODO-portfolio-modal-summary'>
                     {project.summary}
                 </div>
-                <div className='TODO-portfolio-modal-skills'>
+                <div ref={horizontalScrollRef} className='portfolio-modal-skills'>
                     {project.skills.map((skill, index) => { return skillButton(skill, index);})}
                 </div>
                 
