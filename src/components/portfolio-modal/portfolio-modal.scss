@@ -1,3 +1,6 @@
+$large-font: clamp(16px, min(5vh, 6vw), 50px);
+$medium-font: clamp(12px, min(3vh, 4vw), 30px);
+
 .portfolio-modal-container {
     position: absolute;
     right: 40%;
@@ -19,23 +22,27 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: clamp(18px, 3rem, 36px);
-    background-color: rgba(0, 0, 0, .8);
+    font-size: $large-font;
+    background-color: rgba(0, 0, 0, 1);
     top: 0;
-    bottom: 80%;
+    bottom: 90%;
     font-weight: 800;
-
 }
 
 .portfolio-modal-info {
     position: absolute;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .9);
     width: 100%;
-    top: 20%;
+    top: 10%;
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.portfolio-modal-info>div {
+    left: 5%; 
+    right: 5%;
 }
 
 .portfolio-modal-image-container {
@@ -52,26 +59,60 @@
     }
 }
 
-.portfolio-modal-skills {
+.portfolio-modal-hbuttons {
+    position: absolute;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 100%;
-    //height: clamp(100px, 15vh, 200px);
-    font-size: clamp(18px, 1.5rem, 36px);
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    font-size: $medium-font;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    border-top: 1px white double;
+    border-bottom: 1px white double;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(255,255,255,0));
+    margin: 5px auto;
+    scroll-behavior: smooth;
 }
 
-.portfolio-modal-skills::-webkit-scrollbar {
+.portfolio-modal-hbuttons > * {
+    transition: transform 0.3 ease;
+}
+
+.portfolio-modal-hbuttons::-webkit-scrollbar {
     display: none;
 }
 
+.portfolio-modal-links {
+    top: 90%;
+    bottom: 0%;
+    justify-content: space-around;
+}
+
+.portfolio-modal-skills {
+    top: 0;
+    bottom: 90%;
+    justify-content: flex-start;
+}
+
+.portfolio-modal-summary {
+    font-size: $medium-font;
+}
+
 .portfolio-skill {
+    padding: 5px;
     margin: 10px;
+    border-radius: 5px;
     background-color: rgba(0, 0, 0, .8);
     border: 2px white double;
     cursor: pointer;
+    transition: background-color .5s ease-out;
+}
+
+.portfolio-skill:hover {
+    background-color: rgba(0,71,171,.8);
 }

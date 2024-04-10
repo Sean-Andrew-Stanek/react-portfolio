@@ -70,13 +70,13 @@ export const PortfolioModal = ({modalData}) => {
                 {project.name}    
             </div>
             <div className='portfolio-modal-info'>
-                <div className='portfolio-modal-skills'>
+                <div className='portfolio-modal-hbuttons portfolio-modal-links'>
                     {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
                 </div>
-                <div className='TODO-portfolio-modal-summary'>
+                <div className='portfolio-modal-summary'>
                     {project.summary}
                 </div>
-                <div ref={horizontalScrollRef} className='portfolio-modal-skills'>
+                <div ref={horizontalScrollRef} className='portfolio-modal-hbuttons portfolio-modal-skills'>
                     {project.skills.map((skill, index) => { return skillButton(skill, index);})}
                 </div>
                 
