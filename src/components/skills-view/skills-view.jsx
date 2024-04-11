@@ -48,10 +48,8 @@ export const SkillsView = ({setModalData}) => {
                     </div>
                     {skillsMasterList[key].map((skill, index) => { 
                         return (
-                            <div key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
-                                <div className='skill-tree-skill'>
-                                    {skill}
-                                </div>
+                            <div className='skill-tree-skill' key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
+                                {skill}
                             </div>
                         );
                     })}
@@ -73,10 +71,8 @@ export const SkillsView = ({setModalData}) => {
                         height: '100%',
                     }}>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content' style={{alignItems:'flex-start'}}>
-                        <div style={{display:'flex', flexFlow:'column', alignItems:'flex-start', overflow: 'hidden'}}>
-                            {skillTree()}
-                        </div>
+                    <div className='text-box-content' style={{justifyContent:'flex-start', padding:'10px', display:'flex', flexFlow:'column', alignItems:'flex-start', overflow: 'hidden'}}>
+                        {skillTree()}
                     </div>
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
                 </div>
