@@ -43,12 +43,23 @@ export const PortfolioModal = ({modalData}) => {
         console.log('TODO: This will open to the new modal target.');
     };
 
-    const skillButton = (skill, index) => {
-        return (
-            <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
-                {skill}
-            </div>
-        );
+    const skillButtons = (skills) => {
+
+        const skillSet = new Set();
+        
+        for(const skillCategory of Object.values(skills))
+            skillCategory.forEach(skill => skillSet.add(skill));
+
+        const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
+            return (
+                <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
+                    {skill}
+                </div>
+            );
+        });
+
+        return skillDivs;
+
     };
 
     const linkButton = (text, target, index) => {
@@ -77,7 +88,7 @@ export const PortfolioModal = ({modalData}) => {
                     {project.summary}
                 </div>
                 <div ref={horizontalScrollRef} className='portfolio-modal-hbuttons portfolio-modal-skills'>
-                    {project.skills.map((skill, index) => { return skillButton(skill, index);})}
+                    {skillButtons(project.skills)}
                 </div>
                 
             </div>
