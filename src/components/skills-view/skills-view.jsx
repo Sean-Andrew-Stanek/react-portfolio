@@ -1,40 +1,64 @@
-import {React, useState} from 'react';
+import {React, Fragment} from 'react';
 import './skills-view.scss';
-import { skills } from '../../utils/strings';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
 
 export const SkillsView = ({setModalData}) => {
 
-    const [frontEndVisible, setFrontEndVisible] = useState(true);
-    const [backEndVisible, setBackEndVisible] = useState(true);
-    const [dataVisible, setDataVisible] = useState(true);
-    const [devVisible, setDevVisible] = useState(true);
+    const getSkills = () => {
+        const returnObject = {};
 
-    const skillTree = (skillList, visibilityToggle, setVisibilityToggle, skillListHeaderText) => {
-        return (
-            <>
-                <div className = 'skill-tree-header'>
-                    {skillListHeaderText}
-                    <div className = 'skill-tree-expander' onClick={() => setVisibilityToggle(!visibilityToggle)} >
-                        <div className='skill-plus-sign' />
-                    </div>
-                </div>
-                {
-                    skillList.map((skill, index) => {
-                        return visibilityToggle && 
-                            <div key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
-                                <div className= 'text-box-border' style={{position:'relative'}}/>
-                                <div className='text-box-content' style={{position:'relative'}}>
-                                    <div className='skill-tree-skill'>
-                                        {skill}
-                                    </div>
-                                </div>
-                            </div>;
-                    })
+        projects.forEach((project) => {
+            Object.keys(project.skills).forEach((key) => {
+                if(!returnObject[key]) {
+                    returnObject[key] = [...project.skills[key]];
+                } else {
+                    returnObject[key] = returnObject[key].concat(project.skills[key]);
                 }
-            </>
+            });
+        });
+
+        Object.keys(returnObject).forEach((key) => {
+            const uniqueSet = new Set(returnObject[key]);
+
+            returnObject[key] = Array.from(uniqueSet).sort((a,b)=> {
+                if(a<b) return -1;
+                if(a>b) return 1;
+                return 0;
+            });
+            
+        });
+
+        return returnObject;
+
+    };
+
+    const skillTree = () => {
+
+        const skillsMasterList = getSkills();
+
+        return (
+            Object.keys(skillsMasterList).map((key, index) => (
+                <Fragment key={`${key}-${index}`}>
+                    <div className = 'skill-tree-header'>
+                        {key}
+                        <div className = 'skill-tree-expander' /* onClick={() => setVisibilityToggle(!visibilityToggle)} */ >
+                            <div className='skill-plus-sign' />
+                        </div>
+                    </div>
+                    {skillsMasterList[key].map((skill, index) => { 
+                        return (
+                            <div key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
+                                <div className='skill-tree-skill'>
+                                    {skill}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </Fragment>
+            ))
         );
+
     };
 
     return (
@@ -51,10 +75,7 @@ export const SkillsView = ({setModalData}) => {
                     <div className= 'text-box-border' />
                     <div className='text-box-content' style={{alignItems:'flex-start'}}>
                         <div style={{display:'flex', flexFlow:'column', alignItems:'flex-start', overflow: 'hidden'}}>
-                            {skillTree(skills.frontEndSkills, frontEndVisible, setFrontEndVisible, 'Front End Skills')}
-                            {skillTree(skills.backEndSkills, backEndVisible, setBackEndVisible, 'Back End Skills')}
-                            {skillTree(skills.dataSkills, dataVisible, setDataVisible, 'Data Skills')}
-                            {skillTree(skills.devSkills, devVisible, setDevVisible, 'Development Skills')}
+                            {skillTree()}
                         </div>
                     </div>
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
@@ -73,7 +94,7 @@ export const SkillsView = ({setModalData}) => {
                 }
                 <div className='quest-text-intro'>
                     Intro
-                </div>s
+                </div>
                 {
                 // Text Body
                 }
