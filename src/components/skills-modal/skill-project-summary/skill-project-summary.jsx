@@ -37,12 +37,13 @@ export const SkillProjectSummary = ({project}) => {
     };
 
     const linkButton = (text, target, index) => {
-
+        
         return (
             <div className='sps-skill' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
                 {text}
             </div>
         );
+
     };
 
     return (
@@ -50,15 +51,15 @@ export const SkillProjectSummary = ({project}) => {
             <div className='sps-image-container'>
                 <img src={`${project.image}`} className='sps-image' />
             </div>
-            
+            <div className='sps-project-name'>
+                {project.name}
+            </div>
             <div className='sps-details'>
-                <div className='sps-project-name'>
-                    {project.name}
-                </div>
+
                 <div className='sps-skill-container'>
                     {skillButton(project.skills)}
                 </div>
-                <div className='sps-subdetails'>
+                <div className='sps-links'>
                     {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
                 </div>
             </div>

@@ -55,7 +55,6 @@ export const SkillsView = ({setModalData}) => {
                             );
                         })}
                     </div>
-                    
                 </Fragment>
             ))
         );
