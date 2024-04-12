@@ -44,6 +44,10 @@ $midpoint: 70%;
 
 .skill-tree-skill {
     cursor: pointer;
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 3px 4px;
 }
 
 .skill-tree-skill:hover {
@@ -51,6 +55,20 @@ $midpoint: 70%;
     background-color: white;
 }
 
+.skill-list {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.skill-button {
+    justify-content:'flex-start';
+    padding:'10px';
+    display:'flex';
+    flex-flow:'column';
+    align-items:'flex-start';
+    overflow: 'hidden';
+    border: white 1px solid;
+}
 
 /////
 /// Expand Button Plus Sign

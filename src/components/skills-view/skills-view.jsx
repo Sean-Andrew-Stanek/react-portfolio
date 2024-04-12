@@ -46,13 +46,16 @@ export const SkillsView = ({setModalData}) => {
                             <div className='skill-plus-sign' />
                         </div>
                     </div>
-                    {skillsMasterList[key].map((skill, index) => { 
-                        return (
-                            <div className='skill-tree-skill' key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
-                                {skill}
-                            </div>
-                        );
-                    })}
+                    <div className='skill-list'>
+                        {skillsMasterList[key].map((skill, index) => { 
+                            return (
+                                <div className='skill-tree-skill' key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': {projects}})} >
+                                    {skill}
+                                </div>
+                            );
+                        })}
+                    </div>
+                    
                 </Fragment>
             ))
         );
