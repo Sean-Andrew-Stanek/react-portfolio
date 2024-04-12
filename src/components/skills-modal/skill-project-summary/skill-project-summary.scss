@@ -27,18 +27,7 @@
     }
 }
 
-.sps-details {
-    position: absolute;
-    background-color: rgba(0, 0, 0, .4);
-    top: 30%;
-    width: 100%;
-    height: 85%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    overflow: hidden;
-}
+
 
 .sps-project-name {
     position: absolute;
@@ -51,29 +40,67 @@
     color: white;
 }
 
-.sps-skill-container, .sps-links{
-    margin-left: 5px;
+//Hold skill-container and links
+.sps-details {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6);
+    top: 30%;
+    width: 100%;
+    height: 70%;
+    color: white;
     display: flex;
-    flex-flow: row nowrap;
-    height: 35%;
-    gap: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+//holds skill and link respectively
+.sps-skill-container, .sps-links{
+    margin: 5px 0;
+    display: flex;
 }
 
 .sps-links {
     width: 100%;
-    display: flex;
     justify-content: space-around;
 }
 
-.sps-skill {
-    border: 1px white solid;
-    background-color: rgba(0,0,0,0.8);
+
+
+
+//Buttons
+.sps-skill, .sps-link {
+    border: 2px silver solid;
+    color: black;
     border-radius: 5px;
-    transition: background-color 1s ease-in-out;
+    padding: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.sps-link {
+    transition: transform 2s ease-out, background .5s ease-in-out;
+    background: linear-gradient(to top right, rgba(0,71,171,0.7), rgba(200,200,225,.7));
+    /* background: linear-gradient(to top right, rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7)); */
+}
+
+.sps-link:hover {
+    /* background: linear-gradient(to top right, rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7)); */
+    background: linear-gradient(to top right, rgba(200,200,225,.7), rgba(0,71,171,0.7));
+    transform: scale(1.05);
+}
+
+.sps-skill {
+    background-color: rgba(255,255,255,0.6);
+    margin-left: 10px;
+    transition: background-color .5s ease-in-out;
 }
 
 .sps-skill:hover {
-    background-color: rgba(0,0,0,1);
+    background-color: rgba(255,255,255,0.9);
     transform: scale(1.05);
 }

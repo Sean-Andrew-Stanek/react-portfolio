@@ -39,7 +39,7 @@ export const SkillProjectSummary = ({project}) => {
     const linkButton = (text, target, index) => {
         
         return (
-            <div className='sps-skill' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+            <div className='sps-link' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
                 {text}
             </div>
         );
