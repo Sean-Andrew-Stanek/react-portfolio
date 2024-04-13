@@ -36,6 +36,9 @@ $quest-text-left: ratio(160px, $quest-background-width);
 */
 
 .main-container {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 600;
+
     position: absolute;
     top: $navbar-top-buffer;
     bottom: $navbar-bottom-buffer;
@@ -165,6 +168,7 @@ $quest-text-left: ratio(160px, $quest-background-width);
 }
 
 .quest-text-body {
+    
     position: absolute;
     //Responsive, medium
     font-size: clamp(12px, 2vw, 18px);
