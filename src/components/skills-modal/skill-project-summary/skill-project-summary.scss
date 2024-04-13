@@ -66,9 +66,6 @@
     justify-content: space-around;
 }
 
-
-
-
 //Buttons
 .sps-skill, .sps-link {
     border: 2px silver solid;
@@ -83,14 +80,11 @@
 }
 
 .sps-link {
-    transition: transform 2s ease-out, background .5s ease-in-out;
-    background: linear-gradient(to top right, rgba(0,71,171,0.7), rgba(200,200,225,.7));
-    /* background: linear-gradient(to top right, rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7)); */
+    transition: transform 2s ease-out;
+    background: linear-gradient(to top right, rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7));
 }
 
 .sps-link:hover {
-    /* background: linear-gradient(to top right, rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7)); */
-    background: linear-gradient(to top right, rgba(200,200,225,.7), rgba(0,71,171,0.7));
     transform: scale(1.05);
 }
 
