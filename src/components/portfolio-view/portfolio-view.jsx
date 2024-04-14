@@ -1,9 +1,13 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 import './portfolio-view.scss';
 import { projects } from '../../utils/porfolio-projects';
 import PropTypes from 'prop-types';
+import { portfolioViewStrings as strings} from '../../utils/strings';
+import TypeWriter from '../../utils/typewriter';
 
 export const PortfolioView = ({setModalData}) => {
+
+    const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     let portfolioCapstones = () => {
         let filteredProjects = projects.filter(project => project.capstone==='true');
@@ -60,13 +64,18 @@ export const PortfolioView = ({setModalData}) => {
                 // Text Intro
                 }
                 <div className='quest-text-intro'>
-                    Intro
+                    <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
                 </div>
                 {
                 // Text Body
                 }
                 <div className='quest-text-body'>
-                    body
+                    <div>
+                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
+                    </div>
+                    <div>
+                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
+                    </div>
                 </div>
             </div>
             {

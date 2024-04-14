@@ -15,6 +15,12 @@ export const skillViewStrings = {
     'closing': 'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.'
 };
 
+export const portfolioViewStrings = {
+    'greeting': 'My Projects',
+    'body': 'These are my capstone projects which I take pride in.  They showcase my capabilities in both frontend and backend capabiliites.',
+    'closing':  'These projects give me a strong base of reusable code which I understand and can tailor to specific projects.'
+};
+
 export const skills = {
     'frontEndSkills': [
         'HTML', 'CSS', 'JavaScript', 'APIs', 'Bootstrap'
