@@ -9,6 +9,12 @@ export const mainViewStrings = {
     'closing': 'Click the buttons above to start to see how I can help you realize your projects.  You can also click the buttons below to contact me.'
 };
 
+export const skillViewStrings = {
+    'greeting': 'My Capabilities',
+    'body': 'Constantly innovating using multiple technologies has given me a wide range of skills.  These skills are those that I have public projects that I can display.  My abilities go beyond this and I love learning new technologies?',
+    'closing': 'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.'
+};
+
 export const skills = {
     'frontEndSkills': [
         'HTML', 'CSS', 'JavaScript', 'APIs', 'Bootstrap'
