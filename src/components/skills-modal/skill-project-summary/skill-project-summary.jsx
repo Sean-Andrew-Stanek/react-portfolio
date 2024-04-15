@@ -11,11 +11,8 @@ import {React} from 'react';
 import PropTypes from 'prop-types';
 import './skill-project-summary.scss';
 
-export const SkillProjectSummary = ({project}) => {
+export const SkillProjectSummary = ({project, setModalData}) => {
 
-    const setModalData = () => {
-        console.log('TODO: This will open to the new modal target.');
-    };
 
     const skillButton = (skills) => {
 
@@ -26,7 +23,7 @@ export const SkillProjectSummary = ({project}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='sps-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
+                <div className='sps-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
                     {skill}
                 </div>
             );
@@ -69,4 +66,5 @@ export const SkillProjectSummary = ({project}) => {
 
 SkillProjectSummary.propTypes = {
     project: PropTypes.object.isRequired,
+    setModalData: PropTypes.func.isRequired,
 };
