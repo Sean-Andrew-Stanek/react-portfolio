@@ -21,10 +21,16 @@ export const portfolioViewStrings = {
     'closing':  'These projects give me a strong base of reusable code which I understand and can tailor to specific projects.'
 };
 
+export const contactViewStrings = {
+    'greeting': 'Want to contact me?',
+    'body': 'I would love to hear from you!  I have worked for years bringing my dreams to life and am at a point where I want to help others realize theirs!',
+    'closing': 'Find me at any of the links to the left!'
+};
+
 
 export const contactRoutes = [
     ['Discord', 'https://discordapp.com/users/dartimos'],
     ['Twitter', 'https://twitter.com/stanek_sean'],
     ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
-    ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
+    ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b'],
 ];

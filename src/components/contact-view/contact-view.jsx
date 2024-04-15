@@ -1,16 +1,19 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 import './contact-view.scss';
 import '../../styles/styles.scss';
 import { contactRoutes } from '../../utils/strings';
 import { Link } from 'react-router-dom';
+import TypeWriter from '../../utils/typewriter';
+import { contactViewStrings as strings} from '../../utils/strings';
+
 
 export const ContactView = () => {
 
+    const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     let contactButton = (info, index) => {
-        console.log('ding');
         return (
-            <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' className='text-box-container cv-box-container' onClick={info[1]} key={`${info}-${index}`}>
+            <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' className='text-box-container cv-box-container' key={`${info}-${index}`}>
                 <div className= 'text-box-border' />
                 <div className='text-box-content cv-content'>
                     Contact me on {info[0]}
@@ -37,18 +40,23 @@ export const ContactView = () => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='Drake-Quest-Border-700-650.png'/>
+                <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-700-650.png'/>
                 {
                 // Text Intro
                 }
                 <div className='quest-text-intro'>
-                    Intro
+                    <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
                 </div>
                 {
                 // Text Body
                 }
                 <div className='quest-text-body'>
-                    body
+                    <div>
+                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
+                    </div>
+                    <div>
+                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
+                    </div>
                 </div>
             </div>
             
