@@ -2,6 +2,7 @@ import {React, Fragment, useEffect, useState, useRef} from 'react';
 import './nav-bar.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { contactRoutes } from '../../utils/strings';
 
 export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
@@ -56,13 +57,6 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     let routes = ['home', 'contact', 'skills', 'portfolio'];
     let routeDetails = ['Return to the intro screen.', 'Contact me for information!', 'My skill set.', 'My projects and achievements.'];
-
-    let contactRoutes = [
-        ['Discord', 'https://discordapp.com/users/dartimos'],
-        ['Twitter', 'https://twitter.com/stanek_sean'],
-        ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
-        ['Linked-In', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
-    ];
 
     let namePlate = () => {
         return (
