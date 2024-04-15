@@ -21,18 +21,4 @@ export const portfolioViewStrings = {
     'closing':  'These projects give me a strong base of reusable code which I understand and can tailor to specific projects.'
 };
 
-export const skills = {
-    'frontEndSkills': [
-        'HTML', 'CSS', 'JavaScript', 'APIs', 'Bootstrap'
-    ],
-    'backEndSkills': [
-        'JavaScript', 'Express', 'AWS EC2'
-    ],
-    'dataSkills': [
-        'MongoDB', 'AWS S3'
-    ],
-    'devSkills': [
-        'skill1', 'skill2', 'skill3'
-    ]
-};
 
