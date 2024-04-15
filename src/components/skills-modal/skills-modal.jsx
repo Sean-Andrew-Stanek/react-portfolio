@@ -13,13 +13,23 @@ import {React} from 'react';
 import PropTypes from 'prop-types';
 import { SkillProjectSummary } from './skill-project-summary/skill-project-summary';
 import './skills-modal.scss';
+import { projects } from '../../utils/porfolio-projects';
 
 export const SkillsModal = ({modalData}) => {
+
+    
+    
+
+    const filteredList = projects.filter(project =>
+        project.skills.frontend.includes(modalData.data) ||
+        project.skills.backend.includes(modalData.data) ||
+        project.skills.other.includes(modalData.data)
+    );
 
     return (
 
         <div className='skill-modal-container'>
-            {modalData.data.projects.map((project, index) =>{
+            {filteredList.map((project, index) =>{
                 return <SkillProjectSummary project={project} key={`${project.name}${index}`}/>;
             })}
 
