@@ -1,43 +1,34 @@
 import {React} from 'react';
 import './contact-view.scss';
 import '../../styles/styles.scss';
+import { contactRoutes } from '../../utils/strings';
 
 export const ContactView = () => {
 
 
+    let contactButton = (info, index) => {
+        console.log('ding');
+        return (
+            <div className='text-box-container' key={`${info}-${index}`}>
+                <div className= 'text-box-border' />
+                <div className='text-box-content'>
+                    Contact me on {info[0]}
+                </div>
+                <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+            </div>
+        );
+    };
 
     return (
         <div className='main-container'>
-
+            
+            {
+            // Left Side Links
+            }
             <div className='cv-button-column'>
-                <div className='text-box-container'>
-                    <div className= 'text-box-border' />
-                    <div className='text-box-content'>
-                        Contact me on Discord
-                    </div>
-                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
-                </div>
-                <div className='text-box-container'>
-                    <div className= 'text-box-border' />
-                    <div className='text-box-content'>
-                        Contact me on Twitter
-                    </div>
-                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
-                </div>
-                <div className='text-box-container'>
-                    <div className= 'text-box-border' />
-                    <div className='text-box-content'>
-                        Contact me on LinkedIn
-                    </div>
-                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
-                </div>
-                <div className='text-box-container'>
-                    <div className= 'text-box-border' />
-                    <div className='text-box-content'>
-                        Contact me through e-mail
-                    </div>
-                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
-                </div>
+                {contactRoutes.map((info, index) => {
+                    return contactButton(info, index);
+                })}
             </div>
 
             <div className='quest-container cv-quest-container'>
