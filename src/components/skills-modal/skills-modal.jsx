@@ -15,7 +15,7 @@ import { SkillProjectSummary } from './skill-project-summary/skill-project-summa
 import './skills-modal.scss';
 import { projects } from '../../utils/porfolio-projects';
 
-export const SkillsModal = ({modalData}) => {
+export const SkillsModal = ({modalData, setModalData}) => {
 
     
     
@@ -30,7 +30,7 @@ export const SkillsModal = ({modalData}) => {
 
         <div className='skill-modal-container'>
             {filteredList.map((project, index) =>{
-                return <SkillProjectSummary project={project} key={`${project.name}${index}`}/>;
+                return <SkillProjectSummary setModalData={setModalData} project={project} key={`${project.name}${index}`}/>;
             })}
 
         </div>
@@ -41,5 +41,6 @@ export const SkillsModal = ({modalData}) => {
 
 SkillsModal.propTypes = {
     modalData: PropTypes.object.isRequired,
+    setModalData: PropTypes.func.isRequired
 };
 

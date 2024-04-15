@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
 import './portfolio-modal.scss';
 
-export const PortfolioModal = ({modalData}) => {
+export const PortfolioModal = ({modalData, setModalData}) => {
 
     const horizontalScrollRef = useRef(null);
 
@@ -39,10 +39,6 @@ export const PortfolioModal = ({modalData}) => {
 
     const project = projects.find(obj => obj.name === modalData.data.name);
 
-    const setModalData = () => {
-        console.log('TODO: This will open to the new modal target.');
-    };
-
     const skillButtons = (skills) => {
 
         const skillSet = new Set();
@@ -52,7 +48,7 @@ export const PortfolioModal = ({modalData}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData()}>
+                <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
                     {skill}
                 </div>
             );
@@ -100,4 +96,5 @@ export const PortfolioModal = ({modalData}) => {
 
 PortfolioModal.propTypes = {
     modalData: PropTypes.object.isRequired,
+    setModalData: PropTypes.func.isRequired
 };
