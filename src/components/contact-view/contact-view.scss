@@ -23,8 +23,16 @@
     border: white 2px solid;
 }
 
-.text-box-content {
+.cv-content {
     text-align: right;
     padding-right: 10px;
     padding-left: 15%;
+}
+
+.cv-box-container {
+    transition: transform .2s ease-out;
+}
+
+.cv-box-container:hover {
+    transform: translateX(-5px);
 }
