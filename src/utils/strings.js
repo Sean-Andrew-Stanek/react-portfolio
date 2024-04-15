@@ -26,5 +26,5 @@ export const contactRoutes = [
     ['Discord', 'https://discordapp.com/users/dartimos'],
     ['Twitter', 'https://twitter.com/stanek_sean'],
     ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
-    ['Linked-In', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
+    ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b']
 ];
