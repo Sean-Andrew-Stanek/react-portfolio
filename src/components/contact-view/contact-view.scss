@@ -15,3 +15,10 @@
     right: calc(min(100px, 30%) + 10px);
     left: calc(25% + 10px);
 }
+
+.cv-charm {
+    border-radius: 5px;
+    width: 20%;
+    transform: translate(-20%, -30%);
+    border: white 2px solid;
+}

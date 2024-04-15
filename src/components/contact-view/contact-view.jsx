@@ -14,7 +14,8 @@ export const ContactView = () => {
                 <div className='text-box-content'>
                     Contact me on {info[0]}
                 </div>
-                <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                {/* <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/> */}
+                <img className='text-box-charm cv-charm' src={`/react-portfolio/${info[0]}-Icon-300-300.png`}/>
             </div>
         );
     };
