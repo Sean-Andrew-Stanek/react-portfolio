@@ -1,12 +1,14 @@
+
 //Profile Image
 
 .cv-button-column {
     position: absolute;
     inset: 10px;
+    top: 30px;
     width: 25%;
     display: flex;
     flex-flow: column;
-    
+    gap: 30px;
 }
 
 .cv-quest-container {
