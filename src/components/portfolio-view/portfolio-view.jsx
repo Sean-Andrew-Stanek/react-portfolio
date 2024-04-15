@@ -50,6 +50,8 @@ export const PortfolioView = ({setModalData}) => {
                         </div>
                     </div>
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                    <img className='text-box-nav-up' src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
+                    <img className='text-box-nav-down' src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
                 </div>
             </div>
             {

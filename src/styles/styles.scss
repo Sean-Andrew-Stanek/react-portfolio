@@ -122,6 +122,24 @@ $quest-text-left: ratio(160px, $quest-background-width);
     transform: translate(-40%, -60%);
 }
 
+.text-box-nav-down {
+    position: absolute;
+    right: 50%;
+    top: 0%;
+    width:25%;
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(25%) translateY(-50%);
+}
+
+.text-box-nav-up {
+    position: absolute;
+    right: 50%;
+    bottom: 0%;
+    width:25%;
+    transform-origin: top right;
+    transform: rotate(-90deg) translateX(-75%) translateY(-50%);
+}
+
 /////
 /// Quest Box
 ///// 
