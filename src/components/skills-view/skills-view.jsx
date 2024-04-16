@@ -97,7 +97,6 @@ export const SkillsView = ({setModalData}) => {
                             })}
                         </div>
                     }
-                    
                 </Fragment>
             ))
         );
@@ -131,7 +130,7 @@ export const SkillsView = ({setModalData}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-700-650.png'/>
+                <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-1024-1024.png'/>
                 {
                 // Text Intro
                 }
