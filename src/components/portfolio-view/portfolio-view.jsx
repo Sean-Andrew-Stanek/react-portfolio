@@ -33,6 +33,9 @@ export const PortfolioView = ({setModalData}) => {
 
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
+    /*
+    *   filters capstone projects and displays
+    */
     let portfolioCapstones = () => {
         let filteredProjects = projects.filter(project => project.capstone==='true');
 

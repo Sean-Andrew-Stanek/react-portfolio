@@ -41,6 +41,11 @@ $midpoint: 70%;
     z-index: 300;
 }
 
+.portfolio-project:hover {
+    outline: white 3px solid;
+    opacity: 1;
+}
+
 .portfolio-project-title {
     position:absolute;
     top: 0;
