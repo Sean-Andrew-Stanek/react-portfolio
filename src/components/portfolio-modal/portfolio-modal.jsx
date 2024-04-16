@@ -15,6 +15,9 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
     const horizontalScrollRef = useRef(null);
 
+    /*
+    *  Horizontal content scroll for skills
+    */
     useEffect(() => {
         const scrollContainer = horizontalScrollRef.current;
 
@@ -37,8 +40,14 @@ export const PortfolioModal = ({modalData, setModalData}) => {
         };
     }, []);
 
+    /*
+    *  Target project
+    */
     const project = projects.find(obj => obj.name === modalData.data.name);
 
+    /*
+    *  Each skill can open a skill modal
+    */
     const skillButtons = (skills) => {
 
         const skillSet = new Set();
@@ -58,6 +67,9 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
     };
 
+    /*
+    *  Creates a clickable link to a repo / live
+    */
     const linkButton = (text, target, index) => {
 
         return (
