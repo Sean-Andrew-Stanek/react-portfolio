@@ -17,9 +17,9 @@ export const PortfolioView = ({setModalData}) => {
     const handleScroll = () => {
         const capstoneScroller = capstoneContainerListener.current;
 
-        setIsTop(capstoneScroller.scrollTop === 0 ? true : false);
+        setIsTop(capstoneScroller.scrollTop === 0);
             
-        setIsBottom(capstoneScroller.scrollTop === (capstoneScroller.scrollHeight - capstoneScroller.clientHeight) ? true : false);
+        setIsBottom(capstoneScroller.scrollTop >= (capstoneScroller.scrollHeight - capstoneScroller.clientHeight));
 
     };
 
