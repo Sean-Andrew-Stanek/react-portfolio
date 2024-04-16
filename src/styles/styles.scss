@@ -193,9 +193,11 @@ $quest-text-left: ratio(160px, $quest-background-width);
 
 .quest-text-body {
     
+    font-family: 'IM Fell English SC', serif;
+
     position: absolute;
     //Responsive, medium
-    font-size: clamp(12px, 2vw, 18px);
+    font-size: clamp(12px, 2vw, 20px);
 
     //Column
     display: flex;
