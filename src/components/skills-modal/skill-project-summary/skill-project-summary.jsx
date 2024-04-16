@@ -23,7 +23,11 @@ export const SkillProjectSummary = ({project, setModalData}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='sps-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
+                <div className='sps-skill' key={`${skill}${index}`} 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setModalData({'type': 'skills', 'data': skill});
+                    }}>
                     {skill}
                 </div>
             );
@@ -44,11 +48,11 @@ export const SkillProjectSummary = ({project, setModalData}) => {
     };
 
     return (
-        <div className='sps-container'>
+        <div className='sps-container' onClick={() => setModalData({'type':'project', 'data':{'name':project.name}})}>
             <div className='sps-image-container'>
                 <img src={`${project.image}`} className='sps-image' />
             </div>
-            <div className='sps-project-name'>
+            <div className='sps-project-name' >
                 {project.name}
             </div>
             <div className='sps-details'>
