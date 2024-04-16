@@ -25,8 +25,8 @@ $midpoint: 70%;
 }
 
 .skill-tree-expander {
-    height: 3vw;
-    width: 3vw;
+    height: min(2vw, 2vh);
+    width: min(2vw, 2vh);
     background-color: rgba(255,255,255,0.5);
     display: flex;
     align-items: center;
