@@ -59,10 +59,10 @@ export const SkillsView = ({setModalData}) => {
             Object.keys(skillsMasterList).map((key, index) => (
                 <Fragment key={`${key}-${index}`}>
                     <div className = 'skill-tree-header'>
-                        {key}
                         <div className = 'skill-tree-expander' onClick={() => toggleVisibility(key)} >
                             <div className={`skill-plus-sign ${!visibilityToggle[key] && 'minus'}`} />
                         </div>
+                        {key}
                     </div>
                     { visibilityToggle[key] &&
                         <div className='skill-list'>
@@ -94,7 +94,7 @@ export const SkillsView = ({setModalData}) => {
                         height: '100%',
                     }}>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content' style={{justifyContent:'flex-start', padding:'10px', display:'flex', flexFlow:'column', alignItems:'flex-start', overflow: 'hidden'}}>
+                    <div className='text-box-content skill-content scrollable' >
                         {skillTree()}
                     </div>
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
