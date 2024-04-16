@@ -16,7 +16,9 @@ $midpoint: 70%;
 }
 
 .skill-tree-header {
-    font-size: clamp(18px, 2.5vw, 24px);
+    font-family: 'IM Fell English SC', serif;
+    font-weight: 100;
+    font-size: clamp(24px, 2.5vw, 36px);
     height: 10%;
     display:flex;
     flex-flow: row;
@@ -43,6 +45,9 @@ $midpoint: 70%;
 }
 
 .skill-tree-skill {
+    font-family: 'IM Fell English SC', serif;
+    font-weight: 100;
+
     cursor: pointer;
     border: 1px white solid;
     border-radius: 5px;

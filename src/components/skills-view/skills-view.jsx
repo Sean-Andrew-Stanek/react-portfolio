@@ -125,7 +125,7 @@ export const SkillsView = ({setModalData}) => {
                 </div>
             </div>
             {
-                //Info Box
+                //Quest Box
             }
             <div className='quest-container skill-quest-container'>
                 {
