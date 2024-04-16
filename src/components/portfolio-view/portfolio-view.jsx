@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useEffect, useRef, useState} from 'react';
 import './portfolio-view.scss';
 import { projects } from '../../utils/porfolio-projects';
 import PropTypes from 'prop-types';
@@ -6,6 +6,30 @@ import { portfolioViewStrings as strings} from '../../utils/strings';
 import TypeWriter from '../../utils/typewriter';
 
 export const PortfolioView = ({setModalData}) => {
+
+    const capstoneContainerListener = useRef(null);
+    const [isTop, setIsTop] = useState(true);
+    const [isBottom, setIsBottom] = useState(true);
+
+    /*
+    *   Controls nav helper opacity
+    */
+    const handleScroll = () => {
+        const capstoneScroller = capstoneContainerListener.current;
+
+        console.log('ding');
+        setIsTop(capstoneScroller.scrollTop === 0 ? true : false);
+            
+        setIsBottom(capstoneScroller.scrollTop === (capstoneScroller.scrollHeight - capstoneScroller.clientHeight) ? true : false);
+
+    };
+
+    /*
+    *   onLoad calls
+    */
+    useEffect(() => {
+        handleScroll();
+    }, []);
 
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
@@ -44,14 +68,14 @@ export const PortfolioView = ({setModalData}) => {
                         height: '100%',
                     }}>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content portfolio-scroller' style={{alignItems:'flex-start'}}>
+                    <div className='text-box-content portfolio-scroller' style={{alignItems:'flex-start'}} ref={capstoneContainerListener} onScroll={handleScroll}>
                         <div className='portfolio-capstone-container'>
                             {portfolioCapstones()}
                         </div>
                     </div>
                     <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
-                    <img className='text-box-nav-up' src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
-                    <img className='text-box-nav-down' src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
+                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
+                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
                 </div>
             </div>
             {
