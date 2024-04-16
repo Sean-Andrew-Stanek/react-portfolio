@@ -18,7 +18,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='Drake-Quest-Border-700-650.png'/>
+                <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-1024-1024.png'/>
                 {
                 // Text Intro
                 }
