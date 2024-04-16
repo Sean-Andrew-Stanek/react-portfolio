@@ -7,7 +7,6 @@ import TypeWriter from '../../utils/typewriter';
 
 export const SkillsView = ({setModalData}) => {
 
-    const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     const getSkills = () => {
         const returnObject = {};
@@ -37,6 +36,21 @@ export const SkillsView = ({setModalData}) => {
 
     };
 
+    const toggleVisibility = (key) => {
+        setVisibilityToggle(prevState => ({
+            ...prevState,
+            [key]: !prevState[key]
+        }));
+    };
+
+    const initialVisibilityState = Object.keys(getSkills()).reduce((acc,key) => {
+        acc[key] = true;
+        return acc;
+    }, {});
+
+    const [typeWriterIndex, setTypeWriterIndex] = useState(0);
+    const [visibilityToggle, setVisibilityToggle] = useState(initialVisibilityState);
+
     const skillTree = () => {
 
         const skillsMasterList = getSkills();
@@ -46,19 +60,22 @@ export const SkillsView = ({setModalData}) => {
                 <Fragment key={`${key}-${index}`}>
                     <div className = 'skill-tree-header'>
                         {key}
-                        {/* <div className = 'skill-tree-expander' onClick={() => setVisibilityToggle(!visibilityToggle)} >
-                            <div className='skill-plus-sign' />
-                        </div> */}
+                        <div className = 'skill-tree-expander' onClick={() => toggleVisibility(key)} >
+                            <div className={`skill-plus-sign ${!visibilityToggle[key] && 'minus'}`} />
+                        </div>
                     </div>
-                    <div className='skill-list'>
-                        {skillsMasterList[key].map((skill, index) => { 
-                            return (
-                                <div className='skill-tree-skill' key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})} >
-                                    {skill}
-                                </div>
-                            );
-                        })}
-                    </div>
+                    { visibilityToggle[key] &&
+                        <div className='skill-list'>
+                            {skillsMasterList[key].map((skill, index) => { 
+                                return (
+                                    <div className='skill-tree-skill' key={`${skill}+${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})} >
+                                        {skill}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    }
+                    
                 </Fragment>
             ))
         );

@@ -87,7 +87,7 @@ $midpoint: 70%;
 }
 
 /* Vertical line */
-.skill-plus-sign::before {
+.skill-plus-sign.minus::before {
     top: 0;
     bottom: 0;
     left: 50%;
