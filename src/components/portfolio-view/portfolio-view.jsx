@@ -68,7 +68,7 @@ export const PortfolioView = ({setModalData}) => {
                         height: '100%',
                     }}>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content portfolio-scroller' style={{alignItems:'flex-start'}} ref={capstoneContainerListener} onScroll={handleScroll}>
+                    <div className='text-box-content scrollable' style={{alignItems:'flex-start'}} ref={capstoneContainerListener} onScroll={handleScroll}>
                         <div className='portfolio-capstone-container'>
                             {portfolioCapstones()}
                         </div>

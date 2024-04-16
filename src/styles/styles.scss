@@ -209,3 +209,12 @@ $quest-text-left: ratio(160px, $quest-background-width);
     height: $quest-text-height;
     z-index: 2;
 }
+
+.scrollable { 
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.scrollable::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Webkit browsers */
+}

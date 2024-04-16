@@ -27,15 +27,6 @@ $midpoint: 70%;
     overflow: hidden;    
 }
 
-.portfolio-scroller {
-    overflow: hidden;
-    overflow-y: auto;
-}
-
-.portfolio-scroller::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Webkit browsers */
-}
-
 
 .portfolio-project {
     margin: min(1vw, 1vh);
