@@ -1,4 +1,4 @@
-import {React, Fragment, useState} from 'react';
+import {React, Fragment, useState, useRef, useEffect} from 'react';
 import './skills-view.scss';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
@@ -7,6 +7,28 @@ import TypeWriter from '../../utils/typewriter';
 
 export const SkillsView = ({setModalData}) => {
 
+    const scrollListener = useRef(null);
+    const [isTop, setIsTop] = useState(true);
+    const [isBottom, setIsBottom] = useState(true);
+
+    /*
+    *   Controls nav helper opacity
+    */
+    const handleScroll = () => {
+        const capstoneScroller = scrollListener.current;
+
+        setIsTop(capstoneScroller.scrollTop === 0);
+            
+        setIsBottom(capstoneScroller.scrollTop >= (capstoneScroller.scrollHeight - capstoneScroller.clientHeight));
+
+    };
+
+    /*
+    *   onLoad calls
+    */
+    useEffect(() => {
+        handleScroll();
+    }, []);
 
     const getSkills = () => {
         const returnObject = {};
@@ -94,10 +116,12 @@ export const SkillsView = ({setModalData}) => {
                         height: '100%',
                     }}>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content skill-content scrollable' >
+                    <div className='text-box-content skill-content scrollable' ref={scrollListener} onScroll={handleScroll}>
                         {skillTree()}
                     </div>
-                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>
+                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>                    
+                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
+                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
                 </div>
             </div>
             {
