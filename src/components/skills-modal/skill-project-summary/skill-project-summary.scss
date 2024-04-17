@@ -79,7 +79,7 @@
     white-space: nowrap;
 }
 
-.sps-skill {
+.sps-skill, .sps-link {
     margin-left: 10px;
     background-size: 100% 100%;
     background-position: center;
@@ -99,16 +99,8 @@
         opacity: 1;
     }
 }
-
 .sps-link {
-    border: 2px silver solid;
-    color: black;
-    border-radius: 5px;
-    transition: transform 2s ease-out;
-    background: linear-gradient(to top right, rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7), rgba(200,200,225,.7), rgba(0,71,171,0.7));
+    padding: 5px 5%;
 }
 
-.sps-link:hover {
-    transform: scale(1.05);
-}
 

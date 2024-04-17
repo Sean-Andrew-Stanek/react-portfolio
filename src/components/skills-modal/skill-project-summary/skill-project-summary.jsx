@@ -43,8 +43,10 @@ export const SkillProjectSummary = ({project, setModalData}) => {
     const linkButton = (text, target, index) => {
         
         return (
-            <div className='sps-link' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
-                {text}
+            <div className='sps-link' style={{backgroundImage: 'url(/react-portfolio/Link-Button-379-54.png)'}} key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+                <span>
+                    {text}
+                </span>
             </div>
         );
 
