@@ -24,12 +24,20 @@ $quest-intro-top: ratio(125px, $quest-background-height);
 $quest-intro-left: ratio(195px, $quest-background-width);
 
 //Text
-$quest-text-height: ratio(390px, $quest-background-height);
-$quest-text-width: ratio(380px, $quest-background-width);
+$quest-text-height: ratio(250px, $quest-background-height);
+$quest-text-width: ratio(390px, $quest-background-width);
 
-$quest-text-margin: ratio(20px, $quest-background-height);
+$quest-text-margin: ratio(10px, $quest-background-height);
 $quest-text-top: $quest-intro-top + $quest-intro-height + $quest-text-margin;
-$quest-text-left: ratio(160px, $quest-background-width);
+$quest-text-left: ratio(155px, $quest-background-width);
+
+//Conclusion
+
+$quest-end-height: ratio(150px, $quest-background-height);
+$quest-end-width: ratio(280px, $quest-background-width);
+
+$quest-end-top: $quest-text-top + $quest-text-height + $quest-text-margin;
+$quest-end-left: ratio(210px, $quest-background-width);
 
 /*
 *  Container for all views
@@ -168,7 +176,7 @@ $quest-text-left: ratio(160px, $quest-background-width);
     z-index: 1;
 }
 
-.quest-text-intro, .mv-quest-text-body {
+.quest-text-intro {
     position: absolute;
     z-index: 2;
 }
@@ -194,7 +202,6 @@ $quest-text-left: ratio(160px, $quest-background-width);
 .quest-text-body {
     
     font-family: 'IM Fell English SC', serif;
-
     position: absolute;
     //Responsive, medium
     font-size: clamp(12px, 2vw, 20px);
@@ -202,13 +209,32 @@ $quest-text-left: ratio(160px, $quest-background-width);
     //Column
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content:center;
 
     //Position
     top: $quest-text-top;
     left: $quest-text-left;
     width: $quest-text-width;
     height: $quest-text-height;
+    z-index: 2;
+}
+
+.quest-text-end {
+    font-family: 'IM Fell English SC', serif;;
+    position: absolute;
+    //Responsive, medium
+    font-size: clamp(12px, 2vw, 20px);
+
+    //Column
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    //Position
+    top: $quest-end-top;
+    left: $quest-end-left;
+    width: $quest-end-width;
+    height: $quest-end-height;
     z-index: 2;
 }
 
