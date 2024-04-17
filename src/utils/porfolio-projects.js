@@ -35,7 +35,7 @@ export const projects = [
         'name': 'Pokedex Viewer',
         'image': 'pokemonsearch.PNG',
         'skills': {
-            'frontend': ['HTML', 'CSS', 'Bootstrap'],
+            'frontend': ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
             'backend': ['APIs'],
             'other': [],
         },        
@@ -51,7 +51,7 @@ export const projects = [
         'name': 'LetsMeet',
         'image': 'Project-LetsMeet-512-512.png',
         'skills': {
-            'frontend': ['React', 'oAuth',],
+            'frontend': ['React', 'oAuth', 'JavaScript'],
             'backend': ['Node.js', 'Serverless', 'Lambda', 'PWA',],
             'other': ['Jest', 'Gherkin', 'Puppeteer'],
         },
@@ -84,7 +84,7 @@ export const projects = [
         'name': 'Movie Database, API and Client - Angular',
         'image': 'Project-AngularMovie-512-256.png',
         'skills': {
-            'frontend': ['Angular', 'Angular Material', 'TypeScript', 'RxJS', 'JWT',],
+            'frontend': ['Angular', 'Angular Material', 'TypeScript', 'RxJS', 'JWT', 'JavaScript'],
             'backend': ['Node.js', 'Express.js', 'MongoDB', 'Mongoose','Passport.js',  'JWT', 'bcrypt'],
             'other': ['MARN Stack'],
         },
@@ -101,7 +101,7 @@ export const projects = [
         'name': 'Chatter - Chat App',
         'image': 'Project-Chatter-512-256.png',
         'skills': {
-            'frontend': ['React Native', 'Node.js'],
+            'frontend': ['React Native', 'Node.js', 'JavaScript'],
             'backend': ['Firebase', 'Node.js'],
             'other': ['Expo',],
         },
