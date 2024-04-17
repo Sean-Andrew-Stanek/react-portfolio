@@ -23,12 +23,15 @@ export const SkillProjectSummary = ({project, setModalData}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='sps-skill' key={`${skill}${index}`} 
+                <div className='sps-skill'  style={{backgroundImage: 'url(/react-portfolio/Skill-Button-175-50.png)'}} key={`${skill}${index}`} 
                     onClick={(e) => {
                         e.stopPropagation();
                         setModalData({'type': 'skills', 'data': skill});
                     }}>
-                    {skill}
+                    <span>
+                        {skill}
+                    </span>
+                    
                 </div>
             );
         });
