@@ -88,7 +88,7 @@ export const PortfolioView = ({setModalData}) => {
                 // Background Image
                 }
                 <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-1024-1024.png'/>
-                {
+                {                
                 // Text Intro
                 }
                 <div className='quest-text-intro'>
@@ -98,12 +98,13 @@ export const PortfolioView = ({setModalData}) => {
                 // Text Body
                 }
                 <div className='quest-text-body'>
-                    <div>
-                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
-                    </div>
-                    <div>
-                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
-                    </div>
+                    {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
+                </div>
+                {
+                // Text End
+                }   
+                <div className='quest-text-end'>
+                    {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
                 </div>
             </div>
             {

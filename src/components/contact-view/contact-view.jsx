@@ -41,8 +41,8 @@ export const ContactView = () => {
                 // Background Image
                 }
                 <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-1024-1024.png'/>
-                {
-                // Text Intro
+                {               
+                    // Text Intro
                 }
                 <div className='quest-text-intro'>
                     <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
@@ -51,12 +51,13 @@ export const ContactView = () => {
                 // Text Body
                 }
                 <div className='quest-text-body'>
-                    <div>
-                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
-                    </div>
-                    <div>
-                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
-                    </div>
+                    {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
+                </div>
+                {
+                // Text End
+                }   
+                <div className='quest-text-end'>
+                    {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
                 </div>
             </div>
             

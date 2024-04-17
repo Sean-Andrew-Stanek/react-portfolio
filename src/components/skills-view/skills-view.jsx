@@ -138,15 +138,22 @@ export const SkillsView = ({setModalData}) => {
                     <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
                 </div>
                 {
+                // Text Intro
+                }
+                <div className='quest-text-intro'>
+                    <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
+                </div>
+                {
                 // Text Body
                 }
                 <div className='quest-text-body'>
-                    <div>
-                        {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
-                    </div>
-                    <div>
-                        {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
-                    </div>
+                    {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
+                </div>
+                {
+                // Text End
+                }   
+                <div className='quest-text-end'>
+                    {typeWriterIndex>=2 && <TypeWriter text={strings.closing}  speed={5}/>}
                 </div>
             </div>
             {
