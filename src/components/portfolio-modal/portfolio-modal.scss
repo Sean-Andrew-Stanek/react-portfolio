@@ -1,6 +1,6 @@
-$large-font: clamp(16px, min(5vh, 6vw), 50px);
-$medium-font: clamp(12px, min(3vh, 4vw), 30px);
-$small-font: clamp(10px, min(2vh, 3vw), 20px);
+$large-font: clamp(18px, 3.5vw, 36px);
+$medium-font: clamp(14px, 3vh, 30px);
+$small-font: clamp(12px, 2.5vw, 24px);
 
 
 *{
@@ -24,6 +24,8 @@ $small-font: clamp(10px, min(2vh, 3vw), 20px);
 
 .portfolio-modal-title {
     position: absolute;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: $large-font;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +51,9 @@ $small-font: clamp(10px, min(2vh, 3vw), 20px);
 .portfolio-modal-info>div {
     margin-left: 5%; 
     margin-right: 5%;
+
+    font-family: 'IM Fell English SC', serif;
+    font-size: $small-font;
 }
 
 .portfolio-modal-image-container {
@@ -109,19 +114,6 @@ $small-font: clamp(10px, min(2vh, 3vw), 20px);
     font-size: $medium-font;
 }
 
-/* .portfolio-skill {
-    padding: 5px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, .8);
-    border: 2px white double;
-    cursor: pointer;
-    transition: background-color .5s ease-out;
-}
-
-.portfolio-skill:hover {
-    background-color: rgba(0,71,171,.8);
-} */
 
 .portfolio-skill, .portfolio-link {
     margin-left: 10px;
