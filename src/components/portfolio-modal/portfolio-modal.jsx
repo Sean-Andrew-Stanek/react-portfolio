@@ -57,8 +57,10 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
-                    {skill}
+                <div className='portfolio-skill' style={{backgroundImage: 'url(/react-portfolio/Skill-Button-175-50.png)'}} key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
+                    <span>
+                        {skill}
+                    </span>
                 </div>
             );
         });
@@ -73,8 +75,10 @@ export const PortfolioModal = ({modalData, setModalData}) => {
     const linkButton = (text, target, index) => {
 
         return (
-            <div className='portfolio-skill' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
-                {text}
+            <div className='portfolio-link' style={{backgroundImage: 'url(/react-portfolio/Link-Button-379-54.png)'}} key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+                <span>
+                    {text}
+                </span>
             </div>
         );
     };
@@ -89,15 +93,16 @@ export const PortfolioModal = ({modalData, setModalData}) => {
                 {project.name}    
             </div>
             <div className='portfolio-modal-info'>
-                <div className='portfolio-modal-hbuttons portfolio-modal-links'>
-                    {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
+                <div ref={horizontalScrollRef} className='portfolio-modal-hbuttons portfolio-modal-skills'>
+                    {skillButtons(project.skills)}
                 </div>
                 <div className='portfolio-modal-summary'>
                     {project.summary}
                 </div>
-                <div ref={horizontalScrollRef} className='portfolio-modal-hbuttons portfolio-modal-skills'>
-                    {skillButtons(project.skills)}
+                <div className='portfolio-modal-hbuttons portfolio-modal-links'>
+                    {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
                 </div>
+
                 
             </div>
 

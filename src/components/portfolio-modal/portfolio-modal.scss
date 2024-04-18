@@ -1,5 +1,11 @@
 $large-font: clamp(16px, min(5vh, 6vw), 50px);
 $medium-font: clamp(12px, min(3vh, 4vw), 30px);
+$small-font: clamp(10px, min(2vh, 3vw), 20px);
+
+
+*{
+    box-sizing: border-box;
+}
 
 .portfolio-modal-container {
     position: absolute;
@@ -37,12 +43,12 @@ $medium-font: clamp(12px, min(3vh, 4vw), 30px);
     bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .portfolio-modal-info>div {
-    left: 5%; 
-    right: 5%;
+    margin-left: 5%; 
+    margin-right: 5%;
 }
 
 .portfolio-modal-image-container {
@@ -60,7 +66,9 @@ $medium-font: clamp(12px, min(3vh, 4vw), 30px);
 }
 
 .portfolio-modal-hbuttons {
-    position: absolute;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -75,7 +83,7 @@ $medium-font: clamp(12px, min(3vh, 4vw), 30px);
     border-top: 1px white double;
     border-bottom: 1px white double;
     background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(255,255,255,0));
-    margin: 5px auto;
+    margin: 10px auto;
     scroll-behavior: smooth;
 }
 
@@ -88,14 +96,12 @@ $medium-font: clamp(12px, min(3vh, 4vw), 30px);
 }
 
 .portfolio-modal-links {
-    top: 90%;
-    bottom: 0%;
+    position: relative;
     justify-content: space-around;
 }
 
 .portfolio-modal-skills {
-    top: 0;
-    bottom: 90%;
+    position:relative;
     justify-content: flex-start;
 }
 
@@ -103,7 +109,7 @@ $medium-font: clamp(12px, min(3vh, 4vw), 30px);
     font-size: $medium-font;
 }
 
-.portfolio-skill {
+/* .portfolio-skill {
     padding: 5px;
     margin: 10px;
     border-radius: 5px;
@@ -115,4 +121,33 @@ $medium-font: clamp(12px, min(3vh, 4vw), 30px);
 
 .portfolio-skill:hover {
     background-color: rgba(0,71,171,.8);
+} */
+
+.portfolio-skill, .portfolio-link {
+    margin-left: 10px;
+    background-size: 100% 100%;
+    background-position: center;
+    width: auto;
+    opacity: .8;
+
+    span {
+        font-family: 'IM Fell English SC', serif;
+        color: white;
+        text-align: center;
+        text-shadow: 1px 1px 2px black;
+        padding-top: -100%;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.portfolio-skill {
+    padding: 1% 3% .5% 3%;
+}
+
+.portfolio-link {
+    padding: .5% 5% 1% 5%;
 }
