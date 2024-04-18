@@ -1,9 +1,9 @@
 //Profile Image
-$profile-image-size: min(10vw, 100px);
+$profile-image-size: clamp(75px, 100px, 10vw);
 
 //Health Bar
-$health-bar-width: calc($profile-image-size * 5);
-$health-bar-height: calc($profile-image-size * 2 / 6);
+$health-bar-width: clamp(30vw, calc($profile-image-size * 5), 70vw);
+$health-bar-height: clamp(2vw, calc($profile-image-size * 2 / 6), 4vw);
 
 //Name Plate
 $name-plate-width: calc($profile-image-size *2);
