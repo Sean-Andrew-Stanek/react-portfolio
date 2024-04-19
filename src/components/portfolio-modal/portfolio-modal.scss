@@ -1,6 +1,4 @@
-$large-font: clamp(18px, 3.5vw, 36px);
-$medium-font: clamp(14px, 3vh, 30px);
-$small-font: clamp(12px, 2.5vw, 24px);
+@import '../../styles/variables';
 
 
 *{

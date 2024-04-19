@@ -1,5 +1,5 @@
 //Global Variables
-//$side-margins
+//$margin-sides
 //$profile-image-size
 //$skillbar-icon-size
 
@@ -24,7 +24,7 @@ $name-plate-height: calc($profile-image-size/5);
     overflow: hidden;
     position: absolute;
     top: calc($nav-top-margin + $profile-image-size/2 - $health-bar-height/2);
-    left: calc($side-margin + 30px);
+    left: calc($margin-sides + 30px);
 }
 
 .nb-health-bar {
@@ -41,7 +41,7 @@ $name-plate-height: calc($profile-image-size/5);
 .nb-buffbar {
     position: absolute;
     top: calc($nav-top-margin + $profile-image-size/2 + $health-bar-height/2);
-    left: calc($side-margin + $profile-image-size + 5px);
+    left: calc($margin-sides + $profile-image-size + 5px);
     z-index: 2;
 }
 
@@ -65,7 +65,7 @@ $name-plate-height: calc($profile-image-size/5);
     height: $profile-image-size;
     position: absolute;
     top: $nav-top-margin;
-    left: $side-margin;
+    left: $margin-sides;
 }
 
 .nb-profile-background-color{
@@ -105,7 +105,7 @@ $name-plate-height: calc($profile-image-size/5);
     overflow: hidden;
     position: absolute;
     top: calc($nav-top-margin + $profile-image-size/2 - $health-bar-height/2 - $name-plate-height);;
-    left: calc($side-margin + calc(3*$profile-image-size/4));
+    left: calc($margin-sides + calc(3*$profile-image-size/4));
 }
 
 /*
