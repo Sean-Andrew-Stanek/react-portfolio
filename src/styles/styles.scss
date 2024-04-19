@@ -186,7 +186,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
 
 .quest-text-intro {
     //Responsive, large, bold
-    font-size: clamp(18px, 2.5vw, 27px);
+    font-size: $large-font;
     font-weight: 600;
 
     //Center all
@@ -205,9 +205,8 @@ $quest-end-left: ratio(210px, $quest-background-width);
 .quest-text-body {
     
     font-family: 'IM Fell English SC', serif;
+    font-size: $extra-small-font;
     position: absolute;
-    //Responsive, medium
-    font-size: clamp(12px, 2vw, 20px);
 
     //Column
     display: flex;
@@ -225,8 +224,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
 .quest-text-end {
     font-family: 'IM Fell English SC', serif;;
     position: absolute;
-    //Responsive, medium
-    font-size: clamp(12px, 2vw, 20px);
+    font-size: $small-font;
 
     //Column
     display: flex;
