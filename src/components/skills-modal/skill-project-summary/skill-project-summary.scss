@@ -39,7 +39,7 @@
     width: 100%;
     background-color: black;
     text-align: center;
-    font-size: clamp(18px, 1.5rem, 24px);
+    font-size: $large-font;
     color: white;
 }
 
@@ -88,6 +88,7 @@
 
     span {
         font-family: 'IM Fell English SC', serif;
+        font-size: $extra-small-font;
         color: white;
         text-align: center;
         text-shadow: 1px 1px 2px black;
