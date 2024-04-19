@@ -10,7 +10,7 @@
     width: 25%;
     display: flex;
     flex-flow: column;
-    gap: 30px;
+    gap: calc(clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  8vh) *.4);
 }
 
 .cv-quest-container {
@@ -20,13 +20,14 @@
 
 .cv-charm {
     border-radius: 5px;
-    width: 20%;
+    width: clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  8vh);
     transform: translate(-20%, -30%);
     border: white 2px solid;
 }
 
 .cv-content {
     text-align: right;
+    font-size: $extra-small-font;
     padding-right: 10px;
     padding-left: 15%;
 }
