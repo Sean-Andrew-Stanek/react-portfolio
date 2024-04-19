@@ -18,4 +18,7 @@ $extra-large-font: clamp(18px, min(3.5vw, 3.5vh), 36px);
 $large-font: clamp(16px, min(3.25vw, 3.25vh), 32px);
 $medium-font: clamp(14px, min(3vw, 3vh), 30px);
 $small-font: clamp(12px, min(2.5vw, 2.5vh), 24px);
-$extra-small-font: clamp(10px, min(2.25vw, 2.25vh), 20px)
+$extra-small-font: clamp(10px, min(2.25vw, 2.25vh), 20px);
+
+//For left reference
+$avatar-container-width:  clamp(50px, 10%, 300px);

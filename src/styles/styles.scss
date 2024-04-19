@@ -12,7 +12,7 @@
 @import './variables';
 
 //Reference for other avatar components
-$avatar-container-width:  min(100px, 30%);
+$avatar-container-width:  clamp(50px, 10%, 300px);
 
 
 //Quest Background

@@ -1,4 +1,6 @@
 
+@import '../../styles/variables';
+
 //Profile Image
 
 .cv-button-column {
@@ -12,7 +14,7 @@
 }
 
 .cv-quest-container {
-    right: calc(min(100px, 30%) + 10px);
+    right: 0;
     left: calc(25% + 10px);
 }
 
