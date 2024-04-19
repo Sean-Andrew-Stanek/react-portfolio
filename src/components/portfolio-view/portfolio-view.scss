@@ -8,6 +8,7 @@ $midpoint: 70%;
 .portfolio-quest-container {
     left: 0;
     right: calc((100% - $midpoint) + 10px);
+    bottom: 10%;
 }
 
 .portfolio-container {
