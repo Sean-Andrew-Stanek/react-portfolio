@@ -1,11 +1,10 @@
 //Global Variables
 //$side-margins
-
+//$profile-image-size
+//$skillbar-icon-size
 
 @import '../../styles/variables';
 
-//Profile Image
-$profile-image-size: clamp(75px, 100px, 10vw);
 
 //Health Bar
 $health-bar-width: clamp(30vw, calc($profile-image-size * 5), 80vw);
@@ -14,9 +13,6 @@ $health-bar-height: clamp(2vw, calc($profile-image-size * 2 / 6), 4vw);
 //Name Plate
 $name-plate-width: calc($profile-image-size *2);
 $name-plate-height: calc($profile-image-size/5);
-
-//Skillbar Icon
-$skillbar-icon-size: calc($profile-image-size * 50 / 100);
 
 /*
 *   Health Bar
@@ -142,17 +138,15 @@ $skillbar-icon-size: calc($profile-image-size * 50 / 100);
 .nb-bottom-skillbar {
     position: absolute;
     display: flex;
-    bottom: 40px;
-    left: min(10px, 20%);
-    right: min(10px, 20%);
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
     justify-content: center;
-    border-radius: 5px;
 }
 
 /*
 *   Skillbar borders
 */
-
 
 .nb-skillbar-border {
     width:calc($skillbar-icon-size * 1.5);
