@@ -21,4 +21,4 @@ $small-font: clamp(12px, min(2.5vw, 2.5vh), 24px);
 $extra-small-font: clamp(10px, min(2.25vw, 2.25vh), 20px);
 
 //For left reference
-$avatar-container-width:  clamp(50px, 10%, 300px);
+$avatar-container-width:  clamp(10px, min(10vh, 10vw), 300px);

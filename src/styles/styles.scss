@@ -9,11 +9,8 @@
 //$navbar-bottom-buffer
 //$profile-image-size
 //$margin-sides
+//$avatar-container-width
 @import './variables';
-
-//Reference for other avatar components
-$avatar-container-width:  clamp(50px, 10%, 300px);
-
 
 //Quest Background
 $quest-background-height: 650px;  //ratio will be 100%
