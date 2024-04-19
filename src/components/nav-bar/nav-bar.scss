@@ -1,20 +1,22 @@
+//Global Variables
+//$side-margins
+
+
+@import '../../styles/variables';
+
 //Profile Image
 $profile-image-size: clamp(75px, 100px, 10vw);
 
 //Health Bar
-$health-bar-width: clamp(30vw, calc($profile-image-size * 5), 70vw);
+$health-bar-width: clamp(30vw, calc($profile-image-size * 5), 80vw);
 $health-bar-height: clamp(2vw, calc($profile-image-size * 2 / 6), 4vw);
 
 //Name Plate
 $name-plate-width: calc($profile-image-size *2);
 $name-plate-height: calc($profile-image-size/5);
 
-//Navbar Offset
-$nav-left: max(10px, 15vw);
-$nav-top: 10px;
-
 //Skillbar Icon
-$skillbar-icon-size: calc($profile-image-size * 40 / 100);
+$skillbar-icon-size: calc($profile-image-size * 50 / 100);
 
 /*
 *   Health Bar
@@ -25,8 +27,8 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
     height: $health-bar-height;
     overflow: hidden;
     position: absolute;
-    top: calc($nav-top + $profile-image-size/2 - $health-bar-height/2);
-    left: calc($nav-left + 30px);
+    top: calc($nav-top-margin + $profile-image-size/2 - $health-bar-height/2);
+    left: calc($side-margin + 30px);
 }
 
 .nb-health-bar {
@@ -42,8 +44,8 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
 
 .nb-buffbar {
     position: absolute;
-    top: calc($nav-top + $profile-image-size/2 + $health-bar-height/2);
-    left: calc($nav-left + $profile-image-size + 5px);
+    top: calc($nav-top-margin + $profile-image-size/2 + $health-bar-height/2);
+    left: calc($side-margin + $profile-image-size + 5px);
     z-index: 2;
 }
 
@@ -66,8 +68,8 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
     width: $profile-image-size;
     height: $profile-image-size;
     position: absolute;
-    top: $nav-top;
-    left: $nav-left;
+    top: $nav-top-margin;
+    left: $side-margin;
 }
 
 .nb-profile-background-color{
@@ -106,8 +108,8 @@ $skillbar-icon-size: calc($profile-image-size * 40 / 100);
     height: $name-plate-height;
     overflow: hidden;
     position: absolute;
-    top: calc($nav-top + $profile-image-size/2 - $health-bar-height/2 - $name-plate-height);;
-    left: calc($nav-left + calc(3*$profile-image-size/4));
+    top: calc($nav-top-margin + $profile-image-size/2 - $health-bar-height/2 - $name-plate-height);;
+    left: calc($side-margin + calc(3*$profile-image-size/4));
 }
 
 /*

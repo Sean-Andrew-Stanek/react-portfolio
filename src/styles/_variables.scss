@@ -1,0 +1,11 @@
+//Navbar Offset
+$nav-top-margin: 10px;
+
+//Profile Image
+$profile-image-size: clamp(75px, 100px, 10vw);
+
+//Margins
+//$side-margin: max(10px, 15vw);
+$side-margin: clamp(5px, 100vw - 500px, 15vw);
+
+$navbar-top-buffer: calc($profile-image-size * 1.1);
