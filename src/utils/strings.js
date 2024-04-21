@@ -32,4 +32,5 @@ export const contactRoutes = [
     ['Twitter', 'https://twitter.com/stanek_sean'],
     ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
     ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b'],
+    ['Email', 'mailto:sean.andrew.stanek@gmail.com']
 ];

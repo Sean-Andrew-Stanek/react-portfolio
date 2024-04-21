@@ -16,7 +16,7 @@ export const ContactView = () => {
             <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' className='text-box-container cv-box-container' key={`${info}-${index}`}>
                 <div className= 'text-box-border' />
                 <div className='text-box-content cv-content'>
-                    Contact me on {info[0]}
+                    Contact me via {info[0]}
                 </div>
                 {/* <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/> */}
                 <img className='text-box-charm cv-charm' src={`/react-portfolio/${info[0]}-Icon-300-300.png`}/>
