@@ -14,6 +14,11 @@ import './skill-project-summary.scss';
 export const SkillProjectSummary = ({project, setModalData}) => {
 
 
+    /* 
+    * Single set of skills with links to another modal with projects with those skills
+    * The list can be scrolled
+    */
+
     const skillButton = (skills) => {
 
         const skillSet = new Set();
@@ -39,6 +44,11 @@ export const SkillProjectSummary = ({project, setModalData}) => {
         return skillDivs;
 
     };
+
+
+    /* 
+    * Links to repositories and live sites.  Not scrollable
+    */
 
     const linkButton = (text, target, index) => {
         
