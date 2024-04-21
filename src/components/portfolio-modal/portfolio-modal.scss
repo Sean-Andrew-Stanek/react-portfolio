@@ -77,7 +77,6 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 90%;
     font-size: $medium-font;
     overflow-x: auto;
     overflow-y: hidden;
@@ -86,7 +85,7 @@
     border-top: 1px white double;
     border-bottom: 1px white double;
     background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(255,255,255,0));
-    margin: 10px auto;
+    margin: auto auto;
     scroll-behavior: smooth;
 }
 
@@ -110,6 +109,7 @@
 
 .portfolio-modal-summary {
     font-size: $medium-font;
+    overflow: hidden;
 }
 
 
@@ -139,5 +139,6 @@
 }
 
 .portfolio-link {
+    font-size: $extra-small-font;
     padding: .5% 5% 1% 5%;
 }
