@@ -7,19 +7,44 @@
 //-summary: short project summary
 //-links: object with key being the name of the link and the value being the address
 
-import {React} from 'react';
+import {React, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import './skill-project-summary.scss';
 
 export const SkillProjectSummary = ({project, setModalData}) => {
 
+    const horizontalScrollRef = useRef(null);
+
+    /*
+    *  Horizontal content scroll for skills
+    */
+    useEffect(() => {
+        const scrollContainer = horizontalScrollRef.current;
+
+        const handleWheel = (e) => {
+            //prevent vertical scrolling
+            e.preventDefault();
+
+            //horizontal scroll
+            scrollContainer.scrollLeft += e.deltaY;
+        };
+
+        if(scrollContainer) {
+            scrollContainer.addEventListener('wheel', handleWheel);
+        }
+        
+
+        return () => {
+            if(scrollContainer)
+                scrollContainer.removeEventListener('wheel', handleWheel);
+        };
+    }, []);
 
     /* 
     * Single set of skills with links to another modal with projects with those skills
     * The list can be scrolled
     */
-
-    const skillButton = (skills) => {
+    const skillButtons = (skills) => {
 
         const skillSet = new Set();
         
@@ -71,9 +96,8 @@ export const SkillProjectSummary = ({project, setModalData}) => {
                 {project.name}
             </div>
             <div className='sps-details'>
-
-                <div className='sps-skill-container'>
-                    {skillButton(project.skills)}
+                <div className='sps-skill-container' ref={horizontalScrollRef}>
+                    {skillButtons(project.skills)}
                 </div>
                 <div className='sps-links'>
                     {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
