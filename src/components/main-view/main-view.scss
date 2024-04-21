@@ -1,0 +1,35 @@
+.mv-link {
+    width: clamp(100px, 100%, 20vw);
+    display: flex; /* Using flexbox for centering */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    background-size: 100% auto; /* Cover the width, adjust height automatically */
+    background-repeat: no-repeat; /* Do not repeat the background */
+    cursor: pointer; /* Change cursor to indicate clickability */
+    text-decoration: none; /* No underline */
+    opacity: 0.8;
+    transition: opacity ease-in 1s;
+
+    span {
+        font-family: 'IM Fell English SC', serif;
+        color: white;
+        text-align: center;
+        text-shadow: 1px 1px 2px black;
+        position: absolute;        
+    }
+
+    img {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        opacity: 1;
+    }
+}
+
+.mv-loading{
+    opacity: 0;
+}
