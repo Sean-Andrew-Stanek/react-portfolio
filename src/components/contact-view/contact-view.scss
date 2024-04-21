@@ -20,16 +20,16 @@
 
 .cv-charm {
     border-radius: 5px;
-    width: clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  8vh);
-    transform: translate(-20%, -30%);
-    border: white 2px solid;
+    width: clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  min(7vh, 7vw));
+    transform: translate(-25%, -25%);
+    border: black 2px solid;
 }
 
 .cv-content {
     text-align: right;
     font-size: $extra-small-font;
     padding-right: 10px;
-    padding-left: 15%;
+    padding-left: 10px;
 }
 
 .cv-box-container {
