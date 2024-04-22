@@ -16,7 +16,7 @@ export const CaseStudyModal = ({modalData}) => {
     return (
         <>
             <div className='csm-main-container' style={{backgroundColor:'white'}}>
-                This is a case-study. 
+                {`This is a case-study about ${modalData.data.name} `}
             </div>
         </>
     );
