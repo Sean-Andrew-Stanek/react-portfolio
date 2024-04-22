@@ -22,7 +22,7 @@ export const ModalManager = ({modalData, setModalData}) => {
             case 'project':
                 return <PortfolioModal modalData={modalData} setModalData = {setModalData}/>;
             case 'case study':
-                return <CaseStudyModal modalData={modalData}/>
+                return <CaseStudyModal modalData={modalData}/>;
             default:
                 console.error(`Modal Type Not Found: ${modalData.type}`);
                 return <div>Something went wrong!</div>;
