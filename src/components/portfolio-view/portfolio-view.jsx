@@ -111,7 +111,7 @@ export const PortfolioView = ({setModalData}) => {
                 //Avatar
             }
             <div className='avatar-container'  style={{left: '0px', bottom: '0px'}}>
-                <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
+                <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' onClick={()=>setModalData({'type':'case study', 'data':{'name':'Personal Portfolio - React'}})}/>
             </div>
         </div>
     );

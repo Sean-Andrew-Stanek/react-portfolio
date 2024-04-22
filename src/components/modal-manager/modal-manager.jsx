@@ -5,6 +5,7 @@ import {React} from 'react';
 import { SkillsModal } from '../skills-modal/skills-modal';
 import { PortfolioModal } from '../portfolio-modal/portfolio-modal';
 import PropTypes from 'prop-types';
+import { CaseStudyModal } from '../case-study-modal/case-study-modal';
 
 export const ModalManager = ({modalData, setModalData}) => {
 
@@ -20,6 +21,8 @@ export const ModalManager = ({modalData, setModalData}) => {
                 return <SkillsModal modalData={modalData} setModalData={setModalData}/>;
             case 'project':
                 return <PortfolioModal modalData={modalData} setModalData = {setModalData}/>;
+            case 'case study':
+                return <CaseStudyModal modalData={modalData}/>
             default:
                 console.error(`Modal Type Not Found: ${modalData.type}`);
                 return <div>Something went wrong!</div>;
