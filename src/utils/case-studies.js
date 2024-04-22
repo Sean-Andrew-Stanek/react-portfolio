@@ -11,7 +11,7 @@ Base Object
         {   
             'title': '',
             'text': '',
-            'image': 'Under-Construction.PNG'
+            'images': ['Under-Construction.PNG'],
         }
     ]
 },
@@ -24,17 +24,17 @@ export const caseStudies = [
             {   
                 'title': 'Goal',
                 'text': 'This is the text for the goal',
-                'image': 'Under-Construction.PNG'
+                'images': ['Under-Construction.PNG'],
             },
             {   
                 'title': 'Process',
                 'text': 'This is the text for the goal',
-                'image': 'Under-Construction.PNG'
+                'images': ['Under-Construction.PNG'],
             },
             {   
                 'title': 'Results',
                 'text': 'This is the text for the goal',
-                'image': 'Under-Construction.PNG'
+                'images': ['Under-Construction.PNG'],
             },
         ]
     },
