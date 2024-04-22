@@ -10,7 +10,7 @@ export const mainViewStrings = {
 
 export const skillViewStrings = {
     'greeting': 'My Capabilities',
-    'body': 'Constantly innovating using multiple technologies has given me a wide range of skills.  These skills are those that I have public projects that I can display.  My abilities go beyond this and I love learning new technologies?',
+    'body': 'Constantly innovating using multiple technologies has given me a wide range of skills.  These skills are those that I have public projects that I can display.  My abilities go beyond this and I love learning new technologies.',
     'closing': 'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.'
 };
 
@@ -28,9 +28,11 @@ export const contactViewStrings = {
 
 
 export const contactRoutes = [
+    ['Email', 'mailto:sean.andrew.stanek@gmail.com'],
+    ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b'],
     ['Discord', 'https://discordapp.com/users/dartimos'],
     ['Twitter', 'https://twitter.com/stanek_sean'],
     ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],
-    ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b'],
-    ['Email', 'mailto:sean.andrew.stanek@gmail.com']
+    
+
 ];
