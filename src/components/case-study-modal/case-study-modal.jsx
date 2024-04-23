@@ -32,15 +32,26 @@ export const CaseStudyModal = ({modalData}) => {
     return (
         <>
             <div className='csm-main-container'>
+                {/*
+                    Content Container
+                */}
                 <div className='csm-info-container' style={{backgroundColor:'red'}}>
-                    {`This is a case-study about ${caseStudy.name}`}<br/>
-                    {`Title: ${currentPage.title}`}<br/>
-                    {currentPage.text}<br/>
-                    
+                    <div className='csm-title'>
+                        {`Title: ${currentPage.title}`}
+                    </div>
+                    <div className='csm-information'>
+                        {currentPage.text}
+                    </div>                    
                 </div>
+                {/*
+                    Image frame
+                */}
                 <div className='csm-img-container' style={{backgroundColor:'purple'}}>
                     <img src={currentPage.images[0]}/>
                 </div>
+                {/*
+                    Navigation Arrows
+                */}
                 <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 && 'csm-fade'}`} onClick = {() => changeIndex(1)}>
                     <img src = {images.navArrow}/>
                 </div>
