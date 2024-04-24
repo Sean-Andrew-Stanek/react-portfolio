@@ -21,6 +21,7 @@ export const CaseStudyModal = ({modalData}) => {
     const imageArrayContainerRef = useRef(null);
 
     const maxImageHeight = '50vh';
+    const maxImageWidth = '90vw';
 
     useEffect (() => {
         const container = imageArrayContainerRef.current;
@@ -71,9 +72,9 @@ export const CaseStudyModal = ({modalData}) => {
     return (
         <>
             <div className='csm-main-container'>
-                <div className='csm-title'>
+                <div className='csm-title-container'>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content' style={{opacity: .95}}>
+                    <div className='text-box-content csm-title' style={{opacity: .95}}>
                         {`${currentPage.title}`}
                     </div>
                 </div>
@@ -89,22 +90,23 @@ export const CaseStudyModal = ({modalData}) => {
                     <div className='csm-information'>
                         {currentPage.text}
                     </div>                    
+                    {/*
+                        Navigation Arrows
+                    */}
+                    <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 && 'csm-fade'}`} onClick = {() => changeIndex(1)}>
+                        <img src = {images.navArrow}/>
+                    </div>
+                    <div className={`csm-previous-page ${pageIndex===0 && 'csm-fade'}`} onClick = {() => changeIndex(-1)}>
+                        <img src = {images.navArrow}/>
+                    </div>
                 </div>
                 {/*
                     Image Array frame
                 */}
                 <div className='csm-img-container' ref={imageArrayContainerRef} style={{backgroundColor:'purple'}}>
-                    <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight}}/>
+                    <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
                 </div>
-                {/*
-                    Navigation Arrows
-                */}
-                <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 && 'csm-fade'}`} onClick = {() => changeIndex(1)}>
-                    <img src = {images.navArrow}/>
-                </div>
-                <div className={`csm-previous-page ${pageIndex===0 && 'csm-fade'}`} onClick = {() => changeIndex(-1)}>
-                    <img src = {images.navArrow}/>
-                </div>
+
             </div>
         </>
     );
