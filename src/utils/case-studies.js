@@ -29,7 +29,7 @@ export const caseStudies = [
             {   
                 'title': 'Goals - Mastery of Modern Web Technologies',
                 'text': 'In the spirit of personal and professional growth, I chose to develop the portfolio using React combined with Vite. This decision was driven by the desire to leverage React\'s component-based architecture for efficient UI development and Vite\'s optimized build tool capabilities for a faster and smoother development experience. My focus was to deepen my understanding and proficiency in using these modern web technologies to their full potential.',
-                'images': ['Under-Construction.PNG'],
+                'images': ['./case-study-1/Skill-List-Code.PNG'],
             },
             {   
                 'title': 'Goals - Skill Enhancement in Styling with SCSS and CSS',
