@@ -34,7 +34,7 @@ export const caseStudies = [
             {   
                 'title': 'Goals - Skill Enhancement in Styling with SCSS and CSS',
                 'text': 'A specific technical goal was to enhance my capabilities in styling using SCSS, alongside reinforcing my foundational knowledge of CSS. This initiative was driven by a strong desire for self-improvement and mastery over detailed web styling techniques. The project provided an ideal platform to experiment with SCSS features such as variables, and nested rules, while also focusing on using CSS transitions to create smooth visual effects. This dual focus not only improved the aesthetics of the site but also empowered me to implement responsive and maintainable design practices that are crucial for professional web development.',
-                'images': ['Under-Construction.PNG'],
+                'images': ['./case-study-1/Clamp-Inception.png'],
             },
             {   
                 'title': 'Goals - Dynamic Content Generation',

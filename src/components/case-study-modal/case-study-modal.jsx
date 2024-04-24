@@ -21,7 +21,7 @@ export const CaseStudyModal = ({modalData}) => {
     const imageArrayContainerRef = useRef(null);
 
     const maxImageHeight = '50vh';
-    const maxImageWidth = '90vw';
+    const maxImageWidth = '70vw';
 
     useEffect (() => {
         const container = imageArrayContainerRef.current;
