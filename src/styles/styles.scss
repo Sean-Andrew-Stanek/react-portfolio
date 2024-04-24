@@ -10,6 +10,8 @@
 //$profile-image-size
 //$margin-sides
 //$avatar-container-width
+//$skillbar-icon-size
+
 @import './variables';
 
 //Quest Background
@@ -48,8 +50,8 @@ $quest-end-left: ratio(210px, $quest-background-width);
     font-weight: 600;
 
     position: absolute;
-    top: $navbar-top-buffer;
-    bottom: $navbar-bottom-buffer;
+    top: calc($navbar-top-buffer + $skillbar-icon-size / 2);
+    bottom: calc($navbar-bottom-buffer + 10px);
     left: $margin-sides;
     right: $margin-sides;
     animation: mainContainerFadeIn 2s ease-out forwards;

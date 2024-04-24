@@ -1,0 +1,130 @@
+@import '../../styles/variables';
+
+$modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90vh);
+
+.csm-main-container {
+    position: absolute;
+    margin:auto auto;
+    inset: 0;
+
+    width: calc(100vw - calc($margin-sides * 2));
+    height: $modal-height;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.csm-info-container {
+    position: absolute;
+
+    //TODO
+    left: calc($modal-height * .05);
+    width: calc(100% - calc($modal-height * .05) * 2);
+
+    height: 90%;
+    bottom: 0;
+
+    z-index: 1;
+
+    img {
+        top:0;
+        left:0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.csm-img-container {
+    //Positioning
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc($modal-height * .3);
+    height: calc($modal-height * .3);
+    overflow: hidden;
+
+    //Styling
+    cursor: pointer;
+    border: black 2px solid;
+    border-radius: 10px;
+
+    z-index: 3;
+
+    img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    &:hover {
+        width: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
+        height: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
+    }
+}
+
+.csm-previous-page, .csm-next-page {
+    
+    // Size and position
+    position: absolute;
+    top: 40%;
+    height: calc($modal-height * .2);
+    width: calc(calc(100vw - calc($margin-sides * 2)) * .2);
+    z-index: 2;
+
+    //Look and Feel
+    background-color: rgba(0,0,0,0.01);
+    cursor: pointer;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.csm-previous-page {
+    left: -5%;
+}
+
+.csm-next-page {
+    right: -5%;
+    transform: scaleX(-1);
+}
+
+.csm-fade {
+    opacity: .5;
+}
+
+.csm-title-container {
+    position: absolute;
+
+    top: calc($modal-height * .15);
+    left: 0;
+    width: calc($modal-height * .3);
+    height: calc($modal-height * .15);
+
+    font-size: $extra-large-font;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 700;
+
+    z-index: 2;
+}
+
+.csm-title {
+    padding: 5%;
+    font-size: $small-font;
+    font-family: 'MedievalSharp', cursive;
+    font-weight: 700;
+}
+
+.csm-information {
+    position: absolute;
+    top: calc($modal-height * .22);
+    left: 20%;
+    right: 20%;
+    font-family: 'IM Fell English SC', serif;
+    font-size: $small-font;
+    margin: auto auto;
+}

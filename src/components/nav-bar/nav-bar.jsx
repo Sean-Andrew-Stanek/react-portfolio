@@ -55,8 +55,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     //Link and Image strings
 
-    let routes = ['home', 'contact', 'skills', 'portfolio'];
-    let routeDetails = ['Return to the intro screen.', 'Contact me for information!', 'My skill set.', 'My projects and achievements.'];
+    let routes = ['home', 'contact', 'skills', 'portfolio','case-study'];
+    let routeDetails = ['Return to the intro screen.', 'Contact me for information!', 'My skill set.', 'My projects and achievements.', 'Case studies of my projects'];
 
     let namePlate = () => {
         return (
@@ -157,7 +157,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     // Main Component
     /*****************/
     return (
-        <div id='navbar-container'>
+        <div className='navbar-container'>
             {bottomNavBar()}
             {namePlate()}
             {buffBar()}
