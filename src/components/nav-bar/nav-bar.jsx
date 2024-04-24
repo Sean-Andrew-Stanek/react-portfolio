@@ -157,7 +157,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     // Main Component
     /*****************/
     return (
-        <div id='navbar-container'>
+        <div className='navbar-container'>
             {bottomNavBar()}
             {namePlate()}
             {buffBar()}

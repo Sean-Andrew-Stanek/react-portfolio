@@ -24,7 +24,7 @@ export const caseStudies = [
             {   
                 'title': 'Goals - Personal Branding with a Unique Touch',
                 'text': 'The primary goal for developing my professional web portfolio was to establish a distinctive online presence that accurately reflects my skills and personality as a FullStack Developer. I aimed to create a website that was not just functional but also engaging and unique. This endeavor was about blending creativity with practicality, ensuring that the final product would stand out in the competitive tech landscape.',
-                'images': ['Under-Construction.PNG'],
+                'images': ['./case-study-1/CS-Intro.png'],
             },
             {   
                 'title': 'Goals - Mastery of Modern Web Technologies',
