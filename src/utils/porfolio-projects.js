@@ -24,7 +24,8 @@ Base Object
         'repository': '',
         'deployed': ''
     },
-    'capstone': ''
+    'capstone': '',
+    'caseStudy': '',
 },
 
 */
@@ -44,7 +45,8 @@ export const projects = [
             'repository': 'https://github.com/Sean-Andrew-Stanek/pokedex-viewer',
             'deployed': 'https://sean-andrew-stanek.github.io/pokedex-viewer/'
         },
-        'capstone': 'true'
+        'capstone': 'true',
+        'caseStudy': 'false',
     },
     //LetsMeet
     {
@@ -60,7 +62,8 @@ export const projects = [
             'repository': 'https://github.com/Sean-Andrew-Stanek/letsmeet',
             'deployed': 'https://sean-andrew-stanek.github.io/letsmeet/'
         },
-        'capstone': 'true'
+        'capstone': 'true',
+        'caseStudy': 'false',
     },
     //Movie API, Client using React
     {
@@ -77,7 +80,8 @@ export const projects = [
             'deployed': 'https://meek-nougat-c5e693.netlify.app/',
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
-        'capstone': 'true'
+        'capstone': 'true',
+        'caseStudy': 'false',
     },
     //Movie API, Client using Angular
     {
@@ -94,7 +98,8 @@ export const projects = [
             'deployed': 'https://sean-andrew-stanek.github.io/movie_api_angular_client',
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
-        'capstone': 'false'
+        'capstone': 'false',
+        'caseStudy': 'false',
     },
     //Chatter
     {
@@ -109,7 +114,8 @@ export const projects = [
         'links': {
             'repository': 'https://github.com/Sean-Andrew-Stanek/chatter',
         },
-        'capstone': 'false'
+        'capstone': 'false',
+        'caseStudy': 'false',
     },
     //React Portfolio
     {
@@ -125,7 +131,8 @@ export const projects = [
             'repository': 'https://github.com/Sean-Andrew-Stanek/react-portfolio',
             'deployed': 'https://sean-andrew-stanek.github.io/react-portfolio/'
         },
-        'capstone': 'true'
+        'capstone': 'true',
+        'caseStudy': 'true',
     },
 
 ];

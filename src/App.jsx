@@ -8,6 +8,7 @@ import { ContactView } from './components/contact-view/contact-view';
 import { PortfolioView } from './components/portfolio-view/portfolio-view';
 import { Background } from './components/background/background';
 import { ModalManager } from './components/modal-manager/modal-manager';
+import { CaseStudyView } from './components/case-study-view/case-study-view';
 
 function App() {
 
@@ -44,7 +45,9 @@ function App() {
                     <Route path='/skills' element={<SkillsView setModalData={setModalData}/>} />
                     <Route path='/contact' element={<ContactView />} />
                     <Route path='/portfolio' element={<PortfolioView  setModalData={setModalData}/>} />
+                    <Route path='/case-study' element={<CaseStudyView  setModalData={setModalData} />} />
                     <Route path='/*' element={<Navigate to='/' />} />
+
                 </Routes>
             </Router>
         </div>
