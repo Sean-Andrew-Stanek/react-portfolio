@@ -6,7 +6,7 @@
 //- name: name of project
 
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './case-study-modal.scss';
 import '../../styles/styles.scss';
 import PropTypes from 'prop-types';
@@ -16,7 +16,45 @@ export const CaseStudyModal = ({modalData}) => {
 
     const caseStudy = caseStudies.find(obj => obj.name === modalData.data.name);
     const [pageIndex, setPageIndex] = useState(0);
-    
+
+    const imageArrayRef = useRef(null);
+    const imageArrayContainerRef = useRef(null);
+
+    const maxImageHeight = '50vh';
+
+    useEffect (() => {
+        const container = imageArrayContainerRef.current;
+        const imageArray = imageArrayRef.current;
+
+        //onEvent functions
+
+        //When mouseEnter, make full size of image
+        const handleMouseEnter = () => {
+            if (imageArray && container) {
+                container.style.width = `${imageArray.width}px`;
+                container.style.height = `${imageArray.height}px`;
+            }
+        };
+
+        //When mouseLeave, reset
+        const handleMouseLeave = () => {
+            if(container) {
+                container.style.width = '';
+                container.style.height = '';
+            }
+        };
+
+        //Add events to container
+        container.addEventListener('mouseenter', handleMouseEnter);
+        container.addEventListener('mouseleave', handleMouseLeave);
+
+        //Cleanup
+        return () => {
+            container.removeEventListener('mouseenter', handleMouseEnter);
+            container.removeEventListener('mouseleave', handleMouseLeave);
+        };
+    }, []);
+
     let images = {
         'navArrow': 'Nav-Arrow-1024-1024.png',
         'modalBackground': 'Spear-Border-1024-1024.png'
@@ -55,8 +93,8 @@ export const CaseStudyModal = ({modalData}) => {
                 {/*
                     Image Array frame
                 */}
-                <div className='csm-img-container' style={{backgroundColor:'purple'}}>
-                    <img src={currentPage.images[0]}/>
+                <div className='csm-img-container' ref={imageArrayContainerRef} style={{backgroundColor:'purple'}}>
+                    <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight}}/>
                 </div>
                 {/*
                     Navigation Arrows
