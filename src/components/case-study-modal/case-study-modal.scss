@@ -103,7 +103,7 @@ $modal-height: min(95vh, calc(100vw - calc($margin-sides * 2)));
     height: calc($modal-height * .15);
 
     font-size: $extra-large-font;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'MedievalSharp', cursive;
     font-weight: 700;
 
     z-index: 2;
@@ -112,7 +112,8 @@ $modal-height: min(95vh, calc(100vw - calc($margin-sides * 2)));
 .csm-information {
     position: absolute;
     top: calc($modal-height * .22);
-    left: 25%;
-    font-family: 'MedievalSharp', cursive;
-    font-size: $large-font;
+    left: 20%;
+    right: 20%;
+    font-family: 'IM Fell English SC', serif;
+    font-size: $medium-font;
 }
