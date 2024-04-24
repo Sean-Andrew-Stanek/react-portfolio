@@ -34,7 +34,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Text End
                 }   
-                <div className='quest-text-end' style={{display:'flex', flexDirection:'column', flexGrow:'0', flexShrink:'0', textAlign:'center', alignItems:'center', gap:'2px', justifyContent:'flex-start'}}>
+                <div className='quest-text-end mv-quest-end'>
                     {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
                     <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} style={{backgroundImage: 'url(/react-portfolio/Wide-Button-400-70.png)'}} onClick={() => window.open('', '_blank')}>
                         <img src='/react-portfolio/Wide-Button-400-70.png' />

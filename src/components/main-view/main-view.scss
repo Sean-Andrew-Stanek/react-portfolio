@@ -33,3 +33,15 @@
 .mv-loading{
     opacity: 0;
 }
+
+.mv-quest-end {
+    display:'flex';
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    align-items: center;
+    gap: 2px;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}

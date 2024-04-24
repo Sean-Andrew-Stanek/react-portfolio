@@ -26,7 +26,7 @@ $quest-intro-top: ratio(125px, $quest-background-height);
 $quest-intro-left: ratio(195px, $quest-background-width);
 
 //Text
-$quest-text-height: ratio(250px, $quest-background-height);
+$quest-text-height: ratio(240px, $quest-background-height);
 $quest-text-width: ratio(390px, $quest-background-width);
 
 $quest-text-margin: ratio(10px, $quest-background-height);
@@ -35,7 +35,7 @@ $quest-text-left: ratio(155px, $quest-background-width);
 
 //Conclusion
 
-$quest-end-height: ratio(150px, $quest-background-height);
+$quest-end-height: ratio(160px, $quest-background-height);
 $quest-end-width: ratio(280px, $quest-background-width);
 
 $quest-end-top: $quest-text-top + $quest-text-height + $quest-text-margin;
