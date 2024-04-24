@@ -103,7 +103,7 @@ export const CaseStudyModal = ({modalData}) => {
                 {/*
                     Image Array frame
                 */}
-                <div className='csm-img-container' ref={imageArrayContainerRef} style={{backgroundColor:'purple'}}>
+                <div className='csm-img-container' ref={imageArrayContainerRef} style={{backgroundColor:'black'}}>
                     <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
                 </div>
 
