@@ -18,7 +18,8 @@ export const CaseStudyModal = ({modalData}) => {
     const [pageIndex, setPageIndex] = useState(0);
     
     let images = {
-        'navArrow': 'Nav-Arrow-1024-1024.png'
+        'navArrow': 'Nav-Arrow-1024-1024.png',
+        'modalBackground': 'Spear-Border-1024-1024.png'
     };
 
     let currentPage = caseStudy.pages[pageIndex];
@@ -32,19 +33,27 @@ export const CaseStudyModal = ({modalData}) => {
     return (
         <>
             <div className='csm-main-container'>
+                <div className='csm-title'>
+                    <div className= 'text-box-border' />
+                    <div className='text-box-content' style={{opacity: .95}}>
+                        {`${currentPage.title}`}
+                    </div>
+                </div>
                 {/*
                     Content Container
                 */}
-                <div className='csm-info-container' style={{backgroundColor:'red'}}>
-                    <div className='csm-title'>
-                        {`Title: ${currentPage.title}`}
-                    </div>
+                
+                <div className='csm-info-container'>
+                    {/*
+                        Background
+                    */}
+                    <img src={images.modalBackground} />
                     <div className='csm-information'>
                         {currentPage.text}
                     </div>                    
                 </div>
                 {/*
-                    Image frame
+                    Image Array frame
                 */}
                 <div className='csm-img-container' style={{backgroundColor:'purple'}}>
                     <img src={currentPage.images[0]}/>
