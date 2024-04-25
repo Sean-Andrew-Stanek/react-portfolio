@@ -73,6 +73,7 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     height: calc($modal-height * .2);
     width: calc(calc(100vw - calc($margin-sides * 2)) * .2);
     z-index: 2;
+    transition: transform .5s ease-out;
     
     img {
         width: 100%;
@@ -87,21 +88,31 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
      
     &.csm-animate {
         animation: animateNavBar infinite 3s;
-        animation-delay: 20s;
     }
-}
 
-.csm-animate {
-    animation-delay: 2s;
+    &:hover {
+        animation: none;
+        transform: translateX(-1vw);
+    }
 }
 
 .csm-next-page {
     right: -5%;
-    transform: scaleX(-1);
-    
+    transform: scaleX(-1) translateX(0);
+
     &.csm-animate {
         animation: animateNavBarReverse infinite ease-in-out 3s;
     }
+
+    &:hover {
+        animation: none;
+        transform: scaleX(-1) translateX(-1vw);
+    }
+
+}
+
+.csm-animate {
+    animation-delay: 2s;
 }
 
 .csm-fade {
