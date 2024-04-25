@@ -73,24 +73,35 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     height: calc($modal-height * .2);
     width: calc(calc(100vw - calc($margin-sides * 2)) * .2);
     z-index: 2;
-
-    //Look and Feel
-    background-color: rgba(0,0,0,0.01);
-    cursor: pointer;
-
+    
     img {
         width: 100%;
         height: 100%;
+        position: relative;
+        cursor: pointer;
     }
 }
 
 .csm-previous-page {
     left: -5%;
+     
+    &.csm-animate {
+        animation: animateNavBar infinite 3s;
+        animation-delay: 20s;
+    }
+}
+
+.csm-animate {
+    animation-delay: 2s;
 }
 
 .csm-next-page {
     right: -5%;
     transform: scaleX(-1);
+    
+    &.csm-animate {
+        animation: animateNavBarReverse infinite ease-in-out 3s;
+    }
 }
 
 .csm-fade {
@@ -127,4 +138,24 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     font-family: 'IM Fell English SC', serif;
     font-size: $small-font;
     margin: auto auto;
+}
+
+
+
+@keyframes animateNavBar {
+    0%, 30%, 70%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-1vw);
+    }
+}
+
+@keyframes animateNavBarReverse {
+    0%, 30%, 70%, 100% {
+        transform: scaleX(-1) translateX(0);
+    }
+    50% {
+        transform: scaleX(-1) translateX(-1vw);
+    }
 }

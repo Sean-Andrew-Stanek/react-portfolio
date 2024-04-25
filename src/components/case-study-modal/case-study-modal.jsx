@@ -93,10 +93,10 @@ export const CaseStudyModal = ({modalData}) => {
                     {/*
                         Navigation Arrows
                     */}
-                    <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 && 'csm-fade'}`} onClick = {() => changeIndex(1)}>
+                    <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(1)}>
                         <img src = {images.navArrow}/>
                     </div>
-                    <div className={`csm-previous-page ${pageIndex===0 && 'csm-fade'}`} onClick = {() => changeIndex(-1)}>
+                    <div className={`csm-previous-page ${pageIndex===0 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(-1)}>
                         <img src = {images.navArrow}/>
                     </div>
                 </div>

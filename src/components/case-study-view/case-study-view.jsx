@@ -17,7 +17,7 @@ export const CaseStudyView = ({setModalData}) => {
                 }
                 <div className='avatar-container'  style={{right: '50%', bottom: '10px'}}>
                     <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
-                    <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
+                    <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' />
                 </div>
             </div>
         </>
