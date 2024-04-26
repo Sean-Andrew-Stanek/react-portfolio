@@ -55,16 +55,21 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
 
     z-index: 3;
 
+    &:hover {
+        border: 2px white solid;
+    }
+
     img {
         min-width: 100%;
         min-height: 100%;
     }
 
     transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-    &:hover {
-        width: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
-        height: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
-    }
+}
+
+.csm-expand-info {
+    width: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
+    height: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
 }
 
 .csm-previous-page, .csm-next-page {
@@ -93,12 +98,14 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
      
     &.csm-animate {
         animation: animateNavBar infinite 3s;
+        
+        &:hover {
+            animation: none;
+            transform: translateX(-1vw);
+        }
     }
 
-    &:hover {
-        animation: none;
-        transform: translateX(-1vw);
-    }
+
 }
 
 .csm-next-page {
@@ -107,12 +114,14 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
 
     &.csm-animate {
         animation: animateNavBarReverse infinite ease-in-out 3s;
+
+        &:hover {
+            animation: none;
+            transform: scaleX(-1) translateX(-1vw);
+        }
     }
 
-    &:hover {
-        animation: none;
-        transform: scaleX(-1) translateX(-1vw);
-    }
+
 
 }
 
