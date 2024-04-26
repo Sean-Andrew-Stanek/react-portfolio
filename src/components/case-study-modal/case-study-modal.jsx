@@ -12,6 +12,7 @@ import '../../styles/styles.scss';
 import PropTypes from 'prop-types';
 import { caseStudies } from '../../utils/case-studies';
 
+
 export const CaseStudyModal = ({modalData}) => {
 
     const caseStudy = caseStudies.find(obj => obj.name === modalData.data.name);
@@ -57,7 +58,7 @@ export const CaseStudyModal = ({modalData}) => {
     }, []);
 
     let images = {
-        'navArrow': 'Nav-Arrow-1024-1024.png',
+        'navArrow': 'Nav-Arrow-512-512.svg',
         'modalBackground': 'Spear-Border-1024-1024.png'
     };
 
@@ -70,45 +71,43 @@ export const CaseStudyModal = ({modalData}) => {
     };
 
     return (
-        <>
-            <div className='csm-main-container'>
-                <div className='csm-title-container'>
-                    <div className= 'text-box-border' />
-                    <div className='text-box-content csm-title' style={{opacity: .95}}>
-                        {`${currentPage.title}`}
-                    </div>
+        <div className='csm-main-container' style={{pointerEvents:'none'}}>
+            <div className='csm-title-container'>
+                <div className= 'text-box-border' />
+                <div className='text-box-content csm-title' style={{opacity: .95}}>
+                    {`${currentPage.title}`}
                 </div>
-                {/*
-                    Content Container
-                */}
-                
-                <div className='csm-info-container'>
-                    {/*
-                        Background
-                    */}
-                    <img src={images.modalBackground} />
-                    <div className='csm-information'>
-                        {currentPage.text}
-                    </div>                    
-                    {/*
-                        Navigation Arrows
-                    */}
-                    <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(1)}>
-                        <img src = {images.navArrow}/>
-                    </div>
-                    <div className={`csm-previous-page ${pageIndex===0 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(-1)}>
-                        <img src = {images.navArrow}/>
-                    </div>
-                </div>
-                {/*
-                    Image Array frame
-                */}
-                <div className='csm-img-container' ref={imageArrayContainerRef} style={{backgroundColor:'black'}}>
-                    <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
-                </div>
-
             </div>
-        </>
+            {/*
+                Content Container
+            */}
+            
+            <div className='csm-info-container' style={{pointerEvents:'none'}}>
+                {/*
+                    Background
+                */}
+                <img src={images.modalBackground} style={{pointerEvents:'none'}}/>
+                <div className='csm-information'>
+                    {currentPage.text}
+                </div>                    
+                {/*
+                    Navigation Arrows
+                */}
+                <div className={`csm-next-page ${pageIndex===caseStudy.pages.length-1 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(1)}>
+                    <img src = {images.navArrow}/>
+                </div>
+                <div className={`csm-previous-page ${pageIndex===0 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(-1)}>
+                    <img src = {images.navArrow}/>
+                </div>
+            </div>
+            {/*
+                Image Array frame
+            */}
+            <div className='csm-img-container' ref={imageArrayContainerRef} style={{backgroundColor:'black'}}>
+                <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
+            </div>
+
+        </div>
     );
 
 };
