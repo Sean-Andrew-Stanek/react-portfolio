@@ -122,7 +122,7 @@ export const projects = [
         'name': 'Personal Portfolio - React',
         'image': 'Project-ReactPortfolio-512-512.png',
         'skills': {
-            'frontend': ['Node.js', 'SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
+            'frontend': ['SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
             'backend': ['Node.js'],
             'other': ['GIMP', 'GitHub', 'Version Control'],
         },
