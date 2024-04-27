@@ -1,13 +1,21 @@
 @import '../../styles/variables';
 
 .csv-button {
-    width: 25vw;
-    height: 25vh;
-    border: black 2px solid;
-    background-color: rgba(255,255,255,.7);
+    position: relative;
+    width: min(35vh,35vw);
+    height: min(35vh,35vw);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: $extra-large-font;
+    font-size: $large-font;
+    padding: min(8vh, 8vw);
     cursor: pointer;
+
+    img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
 }

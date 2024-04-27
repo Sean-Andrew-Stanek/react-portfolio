@@ -5,11 +5,15 @@ import PropTypes from 'prop-types';
 export const CaseStudyView = ({setModalData}) => {
 
     //TODO: Import projects, filter by case studies, make button for each said projects.
+    let images = {
+        'modalBackground': 'Spear-Border-1024-1024.png'
+    };
 
     return (
         <>
             <div  className='main-container' style={{}}>
                 <div className='csv-button' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+                    <img src={images.modalBackground}/>
                     React Portfolio - Case Study
                 </div>
                 {
