@@ -49,7 +49,7 @@ export const caseStudies = [
             {   
                 'title': 'Process - Development Practices and Mentorship',
                 'text': 'A significant challenge was crafting a responsive design suitable for various devices. I employed CSS techniques such as position: absolute and clamp() functions extensively to ensure flexibility and accuracy across different screen sizes. This approach not only made the design responsive but also simplified the adaptation process, which proved to be more straightforward than anticipated.',
-                'images': ['Under-Construction.PNG'],
+                'images': ['./case-study-1/CSS-Display.PNG'],
             },
             {   
                 'title': 'Process - Development Practices and Mentorship',
