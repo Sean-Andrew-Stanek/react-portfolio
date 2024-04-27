@@ -87,8 +87,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                         let capPath = path.charAt(0).toUpperCase() + path.slice(1);
                         return (
                             <Fragment key={index}>
-                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => {setHealthBarIndex(index); updateBackgroundLocation(index);}}>
-                                    <img src={`${capPath}-Icon-300-300.png`} className='nb-buffbar-image' alt={`Button to ${capPath}`} onDragStart={cancelDefaultDrag}/>
+                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => {setHealthBarIndex(index); updateBackgroundLocation(index);}}  role='link'>
+                                    <img alt={`Button to ${capPath}`} className='nb-buffbar-image' onDragStart={cancelDefaultDrag} role='link' src={`${capPath}-Icon-300-300.png`} />
                                     <div className='nb-tooltip-down  nb-tooltip'>
                                         <div>
                                             {capPath}
@@ -134,7 +134,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                             <div className='nb-skillbar-border'  key={index}>
                                 <img src={'Nav-Bar-Icon-Border-150-200.png'}/>
                                 <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}>
-                                    <img src={`${info[0]}-Icon-300-300.png`} className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag}/>
+                                    <img className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag} role='link' src={`${info[0]}-Icon-300-300.png`}/>
                                 </Link>
                                 <div className='nb-tooltip-up nb-tooltip'>
                                     <div>

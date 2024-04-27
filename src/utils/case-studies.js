@@ -44,7 +44,7 @@ export const caseStudies = [
             {   
                 'title': 'Process - Project Setup and Tools',
                 'text': 'In the initial stage of my project, I opted for React with Vite as my primary framework, choosing it over Create-React-App despite it being everyone\'s favorite first React boilerplate. To manage the project\'s tasks and timelines effectively, I used Ora, which helped streamline the planning and execution phases. For developing a unique and personalized theme, I utilized tools like GIMP for image manipulation and leveraged DALL-E and ChatGPT for creative assets and text generation, respectively. This combination of advanced tools enabled a robust foundation for building a distinctive web application.',
-                'images': ['Under-Construction.PNG'],
+                'images': ['./case-study-1/Gimp-Drake.PNG'],
             },
             {   
                 'title': 'Process - Development Practices and Mentorship',
