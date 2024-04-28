@@ -14,7 +14,10 @@ export const CaseStudyView = ({setModalData}) => {
             <div  className='main-container' style={{}}>
                 <div className='csv-button' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
                     <img src={images.modalBackground}/>
-                    React Portfolio - Case Study
+                    <div className='csv-text-holder'>
+                        React Portfolio - Case Study
+                    </div>
+                    
                 </div>
                 {
                     //Avatar

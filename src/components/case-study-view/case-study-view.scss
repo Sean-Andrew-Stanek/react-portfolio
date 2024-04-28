@@ -4,12 +4,11 @@
     position: relative;
     width: min(35vh,35vw);
     height: min(35vh,35vw);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     font-size: $large-font;
     padding: min(8vh, 8vw);
     cursor: pointer;
+
 
     img {
         position: absolute;
@@ -18,4 +17,17 @@
         width: 100%;
         z-index: -1;
     }
+}
+
+.csv-text-holder {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 20%;
+    bottom: 7%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
