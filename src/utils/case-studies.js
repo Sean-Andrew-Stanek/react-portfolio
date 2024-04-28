@@ -54,7 +54,7 @@ export const caseStudies = [
             {   
                 'title': 'Process - Development Practices and Mentorship',
                 'text': 'Throughout the development process, I engaged with experienced mentors who provided crucial insights into best practices for web performance, particularly in areas like image loading and positioning. Their guidance was instrumental in refining my approach to these technical aspects, ensuring the application was optimized for speed and efficiency. Moreover, I focused on creating a navigation structure that was both unique and user-friendly, encouraging exploration through intuitive design elements.',
-                'images': ['Under-Construction.PNG'],
+                'images': ['Communication.PNG'],
             },
             {   
                 'title': 'Process - Scalability and Maintenance',
