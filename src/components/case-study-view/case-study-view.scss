@@ -1,5 +1,10 @@
 @import '../../styles/variables';
 
+$csv-upper: 1;
+$csv-lower: 2;
+$csv-left: 1;
+$csv-right: 3;
+
 .csv-button {
     position: relative;
     width: min(35vh,35vw);
@@ -16,6 +21,34 @@
         height: 100%;
         width: 100%;
         z-index: -1;
+    }
+}
+
+.csv-main-contianer {
+    display: grid;
+    grid-template-columns: 1fr 20% 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    .csv-upper-left {
+        grid-column: $csv-left;
+        grid-row: $csv-upper;
+    }
+
+    .csv-lower-left {
+        grid-column: $csv-left;
+        grid-row: $csv-lower;
+    }
+
+    .csv-upper-right {
+        grid-column: $csv-right;
+        grid-row: $csv-upper;
+    }
+
+    .csv-lower-right {
+        grid-column: $csv-right;
+        grid-row: $csv-lower;
     }
 }
 

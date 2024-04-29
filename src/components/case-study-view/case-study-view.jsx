@@ -11,8 +11,39 @@ export const CaseStudyView = ({setModalData}) => {
 
     return (
         <>
-            <div  className='main-container' style={{}}>
-                <div className='csv-button' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+
+            <div  className='main-container csv-main-contianer' style={{}}>
+                {
+                    //Upper Left
+                }
+                <div className='csv-button csv-upper-left' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+                    <img src={images.modalBackground}/>
+                    <div className='csv-text-holder'>
+                        React Portfolio - Case Study
+                    </div>
+                </div>
+                {
+                    //Upper Right
+                }
+                <div className='csv-button csv-upper-right' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+                    <img src={images.modalBackground}/>
+                    <div className='csv-text-holder'>
+                        React Portfolio - Case Study
+                    </div>
+                </div>
+                {
+                    //Lower Left
+                }
+                <div className='csv-button csv-lower-left' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+                    <img src={images.modalBackground}/>
+                    <div className='csv-text-holder'>
+                        React Portfolio - Case Study
+                    </div>
+                </div>
+                {
+                    //Lower Right
+                }
+                <div className='csv-button csv-lower-right' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
                     <img src={images.modalBackground}/>
                     <div className='csv-text-holder'>
                         React Portfolio - Case Study
@@ -22,7 +53,7 @@ export const CaseStudyView = ({setModalData}) => {
                 {
                     //Avatar
                 }
-                <div className='avatar-container'  style={{right: '50%', bottom: '10px'}}>
+                <div className='avatar-container'  style={{right: '50%', bottom: '10px', transform: 'translateX(50%)'}}>
                     <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
                     <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' />
                 </div>
