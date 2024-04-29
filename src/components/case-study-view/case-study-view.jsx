@@ -1,12 +1,34 @@
 import {React} from 'react';
 import './case-study-view.scss';
 import PropTypes from 'prop-types';
+import { projects } from '../../utils/porfolio-projects';
 
 export const CaseStudyView = ({setModalData}) => {
 
-    //TODO: Import projects, filter by case studies, make button for each said projects.
+    //Image References
     let images = {
         'modalBackground': 'Spear-Border-1024-1024.png'
+    };
+
+    //Filter projects with case studies.  
+    //While it can handle more than four, it will only display four
+    //TODO:  Change from capstone (testing purpose)
+    const caseStudyProjects = projects.filter(project => project.caseStudy==='true');
+    const locations = ['csv-upper-left',  'csv-upper-right', 'csv-lower-left', 'csv-lower-right'];
+    
+    const createButtons = () => {
+        const returnJSX = [];
+        for(let i = 0; i < Math.min(caseStudyProjects.length, locations.length); i++) {
+            returnJSX.push(
+                <div className={`csv-button ${locations[i]}`} key={`${caseStudyProjects[i].name}i`} onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+                    <img src={images.modalBackground}/>
+                    <div className='csv-text-holder'>
+                        {caseStudyProjects[i].name}
+                    </div>
+                </div>
+            );
+        }
+        return returnJSX;
     };
 
     return (
@@ -14,42 +36,13 @@ export const CaseStudyView = ({setModalData}) => {
 
             <div  className='main-container csv-main-contianer' style={{}}>
                 {
-                    //Upper Left
+                    //Display Case Study: upper limit 4
                 }
-                <div className='csv-button csv-upper-left' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
-                    <img src={images.modalBackground}/>
-                    <div className='csv-text-holder'>
-                        React Portfolio - Case Study
-                    </div>
-                </div>
                 {
-                    //Upper Right
+                    <>
+                        {createButtons()}
+                    </>
                 }
-                <div className='csv-button csv-upper-right' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
-                    <img src={images.modalBackground}/>
-                    <div className='csv-text-holder'>
-                        React Portfolio - Case Study
-                    </div>
-                </div>
-                {
-                    //Lower Left
-                }
-                <div className='csv-button csv-lower-left' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
-                    <img src={images.modalBackground}/>
-                    <div className='csv-text-holder'>
-                        React Portfolio - Case Study
-                    </div>
-                </div>
-                {
-                    //Lower Right
-                }
-                <div className='csv-button csv-lower-right' onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
-                    <img src={images.modalBackground}/>
-                    <div className='csv-text-holder'>
-                        React Portfolio - Case Study
-                    </div>
-                    
-                </div>
                 {
                     //Avatar
                 }
