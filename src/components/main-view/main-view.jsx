@@ -7,6 +7,15 @@ import TypeWriter from '../../utils/typewriter';
 
 export const MainView = ({iterateColor}) => {
 
+    const handleResumeDownload = () => {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = 'resume.pdf';
+        downloadLink.download = 'Sean Stanek - Resume.pdf';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);        
+    };
+
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     return (
@@ -36,7 +45,7 @@ export const MainView = ({iterateColor}) => {
                 }   
                 <div className='quest-text-end mv-quest-end'>
                     {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
-                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} style={{backgroundImage: 'url(/react-portfolio/Wide-Button-400-70.png)'}} onClick={() => window.open('', '_blank')}>
+                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} style={{backgroundImage: 'url(/react-portfolio/Wide-Button-400-70.png)'}} onClick={handleResumeDownload}>
                         <img src='/react-portfolio/Wide-Button-400-70.png' />
                         <span>
                             Resume

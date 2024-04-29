@@ -12,10 +12,11 @@ export const CaseStudyView = ({setModalData}) => {
 
     //Filter projects with case studies.  
     //While it can handle more than four, it will only display four
-    //TODO:  Change from capstone (testing purpose)
     const caseStudyProjects = projects.filter(project => project.caseStudy==='true');
     const locations = ['csv-upper-left',  'csv-upper-right', 'csv-lower-left', 'csv-lower-right'];
     
+
+    //Creates the buttons for each case study and places them appropriately around the screen.
     const createButtons = () => {
         const returnJSX = [];
         for(let i = 0; i < Math.min(caseStudyProjects.length, locations.length); i++) {
