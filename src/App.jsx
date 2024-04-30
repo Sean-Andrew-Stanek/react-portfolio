@@ -39,7 +39,6 @@ function App() {
             
             {/* Routes */}
             <Router basename='/'>
-                <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex}/>
                 <Routes>
                     <Route path='/' element={<MainView iterateColor={()=>setColorIndex(colorIndex+1)}/>} />
                     <Route path='/skills' element={<SkillsView setModalData={setModalData}/>} />
@@ -49,6 +48,7 @@ function App() {
                     <Route path='/*' element={<Navigate to='/' />} />
 
                 </Routes>
+                <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex}/>
             </Router>
         </div>
     );
