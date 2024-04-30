@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 
 export const Background = ({backgroundIndex}) => {
 
+
+    //Images 
     const backgrounds = useMemo(() => ['./background-image-v2.png', './Signpost-Background-450-300.png'], []);
+    
     const bgPositions = [ 'center', 'top left' ];
 
     const [firstBackground, setFirstBackground] = useState('');

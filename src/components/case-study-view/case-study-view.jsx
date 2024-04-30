@@ -7,7 +7,9 @@ export const CaseStudyView = ({setModalData}) => {
 
     //Image References
     let images = {
-        'modalBackground': 'Spear-Border-1024-1024.png'
+        'modalBackground': 'Spear-Border-1024-1024.png',
+        'avatar': '/react-portfolio/Avatar-150-450.png',
+        'avatarAbove': '/react-portfolio/Exclaim-200-350.png',
     };
 
     //Filter projects with case studies.  
@@ -48,8 +50,8 @@ export const CaseStudyView = ({setModalData}) => {
                     //Avatar
                 }
                 <div className='avatar-container'  style={{right: '50%', bottom: '10px', transform: 'translateX(50%)'}}>
-                    <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
-                    <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' />
+                    <img className='avatar-above-image'  src = {images.avatarAbove} />
+                    <img className='avatar-image' src = {images.avatar} />
                 </div>
             </div>
         </>
