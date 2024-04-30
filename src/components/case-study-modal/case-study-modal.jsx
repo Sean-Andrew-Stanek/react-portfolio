@@ -54,6 +54,8 @@ export const CaseStudyModal = ({modalData}) => {
     let currentPage = caseStudy.pages[pageIndex];
 
     const changeIndex = (change) => {
+        if(expandedImage)
+            toggleExpandImage();
         const desiredPage = pageIndex + change;
         if(desiredPage >= 0 && desiredPage < caseStudy.pages.length)
             setPageIndex(desiredPage);
