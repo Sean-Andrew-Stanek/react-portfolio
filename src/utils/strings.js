@@ -8,7 +8,7 @@ export const mainViewStrings = {
 
 export const skillViewStrings = {
     'greeting': 'My Capabilities',
-    'body': 'Click on a skill to see where it was used.  Constantly innovating has given me a wide range of skills even beyond these.  Feel free to inquire about additional skills I may have examples of in more casual projects.',
+    'body': 'Click on a skill to view my work. My drive for innovation has honed a broad skill set, including unpublished projects. Feel free to inquire about other capabilities.',
     'closing': 'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.'
 };
 
