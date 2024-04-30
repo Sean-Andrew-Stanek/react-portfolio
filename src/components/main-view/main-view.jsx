@@ -9,7 +9,7 @@ export const MainView = ({iterateColor}) => {
 
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
-        downloadLink.href = 'resume.pdf';
+        downloadLink.href = '/react-portfolio/resume.pdf';
         downloadLink.download = 'Sean Stanek - Resume.pdf';
         document.body.appendChild(downloadLink);
         downloadLink.click();
