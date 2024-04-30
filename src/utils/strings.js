@@ -10,14 +10,14 @@ export const mainViewStrings = {
 
 export const skillViewStrings = {
     'greeting': 'My Capabilities',
-    'body': 'Constantly innovating using multiple technologies has given me a wide range of skills.  These skills are those that I have public projects that I can display.  My abilities go beyond this and I love learning new technologies.',
+    'body': 'Click on a skill to see where it was used.  Constantly innovating has given me a wide range of skills even beyond these.  Feel free to inquire about additional skills I may have examples of in more casual projects.',
     'closing': 'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.'
 };
 
 export const portfolioViewStrings = {
     'greeting': 'My Projects',
     'body': 'These are my capstone projects which I take pride in.  They showcase my capabilities in both frontend and backend capabiliites.',
-    'closing':  'These projects give me a strong base of reusable code which I understand and can tailor to specific projects.'
+    'closing':  'Click on the projects to see them live or to view the repositories.'
 };
 
 export const contactViewStrings = {
