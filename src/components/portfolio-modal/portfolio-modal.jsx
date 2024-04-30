@@ -57,7 +57,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='portfolio-skill' style={{backgroundImage: 'url(/react-portfolio/Skill-Button-175-50.png)'}} key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
+                <div className='portfolio-skill' style={{backgroundImage: 'url(/Skill-Button-175-50.png)'}} key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
                     <span>
                         {skill}
                     </span>
@@ -75,7 +75,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
     const linkButton = (text, target, index) => {
 
         return (
-            <div className='portfolio-link' style={{backgroundImage: 'url(/react-portfolio/Link-Button-379-54.png)'}} key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+            <div className='portfolio-link' style={{backgroundImage: 'url(/Link-Button-379-54.png)'}} key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
                 <span>
                     {text}
                 </span>

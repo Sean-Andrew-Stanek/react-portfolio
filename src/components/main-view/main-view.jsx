@@ -9,7 +9,7 @@ export const MainView = ({iterateColor}) => {
 
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
-        downloadLink.href = '/react-portfolio/resume.pdf';
+        downloadLink.href = '/resume.pdf';
         downloadLink.download = 'Sean Stanek - Resume.pdf';
         document.body.appendChild(downloadLink);
         downloadLink.click();
@@ -27,7 +27,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-1024-1024.png'/>
+                <img className='quest-background' src='/Drake-Quest-Border-1024-1024.png'/>
                 {
                 // Text Intro
                 }
@@ -45,8 +45,8 @@ export const MainView = ({iterateColor}) => {
                 }   
                 <div className='quest-text-end mv-quest-end'>
                     {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
-                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} style={{backgroundImage: 'url(/react-portfolio/Wide-Button-400-70.png)'}} onClick={handleResumeDownload}>
-                        <img src='/react-portfolio/Wide-Button-400-70.png' />
+                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} style={{backgroundImage: 'url(/Wide-Button-400-70.png)'}} onClick={handleResumeDownload}>
+                        <img src='/Wide-Button-400-70.png' />
                         <span>
                             Resume
                         </span>
@@ -60,8 +60,8 @@ export const MainView = ({iterateColor}) => {
             //Avatar
             }
             <div className='avatar-container' style={{left: '10px', bottom: '10px'}}>
-                <img className='avatar-above-image'  src = '/react-portfolio/Exclaim-200-350.png' />
-                <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png' onClick={iterateColor}/>
+                <img className='avatar-above-image'  src = '/Exclaim-200-350.png' />
+                <img className='avatar-image' src = '/Avatar-150-450.png' onClick={iterateColor}/>
             </div>
         </div>
     );

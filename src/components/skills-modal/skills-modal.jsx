@@ -64,8 +64,8 @@ export const SkillsModal = ({modalData, setModalData}) => {
                         return <SkillProjectSummary setModalData={setModalData} project={project} key={`${project.name}${index}`}/>;
                     })}
                 </div>
-                <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} style={{width:'10%'}} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
-                <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} style={{width:'10%'}} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
+                <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} style={{width:'10%'}} src='/Nav-Arrow-1024-1024.png'/>
+                <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} style={{width:'10%'}} src='/Nav-Arrow-1024-1024.png'/>
             </div>
         </div>
 

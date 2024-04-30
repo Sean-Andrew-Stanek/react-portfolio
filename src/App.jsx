@@ -38,7 +38,7 @@ function App() {
             }
             
             {/* Routes */}
-            <Router basename='/react-portfolio/'>
+            <Router basename='/'>
                 <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex}/>
                 <Routes>
                     <Route path='/' element={<MainView iterateColor={()=>setColorIndex(colorIndex+1)}/>} />

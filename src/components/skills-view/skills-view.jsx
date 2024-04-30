@@ -118,9 +118,9 @@ export const SkillsView = ({setModalData}) => {
                     <div className='text-box-content skill-content scrollable' ref={scrollListener} onScroll={handleScroll}>
                         {skillTree()}
                     </div>
-                    <img className='text-box-charm' src='/react-portfolio/Drake-Corner-256-256.png'/>                    
-                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
-                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src='/react-portfolio/Nav-Arrow-1024-1024.png'/>
+                    <img className='text-box-charm' src='/Drake-Corner-256-256.png'/>                    
+                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src='/Nav-Arrow-1024-1024.png'/>
+                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src='/Nav-Arrow-1024-1024.png'/>
                 </div>
             </div>
             {
@@ -130,7 +130,7 @@ export const SkillsView = ({setModalData}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/react-portfolio/Drake-Quest-Border-1024-1024.png'/>
+                <img className='quest-background' src='/Drake-Quest-Border-1024-1024.png'/>
                 {
                 // Text Intro
                 }
@@ -160,7 +160,7 @@ export const SkillsView = ({setModalData}) => {
                 //Avatar
             }
             <div className='avatar-container'  style={{right: '0px', bottom: '0px'}}>
-                <img className='avatar-image' src = '/react-portfolio/Avatar-150-450.png'/>
+                <img className='avatar-image' src = '/Avatar-150-450.png'/>
             </div>
         </div>
     );

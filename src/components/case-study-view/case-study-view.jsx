@@ -8,8 +8,8 @@ export const CaseStudyView = ({setModalData}) => {
     //Image References
     let images = {
         'modalBackground': 'Spear-Border-1024-1024.png',
-        'avatar': '/react-portfolio/Avatar-150-450.png',
-        'avatarAbove': '/react-portfolio/Exclaim-200-350.png',
+        'avatar': '/Avatar-150-450.png',
+        'avatarAbove': '/Exclaim-200-350.png',
     };
 
     //Filter projects with case studies.  
