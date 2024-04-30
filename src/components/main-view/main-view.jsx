@@ -9,8 +9,8 @@ export const MainView = ({iterateColor}) => {
 
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
-        downloadLink.href = '/resume.pdf';
-        downloadLink.download = 'Sean Stanek - Resume.pdf';
+        downloadLink.href = 'https://d28tw3yejqaj5m.cloudfront.net/Sean-Andrew-Stanek-Resume.pdf';
+        downloadLink.target = '_blank';
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);        

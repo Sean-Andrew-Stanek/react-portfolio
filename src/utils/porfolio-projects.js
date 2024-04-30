@@ -54,7 +54,7 @@ export const projects = [
         'image': 'Project-LetsMeet-512-512.png',
         'skills': {
             'frontend': ['React', 'oAuth', 'JavaScript'],
-            'backend': ['Node.js', 'Serverless', 'Lambda', 'PWA',],
+            'backend': ['Node.js', 'Serverless', 'AWS Lambda', 'PWA',],
             'other': ['Jest', 'Gherkin', 'Puppeteer', 'Git', 'Version Control'],
         },
         'summary': 'A serverless React app with OAuth integration, featuring Lambda functions for reading and organizing conference meeting times from a calendar. Implements a searchable data format and incorporated charts for a user-friendly display. Utilized a comprehensive testing approach, including Test-Driven Development (TDD), Behavior-Driven Development (BDD), and End-to-End Acceptance Tests. While the app may not boast flashy visuals, the repository reveals extensive behind-the-scenes work, resulting in a responsive, robust, and easily maintainable solution.',
@@ -124,7 +124,7 @@ export const projects = [
         'skills': {
             'frontend': ['SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
             'backend': ['Node.js'],
-            'other': ['GIMP', 'GitHub', 'Version Control'],
+            'other': ['AWS S3', 'GIMP', 'GitHub', 'Version Control'],
         },
         'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.  As my first independent project outside of the bootcamp, it was designed to shore up my biggest weakness: SCSS/CSS.',
         'links': {
