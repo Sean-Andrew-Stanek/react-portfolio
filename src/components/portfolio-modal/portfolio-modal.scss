@@ -28,11 +28,12 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    font-size: $large-font;
+    font-size: $extra-large-font;
     background-color: rgba(0, 0, 0, 1);
     top: 0;
     bottom: 90%;
     font-weight: 800;
+    text-align: center;
 }
 
 .portfolio-modal-info {
@@ -101,17 +102,18 @@
     position: relative;
     justify-content: space-around;
     margin: 5px;
+    flex-shrink: 0;
 }
 
 .portfolio-modal-skills {
     position:relative;
     justify-content: flex-start;
     margin:5px;
+    flex-shrink: 0;
 }
 
 .portfolio-modal-summary {
     font-size: $medium-font;
-    overflow: hidden;
 }
 
 
@@ -121,6 +123,8 @@
     background-position: center;
     width: auto;
     opacity: .8;
+
+    cursor: pointer;
 
     span {
         font-family: 'IM Fell English SC', serif;

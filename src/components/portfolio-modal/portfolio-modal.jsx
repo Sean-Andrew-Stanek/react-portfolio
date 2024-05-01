@@ -96,7 +96,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
                 <div ref={horizontalScrollRef} className='portfolio-modal-hbuttons portfolio-modal-skills'>
                     {skillButtons(project.skills)}
                 </div>
-                <div className='portfolio-modal-summary'>
+                <div className='portfolio-modal-summary scrollable'>
                     {project.summary}
                 </div>
                 <div className='portfolio-modal-hbuttons portfolio-modal-links'>
