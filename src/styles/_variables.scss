@@ -11,7 +11,7 @@ $skillbar-icon-size: clamp(30px, calc($profile-image-size * 50 / 100), 5vh);
 //$side-margin: max(10px, 15vw);
 $margin-sides: clamp(5px, 100vw - 950px, 15vw);
 $navbar-top-buffer: calc($profile-image-size * 1.1);
-$navbar-bottom-buffer: calc($skillbar-icon-size * 2.5 + 5px);
+$navbar-bottom-buffer: calc($skillbar-icon-size * 2.5 + 10px);
 
 //Font Sizes
 $extra-large-font: clamp(18px, min(3.5vw, 3.5vh), 36px);

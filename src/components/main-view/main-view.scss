@@ -1,3 +1,6 @@
+@import '../../styles/variables';
+
+
 .mv-link {
     width: clamp(100px, 100%, 20vw);
     display: flex; /* Using flexbox for centering */
