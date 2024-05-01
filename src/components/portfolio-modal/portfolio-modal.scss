@@ -7,8 +7,8 @@
 
 .portfolio-modal-container {
     position: absolute;
-    right: 40%;
-    width: 50%;
+    right: $margin-sides;
+    left: $margin-sides;
     top: 20%;
     height: 60%;
     background-color: rgba(0,0,0,.8);
@@ -51,7 +51,7 @@
     margin-right: 5%;
 
     font-family: 'IM Fell English SC', serif;
-    font-size: $small-font;
+    font-size: $medium-font;
 }
 
 .portfolio-modal-image-container {
@@ -100,11 +100,13 @@
 .portfolio-modal-links {
     position: relative;
     justify-content: space-around;
+    margin: 5px;
 }
 
 .portfolio-modal-skills {
     position:relative;
     justify-content: flex-start;
+    margin:5px;
 }
 
 .portfolio-modal-summary {

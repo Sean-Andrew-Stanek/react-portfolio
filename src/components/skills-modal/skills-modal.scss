@@ -1,15 +1,16 @@
+@import '../../styles/variables';
+
 .skill-modal-container {
 
     position: absolute;
-    left: 40%;
-    width: 50%;
+    left: $margin-sides;
+    right: $margin-sides;
     top: 15%;
     height: 70%;
 
 }
 
 .skill-modal-projects {
-    height: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
