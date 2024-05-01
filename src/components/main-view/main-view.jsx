@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
-import './main-view.scss';
 import '../../styles/styles.scss';
+import './main-view.scss';
 import { mainViewStrings as strings} from '../../utils/strings';
 import PropTypes from 'prop-types';
 import TypeWriter from '../../utils/typewriter';

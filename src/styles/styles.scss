@@ -164,7 +164,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
 .quest-container {
     position: absolute;
     top: 10px;
-    bottom: 20%;
+    bottom: 5%;
     left: calc($avatar-container-width + 10px);
     right: 10%;
 }
@@ -204,7 +204,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
 .quest-text-body {
     
     font-family: 'IM Fell English SC', serif;
-    font-size: $extra-small-font;
+    font-size: $small-font;
     position: absolute;
 
     //Column
