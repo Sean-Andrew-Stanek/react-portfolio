@@ -1,3 +1,4 @@
+@import '../../styles/variables';
 
 //Skills left; Quest right
 $midpoint: 70%;
@@ -5,7 +6,7 @@ $midpoint: 70%;
 .skill-quest-container {
     right: 0;
     left: calc((100% - $midpoint) + 10px);
-    bottom: 10%;
+    bottom: 10px;
 }
 
 .skill-container {
@@ -13,14 +14,15 @@ $midpoint: 70%;
     left: 0;
     right: calc($midpoint - 5px);
     top: 5%;
-    bottom: 0;
+    bottom: 5%;
     z-index: 300;
 }
 
 .skill-tree-header {
     font-family: 'IM Fell English SC', serif;
     font-weight: 100;
-    font-size: clamp(24px, 2.5vw, 36px);
+    font-size: $extra-large-font;
+    color: skyblue;
     height: 10%;
     display:flex;
     flex-flow: row;
@@ -49,6 +51,7 @@ $midpoint: 70%;
 .skill-tree-skill {
     font-family: 'IM Fell English SC', serif;
     font-weight: 100;
+    font-size: $medium-font;
 
     cursor: pointer;
     border: 1px white solid;
@@ -114,7 +117,7 @@ $midpoint: 70%;
 .skill-content {
     display: flex;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 2%;
     flex-direction: column;
     align-items: flex-start;
 }

@@ -27,7 +27,7 @@ export const contactViewStrings = {
 
 export const contactRoutes = [
     ['Email', 'mailto:sean.andrew.stanek@gmail.com'],
-    ['LinkedIn', 'https://www.linkedin.com/in/sean-stanek-68b54129b'],
+    ['LinkedIn', 'https://www.linkedin.com/in/sean-andrew-stanek'],
     ['Discord', 'https://discordapp.com/users/dartimos'],
     ['Twitter', 'https://twitter.com/stanek_sean'],
     ['GitHub', 'https://github.com/Sean-Andrew-Stanek'],

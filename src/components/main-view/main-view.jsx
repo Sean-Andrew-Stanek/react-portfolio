@@ -23,7 +23,7 @@ export const MainView = ({iterateColor}) => {
             {
             // Quest Bubble
             }
-            <div className='quest-container'>
+            <div className='quest-container mv-quest-container'>
                 {
                 // Background Image
                 }
