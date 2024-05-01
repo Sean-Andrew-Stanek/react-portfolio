@@ -3,6 +3,8 @@ $navbar-top-buffer: calc(min(10vw, 100px) + 20px);
 $margin-sides: max(10px, 15vw);
 $navbar-bottom-buffer: calc(min(10vw, 100px) + 40px);
 
+@import '../../styles/variables';
+
 $midpoint: 70%;
 
 .portfolio-quest-container {
@@ -50,14 +52,22 @@ $midpoint: 70%;
 .portfolio-project-title {
     position:absolute;
     top: 0;
-    bottom: 30%;
+    bottom: 60%;
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: $extra-small-font;
+
+    word-wrap: break-word;
 }
 
 .portfolio-project-image-container {
     position:absolute;
     overflow: hidden;
-    top: 30%;
+    top: 40%;
     bottom:0;
     width: 100%;
 
