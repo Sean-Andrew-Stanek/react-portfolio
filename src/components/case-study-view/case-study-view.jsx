@@ -15,7 +15,7 @@ export const CaseStudyView = ({setModalData}) => {
 
     //Filter projects with case studies.  
     //While it can handle more than four, it will only display four
-    const caseStudyProjects = projects.filter(project => project.capstone==='true');
+    const caseStudyProjects = projects.filter(project => project.caseStudy==='true');
     const locations = ['csv-upper-left',  'csv-upper-right', 'csv-lower-left', 'csv-lower-right'];
     
 
@@ -24,7 +24,7 @@ export const CaseStudyView = ({setModalData}) => {
         const returnJSX = [];
         for(let i = 0; i < Math.min(caseStudyProjects.length, locations.length); i++) {
             returnJSX.push(
-                <div className={`csv-button ${locations[i]}`} key={`${caseStudyProjects[i].name}i`} onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
+                <div className={`csv-button ${locations[i]}`} key={`${caseStudyProjects[i].name}i`} onClick={() => setModalData({'type': 'case study', 'data': {'name': caseStudyProjects[i].name}})}>
                     <img src={images.buttonBackground}/>
                     <div className='csv-text-holder'>
                         {caseStudyProjects[i].name}
