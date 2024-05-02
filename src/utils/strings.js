@@ -3,7 +3,7 @@
 // Main View
 export const mainViewStrings = {
     'greeting': 'Stay a while and listen!',
-    'body': 'I\'m Sean Andrew Stanek, a seasoned web designer and programmer with a teaching background. Proficient in MERN/MARN stacks and diverse technologies like C#, GIMP, and AWS, I excel in technical challenges. My experience in education has also enhanced my problem-solving, empathy, and teamwork skills.'
+    'body': 'I\'m Sean Andrew Stanek, a seasoned web designer and programmer with a teaching background. Proficient in MERN/MEAN stacks and diverse technologies like C#, GIMP, and AWS, I excel in technical challenges. My experience in education has also enhanced my problem-solving, empathy, and teamwork skills.'
 };
 
 export const skillViewStrings = {

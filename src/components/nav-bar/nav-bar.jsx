@@ -123,6 +123,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     
     let bottomNavBar = () => {
         return (
+            
             <div className='nb-bottom-skillbar'>
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {
