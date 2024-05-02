@@ -90,7 +90,7 @@ export const projects = [
         'skills': {
             'frontend': ['Angular', 'Angular Material', 'TypeScript', 'RxJS', 'JWT', 'JavaScript'],
             'backend': ['Node.js', 'Express.js', 'MongoDB', 'Mongoose','Passport.js',  'JWT', 'bcrypt'],
-            'other': ['MARN Stack', 'Git', 'Version Control'],
+            'other': ['MEAN Stack', 'Git', 'Version Control'],
         },
         'summary': 'Developed an Angular client for the Movie API, demonstrating expertise in Angular, Angular Material, and reactive programming with RxJS. The one-page layout offers a seamless user experience, presenting movie data in an intuitive interface. Leveraged Angular Material for a visually appealing and responsive design. This project highlights my proficiency in Angular development and showcases a clean and modern user interface.',
         'links': {

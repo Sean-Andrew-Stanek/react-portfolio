@@ -60,7 +60,6 @@ export const MainView = ({iterateColor}) => {
             //Avatar
             }
             <div className='avatar-container' style={{left: '10px', bottom: '10px'}}>
-                <img className='avatar-above-image'  src = '/Exclaim-200-350.png' />
                 <img className='avatar-image' src = '/Avatar-150-450.png' onClick={iterateColor}/>
             </div>
         </div>

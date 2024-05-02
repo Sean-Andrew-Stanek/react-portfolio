@@ -64,7 +64,6 @@ export const ContactView = () => {
                 //Avatar
             }
             <div className='avatar-container'  style={{right: '10px', bottom: '10px'}}>
-                <img className='avatar-above-image'  src = '/Exclaim-200-350.png' />
                 <img className='avatar-image' src = '/Avatar-150-450.png'/>
             </div>
 

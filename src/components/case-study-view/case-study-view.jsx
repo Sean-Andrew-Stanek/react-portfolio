@@ -50,7 +50,6 @@ export const CaseStudyView = ({setModalData}) => {
                     //Avatar
                 }
                 <div className='avatar-container'  style={{right: '50%', bottom: '10px', transform: 'translateX(50%)'}}>
-                    <img className='avatar-above-image'  src = {images.avatarAbove} />
                     <img className='avatar-image' src = {images.avatar} />
                 </div>
             </div>
