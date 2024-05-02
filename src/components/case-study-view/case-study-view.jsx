@@ -1,4 +1,5 @@
 import {React} from 'react';
+import '../../styles/styles.scss';
 import './case-study-view.scss';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
@@ -7,14 +8,14 @@ export const CaseStudyView = ({setModalData}) => {
 
     //Image References
     let images = {
-        'modalBackground': 'Spear-Border-1024-1024.png',
+        'buttonBackground': 'Spear-Border-1024-1024.png',
         'avatar': '/Avatar-150-450.png',
         'avatarAbove': '/Exclaim-200-350.png',
     };
 
     //Filter projects with case studies.  
     //While it can handle more than four, it will only display four
-    const caseStudyProjects = projects.filter(project => project.caseStudy==='true');
+    const caseStudyProjects = projects.filter(project => project.capstone==='true');
     const locations = ['csv-upper-left',  'csv-upper-right', 'csv-lower-left', 'csv-lower-right'];
     
 
@@ -24,7 +25,7 @@ export const CaseStudyView = ({setModalData}) => {
         for(let i = 0; i < Math.min(caseStudyProjects.length, locations.length); i++) {
             returnJSX.push(
                 <div className={`csv-button ${locations[i]}`} key={`${caseStudyProjects[i].name}i`} onClick={() => setModalData({'type': 'case study', 'data': {'name': 'Personal Portfolio - React'}})}>
-                    <img src={images.modalBackground}/>
+                    <img src={images.buttonBackground}/>
                     <div className='csv-text-holder'>
                         {caseStudyProjects[i].name}
                     </div>
@@ -37,20 +38,29 @@ export const CaseStudyView = ({setModalData}) => {
     return (
         <>
 
-            <div  className='main-container csv-main-contianer' style={{}}>
-                {
-                    //Display Case Study: upper limit 4
-                }
-                {
-                    <>
-                        {createButtons()}
-                    </>
-                }
-                {
-                    //Avatar
-                }
-                <div className='avatar-container'  style={{right: '50%', bottom: '10px', transform: 'translateX(50%)'}}>
-                    <img className='avatar-image' src = {images.avatar} />
+            <div  className='main-container' style={{}}>
+                <div className='csv-main-container'>
+                    {
+                        //Display Case Study: upper limit 4
+                    }
+                    {
+                        <>
+                            {createButtons()}
+                        </>
+                    }
+                    <div className='csv-nav-title'>
+                        <div className= 'text-box-border' />
+                        <div className='text-box-content'>
+                            Case Studies
+                        </div>
+                        {/* <img className='text-box-charm cv-charm' src={`/${info[0]}-Icon-300-300.png`}/> */}
+                    </div>
+                    {
+                        //Avatar
+                    }
+                    <div className='csv-avatar'>
+                        <img className='csv-avatar-image' src = {images.avatar}/>
+                    </div>
                 </div>
             </div>
         </>
