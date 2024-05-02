@@ -37,7 +37,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Text Body
                 }
-                <div className='quest-text-body'>
+                <div className='quest-text-body scrollable'>
                     {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
                 </div>
                 {
