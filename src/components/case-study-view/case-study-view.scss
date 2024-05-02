@@ -1,21 +1,32 @@
 @import '../../styles/variables';
 
-$csv-upper: 1;
-$csv-lower: 2;
-$csv-left: 1;
-$csv-right: 3;
+//Bottom Banner
+.csv-nav-title {
+    position: absolute;
+    
+    bottom: 0;
+    height: 18%;
+    left: 0;
+    width: 100%;
+
+    font-size: $extra-large-font;
+    
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+}
 
 .csv-button {
-    position: relative;
-    width: min(35vh,35vw);
-    height: min(35vh,35vw);
-    max-width: 30%;
-    max-height: 30%;
+    position: absolute;
+
+    width: 35%;
+    height: 35%;
 
     font-size: $large-font;
-    padding: min(8vh, 8vw);
+    
     cursor: pointer;
-
 
     img {
         position: absolute;
@@ -26,25 +37,10 @@ $csv-right: 3;
     }
 }
 
-.csv-nav-title {
-    grid-column: 1 / span 3;
-    grid-row: 3 / span 1;
-    width: 90%;
-    height: 90%;
-    overflow: hidden;
 
-    position: relative;
-    
-    >img {
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-    }
-}
 
 .csv-avatar {
-    grid-column: 2;
-    grid-row: 1 / span 2;
+
 
     display: flex;
     justify-content: center;
@@ -57,36 +53,24 @@ $csv-right: 3;
     }
 }
 
-.csv-main-container {
-    display: grid;
-    grid-template-columns: 1fr 20% 1fr;
-    grid-template-rows: 1fr 1fr 20%;
+.csv-upper-left {
+    top: 0;
+    left: 0;
+}
 
-    height: 100%;
-    width: 100%;
+.csv-lower-left {
+    bottom: 20%;
+    left: 0;
+}
 
-    justify-items: center;
-    align-items: center;
+.csv-upper-right {
+    top: 0;
+    right: 0;
+}
 
-    .csv-upper-left {
-        grid-column: $csv-left;
-        grid-row: $csv-upper;
-    }
-
-    .csv-lower-left {
-        grid-column: $csv-left;
-        grid-row: $csv-lower;
-    }
-
-    .csv-upper-right {
-        grid-column: $csv-right;
-        grid-row: $csv-upper;
-    }
-
-    .csv-lower-right {
-        grid-column: $csv-right;
-        grid-row: $csv-lower;
-    }
+.csv-lower-right {
+    bottom: 20%;
+    right: 0;
 }
 
 .csv-text-holder {
@@ -100,4 +84,6 @@ $csv-right: 3;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    font-size: $medium-font;
 }

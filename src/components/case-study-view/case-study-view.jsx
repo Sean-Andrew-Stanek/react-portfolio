@@ -39,28 +39,26 @@ export const CaseStudyView = ({setModalData}) => {
         <>
 
             <div  className='main-container' style={{}}>
-                <div className='csv-main-container'>
-                    {
-                        //Display Case Study: upper limit 4
-                    }
-                    {
-                        <>
-                            {createButtons()}
-                        </>
-                    }
-                    <div className='csv-nav-title'>
-                        <div className= 'text-box-border' />
-                        <div className='text-box-content'>
-                            Case Studies
-                        </div>
-                        {/* <img className='text-box-charm cv-charm' src={`/${info[0]}-Icon-300-300.png`}/> */}
+                {
+                    //Display Case Study: upper limit 4
+                }
+                {
+                    <>
+                        {createButtons()}
+                    </>
+                }
+                <div className='csv-nav-title'>
+                    <div className= 'text-box-border' />
+                    <div className='text-box-content'>
+                        Case Studies
                     </div>
-                    {
-                        //Avatar
-                    }
-                    <div className='csv-avatar'>
-                        <img className='csv-avatar-image' src = {images.avatar}/>
-                    </div>
+                    {/* <img className='text-box-charm cv-charm' src={`/${info[0]}-Icon-300-300.png`}/> */}
+                </div>
+                {
+                    //Avatar
+                }
+                <div className='csv-avatar'>
+                    <img className='csv-avatar-image' src = {images.avatar}/>
                 </div>
             </div>
         </>
