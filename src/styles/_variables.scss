@@ -14,11 +14,11 @@ $navbar-top-buffer: calc($profile-image-size * 1.1);
 $navbar-bottom-buffer: calc($skillbar-icon-size * 2.5 + 10px);
 
 //Font Sizes
-$extra-large-font: clamp(1rem, min(4.5vw, 4.5vh), 7rem);
+$extra-large-font: clamp(1rem, min(4.25vw, 4.25vh), 6rem);
 $large-font: clamp(1rem, min(3.5vw, 3.5vh), 6rem);
-$medium-font: clamp(.8rem, min(2.75vw, 2.75vh), 5rem);
-$small-font: clamp(.09rem, min(2.5vw, 2.5vh), 4rem);
-$extra-small-font: clamp(.5rem, min(2.5vw, 2.5vh), 3rem);
+$medium-font: clamp(.8rem, min(2.7vw, 2.7vh), 4rem);
+$small-font: clamp(.09rem, min(2.5vw, 2.5vh), 3rem);
+$extra-small-font: clamp(.5rem, min(2.5vw, 2.5vh), 1rem);
 
 //For left reference
 $avatar-container-width:  clamp(50px, 10vw, 100px);
