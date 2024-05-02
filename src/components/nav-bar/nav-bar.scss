@@ -154,7 +154,13 @@ $name-plate-height: calc($profile-image-size/5);
     transform: translate(-50%, 0);
     justify-content: center;
     width: 100vw;
-    overflow: hidden;
+
+    ::before {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
 }
 
 /*
