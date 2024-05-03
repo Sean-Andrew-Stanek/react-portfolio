@@ -67,7 +67,7 @@ export const projects = [
     },
     //Movie API, Client using React
     {
-        'name': 'Movie Database, API and Client - React',
+        'name': 'Movie Database - React',
         'image': 'Project-ReactMovie-512-512.png',
         'skills': {
             'frontend': ['Node.js', 'JWT', 'React', 'React Bootstrap', 'JavaScript', 'HTML', 'JSX', 'SCSS'],
@@ -85,7 +85,7 @@ export const projects = [
     },
     //Movie API, Client using Angular
     {
-        'name': 'Movie Database, API and Client - Angular',
+        'name': 'Movie Database - Angular',
         'image': 'Project-AngularMovie-512-256.png',
         'skills': {
             'frontend': ['Angular', 'Angular Material', 'TypeScript', 'RxJS', 'JWT', 'JavaScript'],
