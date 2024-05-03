@@ -46,7 +46,7 @@ $name-plate-height: calc($profile-image-size/5);
 }
 
 /*
-*   Buff Bar
+*   Top Buff Bar
 */
 
 .nb-buffbar {
@@ -64,8 +64,6 @@ $name-plate-height: calc($profile-image-size/5);
     border-radius: 5px;
     z-index: 2;
 }
-
-
 
 /*
 *   Profile Image
@@ -101,6 +99,7 @@ $name-plate-height: calc($profile-image-size/5);
 
 /*
 *   Name Plate
+*   TODO: FONT
 */
 
 .nb-name-plate-color-overlay {
@@ -120,7 +119,7 @@ $name-plate-height: calc($profile-image-size/5);
 }
 
 /*
-*   Skill Bar Icons
+*   Top and Bottom Icons
 */
 
 .nb-skillbar-icon {
@@ -144,23 +143,21 @@ $name-plate-height: calc($profile-image-size/5);
 
 /*
 *   Bottom Skill Bar
-*/
+*/  
 
 .nb-bottom-skillbar {
+    //Location and size
     position: absolute;
     display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
     bottom: 10px;
+    height: calc($skillbar-icon-size * 2.5 + 10vh);
     left: 50%;
     transform: translate(-50%, 0);
     justify-content: center;
     width: 100vw;
-
-    ::before {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-    }
-    
+    overflow: hidden;
 }
 
 /*
@@ -168,13 +165,18 @@ $name-plate-height: calc($profile-image-size/5);
 */
 
 .nb-skillbar-border {
+
     margin-left: -1px;
+
     width:calc($skillbar-icon-size * 1.5);
     height:calc($skillbar-icon-size * 2.5);
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    ::before {
+        overflow-x: hidden;
+    }
 }
 
 .nb-skillbar-border > img{
