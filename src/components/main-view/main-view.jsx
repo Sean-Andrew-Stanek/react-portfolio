@@ -7,6 +7,15 @@ import TypeWriter from '../../utils/typewriter';
 
 export const MainView = ({iterateColor}) => {
 
+    /*****************/
+    // Images
+    /*****************/
+    let images = {
+        'questBorder': '/Drake-Quest-Border-1024-1024.png',
+        'resumeButton': '/Wide-Button-400-70.png',
+    };
+
+
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
         downloadLink.href = 'https://d28tw3yejqaj5m.cloudfront.net/Sean-Andrew-Stanek-Resume.pdf';
@@ -27,7 +36,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/Drake-Quest-Border-1024-1024.png'/>
+                <img className='quest-background' src={images.questBorder}/>
                 {
                 // Text Intro
                 }
@@ -45,8 +54,8 @@ export const MainView = ({iterateColor}) => {
                 }   
                 <div className='quest-text-end mv-quest-end'>
                     {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
-                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} style={{backgroundImage: 'url(/Wide-Button-400-70.png)'}} onClick={handleResumeDownload}>
-                        <img src='/Wide-Button-400-70.png' />
+                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} onClick={handleResumeDownload}>
+                        <img src= {images.resumeButton} />
                         <span>
                             Resume
                         </span>
