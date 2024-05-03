@@ -13,6 +13,7 @@ export const MainView = ({iterateColor}) => {
     let images = {
         'questBorder': '/Drake-Quest-Border-1024-1024.png',
         'resumeButton': '/Wide-Button-400-70.png',
+        'avatar': '/Avatar-150-450.png'
     };
 
 
@@ -69,7 +70,7 @@ export const MainView = ({iterateColor}) => {
             //Avatar
             }
             <div className='avatar-container' style={{left: '10px', bottom: '10px'}}>
-                <img className='avatar-image' src = '/Avatar-150-450.png' onClick={iterateColor}/>
+                <img className='avatar-image' src = {images.avatar} onClick={iterateColor}/>
             </div>
         </div>
     );

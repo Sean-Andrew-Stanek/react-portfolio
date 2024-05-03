@@ -11,6 +11,7 @@ import './case-study-modal.scss';
 import '../../styles/styles.scss';
 import PropTypes from 'prop-types';
 import { caseStudies } from '../../utils/case-studies';
+import { images } from '../../utils/images';
 
 
 export const CaseStudyModal = ({modalData}) => {
@@ -45,11 +46,6 @@ export const CaseStudyModal = ({modalData}) => {
         }
     });
 
-
-    let images = {
-        'navArrow': 'Nav-Arrow-512-512.svg',
-        'modalBackground': 'Spear-Border-1024-1024.png'
-    };
 
     let currentPage = caseStudy.pages[pageIndex];
 

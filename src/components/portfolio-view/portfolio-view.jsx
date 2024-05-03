@@ -11,6 +11,16 @@ export const PortfolioView = ({setModalData}) => {
     const [isTop, setIsTop] = useState(true);
     const [isBottom, setIsBottom] = useState(true);
 
+    /*****************/
+    // Images
+    /*****************/
+    let images = {
+        'textBoxCharm': '/Drake-Corner-256-256.png',
+        'navArrow': '/Nav-Arrow-1024-1024.png',
+        'questBackground': '/Drake-Quest-Border-1024-1024.png',
+        'avatar': '/Avatar-150-450.png',
+    };
+
     /*
     *   Controls nav helper opacity
     */
@@ -75,9 +85,9 @@ export const PortfolioView = ({setModalData}) => {
                             {portfolioCapstones()}
                         </div>
                     </div>
-                    <img className='text-box-charm' src='/Drake-Corner-256-256.png'/>
-                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src='/Nav-Arrow-1024-1024.png'/>
-                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src='/Nav-Arrow-1024-1024.png'/>
+                    <img className='text-box-charm' src={images.textBoxCharm}/>
+                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src={images.navArrow}/>
+                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src={images.navArrow}/>
                 </div>
             </div>
             {
@@ -87,7 +97,7 @@ export const PortfolioView = ({setModalData}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/Drake-Quest-Border-1024-1024.png'/>
+                <img className='quest-background' src={images.questBackground}/>
                 {                
                 // Text Intro
                 }
@@ -111,7 +121,7 @@ export const PortfolioView = ({setModalData}) => {
                 //Avatar
             }
             <div className='avatar-container'  style={{left: '0px', bottom: '0px'}}>
-                <img className='avatar-image' src = '/Avatar-150-450.png' onClick={()=>setModalData({'type':'case study', 'data':{'name':'Personal Portfolio - React'}})}/>
+                <img className='avatar-image' src = {images.avatar} onClick={()=>setModalData({'type':'case study', 'data':{'name':'Personal Portfolio - React'}})}/>
             </div>
         </div>
     );

@@ -18,6 +18,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
     /*****************/
     const images = {
         'skillButton': 'Skill-Button-175-50.png',
+        'linkButton': 'Link-Button-379-54.png',
     };
 
     /*****************/
@@ -85,7 +86,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
         return (
             <div className='portfolio-link' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
-                <img src='Link-Button-379-54.png'/>
+                <img src={images.linkButton}/>
                 <span>
                     {text}
                 </span>

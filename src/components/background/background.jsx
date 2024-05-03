@@ -3,12 +3,13 @@
 import {React, useEffect, useState, useMemo} from 'react';
 import './background.scss';
 import PropTypes from 'prop-types';
+import images from '../../utils/images';
 
 export const Background = ({backgroundIndex}) => {
 
 
     //Images 
-    const backgrounds = useMemo(() => ['./background-image-v2.png', './Signpost-Background-450-300.png'], []);
+    const backgrounds = useMemo(() => images.backgrounds, []);
     
     const bgPositions = [ 'center', 'top left' ];
 

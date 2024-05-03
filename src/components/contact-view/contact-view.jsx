@@ -5,18 +5,9 @@ import { contactRoutes } from '../../utils/strings';
 import { Link } from 'react-router-dom';
 import TypeWriter from '../../utils/typewriter';
 import { contactViewStrings as strings} from '../../utils/strings';
-
+import { images } from '../../utils/images';
 
 export const ContactView = () => {
-    
-    /*****************/
-    // Images
-    /*****************/
-    const images = {
-        'iconSuffix': '-Icon-300-300.png',
-        'questBackground': '/Drake-Quest-Border-1024-1024.png',
-        'avatar': '/Avatar-150-450.png',
-    };
 
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
@@ -27,7 +18,7 @@ export const ContactView = () => {
                 <div className='text-box-content cv-content'>
                     Contact me via {info[0]}
                 </div>
-                <img className='text-box-charm cv-charm' src={`/${info[0]}${images.iconSuffix}`}/>
+                <img className='text-box-charm cv-charm' src={`/${info[0]}${images.contactIconSuffix}`}/>
             </Link>
         );
     };

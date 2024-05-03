@@ -3,17 +3,9 @@ import '../../styles/styles.scss';
 import './case-study-view.scss';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
+import { images } from '../../utils/images';
 
 export const CaseStudyView = ({setModalData}) => {
-
-    /*****************/
-    // Images
-    /*****************/
-    let images = {
-        'buttonBackground': 'Spear-Border-1024-1024.png',
-        'avatar': '/Avatar-150-450.png',
-        'avatarAbove': '/Exclaim-200-350.png',
-    };
 
     //Filter projects with case studies.  
     //While it can handle more than four, it will only display four
