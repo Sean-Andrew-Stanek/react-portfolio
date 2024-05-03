@@ -118,6 +118,7 @@
 
 
 .portfolio-skill, .portfolio-link {
+    position: relative;
     margin-left: 10px;
     background-size: 100% 100%;
     background-position: center;
@@ -138,12 +139,8 @@
         transform: scale(1.05);
         opacity: 1;
     }
-}
 
-.portfolio-skill {
-    position: relative;
-    padding: 1% 3% .5% 3%;
-
+    
     >img {
         position:absolute;
         inset: 0;
@@ -152,6 +149,10 @@
         object-fit: fill;
         z-index: -1;
     }
+}
+
+.portfolio-skill {
+    padding: 1% 3% .5% 3%;
 }
 
 .portfolio-link {

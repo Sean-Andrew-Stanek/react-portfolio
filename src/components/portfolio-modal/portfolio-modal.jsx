@@ -13,11 +13,19 @@ import './portfolio-modal.scss';
 
 export const PortfolioModal = ({modalData, setModalData}) => {
 
-    const horizontalScrollRef = useRef(null);
+    /*****************/
+    // Images
+    /*****************/
+    const images = {
+        'skillButton': 'Skill-Button-175-50.png',
+    };
 
-    /*
-    *  Horizontal content scroll for skills
-    */
+    /*****************/
+    // Horizontal Scrolling
+    /*****************/
+
+    const horizontalScrollRef = useRef(null);
+    
     useEffect(() => {
         const scrollContainer = horizontalScrollRef.current;
 
@@ -40,14 +48,14 @@ export const PortfolioModal = ({modalData, setModalData}) => {
         };
     }, []);
 
-    /*
-    *  Target project
-    */
+    /*****************/
+    // Modal Project Info
+    /*****************/
     const project = projects.find(obj => obj.name === modalData.data.name);
 
-    /*
-    *  Each skill can open a skill modal
-    */
+    /*****************/
+    // Links to Skill Modal
+    /*****************/
     const skillButtons = (skills) => {
 
         const skillSet = new Set();
@@ -58,7 +66,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
                 <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
-                    <img src = 'Skill-Button-175-50.png' />
+                    <img src = {images.skillButton} />
                     <span>
                         {skill}
                     </span>
@@ -70,19 +78,24 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
     };
 
-    /*
-    *  Creates a clickable link to a repo / live
-    */
+    /*****************/
+    // Repos / Live Anchors
+    /*****************/
     const linkButton = (text, target, index) => {
 
         return (
-            <div className='portfolio-link' style={{backgroundImage: 'url(/Link-Button-379-54.png)'}} key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+            <div className='portfolio-link' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
+                <img src='Link-Button-379-54.png'/>
                 <span>
                     {text}
                 </span>
             </div>
         );
     };
+
+    /*****************/
+    // Return Component
+    /*****************/
 
     return (
         
