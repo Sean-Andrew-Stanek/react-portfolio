@@ -57,7 +57,8 @@ export const PortfolioModal = ({modalData, setModalData}) => {
 
         const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
             return (
-                <div className='portfolio-skill' style={{backgroundImage: 'url(/Skill-Button-175-50.png)'}} key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
+                <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
+                    <img src = 'Skill-Button-175-50.png' />
                     <span>
                         {skill}
                     </span>

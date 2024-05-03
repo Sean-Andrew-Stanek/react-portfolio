@@ -79,7 +79,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         );
     };
     
-    let buffBar = () => {
+    let topNavBar = () => {
         return (
             <div className='nb-buffbar'>
                 {
@@ -118,12 +118,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         );
     };
 
-
-
-    
     let bottomNavBar = () => {
         return (
-            
             <div className='nb-bottom-skillbar'>
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {
@@ -134,12 +130,12 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                         return (
                             <div className='nb-skillbar-border'  key={index}>
                                 <img src={'Nav-Bar-Icon-Border-150-200.png'}/>
-                                <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}>
+                                <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}style={{overflow:'hidden'}}>
                                     <img className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag} role='link' src={`${info[0]}-Icon-300-300.png`}/>
                                 </Link>
                                 <div className='nb-tooltip-up nb-tooltip'>
                                     <div>
-                                        {info[0].replace('-', '')}
+                                        {info[0].replace('-', '')}+-9
                                     </div>
                                     <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
                                         Contact me on {info[0]}!
@@ -161,7 +157,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         <div className='navbar-container'>
             {bottomNavBar()}
             {namePlate()}
-            {buffBar()}
+            {topNavBar()}
             {healthBar()}
             {profileImage()}
         </div>
