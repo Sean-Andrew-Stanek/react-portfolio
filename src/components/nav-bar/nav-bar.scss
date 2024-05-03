@@ -165,9 +165,9 @@ $name-plate-height: calc($profile-image-size/5);
 */
 
 .nb-skillbar-border {
-    position: relative;
-    flex-shrink: 0;
-    margin-right: -1px;
+
+    margin-left: -1px;
+
     width:calc($skillbar-icon-size * 1.5);
     height:calc($skillbar-icon-size * 2.5);
     display: flex;

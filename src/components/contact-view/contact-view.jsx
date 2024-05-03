@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
-import './contact-view.scss';
 import '../../styles/styles.scss';
+import './contact-view.scss';
 import { contactRoutes } from '../../utils/strings';
 import { Link } from 'react-router-dom';
 import TypeWriter from '../../utils/typewriter';
