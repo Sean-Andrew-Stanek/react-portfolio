@@ -9,7 +9,7 @@ export const Background = ({backgroundIndex}) => {
 
 
     //Images 
-    const backgrounds = useMemo(() => images.backgrounds, []);
+    const backgrounds = useMemo(() => [images.backgrounds[0], images.backgrounds[1]], []);
     
     const bgPositions = [ 'center', 'top left' ];
 

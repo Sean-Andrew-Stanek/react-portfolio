@@ -1,4 +1,5 @@
 export const images = {
+
     'backgrounds': ['background-image-v2.png', 'Signpost-Background-450-300.png'],
     'navArrow': 'Nav-Arrow-512-512.svg',
     'modalBackground': 'Spear-Border-1024-1024.png',
@@ -10,3 +11,5 @@ export const images = {
     'resumeButton': '/Wide-Button-400-70.png',
     
 };
+
+export default images;

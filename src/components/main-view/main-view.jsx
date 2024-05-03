@@ -4,22 +4,14 @@ import './main-view.scss';
 import { mainViewStrings as strings} from '../../utils/strings';
 import PropTypes from 'prop-types';
 import TypeWriter from '../../utils/typewriter';
+import { images } from '../../utils/images';
 
 export const MainView = ({iterateColor}) => {
-
-    /*****************/
-    // Images
-    /*****************/
-    let images = {
-        'questBorder': '/Drake-Quest-Border-1024-1024.png',
-        'resumeButton': '/Wide-Button-400-70.png',
-        'avatar': '/Avatar-150-450.png'
-    };
 
 
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
-        downloadLink.href = 'https://d28tw3yejqaj5m.cloudfront.net/Sean-Andrew-Stanek-Resume.pdf';
+        downloadLink.href = './Sean-Andrew-Stanek-Resume.pdf';
         downloadLink.target = '_blank';
         document.body.appendChild(downloadLink);
         downloadLink.click();
@@ -37,7 +29,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src={images.questBorder}/>
+                <img className='quest-background' src={images.questBackground}/>
                 {
                 // Text Intro
                 }
