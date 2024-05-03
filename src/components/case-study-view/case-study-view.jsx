@@ -6,7 +6,9 @@ import { projects } from '../../utils/porfolio-projects';
 
 export const CaseStudyView = ({setModalData}) => {
 
-    //Image References
+    /*****************/
+    // Images
+    /*****************/
     let images = {
         'buttonBackground': 'Spear-Border-1024-1024.png',
         'avatar': '/Avatar-150-450.png',

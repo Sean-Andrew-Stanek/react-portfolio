@@ -8,6 +8,15 @@ import { contactViewStrings as strings} from '../../utils/strings';
 
 
 export const ContactView = () => {
+    
+    /*****************/
+    // Images
+    /*****************/
+    const images = {
+        'iconSuffix': '-Icon-300-300.png',
+        'questBackground': '/Drake-Quest-Border-1024-1024.png',
+        'avatar': '/Avatar-150-450.png',
+    };
 
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
@@ -18,7 +27,7 @@ export const ContactView = () => {
                 <div className='text-box-content cv-content'>
                     Contact me via {info[0]}
                 </div>
-                <img className='text-box-charm cv-charm' src={`/${info[0]}-Icon-300-300.png`}/>
+                <img className='text-box-charm cv-charm' src={`/${info[0]}${images.iconSuffix}`}/>
             </Link>
         );
     };
@@ -39,7 +48,7 @@ export const ContactView = () => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/Drake-Quest-Border-1024-1024.png'/>
+                <img className='quest-background' src={images.questBackground}/>
                 {               
                     // Text Intro
                 }
@@ -64,7 +73,7 @@ export const ContactView = () => {
                 //Avatar
             }
             <div className='avatar-container'  style={{right: '10px', bottom: '10px'}}>
-                <img className='avatar-image' src = '/Avatar-150-450.png'/>
+                <img className='avatar-image' src = {images.avatar}/>
             </div>
 
         </div>
