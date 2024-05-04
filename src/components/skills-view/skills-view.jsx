@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
 import { skillViewStrings as strings} from '../../utils/strings';
 import TypeWriter from '../../utils/typewriter';
+import { images } from '../../utils/images';
 
 export const SkillsView = ({setModalData}) => {
 
@@ -118,9 +119,9 @@ export const SkillsView = ({setModalData}) => {
                     <div className='text-box-content skill-content scrollable' ref={scrollListener} onScroll={handleScroll}>
                         {skillTree()}
                     </div>
-                    <img className='text-box-charm' src='/Drake-Corner-256-256.png'/>                    
-                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src='/Nav-Arrow-1024-1024.png'/>
-                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src='/Nav-Arrow-1024-1024.png'/>
+                    <img className='text-box-charm' src={images.textBoxCharm}/>                    
+                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src={images.navArrow}/>
+                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src={images.navArrow}/>
                 </div>
             </div>
             {
@@ -130,7 +131,7 @@ export const SkillsView = ({setModalData}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src='/Drake-Quest-Border-1024-1024.png'/>
+                <img className='quest-background' src={images.questBackground}/>
                 {
                 // Text Intro
                 }
@@ -160,7 +161,7 @@ export const SkillsView = ({setModalData}) => {
                 //Avatar
             }
             <div className='avatar-container'  style={{right: '0px', bottom: '0px'}}>
-                <img className='avatar-image' src = '/Avatar-150-450.png'/>
+                <img className='avatar-image' src = {images.avatar}/>
             </div>
         </div>
     );

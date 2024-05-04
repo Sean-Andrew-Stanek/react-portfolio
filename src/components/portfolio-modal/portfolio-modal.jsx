@@ -10,16 +10,10 @@ import { React, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { projects } from '../../utils/porfolio-projects';
 import './portfolio-modal.scss';
+import { images } from '../../utils/images';
 
 export const PortfolioModal = ({modalData, setModalData}) => {
 
-    /*****************/
-    // Images
-    /*****************/
-    const images = {
-        'skillButton': 'Skill-Button-175-50.png',
-        'linkButton': 'Link-Button-379-54.png',
-    };
 
     /*****************/
     // Horizontal Scrolling

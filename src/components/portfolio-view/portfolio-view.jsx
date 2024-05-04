@@ -4,6 +4,7 @@ import { projects } from '../../utils/porfolio-projects';
 import PropTypes from 'prop-types';
 import { portfolioViewStrings as strings} from '../../utils/strings';
 import TypeWriter from '../../utils/typewriter';
+import { images } from '../../utils/images';
 
 export const PortfolioView = ({setModalData}) => {
 
@@ -11,15 +12,6 @@ export const PortfolioView = ({setModalData}) => {
     const [isTop, setIsTop] = useState(true);
     const [isBottom, setIsBottom] = useState(true);
 
-    /*****************/
-    // Images
-    /*****************/
-    let images = {
-        'textBoxCharm': '/Drake-Corner-256-256.png',
-        'navArrow': '/Nav-Arrow-1024-1024.png',
-        'questBackground': '/Drake-Quest-Border-1024-1024.png',
-        'avatar': '/Avatar-150-450.png',
-    };
 
     /*
     *   Controls nav helper opacity
