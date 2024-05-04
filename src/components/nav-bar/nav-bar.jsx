@@ -3,6 +3,7 @@ import './nav-bar.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { contactRoutes } from '../../utils/strings';
+import { images } from '../../utils/images';
 
 export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
@@ -58,13 +59,13 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     let routes = ['home', 'contact', 'skills', 'portfolio','case-study'];
     let routeDetails = ['Return to the intro screen.', 'Contact me for information!', 'My skill set.', 'My projects and achievements.', 'Case studies of my projects'];
 
+
     let namePlate = () => {
         return (
             <>
-                
-                <img src='./Name-Plate-Background-250-25.png' className='nb-name-plate'/>
+                <img src={images.namePlateBackground} className='nb-name-plate'/>
                 <div className='nb-name-plate nb-name-plate-color-overlay' style={{backgroundColor: colors[colorIndex%colors.length], opacity: .4}}/>
-                <img src='./Name-Plate-250-25.png' className='nb-name-plate' />
+                <img src={images.namePlate} className='nb-name-plate' />
             </>
         );
     };
@@ -72,9 +73,9 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     let healthBar = () => {
         return (
             <div ref={healthBarContainerRef} className='nb-healthbar-container'>
-                <img src='./Red-Health-600-50.png' className='nb-health-bar'/>
-                <img src='./Green-Health-600-50.png' className='nb-health-bar' style = {{left: `${moveHealthBarLeft()}px`}}/>
-                <img src='./Health-Outline-600-50.png' className='nb-health-bar'/>
+                <img src= {images.redHealthBar} className='nb-health-bar'/>
+                <img src= {images.greenHealthBar} className='nb-health-bar' style = {{left: `${moveHealthBarLeft()}px`}}/>
+                <img src= {images.healthBarOutline} className='nb-health-bar'/>
             </div>
         );
     };
@@ -88,7 +89,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                         return (
                             <Fragment key={index}>
                                 <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => {setHealthBarIndex(index); updateBackgroundLocation(index);}}  role='link'>
-                                    <img alt={`Button to ${capPath}`} className='nb-buffbar-image' onDragStart={cancelDefaultDrag} role='link' src={`${capPath}-Icon-300-300.png`} />
+                                    <img alt={`Button to ${capPath}`} className='nb-buffbar-image' onDragStart={cancelDefaultDrag} role='link' src={`${capPath}${images.contactIconSuffix}`} />
                                     <div className='nb-tooltip-down  nb-tooltip'>
                                         <div>
                                             {capPath}
@@ -110,10 +111,10 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     let profileImage = () => {
         return(
             <>
-                <img src='./Perlin-Background-300-300.png' className='nb-profile-image'/>
+                <img src= {images.portraitTextureBackground} className='nb-profile-image'/>
                 <div className='nb-profile-image nb-profile-background-color' style={{borderRadius: '50%', backgroundColor: colors[colorIndex%colors.length], opacity: .4}} />
-                <img src='./Portrait-300-300.png' className='nb-profile-image' />
-                <img src='./Gold-Ring-300-300.png' className='nb-profile-image nb-profile-border' />
+                <img src= {images.portrait} className='nb-profile-image' />
+                <img src= {images.portraitBorder} className='nb-profile-image nb-profile-border' />
             </>
         );
     };

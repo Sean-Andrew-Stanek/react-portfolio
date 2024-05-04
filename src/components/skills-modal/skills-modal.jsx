@@ -15,16 +15,9 @@ import { SkillProjectSummary } from './skill-project-summary/skill-project-summa
 import './skills-modal.scss';
 import { projects } from '../../utils/porfolio-projects';
 import '../../styles/styles.scss';
+import { images } from '../../utils/images';
 
 export const SkillsModal = ({modalData, setModalData}) => {
-    
-    /*****************/
-    // Images
-    /*****************/
-    const images = {
-        'navArrow': '/Nav-Arrow-1024-1024.png'
-    };
-
     /*
     *   Filters projects with requested skill
     */

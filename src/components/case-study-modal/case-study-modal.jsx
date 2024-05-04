@@ -91,7 +91,7 @@ export const CaseStudyModal = ({modalData}) => {
                 Image Array frame
             */}
             <div className={`csm-img-container ${expandedImage ? 'csm-expand-info':''}`} ref={imageArrayContainerRef} onClick={() => toggleExpandImage()} style={{backgroundColor:'black'}}>
-                <img ref={imageArrayRef} src={currentPage.images[0]} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
+                <img ref={imageArrayRef} src={`${images.caseStudyImagePath}${currentPage.images[0]}`} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
             </div>
 
         </div>
