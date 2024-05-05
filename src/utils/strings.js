@@ -1,5 +1,8 @@
 //Global Strings for easy editing
 
+//Resume Location
+export const resumeLink = './Sean-Andrew-Stanek-Resume.pdf';
+
 // Main View
 export const mainViewStrings = {
     'greeting': 'Stay a while and listen!',

@@ -5,13 +5,14 @@ import { mainViewStrings as strings} from '../../utils/strings';
 import PropTypes from 'prop-types';
 import TypeWriter from '../../utils/typewriter';
 import { images } from '../../utils/images';
+import { resumeLink } from '../../utils/strings';
 
 export const MainView = ({iterateColor}) => {
 
 
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
-        downloadLink.href = './Sean-Andrew-Stanek-Resume.pdf';
+        downloadLink.href = {resumeLink};
         downloadLink.target = '_blank';
         document.body.appendChild(downloadLink);
         downloadLink.click();
