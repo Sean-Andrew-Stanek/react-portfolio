@@ -78,8 +78,8 @@ export const PortfolioView = ({setModalData}) => {
                         </div>
                     </div>
                     <img className='text-box-charm' src={images.textBoxCharm}/>
-                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} src={images.navArrow}/>
-                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} src={images.navArrow}/>
+                    <img className={`text-box-nav-up ${isTop&&'nav-fade'}`} style={{zIndex:'-1'}} src={images.navArrow}/>
+                    <img className={`text-box-nav-down ${isBottom&&'nav-fade'}`} style={{zIndex:'-1'}} src={images.navArrow}/>
                 </div>
             </div>
             {

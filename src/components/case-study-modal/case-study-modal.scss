@@ -79,7 +79,7 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     top: 40%;
     height: calc($modal-height * .2);
     width: calc(calc(100vw - calc($margin-sides * 2)) * .2);
-    z-index: 2;
+    z-index: -1;
     transition: transform .5s ease-out;
 
     pointer-events: visiblePainted;
