@@ -89,7 +89,7 @@ export const PortfolioView = ({setModalData}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src={images.questBackground}/>
+                <img alt='' className='quest-background' src={images.questBackground}/>
                 {                
                 // Text Intro
                 }

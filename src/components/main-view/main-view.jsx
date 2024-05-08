@@ -30,7 +30,7 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img className='quest-background' src={images.questBackground}/>
+                <img alt='' className='quest-background' src={images.questBackground}/>
                 {
                 // Text Intro
                 }
