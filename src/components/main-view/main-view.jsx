@@ -12,7 +12,7 @@ export const MainView = ({iterateColor}) => {
 
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
-        downloadLink.href = {resumeLink};
+        downloadLink.href = resumeLink;
         downloadLink.target = '_blank';
         document.body.appendChild(downloadLink);
         downloadLink.click();
@@ -48,8 +48,9 @@ export const MainView = ({iterateColor}) => {
                 }   
                 <div className='quest-text-end mv-quest-end'>
                     {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
-                    <div className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} onClick={handleResumeDownload}>
-                        <img src= {images.resumeButton} />
+                    <div aria-disabled={typeWriterIndex<3} aria-label='Resume download' className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} 
+                        onClick={handleResumeDownload} onKeyDown={(event) => (event.key === 'Enter' || event.key === 'Space') && handleResumeDownload()} role='button'tabIndex='0'>
+                        <img alt='' src= {images.resumeButton} />
                         <span>
                             Resume
                         </span>
