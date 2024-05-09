@@ -10,6 +10,7 @@
 import {React, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import './skill-project-summary.scss';
+import { images } from '../../../utils/images';
 
 export const SkillProjectSummary = ({project, setModalData}) => {
 
@@ -90,7 +91,7 @@ export const SkillProjectSummary = ({project, setModalData}) => {
     return (
         <div className='sps-container' onClick={() => setModalData({'type':'project', 'data':{'name':project.name}})}>
             <div className='sps-image-container'>
-                <img src={`${project.image}`} className='sps-image' />
+                <img src={`${images.projectImagePath}${project.image}`} className='sps-image' />
             </div>
             <div className='sps-project-name' >
                 {project.name}

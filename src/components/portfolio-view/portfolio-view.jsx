@@ -50,7 +50,7 @@ export const PortfolioView = ({setModalData}) => {
                                     {project.name}
                                 </div>
                                 <div className='portfolio-project-image-container'>
-                                    <img src={`${project.image}`} />
+                                    <img src={`${images.projectImagePath}${project.image}`} />
                                 </div>
                             </div>
                         );

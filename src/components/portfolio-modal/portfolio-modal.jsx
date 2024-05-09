@@ -96,7 +96,7 @@ export const PortfolioModal = ({modalData, setModalData}) => {
         
         <div className='portfolio-modal-container'>
             <div className='portfolio-modal-image-container'>
-                <img src={project.image}/>
+                <img src={`${images.projectImagePath}${project.image}`}/>
             </div>
             <div className = 'portfolio-modal-title'>
                 {project.name}    
