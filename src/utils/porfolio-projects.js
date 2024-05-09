@@ -34,7 +34,7 @@ export const projects = [
     //Pokedex Project
     {
         'name': 'Pokedex Viewer',
-        'image': 'pokemonsearch.PNG',
+        'image': 'Pokemon Search.png',
         'skills': {
             'frontend': ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
             'backend': ['APIs'],
@@ -51,7 +51,7 @@ export const projects = [
     //LetsMeet
     {
         'name': 'LetsMeet',
-        'image': 'Project-LetsMeet-512-512.png',
+        'image': 'LetsMeet.png',
         'skills': {
             'frontend': ['React', 'oAuth', 'JavaScript'],
             'backend': ['Node.js', 'Serverless', 'AWS Lambda', 'PWA',],
@@ -68,7 +68,7 @@ export const projects = [
     //Movie API, Client using React
     {
         'name': 'Movie Database - React',
-        'image': 'Project-ReactMovie-512-512.png',
+        'image': 'MERN Client.png',
         'skills': {
             'frontend': ['Node.js', 'JWT', 'React', 'React Bootstrap', 'JavaScript', 'HTML', 'JSX', 'SCSS'],
             'backend': ['Express.js', 'MongoDB', 'Mongoose', 'Passport.js', 'JWT', 'bcrypt', ],
@@ -86,7 +86,7 @@ export const projects = [
     //Movie API, Client using Angular
     {
         'name': 'Movie Database - Angular',
-        'image': 'Project-AngularMovie-512-256.png',
+        'image': 'MEAN Client.png',
         'skills': {
             'frontend': ['Angular', 'Angular Material', 'TypeScript', 'RxJS', 'JWT', 'JavaScript'],
             'backend': ['Node.js', 'Express.js', 'MongoDB', 'Mongoose','Passport.js',  'JWT', 'bcrypt'],
@@ -98,13 +98,13 @@ export const projects = [
             'deployed': 'https://sean-andrew-stanek.github.io/movie_api_angular_client',
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
-        'capstone': 'false',
+        'capstone': 'true',
         'caseStudy': 'false',
     },
     //Chatter
     {
         'name': 'Chatter - Chat App',
-        'image': 'Project-Chatter-512-256.png',
+        'image': 'Chatter.png',
         'skills': {
             'frontend': ['React Native', 'Node.js', 'JavaScript'],
             'backend': ['Firebase', 'Node.js'],
@@ -120,7 +120,7 @@ export const projects = [
     //React Portfolio
     {
         'name': 'Personal Portfolio - React',
-        'image': 'Project-ReactPortfolio-512-512.png',
+        'image': 'React Portfolio.png',
         'skills': {
             'frontend': ['SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
             'backend': ['Node.js'],
