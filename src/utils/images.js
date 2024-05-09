@@ -8,6 +8,7 @@ export const images = {
     //PATHS
     'projectImagePath': '/project-images/',
     'caseStudyImagePath': '/case-study-images/',
+    'iconImagePath': '/nav-icon/',
 
     //STATIC
     'avatarAbove': '/Exclaim-200-350.png',
@@ -26,10 +27,6 @@ export const images = {
     'resumeButton': '/Wide-Button-400-70.png',
     'skillButton': '/Skill-Button-175-50.png',
     'textBoxCharm': '/Drake-Corner-256-256.png',
-
-    //SUFFIXES
-    'contactIconSuffix': '-Icon-300-300.png',
-
 
 
 };
