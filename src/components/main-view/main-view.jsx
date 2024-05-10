@@ -30,7 +30,10 @@ export const MainView = ({iterateColor}) => {
                 {
                 // Background Image
                 }
-                <img alt='' className='quest-background' src={images.questBackground}/>
+                <img alt='' className='quest-border quest-border-left' src = {images.questSide}/>
+                <img alt='' className='quest-border quest-border-right' src = {images.questSide}/>
+                <img alt='' className='quest-border quest-border-top' src = {images.questTop}/>
+                <img alt='' className='quest-border quest-border-bottom' src = {images.questTop}/>
                 {
                 // Text Intro
                 }

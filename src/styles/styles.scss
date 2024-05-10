@@ -168,6 +168,38 @@ $quest-end-left: ratio(210px, $quest-background-width);
     right: 10%;
 }
 
+.quest-border {
+    position: absolute;
+}
+
+.quest-border-top {
+    bottom: 90%;
+    width: 100%;
+    max-height: 30px;
+    z-index: 1;
+}
+
+.quest-border-bottom {
+    top: 90%;
+    width: 100%;
+    max-height: 40px;
+    z-index: 1;
+}
+
+.quest-border-left {
+    right: 75%;
+    height: 100%;
+    z-index: 2;
+}
+
+.quest-border-right {
+    left: 75%;
+    height: 100%;
+    transform: scaleX(-1);
+    z-index: 2;
+}
+
+
 .quest-background {
     position: absolute;
     top: 0;

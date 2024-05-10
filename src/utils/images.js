@@ -23,6 +23,8 @@ export const images = {
     'portraitBorder': '/Gold-Ring-300-300.png',
     'portraitTextureBackground': '/Perlin-Background-300-300.png',
     'questBackground': '/Drake-Quest-Border-1024-1024.png',
+    'questSide': '/Quest-Side.png',
+    'questTop': 'Quest-Top.png',
     'redHealthBar': '/Red-Health-600-50.png',
     'resumeButton': '/Wide-Button-400-70.png',
     'skillButton': '/Skill-Button-175-50.png',
