@@ -22,7 +22,7 @@ export const images = {
     'navArrow': '/Nav-Arrow-512-512.svg',
     'portraitBorder': '/Gold-Ring-300-300.png',
     'portraitTextureBackground': '/Perlin-Background-300-300.png',
-    'questBackground': '/Drake-Quest-Border-1024-1024.png',
+    'questBackground': 'Quest-Background.svg',
     'questSide': '/Quest-Side.png',
     'questTop': 'Quest-Top.png',
     'redHealthBar': '/Red-Health-600-50.png',
