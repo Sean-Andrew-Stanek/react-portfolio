@@ -43,8 +43,8 @@ export const CaseStudyView = ({setModalData}) => {
                 }
                 <div className='csv-nav-title'>
                     <div className= 'text-box-border' />
-                    <div className='text-box-content'>
-                        Case Studies
+                    <div className='text-box-content csv-text-box'>
+                        Click above to view my case studies.
                     </div>
                     {/* <img className='text-box-charm cv-charm' src={`/${info[0]}-Icon-300-300.png`}/> */}
                 </div>
