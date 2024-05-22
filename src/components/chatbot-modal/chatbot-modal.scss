@@ -1,9 +1,48 @@
 
+@import '../../styles/variables';
+
 .cbm-main-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    bottom: calc($skillbar-icon-size * 2.5);
+}
+
+.cbm-modal-background {
+    background-color: rgba(0,0,0,.5);
+}
+
+.cbm-spear-left, .cbm-spear-right {
+    position: absolute;
     height: 100%;
-    background-color: black;
+    z-index: 5;
+}
+
+.cbm-spear-right{
+    right: calc($margin-sides + 5vw);
+    transform: translateX(50%);
+}
+
+.cbm-spear-left{
+    left: calc($margin-sides + 5vw);
+    transform: translateX(-50%);
+}
+
+.cbm-spear-top {
+    position: absolute;
+    width: calc(100vw - 2 * $margin-sides);
+    transform: translateY(-50%);
+    top: 5vh;
+    left: calc($margin-sides);
+    z-index: 4;
+}
+
+.cbm-chat-window-container {
+    position: absolute;
+    right: calc($margin-sides + 5vw);
+    left: calc($margin-sides + 5vw);
+    top: 5vh;
+    bottom: -5vh;
+    background-color: blue;
 }

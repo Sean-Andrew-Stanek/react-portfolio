@@ -152,7 +152,7 @@ $name-plate-height: calc($profile-image-size/5);
     align-items: flex-end;
     justify-content: flex-start;
     bottom: 10px;
-    height: calc($skillbar-icon-size * 2.5 + 10vh);
+    top: $navbar-top-buffer;
     left: 50%;
     transform: translate(-50%, 0);
     justify-content: center;
@@ -189,6 +189,7 @@ $name-plate-height: calc($profile-image-size/5);
 
 .nb-skillbar-end {
     height:calc($skillbar-icon-size * 2.5);
+    z-index: 1;
 }
 
 .nb-skillbar-mid {

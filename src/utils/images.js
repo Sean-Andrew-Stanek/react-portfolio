@@ -27,6 +27,8 @@ export const images = {
     'redHealthBar': '/Red-Health-600-50.png',
     'resumeButton': '/Wide-Button-400-70.png',
     'skillButton': '/Skill-Button-175-50.png',
+    'spearHorizontal': '/Spear-Horizontal.png',
+    'spearVertical': '/Spear-Vertical.png',
     'textBoxCharm': '/Drake-Corner-256-256.png',
 
 

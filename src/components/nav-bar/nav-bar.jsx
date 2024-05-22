@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { contactRoutes } from '../../utils/strings';
 import { images } from '../../utils/images';
+import { ChatBotModal } from '../chatbot-modal/chatbot-modal';
 
 export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
@@ -122,6 +123,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     let bottomNavBar = () => {
         return (
             <div className='nb-bottom-skillbar'>
+                <ChatBotModal/>
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {
                     //Adhere to format rules for image and outbound link
@@ -136,7 +138,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                                 </Link>
                                 <div className='nb-tooltip-up nb-tooltip'>
                                     <div>
-                                        {info[0].replace('-', '')}+-9
+                                        {info[0].replace('-', '')}
                                     </div>
                                     <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
                                         Contact me on {info[0]}!
@@ -149,6 +151,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                 <div className='nb-skillbar-mid'> 
                     <img onClick={()=> console.log('ding')}src={images.chatButton} />
                 </div>
+                
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>  
             </div>
         );
