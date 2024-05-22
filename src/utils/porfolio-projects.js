@@ -63,7 +63,7 @@ export const projects = [
             'deployed': 'https://sean-andrew-stanek.github.io/letsmeet/'
         },
         'capstone': 'true',
-        'caseStudy': 'true',
+        'caseStudy': 'false',
     },
     //Movie API, Client using React
     {
@@ -81,7 +81,7 @@ export const projects = [
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
         'capstone': 'true',
-        'caseStudy': 'true',
+        'caseStudy': 'false',
     },
     //Movie API, Client using Angular
     {
@@ -99,7 +99,7 @@ export const projects = [
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
         'capstone': 'true',
-        'caseStudy': 'true',
+        'caseStudy': 'false',
     },
     //Chatter
     {

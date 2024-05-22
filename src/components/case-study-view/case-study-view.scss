@@ -25,8 +25,15 @@
     height: 35%;
 
     font-size: $large-font;
+
+    opacity: 70%;
     
     cursor: pointer;
+
+    &:hover {
+        opacity: 100%;
+        animation: none;
+    }
 
     img {
         position: absolute;
@@ -35,7 +42,19 @@
         width: 100%;
         z-index: -1;
     }
+
+    animation: clickableHelper 3s infinite;
 }
+
+@keyframes clickableHelper {
+    0%, 60%, 80% {
+        opacity: 70%;
+    }
+    70%, 90% {
+        opacity: 90%;
+    }
+}
+
 
 .csv-text-box {
     font-family: 'IM Fell English SC', serif;
