@@ -4,12 +4,24 @@
 //                                                                       //
 ///////////////////////////////////////////////////////////////////////////
 
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import './chatbot-modal.scss';
 import { images } from '../../utils/images';
 
 
+
+
 export const ChatBotModal = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [moveSpears, setMoveSpears] = useState(false);
+
+    useEffect(() => {
+        
+        setIsLoading(false);
+        
+
+    }, []);
 
     return (
         <div className='cbm-modal-background'>
