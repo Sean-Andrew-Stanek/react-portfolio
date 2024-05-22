@@ -14,6 +14,7 @@ export const images = {
     'avatarAbove': '/Exclaim-200-350.png',
     'backgrounds': ['/background-image-v2.png', '/Signpost-Background-450-300.png'],
     'buttonBackground': '/Spear-Border-1024-1024.png',
+    'chatButton': '/Nav-Bar-Chat-Button.png',
     'greenHealthBar': '/Green-Health-600-50.png',
     'healthBarOutline': '/Health-Outline-600-50.png',
     'linkButton': '/Link-Button-379-54.png',
