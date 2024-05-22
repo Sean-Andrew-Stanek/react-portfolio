@@ -3,14 +3,19 @@
 
 .cbm-main-container {
     position: absolute;
-    top: 0;
+    top: $navbar-top-buffer;
     left: 0;
     width: 100%;
     bottom: calc($skillbar-icon-size * 2.5);
 }
 
 .cbm-modal-background {
-    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient( to bottom, rgba(0,0,0,.5), rgba(0,0,0,.4) 90%, rgba(0,0,0,0));
 }
 
 .cbm-spear-left, .cbm-spear-right {
@@ -44,5 +49,62 @@
     left: calc($margin-sides + 5vw);
     top: 5vh;
     bottom: -5vh;
-    background-color: blue;
+    background: linear-gradient( to bottom, rgba(0,0,0,.95), rgba(0,0,0,.9) 90%, rgba(0,0,0,0)); 
+}
+
+.cbm-user-bar {
+    position: absolute;
+    top: 80%;
+    left: 20px;
+    right: 20px;
+    bottom: 7vh;
+    border: white double 4px;
+    border-radius: 0 0 20px 20px;
+
+    background-color: rgba(0,200,200,.1);
+
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 5px;
+}
+
+
+.cbm-input-box{
+    border: white solid 2px;
+    height: clamp(20px, 80%, 40px);
+    width: 75%;
+    border-radius: 5px;
+    
+}
+
+.cbm-submit-button{
+    border: white solid 2px;
+    height: clamp(20px, 80%, 40px);
+    width: 25%;
+    border-radius: 5px;
+    background-color: rgba(34, 45, 54, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.8);
+
+    &:hover {
+        background-color: rgba(34, 45, 54, 1);
+        color: rgba(255,255,255,1);
+        cursor: pointer;
+    }
+}
+
+
+.cbm-chat-window {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 20%;
+    border: white double 4px;
+    border-radius: 20px 20px 0 0;
+
+    background-color: rgba(0,200,200,.1);
 }

@@ -152,7 +152,7 @@ $name-plate-height: calc($profile-image-size/5);
     align-items: flex-end;
     justify-content: flex-start;
     bottom: 10px;
-    top: $navbar-top-buffer;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
     justify-content: center;
