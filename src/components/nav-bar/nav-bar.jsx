@@ -10,6 +10,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
+    const [chatIsVisible, setChatIsVisible] = useState(false);
+
     const healthBarContainerRef = useRef(null);
     
     let colors = ['black', 'red', 'yellow', 'green', 'blue'];
@@ -123,7 +125,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     let bottomNavBar = () => {
         return (
             <div className='nb-bottom-skillbar'>
-                <ChatBotModal/>
+                {chatIsVisible&&<ChatBotModal/>}
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {
                     //Adhere to format rules for image and outbound link
@@ -149,9 +151,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                     })
                 }
                 <div className='nb-skillbar-mid'> 
-                    <img onClick={()=> console.log('ding')}src={images.chatButton} />
+                    <img onClick={()=> setChatIsVisible(!chatIsVisible)} src={images.chatButton} />
                 </div>
-                
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>  
             </div>
         );
