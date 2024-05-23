@@ -15,7 +15,13 @@
     left: 0;
     width: 100%;
     bottom: 0;
-    background: linear-gradient( to bottom, rgba(0,0,0,.5), rgba(0,0,0,.4) 90%, rgba(0,0,0,0));
+    background-color: none;
+
+    transition: background-color ease-in 1s;
+}
+
+.cbm-modal-background-unfade {
+    background-color: rgba(0,0,0,0.5);
 }
 
 .cbm-spear-left, .cbm-spear-right {

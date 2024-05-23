@@ -7,11 +7,14 @@
 import {React, useEffect, useState} from 'react';
 import './chatbot-modal.scss';
 import { images } from '../../utils/images';
+import PropTypes from 'prop-types';
 
 
 
 
-export const ChatBotModal = () => {
+export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
+
+
 
     const [moveVerticalSpears, setMoveVerticalSpears] = useState(false);
     const [moveHorizontalSpears, setMoveHorizontalSpears] = useState(false);
@@ -36,16 +39,35 @@ export const ChatBotModal = () => {
 
     }, []);
 
+    useEffect(() => {
+        if(prepRemoveChat)
+            unloadPage();
+    }, [prepRemoveChat]);
+
     const unloadPage = () => {
 
-        setMoveVerticalSpears(false);
-        setMoveHorizontalSpears(false);
         setMainViewVisible(false);
+
+        const removeChat = setTimeout(() => {
+            setMoveVerticalSpears(false);
+            setMoveHorizontalSpears(false);
+        }, 500);
+
+        
+        
+        const chatTimer = setTimeout(() => {
+            setChatIsVisible(false);
+        }, 1500);
+        
+        return () => {
+            clearTimeout(chatTimer);
+            clearTimeout(removeChat);
+        };
 
     };
 
     return (
-        <div className='cbm-modal-background'>
+        <div className={`cbm-modal-background ${mainViewVisible && 'cbm-modal-background-unfade'}`}>
             <div className = 'cbm-main-container'>
                 <img className = {`cbm-spear-left ${moveVerticalSpears && 'cbm-vertical-spear-end-position'}`} src = {images.spearVertical}/>
                 <img className = {`cbm-spear-right ${moveVerticalSpears && 'cbm-vertical-spear-end-position'}`} src = {images.spearVertical}/>
@@ -69,4 +91,9 @@ export const ChatBotModal = () => {
 
     );
 
+};
+
+ChatBotModal.propTypes = {
+    prepRemoveChat: PropTypes.bool.isRequired,
+    setChatIsVisible: PropTypes.func.isRequired,
 };
