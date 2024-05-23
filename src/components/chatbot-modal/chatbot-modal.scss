@@ -22,6 +22,9 @@
     position: absolute;
     height: 100%;
     z-index: 5;
+    top: 120%;
+
+    transition: top ease-in-out 1s;
 }
 
 .cbm-spear-right{
@@ -34,13 +37,24 @@
     transform: translateX(-50%);
 }
 
+
+.cbm-vertical-spear-end-position {
+    top: 0%;
+}
+
 .cbm-spear-top {
     position: absolute;
     width: calc(100vw - 2 * $margin-sides);
     transform: translateY(-50%);
     top: 5vh;
-    left: calc($margin-sides);
+    left: 100%;
     z-index: 4;
+
+    transition: left ease-out 1s;
+}
+
+.cbm-horizontal-spear-end-position {
+    left: calc($margin-sides);
 }
 
 .cbm-chat-window-container {
@@ -50,6 +64,13 @@
     top: 5vh;
     bottom: -5vh;
     background: linear-gradient( to bottom, rgba(0,0,0,.95), rgba(0,0,0,.9) 90%, rgba(0,0,0,0)); 
+    opacity: 0;
+
+    transition: opacity ease-in-out 1s;
+}
+
+.cbm-chat-window-container-visible {
+    opacity: 1;
 }
 
 .cbm-user-bar {
