@@ -150,7 +150,10 @@
 
 .cbm-chat-entry {
     color: rgba(255, 0, 0, 255);
+    font-family: 'IM Fell English', serif;
+
     font-size: $medium-font;
+    font-weight: 100;
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 2%;
