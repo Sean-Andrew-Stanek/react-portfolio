@@ -15,10 +15,14 @@ import PropTypes from 'prop-types';
 export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 
 
-
+    const [userInput, setUserInput] = useState('');
     const [moveVerticalSpears, setMoveVerticalSpears] = useState(false);
     const [moveHorizontalSpears, setMoveHorizontalSpears] = useState(false);
     const [mainViewVisible, setMainViewVisible] = useState(false);
+    const [chatLog, setChatLog] = useState([
+        ['warn', 'Welcome to the simulated chatroom powered by OpenAI.  Feel free to ask any questions you have about my portfolio and experience.'],
+        ['admin', 'Welcome!  There are currently two others online.']
+    ]);
 
     useEffect(() => {
         
@@ -66,6 +70,46 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 
     };
 
+    const createMessageDiv = (message, index) => {
+        if (message[0]!=='warn')
+            return (
+                <div className={`cbm-chat-entry ${chatColorSelector(message[0])}`} key={index}>
+                    <div>
+                        {`<${message[0]}>:`}
+                    </div>
+                    <div>
+                        {`${message[1]}`}
+                    </div>                 
+                </div>
+            );
+        else
+            return (
+                <div className={`cbm-chat-entry ${chatColorSelector(message[0])}`} key={index}>
+                    <div style={{gridColumn: 'span 2'}}>
+                        {`${message[1]}`}
+                    </div>                 
+                </div>
+            );
+    };
+
+    const chatColorSelector = (user) => {
+        switch(user) {
+            case 'warn':
+                return 'color-warn';
+            case 'admin':
+                return 'color-admin';
+            case 'user':
+                return 'color-user';
+        }
+    };
+
+    const handleSubmit = () => {
+        if(userInput!=='') {
+            setChatLog([...chatLog, ['user', userInput]]);
+            setUserInput('');
+        }
+    };
+
     return (
         <div className={`cbm-modal-background ${mainViewVisible && 'cbm-modal-background-unfade'}`}>
             <div className = 'cbm-main-container'>
@@ -74,13 +118,12 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
                 <img className = {`cbm-spear-top ${moveHorizontalSpears && 'cbm-horizontal-spear-end-position'}`} src = {images.spearHorizontal}/>
                 <div className = {`cbm-chat-window-container ${mainViewVisible && 'cbm-chat-window-container-visible'}`}>
                     <div className='cbm-chat-window'>
-
+                        {/* Adds the messages */}
+                        {chatLog.map((message, index) => createMessageDiv(message, index))}
                     </div>
                     <div className='cbm-user-bar'>
-                        <div className='cbm-input-box'>
-
-                        </div>
-                        <div className='cbm-submit-button'>
+                        <input type='text' value={userInput} onChange = {(e) => {setUserInput(e.target.value);}} />
+                        <div onClick={handleSubmit}>
                             Submit
                         </div>
                     </div>

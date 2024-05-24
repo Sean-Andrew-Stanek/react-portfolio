@@ -94,35 +94,40 @@
     align-items: center;
     padding: 5px 10px;
     gap: 5px;
-}
 
+    >input {
+        border: white solid 2px;
+        height: clamp(20px, 80%, 40px);
+        width: 75%;
+        border-radius: 5px;
+        background-color: rgba(255,255,255,.7);
 
-.cbm-input-box{
-    border: white solid 2px;
-    height: clamp(20px, 80%, 40px);
-    width: 75%;
-    border-radius: 5px;
+    }
+
+    //Submit Button
+    >div {
+        border: white solid 2px;
+        height: clamp(20px, 80%, 40px);
+        width: 25%;
+        border-radius: 5px;
+        background-color: rgba(34, 45, 54, .8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255,255,255,.8);
     
-}
-
-.cbm-submit-button{
-    border: white solid 2px;
-    height: clamp(20px, 80%, 40px);
-    width: 25%;
-    border-radius: 5px;
-    background-color: rgba(34, 45, 54, .8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,.8);
-
-    &:hover {
-        background-color: rgba(34, 45, 54, 1);
-        color: rgba(255,255,255,1);
-        cursor: pointer;
+        &:hover {
+            background-color: rgba(34, 45, 54, 1);
+            color: rgba(255,255,255,1);
+            cursor: pointer;
+        }
     }
 }
 
+
+/****************/
+/* Chat Log CSS */
+/****************/
 
 .cbm-chat-window {
     position: absolute;
@@ -134,4 +139,37 @@
     border-radius: 20px 20px 0 0;
 
     background-color: rgba(0,200,200,.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    padding: 2%;
+    gap: 2%;
+}
+
+.cbm-chat-entry {
+    color: rgba(255, 0, 0, 255);
+    font-size: $medium-font;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 2%;
+
+
+    > :nth-child(2) {
+        margin-left: 5%;        
+    }
+
+}
+
+.color-warn {
+    color: rgba(255, 0, 0, 255);
+}
+
+.color-admin {
+    color: rgba(0, 255, 255, 255);
+}
+
+.color-user {
+    color: rgba(255,255,255,1)
 }
