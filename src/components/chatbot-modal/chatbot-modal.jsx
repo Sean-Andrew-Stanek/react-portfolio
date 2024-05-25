@@ -106,9 +106,21 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
     const handleSubmit = () => {
         if(userInput!=='') {
             setChatLog([...chatLog, ['user', userInput]]);
+
+            //export const getResponseFromOpenAI = async (messages, new_message) => {
+            //getResponseFromOpenAI
+
             setUserInput('');
         }
     };
+
+    const handleResponse = () => {
+        //Find if a new message has been sent
+        //Find if there are any more messages to send
+
+        //Set timer depending on type of message
+        //Send message if appropriate
+    }
 
     return (
         <div className={`cbm-modal-background ${mainViewVisible && 'cbm-modal-background-unfade'}`}>
