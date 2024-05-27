@@ -147,10 +147,9 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
 
             //Get response
 
-            let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to each other and the user in an array with each line a JSON object`);
+            let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the users message in an array with each line a JSON object using double quotes`);
             
             let response = strResponse['reply'];
-            response = response.replace(/([{,]\s*)'([^']+)'(\s*[:}])/g, '$1"$2"$3');
             console.log(response);
             response = JSON.parse(response);
             console.log(response);
@@ -167,7 +166,8 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
 
             setBufferedMessages(newBufferedMessages);
             //TODO: have buffered messages do this
-            setChatLog([...chatLog, ...newBufferedMessages]);
+            console.log(`ChatLog: ${chatLog}`);
+            setChatLog(prevChatLog => [...prevChatLog, ...newBufferedMessages]);
 
             setUserInput('');
         }
