@@ -4,7 +4,7 @@
 //                                                                       //
 ///////////////////////////////////////////////////////////////////////////
 
-import {React, useEffect, useState} from 'react';
+import {React, useEffect, useState, useRef} from 'react';
 import './chatbot-modal.scss';
 import { images } from '../../utils/images';
 import PropTypes from 'prop-types';
@@ -25,8 +25,9 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
         ['warn', 'Welcome to the simulated chatroom powered by OpenAI.  Feel free to ask any questions you have about my portfolio and experience.'],
         ['admin', 'Welcome!  There are currently two others online.']
     ]);
-    //TODO: Add an initial buffer
+    const scrollableChatContainerRef = useRef(null)
     const [bufferedMessages, setBufferedMessages] = useState([]);
+
     
     const createBuffer = async () => {
         //No chance of infinite repeat
@@ -42,6 +43,12 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
         return [];
             
     };
+
+    useEffect(() => {
+        if (scrollableChatContainerRef.current) {
+            scrollableChatContainerRef.current.scrollTop = scrollableChatContainerRef.current.scrollHeight;
+        }
+    }, [chatLog]);
 
     useEffect(() => {
 
@@ -103,6 +110,12 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
 
     };
 
+    const runBuffer = () => {
+
+        
+
+    };
+
     //Chat Stream - The lines the user sees
     const createMessageDiv = (message, index) => {
         if (message[0]!=='warn')
@@ -150,10 +163,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
             let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the user message`);
             
             let response = strResponse['reply'];
-            console.log(response);
             response = JSON.parse(response);
-            console.log(response);
-
 
             let newBufferedMessages = [];
 
@@ -162,7 +172,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
                     newBufferedMessages = [...newBufferedMessages, [key, value]];
                 }
             });
-            console.log(newBufferedMessages);
+            console.log(`buffered messages: ${newBufferedMessages}`);
 
             setBufferedMessages(newBufferedMessages);
             //TODO: have buffered messages do this
@@ -185,7 +195,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
                 <img className = {`cbm-spear-top ${moveHorizontalSpears && 'cbm-horizontal-spear-end-position'}`} src = {images.spearHorizontal}/>
                 
                 <div className = {`cbm-chat-window-container ${mainViewVisible && 'cbm-chat-window-container-visible'}`}>
-                    <div className='cbm-scrollable-container'>
+                    <div className='cbm-scrollable-container' ref={scrollableChatContainerRef}>
                         <div className='cbm-chat-window'>
                             {/* Adds the messages */}
                             {chatLog.map((message, index) => createMessageDiv(message, index))}
