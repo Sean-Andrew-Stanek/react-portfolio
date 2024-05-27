@@ -147,7 +147,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
 
             //Get response
 
-            let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the users message in an array with each line a JSON object using double quotes`);
+            let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the user message`);
             
             let response = strResponse['reply'];
             console.log(response);
@@ -183,18 +183,21 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
                 <img className = {`cbm-spear-left ${moveVerticalSpears && 'cbm-vertical-spear-end-position'}`} src = {images.spearVertical}/>
                 <img className = {`cbm-spear-right ${moveVerticalSpears && 'cbm-vertical-spear-end-position'}`} src = {images.spearVertical}/>
                 <img className = {`cbm-spear-top ${moveHorizontalSpears && 'cbm-horizontal-spear-end-position'}`} src = {images.spearHorizontal}/>
+                
                 <div className = {`cbm-chat-window-container ${mainViewVisible && 'cbm-chat-window-container-visible'}`}>
-                    <div className='cbm-chat-window'>
-                        {/* Adds the messages */}
-                        {chatLog.map((message, index) => createMessageDiv(message, index))}
-                        {/* TODO: Make this look smaller */}
-                        {(bufferedMessages.length !== 0) && 
-                            <div className={'cbm-chat-entry'}>
-                                <div style={{gridColumn: 'span 2'}}>
-                                    Someone is typing...
-                                </div>                 
-                            </div>
-                        }
+                    <div className='cbm-scrollable-container'>
+                        <div className='cbm-chat-window'>
+                            {/* Adds the messages */}
+                            {chatLog.map((message, index) => createMessageDiv(message, index))}
+                            {/* TODO: Make this look smaller */}
+                            {(bufferedMessages.length !== 0) && 
+                                <div className={'cbm-chat-entry'}>
+                                    <div style={{gridColumn: 'span 2'}}>
+                                        Someone is typing...
+                                    </div>                 
+                                </div>
+                            }
+                        </div>
                     </div>
                     <div className='cbm-user-bar'>
                         <input type='text' value={userInput} onChange = {(e) => {setUserInput(e.target.value);}} />

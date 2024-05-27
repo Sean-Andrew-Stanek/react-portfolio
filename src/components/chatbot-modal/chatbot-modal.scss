@@ -73,6 +73,7 @@
     opacity: 0;
 
     transition: opacity ease-in-out 1s;
+
 }
 
 .cbm-chat-window-container-visible {
@@ -129,25 +130,36 @@
 /* Chat Log CSS */
 /****************/
 
-.cbm-chat-window {
+.cbm-scrollable-container {
     position: absolute;
-    top: 40px;
     left: 20px;
     right: 20px;
     bottom: 20%;
+    
+    height: calc(80% - 40px);
+    display: flex;
+    flex-direction: column-reverse;
+
+    overflow: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
     border: white double 4px;
     border-radius: 20px 20px 0 0;
 
     background-color: rgba(0,200,200,.1);
 
+}
+
+.cbm-chat-window {
+
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 
     padding: 2%;
     gap: 2%;
-
-    overflow: hidden;
 }
 
 .cbm-chat-entry {
@@ -159,7 +171,6 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 2%;
-
 
     > :nth-child(2) {
         margin-left: 5%;        
