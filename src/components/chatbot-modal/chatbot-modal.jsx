@@ -26,17 +26,16 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
         ['admin', 'Welcome!  There are currently two others online.']
     ]);
     //TODO: Add an initial buffer
-    const [bufferedMessages, setBufferedMessages] = useState();
-
-    const [awaitingMessages, setAwaitingMessages] = useState(false);
+    const [bufferedMessages, setBufferedMessages] = useState([]);
     
     const createBuffer = async () => {
-        if(!awaitingMessages){
-            setAwaitingMessages(true);
-            let response = await getResponseFromOpenAI({'messages': [], 'new_message': 'Send me the first three lines in a conversation about Sean Stanek'});
-            setAwaitingMessages(false);
+        //No chance of infinite repeat
+        if(bufferedMessages.length === 0){
 
-            setChatLog(...chatLog, ['response', response]);
+            let response = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
+            setChatLog([...chatLog, ['user', response['reply']]]);
+            setBufferedMessages(response['reply']);
+
         }
 
         //Return structured response.
@@ -45,6 +44,8 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
     };
 
     useEffect(() => {
+
+        //console.log('useEffect in use');
         
         setMoveVerticalSpears(true);
 
@@ -56,7 +57,15 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
             setMainViewVisible(true);
         }, 1000);
 
-        setBufferedMessages(createBuffer);
+        //Get initial "messages" behind the scenes but only on first load
+        const initBuffer = async() => {
+            if(chatLog.length === 2) {
+                const buffer = await createBuffer();
+                setBufferedMessages(buffer);
+            }
+        };
+
+        initBuffer();
 
         return() => {
             clearTimeout(horizontalTimer);
@@ -94,7 +103,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
 
     };
 
-    //Chat Stream
+    //Chat Stream - The lines the user sees
     const createMessageDiv = (message, index) => {
         if (message[0]!=='warn')
             return (
@@ -117,7 +126,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
             );
     };
 
-    //Sets user color
+    //Chat entry colors
     const chatColorSelector = (user) => {
         switch(user) {
             case 'warn':
@@ -130,16 +139,35 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
     };
 
     //Handles user input
-    const handleSubmit = () => {
+    const handleSubmit = async() => {
         if(userInput!=='') {
-                        
-            //Send it to the chatlog
-            setChatLog(...chatLog, ['user', userInput]);
+            
+            //Add user message to chat log
+            setChatLog([...chatLog, ['user', userInput]]);           
 
-            //Deal with fetch
+            //Get response
 
-            //export const getResponseFromOpenAI = async (messages, new_message) => {
-            //getResponseFromOpenAI
+            let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to each other and the user in an array with each line a JSON object`);
+            
+            let response = strResponse['reply'];
+            response = response.replace(/([{,]\s*)'([^']+)'(\s*[:}])/g, '$1"$2"$3');
+            console.log(response);
+            response = JSON.parse(response);
+            console.log(response);
+
+
+            let newBufferedMessages = [];
+
+            response.forEach( msg => {
+                for(const[key,value] of Object.entries(msg)){
+                    newBufferedMessages = [...newBufferedMessages, [key, value]];
+                }
+            });
+            console.log(newBufferedMessages);
+
+            setBufferedMessages(newBufferedMessages);
+            //TODO: have buffered messages do this
+            setChatLog([...chatLog, ...newBufferedMessages]);
 
             setUserInput('');
         }
@@ -159,7 +187,8 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
                     <div className='cbm-chat-window'>
                         {/* Adds the messages */}
                         {chatLog.map((message, index) => createMessageDiv(message, index))}
-                        {!awaitingMessages && 
+                        {/* TODO: Make this look smaller */}
+                        {(bufferedMessages.length !== 0) && 
                             <div className={'cbm-chat-entry'}>
                                 <div style={{gridColumn: 'span 2'}}>
                                     Someone is typing...
