@@ -25,17 +25,20 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
         ['warn', 'Welcome to the simulated chatroom powered by OpenAI.  Feel free to ask any questions you have about my portfolio and experience.'],
         ['admin', 'Welcome!  There are currently two others online.']
     ]);
-    const scrollableChatContainerRef = useRef(null)
+    const scrollableChatContainerRef = useRef(null);
     const [bufferedMessages, setBufferedMessages] = useState([]);
+    const initialBufferFetch = useRef(false);
+    const messageTimeout = useRef(null);
 
     
     const createBuffer = async () => {
         //No chance of infinite repeat
-        if(bufferedMessages.length === 0){
+        if(!initialBufferFetch && bufferedMessages.length === 0){
 
-            let response = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
-            setChatLog([...chatLog, ['user', response['reply']]]);
-            setBufferedMessages(response['reply']);
+            //let response = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
+            //TODO: TURN THIS INTO ARRAY OF OBJECTS
+            //setBufferedMessages(response['reply']);
+            initialBufferFetch.current = true;
 
         }
 
@@ -43,6 +46,44 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
         return [];
             
     };
+
+    const addBufferedMessages = (passedIndex) => {
+        console.log('=========================');
+        console.log(`getting buffered message ${passedIndex}`);
+        console.log(`It should display: ${bufferedMessages[passedIndex]}`);
+        console.log(`All the messages are: ${bufferedMessages}`);
+        console.log('=========================');
+        if(bufferedMessages.length > passedIndex){
+            messageTimeout.current = setTimeout(() => {
+                setChatLog(prevChat => [...prevChat, bufferedMessages[passedIndex]]);
+                console.log('=========================');
+                console.log('ding');
+                console.log(`getting buffered message ${passedIndex}`);
+                console.log(`It should display: ${bufferedMessages[passedIndex]}`);
+                console.log(`All the messages are: ${bufferedMessages}`);
+                console.log('=========================');                
+                addBufferedMessages(passedIndex+1, messageTimeout);
+            }, 2000 + passedIndex * 1000);
+        } else {
+            setBufferedMessages([]);
+        }
+    };
+
+    useEffect(() => {
+
+        const passedIndex = 0;
+
+        if(bufferedMessages.length > 0) {
+            if(messageTimeout.current) {
+                clearTimeout(messageTimeout.current);
+            }
+
+            addBufferedMessages(passedIndex);
+        }
+
+    }, [bufferedMessages]);
+
+    
 
     useEffect(() => {
         if (scrollableChatContainerRef.current) {
@@ -110,12 +151,6 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
 
     };
 
-    const runBuffer = () => {
-
-        
-
-    };
-
     //Chat Stream - The lines the user sees
     const createMessageDiv = (message, index) => {
         if (message[0]!=='warn')
@@ -172,12 +207,9 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
                     newBufferedMessages = [...newBufferedMessages, [key, value]];
                 }
             });
-            console.log(`buffered messages: ${newBufferedMessages}`);
+            console.log(`buffered messages: ${newBufferedMessages[0]}`);
 
             setBufferedMessages(newBufferedMessages);
-            //TODO: have buffered messages do this
-            console.log(`ChatLog: ${chatLog}`);
-            setChatLog(prevChatLog => [...prevChatLog, ...newBufferedMessages]);
 
             setUserInput('');
         }
