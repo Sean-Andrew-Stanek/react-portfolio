@@ -183,6 +183,10 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
                 return 'color-admin';
             case 'user':
                 return 'color-user';
+            case 'NPC1':
+                return 'color-npc1';
+            case 'NPC2':
+                return 'color-npc2';
         }
     };
 
