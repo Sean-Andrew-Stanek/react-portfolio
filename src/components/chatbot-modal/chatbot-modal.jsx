@@ -33,37 +33,47 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
     
     const createBuffer = async () => {
         //No chance of infinite repeat
-        if(!initialBufferFetch && bufferedMessages.length === 0){
-
-            //let response = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
-            //TODO: TURN THIS INTO ARRAY OF OBJECTS
-            //setBufferedMessages(response['reply']);
+        if(!initialBufferFetch.current && bufferedMessages.length === 0){
+            let strResponse = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
             initialBufferFetch.current = true;
-
-        }
-
-        //Return structured response.
-        return [];
-            
+            setBufferedMessages(formatResponse(strResponse));
+        }            
     };
 
+    //Returns an array of messages in {<userName>: <message>} format
+    const formatResponse = (fullResponse) => {
+        let response = fullResponse['reply'];
+        
+        try {
+            response = JSON.parse(response);    
+        }
+        catch{
+            console.log(`error with response: ${response}`);
+            
+        }
+        
+
+        let newBufferedMessages = [];
+
+        response.forEach( msg => {
+            for(const[key,value] of Object.entries(msg)){
+                newBufferedMessages = [...newBufferedMessages, [key, value]];
+            }
+        });
+
+        console.log(`buffered messages: ${newBufferedMessages}`);
+
+        return newBufferedMessages;
+    };
+
+    //Sends out the buffered messages sequentially.
+    //First is after 2 seconds.  Each after is 4 seconds.
     const addBufferedMessages = (passedIndex) => {
-        console.log('=========================');
-        console.log(`getting buffered message ${passedIndex}`);
-        console.log(`It should display: ${bufferedMessages[passedIndex]}`);
-        console.log(`All the messages are: ${bufferedMessages}`);
-        console.log('=========================');
         if(bufferedMessages.length > passedIndex){
             messageTimeout.current = setTimeout(() => {
-                setChatLog(prevChat => [...prevChat, bufferedMessages[passedIndex]]);
-                console.log('=========================');
-                console.log('ding');
-                console.log(`getting buffered message ${passedIndex}`);
-                console.log(`It should display: ${bufferedMessages[passedIndex]}`);
-                console.log(`All the messages are: ${bufferedMessages}`);
-                console.log('=========================');                
+                setChatLog(prevChat => [...prevChat, bufferedMessages[passedIndex]]);             
                 addBufferedMessages(passedIndex+1, messageTimeout);
-            }, 2000 + passedIndex * 1000);
+            }, (2000 + (passedIndex !== 0 && 2000)));
         } else {
             setBufferedMessages([]);
         }
@@ -108,8 +118,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
         //Get initial "messages" behind the scenes but only on first load
         const initBuffer = async() => {
             if(chatLog.length === 2) {
-                const buffer = await createBuffer();
-                setBufferedMessages(buffer);
+                createBuffer();
             }
         };
 
@@ -197,23 +206,8 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMes
             //Add user message to chat log
             setChatLog([...chatLog, ['user', userInput]]);           
 
-            //Get response
-
             let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the user message`);
-            
-            let response = strResponse['reply'];
-            response = JSON.parse(response);
-
-            let newBufferedMessages = [];
-
-            response.forEach( msg => {
-                for(const[key,value] of Object.entries(msg)){
-                    newBufferedMessages = [...newBufferedMessages, [key, value]];
-                }
-            });
-            console.log(`buffered messages: ${newBufferedMessages[0]}`);
-
-            setBufferedMessages(newBufferedMessages);
+            setBufferedMessages(formatResponse(strResponse));
 
             setUserInput('');
         }
