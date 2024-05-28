@@ -161,13 +161,29 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 
     };
 
+    const formatName = (name) => {
+        switch (name) {
+            case 'NPC1': 
+                return 'Bob';
+            case 'NPC2':
+                return 'Steve';
+            case 'user':
+                return 'Guest';
+            case 'admin':
+                return 'Admin';
+            default:
+                return name;
+
+        }
+    }
+
     //Chat Stream - The lines the user sees
     const createMessageDiv = (message, index) => {
         if (message[0]!=='warn')
             return (
                 <div className={`cbm-chat-entry ${chatColorSelector(message[0])}`} key={index}>
                     <div>
-                        {`<${message[0]}>:`}
+                        {`<${formatName(message[0])}>:`}
                     </div>
                     <div>
                         {`${message[1]}`}
