@@ -89,6 +89,11 @@
     border: white double 4px;
     border-radius: 0 0 20px 20px;
 
+    color: rgba(255, 0, 0, 255);
+    font-family: 'IM Fell English', serif;
+    font-size: $medium-font;
+    font-weight: 100;
+
     background-color: rgba(0,200,200,.1);
 
     display: flex;
@@ -101,8 +106,12 @@
         height: clamp(20px, 80%, 40px);
         width: 75%;
         border-radius: 5px;
-        background-color: rgba(255,255,255,.7);
-
+        background-color: rgba(255,255,255,.9);
+        color: rgba(0, 0, 0, 255);
+        font-family: 'IM Fell English', serif;
+        font-size: $medium-font;
+        font-weight: 100;
+        padding-left: 10px;
     }
 
     //Submit Button
@@ -165,12 +174,12 @@
 .cbm-chat-entry {
     color: rgba(255, 0, 0, 255);
     font-family: 'IM Fell English', serif;
-
     font-size: $medium-font;
     font-weight: 100;
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    gap: 2%;
+    grid-template-columns: 1fr ;
+    margin-top: 2vh;
+    gap: 0;
 
     > :nth-child(2) {
         margin-left: 5%;        
@@ -206,13 +215,13 @@
 }
 
 .color-user {
-    color: rgba(255,255,255,1)
+    color: rgba(255, 99, 132, 1)
 }
 
 .color-npc1 {
-    color: darkgoldenrod;
+    color: rgba(50, 205, 50, 1);
 }
 
 .color-npc2 {
-    color: forestgreen;
+    color: rgba(75, 192, 192, 1);
 }

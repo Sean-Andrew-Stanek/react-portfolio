@@ -10,11 +10,7 @@ import { images } from '../../utils/images';
 import PropTypes from 'prop-types';
 import { getResponseFromOpenAI } from '../../utils/fetch';
 
-
-
-
 export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
-
 
     const [userInput, setUserInput] = useState('');
     const [moveVerticalSpears, setMoveVerticalSpears] = useState(false);
@@ -94,17 +90,17 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 
     }, [bufferedMessages]);
 
-    
-
     useEffect(() => {
-        if (scrollableChatContainerRef.current) {
-            scrollableChatContainerRef.current.scrollTop = scrollableChatContainerRef.current.scrollHeight;
+
+        const chatLogObserver = new ResizeObserver(() => {
+            if(scrollableChatContainerRef.current) {
+                scrollableChatContainerRef.current.scrollTop = scrollableChatContainerRef.current.scrollHeight;
+            }
+        });
+
+        if(scrollableChatContainerRef.current){
+            chatLogObserver.observe(scrollableChatContainerRef.current);
         }
-    }, [chatLog]);
-
-    useEffect(() => {
-
-        //console.log('useEffect in use');
         
         setMoveVerticalSpears(true);
 
@@ -128,6 +124,9 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
         return() => {
             clearTimeout(horizontalTimer);
             clearTimeout(mainWindowTimer);
+            if (scrollableChatContainerRef.current) {
+                chatLogObserver.unobserve(scrollableChatContainerRef.current);
+            }
         };
 
     }, []);
@@ -161,12 +160,13 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 
     };
 
+    //Changes the names from the original API request
     const formatName = (name) => {
         switch (name) {
             case 'NPC1': 
-                return 'Bob';
+                return 'SkillXSlayer21';
             case 'NPC2':
-                return 'Steve';
+                return 'ThunderFury111';
             case 'user':
                 return 'Guest';
             case 'admin':
@@ -175,7 +175,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
                 return name;
 
         }
-    }
+    };
 
     //Chat Stream - The lines the user sees
     const createMessageDiv = (message, index) => {
@@ -222,17 +222,20 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
             
             //Add user message to chat log
             setChatLog([...chatLog, ['user', userInput]]);           
-
+            setUserInput('');
             let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the user message`);
             setBufferedMessages(formatResponse(strResponse));
 
-            setUserInput('');
+
         }
     };
 
-
-
-
+    //Allows input to be submitted with enter key
+    const handleKeyPress = (e) => {
+        if(e.key === 'Enter') {
+            handleSubmit();
+        }
+    };
 
     return (
         <div className={`cbm-modal-background ${mainViewVisible && 'cbm-modal-background-unfade'}`}>
@@ -250,25 +253,31 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
                             {(nextBufferedUser !== '') && 
                                 <div className={'cbm-chat-entry'}>
                                     <div className = {'cbm-typing-notification'} style={{gridColumn: 'span 2'}}>
-                                        {`${nextBufferedUser} is typing...`}
+                                        {`${formatName(nextBufferedUser)} is typing...`}
                                     </div>                 
                                 </div>
                             }
                         </div>
                     </div>
                     <div className='cbm-user-bar'>
-                        <input type='text' value={userInput} onChange = {(e) => {setUserInput(e.target.value);}} />
-                        <div onClick={handleSubmit}>
+                        <input
+                            type='text'
+                            value={userInput}
+                            onChange = {(e) => {setUserInput(e.target.value);}} 
+                            onKeyDown={handleKeyPress}
+                        />
+                        <div
+                            tabIndex='0'
+                            onClick={handleSubmit}
+                            onKeyDown={handleKeyPress}
+                        >
                             Submit
                         </div>
                     </div>
-                    
                 </div>
             </div>            
         </div>
-
     );
-
 };
 
 ChatBotModal.propTypes = {
