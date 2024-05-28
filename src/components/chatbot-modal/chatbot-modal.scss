@@ -178,12 +178,31 @@
 
 }
 
+
+.cbm-typing-notification {
+    color: rgba(155,155,155,1);
+    font-size: $extra-small-font;
+    opacity: 1;
+
+    animation: blinking 2000ms infinite;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .2;
+    }
+}
+
+
 .color-warn {
-    color: rgba(255, 0, 0, 255);
+    color: rgba(255, 0, 0, 1);
 }
 
 .color-admin {
-    color: rgba(0, 255, 255, 255);
+    color: rgba(0, 255, 255, 1);
 }
 
 .color-user {

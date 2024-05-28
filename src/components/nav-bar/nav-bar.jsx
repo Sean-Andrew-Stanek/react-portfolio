@@ -190,11 +190,4 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 NavBar.propTypes = {
     colorIndex: PropTypes.number.isRequired,
     setBackgroundIndex: PropTypes.func.isRequired,
-    setMessages: PropTypes.func.isRequired,
-    messages: PropTypes.arrayOf(
-        PropTypes.shape({
-            role: PropTypes.string.isRequired,
-            content: PropTypes.string.isRequired,
-        })
-    ).isRequired,
 };

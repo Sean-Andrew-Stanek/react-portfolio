@@ -20,6 +20,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
     const [moveVerticalSpears, setMoveVerticalSpears] = useState(false);
     const [moveHorizontalSpears, setMoveHorizontalSpears] = useState(false);
     const [mainViewVisible, setMainViewVisible] = useState(false);
+    const [nextBufferedUser, setNextBufferedUser] = useState('');
     //TODO: Add a random starting chat
     const [chatLog, setChatLog] = useState([
         ['warn', 'Welcome to the simulated chatroom powered by OpenAI.  Feel free to ask any questions you have about my portfolio and experience.'],
@@ -61,8 +62,6 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
             }
         });
 
-        console.log(`buffered messages: ${newBufferedMessages}`);
-
         return newBufferedMessages;
     };
 
@@ -70,11 +69,13 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
     //First is after 2 seconds.  Each after is 4 seconds.
     const addBufferedMessages = (passedIndex) => {
         if(bufferedMessages.length > passedIndex){
+            setNextBufferedUser(bufferedMessages[passedIndex][0]);
             messageTimeout.current = setTimeout(() => {
                 setChatLog(prevChat => [...prevChat, bufferedMessages[passedIndex]]);             
                 addBufferedMessages(passedIndex+1, messageTimeout);
             }, (2000 + (passedIndex !== 0 && 2000)));
         } else {
+            setNextBufferedUser('');
             setBufferedMessages([]);
         }
     };
@@ -230,10 +231,10 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
                             {/* Adds the messages */}
                             {chatLog.map((message, index) => createMessageDiv(message, index))}
                             {/* TODO: Make this look smaller */}
-                            {(bufferedMessages.length !== 0) && 
+                            {(nextBufferedUser !== '') && 
                                 <div className={'cbm-chat-entry'}>
-                                    <div style={{gridColumn: 'span 2'}}>
-                                        Someone is typing...
+                                    <div className = {'cbm-typing-notification'} style={{gridColumn: 'span 2'}}>
+                                        {`${nextBufferedUser} is typing...`}
                                     </div>                 
                                 </div>
                             }
@@ -257,11 +258,4 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 ChatBotModal.propTypes = {
     prepRemoveChat: PropTypes.bool.isRequired,
     setChatIsVisible: PropTypes.func.isRequired,
-    setMessages: PropTypes.func.isRequired,
-    messages: PropTypes.arrayOf(
-        PropTypes.shape({
-            role: PropTypes.string.isRequired,
-            content: PropTypes.string.isRequired,
-        })
-    ).isRequired,
 };
