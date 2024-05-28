@@ -238,13 +238,13 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
     };
 
     return (
-        <div className={`cbm-modal-background ${mainViewVisible && 'cbm-modal-background-unfade'}`}>
+        <div className={`cbm-modal-background ${mainViewVisible && 'cbm-modal-background-unfade'}`} onClick={unloadPage}>
             <div className = 'cbm-main-container'>
                 <img className = {`cbm-spear-left ${moveVerticalSpears && 'cbm-vertical-spear-end-position'}`} src = {images.spearVertical}/>
                 <img className = {`cbm-spear-right ${moveVerticalSpears && 'cbm-vertical-spear-end-position'}`} src = {images.spearVertical}/>
                 <img className = {`cbm-spear-top ${moveHorizontalSpears && 'cbm-horizontal-spear-end-position'}`} src = {images.spearHorizontal}/>
                 
-                <div className = {`cbm-chat-window-container ${mainViewVisible && 'cbm-chat-window-container-visible'}`}>
+                <div className = {`cbm-chat-window-container ${mainViewVisible && 'cbm-chat-window-container-visible'}`} onClick={(e) => e.stopPropagation()}>
                     <div className='cbm-scrollable-container' ref={scrollableChatContainerRef}>
                         <div className='cbm-chat-window'>
                             {/* Adds the messages */}
