@@ -6,7 +6,7 @@ import { contactRoutes } from '../../utils/strings';
 import { images } from '../../utils/images';
 import { ChatBotModal } from '../chatbot-modal/chatbot-modal';
 
-export const NavBar = ({colorIndex, setBackgroundIndex, messages, setMessages}) => {
+export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
@@ -139,8 +139,6 @@ export const NavBar = ({colorIndex, setBackgroundIndex, messages, setMessages}) 
                     <ChatBotModal 
                         prepRemoveChat = {prepRemoveChat} 
                         setChatIsVisible = {setChatIsVisible}
-                        setMessages={setMessages}
-                        messages={messages}
                     />}
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {

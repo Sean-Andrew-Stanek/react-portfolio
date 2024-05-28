@@ -13,7 +13,7 @@ import { getResponseFromOpenAI } from '../../utils/fetch';
 
 
 
-export const ChatBotModal = ({prepRemoveChat, setChatIsVisible, messages, setMessages}) => {
+export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
 
 
     const [userInput, setUserInput] = useState('');

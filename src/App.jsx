@@ -16,7 +16,6 @@ function App() {
     const [modalData, setModalData] = useState({});
 
     const [backgroundIndex, setBackgroundIndex] = useState(0);
-    const [messages, setMessages] = useState([]);
 
     useEffect(() => {
         //Transition background overlay
@@ -49,7 +48,7 @@ function App() {
                     <Route path='/*' element={<Navigate to='/' />} />
 
                 </Routes>
-                <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex} messages={messages} setMessages={setMessages}/>
+                <NavBar colorIndex = {colorIndex} setBackgroundIndex={setBackgroundIndex}/>
             </Router>
         </div>
     );
