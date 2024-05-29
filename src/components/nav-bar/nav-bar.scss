@@ -203,12 +203,35 @@ $name-plate-height: calc($profile-image-size/5);
     height:calc($skillbar-icon-size * 2.5);
     transform: translateX(-50%);
     z-index: 2;
+    cursor: pointer;
 
-    >img {
+    >img, >div {
         height: 100%;
         width: 100%;
         object-fit: cover;
         transform: translateY(-5%);
+    }
+
+    >div {
+        position:absolute;
+        top:0;
+        mix-blend-mode: overlay;
+        mask-image: url('/Nav-Bar-Chat-Button.png');
+        mask-size: cover;
+        pointer-events: none;
+
+        background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,1) 100%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
     }
 }
 

@@ -166,6 +166,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                 }
                 <div className='nb-skillbar-mid'> 
                     <img onClick={()=> handleChatVisible()} src={images.chatButton} />
+                    <div />
                 </div>
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>  
             </div>
