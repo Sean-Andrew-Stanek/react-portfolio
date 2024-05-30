@@ -12,6 +12,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     const [healthBarWidth, setHealthBarWidth] = useState(0);
     const [prepRemoveChat, setPrepRemoveChat] = useState(true);
     const [chatIsVisible, setChatIsVisible] = useState(false);
+    const [isStarting, setIsStarting] = useState(true);
 
     const healthBarContainerRef = useRef(null);
     
@@ -50,7 +51,14 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         updateHealthBarWidth();
         window.addEventListener('resize', updateHealthBarWidth);
         
-        return () => window.removeEventListener('resize', updateHealthBarWidth);
+        const showAIToolTipTimer = setTimeout(() => {
+            setIsStarting(false);
+        }, 5000);
+
+        return () => {
+            clearTimeout(showAIToolTipTimer);
+            window.removeEventListener('resize', updateHealthBarWidth);
+        };        
 
     },[]);
 
@@ -123,6 +131,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         );
     };
 
+        
     let handleChatVisible = () => {
         if(chatIsVisible) {
             setPrepRemoveChat(true);
@@ -130,6 +139,12 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
             setPrepRemoveChat(false);
             setChatIsVisible(true);
         }
+    };
+
+    let showAIToolTip  = {
+        bottom: 'calc(100% + 5px)',
+        opacity: '1',
+        visibility: 'visible'
     };
 
     let bottomNavBar = () => {
@@ -166,7 +181,15 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                 }
                 <div className='nb-skillbar-mid'> 
                     <img onClick={()=> handleChatVisible()} src={images.chatButton} />
-                    <div />
+                    <div className='nb-skill-bar-mid-shimmer-mask'/>
+                    <div className='nb-tooltip-up nb-tooltip' style={isStarting?{...showAIToolTip}:{}}>
+                        <div>
+                            Check out my Portfolio AI!
+                        </div>
+                        <div>
+                            <img src={images.navArrow} className='nb-tooltip-arrow'/>
+                        </div>
+                    </div>
                 </div>
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>  
             </div>
