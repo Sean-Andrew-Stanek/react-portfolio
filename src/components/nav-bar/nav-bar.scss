@@ -202,7 +202,7 @@ $name-plate-height: calc($profile-image-size/5);
     left: 50%;
     height:calc($skillbar-icon-size * 2.5);
     transform: translateX(-50%);
-    z-index: 2;
+    z-index: 3;
     cursor: pointer;
 
     >img, >.nb-skill-bar-mid-shimmer-mask {
@@ -295,7 +295,7 @@ $name-plate-height: calc($profile-image-size/5);
     opacity: 1;
     visibility: visible;
     height: 10vh;
-    z-index: 3;
+    pointer-events: none;
 }
 
 .nb-tooltip-arrow {

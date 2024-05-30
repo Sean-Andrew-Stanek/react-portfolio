@@ -226,12 +226,15 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
         if(userInput!=='') {
             
             //Add user message to chat log
-            setChatLog([...chatLog, ['user', userInput]]);           
+            setChatLog(prevChat => [...prevChat, ['user', userInput]]);           
             setUserInput('');
-            let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the user message`);
-            setBufferedMessages(formatResponse(strResponse));
 
-
+            if(hasFetchFailed) {
+                setChatLog(prevChat => [...prevChat,  ['admin', 'Sorry, the chat is currently down.']]);
+            } else {
+                let strResponse = await getResponseFromOpenAI([], `The user has written "${userInput}.  Give me the next three chat responses responding to the user message`);
+                setBufferedMessages(formatResponse(strResponse));
+            }
         }
     };
 
