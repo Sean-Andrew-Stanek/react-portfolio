@@ -26,15 +26,23 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
     const [bufferedMessages, setBufferedMessages] = useState([]);
     const initialBufferFetch = useRef(false);
     const messageTimeout = useRef(null);
+    const [hasFetchFailed, setHasFetchFailed] = useState(false);
 
     
     const createBuffer = async () => {
         //No chance of infinite repeat
-        if(!initialBufferFetch.current && bufferedMessages.length === 0){
-            let strResponse = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
-            initialBufferFetch.current = true;
-            setBufferedMessages(formatResponse(strResponse));
-        }            
+        initialBufferFetch.current = true;
+        try{
+            if(bufferedMessages.length === 0){
+                let strResponse = await getResponseFromOpenAI([], 'Send me the first three lines in a conversation about Sean Stanek');
+                setBufferedMessages(formatResponse(strResponse));
+            }   
+        }
+        catch{
+            setHasFetchFailed(true);
+            setChatLog(prevChat=>[...prevChat, ['admin', 'Sorry, it looks like there is a server problem.']]);
+        }
+                 
     };
 
     //Returns an array of messages in {<userName>: <message>} format
@@ -113,13 +121,10 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
         }, 1000);
 
         //Get initial "messages" behind the scenes but only on first load
-        const initBuffer = async() => {
-            if(chatLog.length === 2) {
-                createBuffer();
-            }
-        };
-
-        initBuffer();
+        if(!initialBufferFetch.current) {
+            initialBufferFetch.current = true;
+            createBuffer();
+        }
 
         return() => {
             clearTimeout(horizontalTimer);

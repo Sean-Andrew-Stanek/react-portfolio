@@ -23,13 +23,13 @@ export const getResponseFromOpenAI = async (messages, new_message) => {
             },
             body: JSON.stringify(jsonPayload)
         });
+
         if (!response.ok) {
             throw new Error('Error: ' + response.statusText);
         }
+
         return await response.json();
     } catch (error) {
-        console.error('There was a problem with the fetch: ', error);
-        throw error;
+        throw new Error('Failed to Fetch');
     }
-
 };

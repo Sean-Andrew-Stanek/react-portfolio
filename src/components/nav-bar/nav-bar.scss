@@ -295,6 +295,7 @@ $name-plate-height: calc($profile-image-size/5);
     opacity: 1;
     visibility: visible;
     height: 10vh;
+    z-index: 3;
 }
 
 .nb-tooltip-arrow {
@@ -314,4 +315,8 @@ $name-plate-height: calc($profile-image-size/5);
     50% {
         bottom: 10px;
     }
+}
+
+.nb-chat-tooltip {
+    bottom: 25%;
 }
