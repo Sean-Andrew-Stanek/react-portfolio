@@ -183,7 +183,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                     <img onClick={()=> handleChatVisible()} src={images.chatButton} />
                     <div className='nb-skill-bar-mid-shimmer-mask'/>
                     <div className='nb-tooltip-up nb-tooltip nb-chat-tooltip' style={isStarting?{...showAIToolTip}:{}}>
-                        <div>
+                        <div style={{textAlign:'center'}}>
                             Check out my Portfolio AI Chat.
                         </div>
                         <div>
