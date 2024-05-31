@@ -203,7 +203,7 @@ $name-plate-height: calc($profile-image-size/5);
     height:calc($skillbar-icon-size * 2.5);
     transform: translateX(-50%);
     z-index: 3;
-    cursor: pointer;
+    pointer-events: none;
 
     >img, >.nb-skill-bar-mid-shimmer-mask {
         height: 100%;
@@ -223,6 +223,19 @@ $name-plate-height: calc($profile-image-size/5);
         background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,1) 100%);
         background-size: 200% 100%;
         animation: shimmer 2s infinite;
+    }
+
+    .nb-skill-bar-mid-clickable-div {
+        position: absolute;
+        inset: 0;
+        bottom: 80%;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .nb-chat-tooltip {
+        bottom: 25%;
+        pointer-events: none;
     }
 }
 
@@ -307,6 +320,8 @@ $name-plate-height: calc($profile-image-size/5);
     animation: bounce 1s infinite;
 }
 
+
+
 @keyframes bounce {
     0%, 100%{
         bottom:0;
@@ -317,6 +332,3 @@ $name-plate-height: calc($profile-image-size/5);
     }
 }
 
-.nb-chat-tooltip {
-    bottom: 25%;
-}
