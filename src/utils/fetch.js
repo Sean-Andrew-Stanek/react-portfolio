@@ -1,7 +1,9 @@
 
 //Local Funct
-let azureFunctionURI = 'http://localhost:7071/api/get_message';
+//let azureFunctionURI = 'http://localhost:7071/api/get_message';
 
+//Azure Funct
+let azureFunctionURI = 'https://portfolio-chat-bot.azurewebsites.net/api/get_message?code=McshsKnkJmUYmpJGjc7-R4Xg0J-xU1pZEmkI1OYIKoVoAzFutZgr8A%3D%3D';
 
 /*******************************************/
 /*  messages: old messages                 */
