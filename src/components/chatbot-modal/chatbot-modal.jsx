@@ -77,7 +77,7 @@ export const ChatBotModal = ({prepRemoveChat, setChatIsVisible}) => {
             messageTimeout.current = setTimeout(() => {
                 setChatLog(prevChat => [...prevChat, bufferedMessages[passedIndex]]);             
                 addBufferedMessages(passedIndex+1, messageTimeout);
-            }, (2000 + (passedIndex !== 0 && 2000)));
+            }, (2000 + (passedIndex !== 0 ? 2000 : 0)));
         } else {
             setNextBufferedUser('');
             setBufferedMessages([]);
