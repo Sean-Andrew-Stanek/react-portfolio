@@ -4,11 +4,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { contactRoutes } from '../../utils/strings';
 import { images } from '../../utils/images';
+import { ChatBotModal } from '../chatbot-modal/chatbot-modal';
 
 export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
+    const [prepRemoveChat, setPrepRemoveChat] = useState(true);
+    const [chatIsVisible, setChatIsVisible] = useState(false);
+    const [isStarting, setIsStarting] = useState(true);
+
     const healthBarContainerRef = useRef(null);
     
     let colors = ['black', 'red', 'yellow', 'green', 'blue'];
@@ -46,7 +51,14 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         updateHealthBarWidth();
         window.addEventListener('resize', updateHealthBarWidth);
         
-        return () => window.removeEventListener('resize', updateHealthBarWidth);
+        const showAIToolTipTimer = setTimeout(() => {
+            setIsStarting(false);
+        }, 5000);
+
+        return () => {
+            clearTimeout(showAIToolTipTimer);
+            window.removeEventListener('resize', updateHealthBarWidth);
+        };        
 
     },[]);
 
@@ -119,9 +131,30 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
         );
     };
 
+        
+    let handleChatVisible = () => {
+        if(chatIsVisible) {
+            setPrepRemoveChat(true);
+        }else {
+            setPrepRemoveChat(false);
+            setChatIsVisible(true);
+        }
+    };
+
+    let showAIToolTip  = {
+        bottom: 'calc(100% + 5px)',
+        opacity: '1',
+        visibility: 'visible'
+    };
+
     let bottomNavBar = () => {
         return (
             <div className='nb-bottom-skillbar'>
+                {chatIsVisible&&
+                    <ChatBotModal 
+                        prepRemoveChat = {prepRemoveChat} 
+                        setChatIsVisible = {setChatIsVisible}
+                    />}
                 <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
                 {
                     //Adhere to format rules for image and outbound link
@@ -136,7 +169,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                                 </Link>
                                 <div className='nb-tooltip-up nb-tooltip'>
                                     <div>
-                                        {info[0].replace('-', '')}+-9
+                                        {info[0].replace('-', '')}
                                     </div>
                                     <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
                                         Contact me on {info[0]}!
@@ -146,7 +179,20 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                         );
                     })
                 }
-                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>      
+                <div className='nb-skillbar-mid'> 
+                    <img  src={images.chatButton} />
+                    <div className='nb-skill-bar-mid-clickable-div' onClick={()=> handleChatVisible()} />
+                    <div className='nb-skill-bar-mid-shimmer-mask'/>
+                    <div className='nb-tooltip-up nb-tooltip nb-chat-tooltip' style={isStarting?{...showAIToolTip}:{}}>
+                        <div style={{textAlign:'center'}}>
+                            Check out my Portfolio AI Chat.
+                        </div>
+                        <div>
+                            <img src={images.navArrow} className='nb-tooltip-arrow'/>
+                        </div>
+                    </div>
+                </div>
+                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>  
             </div>
         );
     };

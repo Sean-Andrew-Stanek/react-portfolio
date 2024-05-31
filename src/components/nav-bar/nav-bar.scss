@@ -123,7 +123,7 @@ $name-plate-height: calc($profile-image-size/5);
 */
 
 .nb-skillbar-icon {
-    z-index: 99;
+    z-index: 3;
     position: relative;
     width: $skillbar-icon-size;
     height: $skillbar-icon-size;
@@ -151,13 +151,18 @@ $name-plate-height: calc($profile-image-size/5);
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
+    top: 0;
     bottom: 10px;
-    height: calc($skillbar-icon-size * 2.5 + 10vh);
     left: 50%;
     transform: translate(-50%, 0);
     justify-content: center;
     width: 100vw;
     overflow: hidden;
+    pointer-events: none;
+
+    & > * {
+        pointer-events: auto;
+    }
 }
 
 /*
@@ -189,6 +194,58 @@ $name-plate-height: calc($profile-image-size/5);
 
 .nb-skillbar-end {
     height:calc($skillbar-icon-size * 2.5);
+    z-index: 1;
+}
+
+.nb-skillbar-mid {
+    position: absolute;
+    left: 50%;
+    height:calc($skillbar-icon-size * 2.5);
+    transform: translateX(-50%);
+    z-index: 3;
+    pointer-events: none;
+
+    >img, >.nb-skill-bar-mid-shimmer-mask {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transform: translateY(-5%);
+    }
+
+    >.nb-skill-bar-mid-shimmer-mask {
+        position:absolute;
+        top:0;
+        mix-blend-mode: overlay;
+        mask-image: url('/Nav-Bar-Chat-Button.png');
+        mask-size: cover;
+        pointer-events: none;
+
+        background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,1) 100%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite;
+    }
+
+    .nb-skill-bar-mid-clickable-div {
+        position: absolute;
+        inset: 0;
+        bottom: 80%;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .nb-chat-tooltip {
+        bottom: 25%;
+        pointer-events: none;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 
@@ -246,4 +303,32 @@ $name-plate-height: calc($profile-image-size/5);
     top: 50%;
 }
 
+.nb-skillbar-mid:hover >.nb-tooltip-up {
+    bottom: calc(100% + 5px);
+    opacity: 1;
+    visibility: visible;
+    height: 10vh;
+    pointer-events: none;
+}
+
+.nb-tooltip-arrow {
+    position: absolute;
+    bottom: 0px;
+    left:50%;
+    transform: translateX(-50%) rotate(-90deg);
+    width: 20%;
+    animation: bounce 1s infinite;
+}
+
+
+
+@keyframes bounce {
+    0%, 100%{
+        bottom:0;
+    }
+    
+    50% {
+        bottom: 10px;
+    }
+}
 
