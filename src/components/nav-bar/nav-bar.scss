@@ -201,33 +201,28 @@ $name-plate-height: calc($profile-image-size/5);
     position: absolute;
     left: 50%;
     height:calc($skillbar-icon-size * 2.5);
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     z-index: 3;
     pointer-events: none;
 
-    >img, >.nb-skill-bar-mid-shimmer-mask {
-        position: relative;
+    >.nb-skill-bar-mid-shimmer-mask {
+        position:absolute;
         inset:0;
         height: 100%;
         width: 100%;
-        object-fit: cover;
-        transform: translateY(-5%);
-        z-index: 999;
-    }
-
-    >.nb-skill-bar-mid-shimmer-mask {
-        position:absolute;
-        top:0;
         mix-blend-mode: overlay;
         -webkit-mask-image: url('/Nav-Bar-Chat-Button.png');
         mask-image: url('/Nav-Bar-Chat-Button.png');
         -webkit-mask-size: cover;
         mask-size: cover;
         pointer-events: none;
+        transform: translateY(-5%);
 
         background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,1) 100%);
         background-size: 200% 100%;
         animation: shimmer 2s infinite;
+        z-index: 999;
     }
 
     .nb-skill-bar-mid-clickable-div {
@@ -242,6 +237,16 @@ $name-plate-height: calc($profile-image-size/5);
         bottom: 25%;
         pointer-events: none;
     }
+}
+
+.nb-skillbar-mid-image {
+    position: relative;
+    inset:0;
+    height: 100%;
+    width: auto;
+    transform: translateY(-5%);
+    pointer-events: none;
+    z-index: 998;
 }
 
 @keyframes shimmer {
