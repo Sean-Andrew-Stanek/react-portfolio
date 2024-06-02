@@ -180,7 +180,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                     })
                 }
                 <div className='nb-skillbar-mid'> 
-                    <img  src={images.chatButton} />
+                    <img className='nb-skillbar-mid-image' src={images.chatButton} />
                     <div className='nb-skill-bar-mid-clickable-div' onClick={()=> handleChatVisible()} />
                     <div className='nb-skill-bar-mid-shimmer-mask'/>
                     <div className='nb-tooltip-up nb-tooltip nb-chat-tooltip' style={isStarting?{...showAIToolTip}:{}}>
