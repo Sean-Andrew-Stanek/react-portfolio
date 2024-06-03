@@ -17,7 +17,6 @@ export const CaseStudyView = ({setModalData}) => {
     const [isTop, setIsTop] = useState(true);
     const [isBottom, setIsBottom] = useState(true);
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
-    
 
     //Creates the buttons for each case study and places them appropriately around the screen.
     const createButtons = () => {
@@ -63,7 +62,7 @@ export const CaseStudyView = ({setModalData}) => {
             {
                 //Skill Container
             }
-            <div className='portfolio-container'>
+            <div className='csv-container'>
                 <div className='text-box-container' 
                     style={{
                         width: '100%',
@@ -83,7 +82,7 @@ export const CaseStudyView = ({setModalData}) => {
             {
                 //Info Box
             }
-            <div className='quest-container portfolio-quest-container'>
+            <div className='quest-container csv-quest-container'>
                 {
                 // Background Image
                 }
@@ -110,7 +109,7 @@ export const CaseStudyView = ({setModalData}) => {
             {
                 //Avatar
             }
-            <div className='avatar-container'  style={{left: '0px', bottom: '0px'}}>
+            <div className='avatar-container csv-avatar'  style={{bottom: '0px'}}>
                 <img className='avatar-image' src = {images.avatar}/>
             </div>
         </div>
