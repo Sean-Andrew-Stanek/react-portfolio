@@ -11,6 +11,7 @@ export const PortfolioView = ({setModalData}) => {
     const capstoneContainerListener = useRef(null);
     const [isTop, setIsTop] = useState(true);
     const [isBottom, setIsBottom] = useState(true);
+    const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
 
     /*
@@ -31,8 +32,6 @@ export const PortfolioView = ({setModalData}) => {
     useEffect(() => {
         handleScroll();
     }, []);
-
-    const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     /*
     *   filters capstone projects and displays

@@ -27,6 +27,12 @@ export const contactViewStrings = {
     'closing': 'Find me at any of the links to the left!'
 };
 
+export const caseStudyViewStrings = {
+    'greeting': 'Check out my case studies!',
+    'body': 'Get a more in depth look at the processes I took to create high-quality projects.  See if I am a good fit for your project.',
+    'closing': 'Click on one of the projects for more information.'
+};
+    
 
 export const contactRoutes = [
     ['Email', 'mailto:sean.andrew.stanek@gmail.com'],
