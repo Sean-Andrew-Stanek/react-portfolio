@@ -26,7 +26,7 @@ export const CaseStudyView = ({setModalData}) => {
                 {
                     caseStudyProjects.map((project,index) => {
                         return (
-                            <div className='portfolio-project' key={`${project}${index}`} onClick={()=>setModalData({'type':'project', 'data':{'name':`${project.name}`}})}>
+                            <div className='portfolio-project' key={`${project}${index}`} onClick={()=>setModalData({'type': 'case study', 'data': {'name': caseStudyProjects[index].name}})}>
                                 <div className='portfolio-project-title'>
                                     {project.name}
                                 </div>
