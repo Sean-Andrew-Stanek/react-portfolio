@@ -6,6 +6,8 @@ import { SkillsModal } from '../skills-modal/skills-modal';
 import { PortfolioModal } from '../portfolio-modal/portfolio-modal';
 import PropTypes from 'prop-types';
 import { CaseStudyModal } from '../case-study-modal/case-study-modal';
+import './modal-manager.scss';
+
 
 export const ModalManager = ({modalData, setModalData}) => {
 
@@ -31,12 +33,8 @@ export const ModalManager = ({modalData, setModalData}) => {
 
     return (
         <div 
-            style={{
-                position: 'absolute',
-                inset: 0,
-                zIndex: 100,
-                backgroundColor: 'rgba(0,0,0,0.7)'
-            }}
+            className='modal-manager'
+            
             onClick={closeModal}
         >
             {modalContent()}            
