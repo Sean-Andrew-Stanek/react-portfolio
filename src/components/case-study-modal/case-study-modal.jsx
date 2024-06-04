@@ -24,8 +24,9 @@ export const CaseStudyModal = ({modalData}) => {
     const imageArrayRef = useRef(null);
     const imageArrayContainerRef = useRef(null);
 
+    /* DELETE IF IN MAIN    
     const maxImageHeight = '50vh';
-    const maxImageWidth = '70vw';
+    const maxImageWidth = '70vw'; */
 
     let toggleExpandImage = (() => {
         setExpandedImage(!expandedImage);
@@ -58,25 +59,51 @@ export const CaseStudyModal = ({modalData}) => {
     };
 
     return (
+        
         <div className='csm-main-container' style={{pointerEvents:'none'}}>
-            <div className='csm-title-container'>
-                <div className= 'text-box-border' />
-                <div className='text-box-content csm-title' style={{opacity: .95}}>
-                    {`${currentPage.title}`}
-                </div>
-            </div>
+            {/*
+                    The main div will not be clickable as there is a lot of alpha
+            */}
+
             {/*
                 Content Container
             */}
             
             <div className='csm-info-container' style={{pointerEvents:'none'}}>
                 {/*
+                        Title
+                */}
+                <div className='csm-title-container'>
+                    <div className= 'text-box-border csm-text-box-border' />
+                    <div className='text-box-content csm-title' style={{opacity: '.95'}}>
+                        {`${currentPage.title}`}
+                    </div>
+                </div>
+
+                {/*
                     Background
                 */}
                 <img src={images.modalBackground} style={{pointerEvents:'none'}}/>
-                <div className='csm-information'>
-                    {currentPage.text}
-                </div>                    
+                {/*
+                    Text
+                */}
+                <div className='csm-text-container'  style={{pointerEvents:'auto'}}>
+                    <div className='csm-text'>
+                        {currentPage.text}
+                    </div>
+                </div>
+                {/*
+                    Image
+                    TODO:  ACCESIBILITY
+                */}
+                <div className='csm-image-container' style={{pointerEvents:'auto'}}>
+                    <div className='csm-image-wrapper'>
+                        <img src={`${images.caseStudyImagePath}${currentPage.images[0]}`} className='csm-image' onClick = {() => toggleExpandImage()}/>
+                    </div>
+                    <div>
+                        Click to expand
+                    </div>
+                </div>
                 {/*
                     Navigation Arrows
                 */}
@@ -86,14 +113,9 @@ export const CaseStudyModal = ({modalData}) => {
                 <div className={`csm-previous-page ${pageIndex===0 ? 'csm-fade' : 'csm-animate'}`} onClick = {() => changeIndex(-1)}>
                     <img src = {images.navArrow}/>
                 </div>
-            </div>
-            {/*
-                Image Array frame
-            */}
-            <div className={`csm-img-container ${expandedImage ? 'csm-expand-info':''}`} ref={imageArrayContainerRef} onClick={() => toggleExpandImage()} style={{backgroundColor:'black'}}>
-                <img ref={imageArrayRef} src={`${images.caseStudyImagePath}${currentPage.images[0]}`} style={{maxHeight:maxImageHeight, maxWidth:maxImageWidth}}/>
-            </div>
 
+
+            </div>
         </div>
     );
 

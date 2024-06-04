@@ -19,11 +19,10 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
 .csm-info-container {
     position: absolute;
 
-    //TODO
     left: calc($modal-height * .05);
     width: calc(100% - calc($modal-height * .05) * 2);
 
-    height: 90%;
+    top: 0;
     bottom: 0;
 
     z-index: 1;
@@ -133,35 +132,95 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     opacity: .5;
 }
 
+.csm-text-box-border {
+    background: linear-gradient(to right, rgba(51, 51, 51, 1), rgba(102, 102, 102, 1), rgba(51, 51, 102, 1), rgba(51, 51, 102, 0.5), rgba(51, 51, 102, 0), rgba(102, 102, 102, 1), rgba(51, 51, 51, 1));
+    opacity: .8;
+}
+
 .csm-title-container {
     position: absolute;
 
-    top: calc($modal-height * .15);
-    left: 0;
-    width: calc($modal-height * .3);
+    top: 5%;
+    left: 20%;
+    right: 20%;
+    
     height: calc($modal-height * .15);
-
-    font-size: $extra-large-font;
-    font-family: 'MedievalSharp', cursive;
-    font-weight: 700;
-
+    
     z-index: 2;
 }
 
 .csm-title {
     padding: 5%;
-    font-size: $small-font;
-    font-family: 'MedievalSharp', cursive;
-    font-weight: 700;
+    font-size: $medium-font;
+    font-family: 'MedievalSharp', serif;
+    font-weight: 500;
+    background-color: rgba(158, 158, 157);
+    color: black;
 }
 
-.csm-information {
+.csm-text-container {
     position: absolute;
     top: calc($modal-height * .22);
+    bottom: calc($navbar-bottom-buffer + 20%);
     left: 20%;
     right: 20%;
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'IM Fell English', serif;
     font-size: $small-font;
+    
+    display: flex;
+    align-content: center;
+    
+}
+
+.csm-image-container {
+    position: absolute;
+    top: calc(100% - ($navbar-bottom-buffer + 20%));
+    bottom: 5%;
+    left: 20%;
+    right: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &>.csm-image-wrapper {
+        position: relative;
+        height: 80%;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: height .25s ease-in-out, width .25s ease-in-out;
+        
+        &>img {
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+            border: black 2px solid;
+        }
+
+        &>img:hover {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            
+
+        }
+    }
+
+    &>.csm-image-wrapper:hover {
+        height:82%;
+        width: 82%;
+    }
+
+    text-align: center;
+}
+
+.csm-text {
     margin: auto auto;
 }
 
