@@ -47,6 +47,23 @@ export const projects = [
         },
         'capstone': 'true',
         'caseStudy': 'false',
+    },    
+    //React Portfolio
+    {
+        'name': 'Personal Portfolio - React',
+        'image': 'React Portfolio.png',
+        'skills': {
+            'frontend': ['SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
+            'backend': ['Node.js'],
+            'other': ['AWS S3', 'GIMP', 'GitHub', 'Version Control'],
+        },
+        'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.  As my first independent project outside of the bootcamp, it was designed to shore up my biggest weakness: SCSS/CSS.',
+        'links': {
+            'repository': 'https://github.com/Sean-Andrew-Stanek/react-portfolio',
+            'deployed': 'https://www.sean-andrew-stanek.com'
+        },
+        'capstone': 'true',
+        'caseStudy': 'true',
     },
     //LetsMeet
     {
@@ -81,7 +98,7 @@ export const projects = [
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
         'capstone': 'true',
-        'caseStudy': 'false',
+        'caseStudy': 'true',
     },
     //Movie API, Client using Angular
     {
@@ -99,7 +116,7 @@ export const projects = [
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
         'capstone': 'true',
-        'caseStudy': 'false',
+        'caseStudy': 'true',
     },
     //Chatter
     {
@@ -116,23 +133,6 @@ export const projects = [
         },
         'capstone': 'false',
         'caseStudy': 'false',
-    },
-    //React Portfolio
-    {
-        'name': 'Personal Portfolio - React',
-        'image': 'React Portfolio.png',
-        'skills': {
-            'frontend': ['SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
-            'backend': ['Node.js'],
-            'other': ['AWS S3', 'GIMP', 'GitHub', 'Version Control'],
-        },
-        'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.  As my first independent project outside of the bootcamp, it was designed to shore up my biggest weakness: SCSS/CSS.',
-        'links': {
-            'repository': 'https://github.com/Sean-Andrew-Stanek/react-portfolio',
-            'deployed': 'https://www.sean-andrew-stanek.com'
-        },
-        'capstone': 'true',
-        'caseStudy': 'true',
     },
 
 ];

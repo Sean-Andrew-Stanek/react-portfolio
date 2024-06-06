@@ -11,7 +11,7 @@ Base Object
         {   
             'title': '',
             'text': '',
-            'images': ['Under-Construction.PNG'],
+            'images': ['Under-Construction.png'],
         }
     ]
 },
@@ -76,6 +76,66 @@ export const caseStudies = [
                 'text': 'Initiating the project with a strong emphasis on accessibility and proper code structuring, I realized the importance of maintaining these standards amidst the temptation to focus solely on complex coding. This experience reinforced the need for discipline in managing both the micro and macro aspects of software development. Moreover, working solo highlighted the potential benefits of collaborative work, prompting me to seek future opportunities for teamwork to enhance code readability and project scalability.',
                 'images': ['case-study-1/Collaborate.png'],
             },
+        ]
+    },
+    {
+        'name': 'Movie Database - React',
+        'pages': [
+            {   
+                'title': 'Solvable Challenge',
+                'text': 'As one of my first full-stack projects, I chose to learn React and Angular in parallel reusing the backend to clarify the comparison.  This project demonstrates how much I have grown as a developer as it was my first full-stack JavaScript project.',
+                'images': ['Under-Construction.png'],
+            },        
+            {   
+                'title': 'Objective, Roles and Goals',
+                'text': 'The task was scheduled to take six weeks part-time but was successfully created in just over five weeks. The tech stack included Node.js with Visual Studio, MongoDB for the database, and Angular/React for the front end. I used React-Bootstrap and Angular Material for a quick and simple UI. The application was initially hosted on Heroku and GitHub, with plans to migrate to AWS.',
+                'images': ['Under-Construction.png'],
+            },
+            {   
+                'title': 'Setting up the backend',
+                'text': 'MongoDB and Express with Node.js was used for the backend.  I implemented Passport, bcrypt, and JWT for security, and verified endpoints and security with Postman. A challenge was to use the security libraries as I was unwilling to simply plug and play and instead spent a lot of time understanding what protected the user\'s data.',
+                'images': ['Under-Construction.png'],
+            },
+            {   
+                'title': 'Creating the frontend',
+                'text': 'Using React, React-Bootstrap, Angular, Angular Material, and Node.js, with PowerShell and Visual Studio. Postman helped identify backend errors. Learning JSX and TypeScript was challenging initially, as were useState and useEffect. Deployment issues with Angular were resolved via the Discord community, and major React bugs were fixed with ChatGPT. Dealing with high-latency networks required creating a frontend to handle timeouts.',
+                'images': ['Under-Construction.png'],
+            },
+            {   
+                'title': 'Conclusion and Final Remarks',
+                'text': 'React and Angular, while both effective, take different approaches. React\'s freeform development allows for personal coding style, making it ideal for solo projects, while Angular\'s structured, opinionated framework is better for collaborative settings due to its ease of comprehension. Using both provided invaluable insights into their unique strengths and nuances, enhancing my overall development skills.',
+                'images': ['Under-Construction.png'],
+            }
+        ]
+    },
+    {
+        'name': 'Movie Database - Angular',
+        'pages': [
+            {   
+                'title': 'Solvable Challenge',
+                'text': 'As one of my first full-stack projects, I chose to learn React and Angular in parallel reusing the backend to clarify the comparison.  This project demonstrates how much I have grown as a developer as it was my first full-stack JavaScript project.',
+                'images': ['Under-Construction.png'],
+            },        
+            {   
+                'title': 'Objective, Roles and Goals',
+                'text': 'The task was scheduled to take six weeks part-time but was successfully created in just over five weeks. The tech stack included Node.js with Visual Studio, MongoDB for the database, and Angular/React for the front end. I used React-Bootstrap and Angular Material for a quick and simple UI. The application was initially hosted on Heroku and GitHub, with plans to migrate to AWS.',
+                'images': ['Under-Construction.png'],
+            },
+            {   
+                'title': 'Setting up the backend',
+                'text': 'MongoDB and Express with Node.js was used for the backend.  I implemented Passport, bcrypt, and JWT for security, and verified endpoints and security with Postman. A challenge was to use the security libraries as I was unwilling to simply plug and play and instead spent a lot of time understanding what protected the user\'s data.',
+                'images': ['Under-Construction.png'],
+            },
+            {   
+                'title': 'Creating the frontend',
+                'text': 'Using React, React-Bootstrap, Angular, Angular Material, and Node.js, with PowerShell and Visual Studio. Postman helped identify backend errors. Learning JSX and TypeScript was challenging initially, as were useState and useEffect. Deployment issues with Angular were resolved via the Discord community, and major React bugs were fixed with ChatGPT. Dealing with high-latency networks required creating a frontend to handle timeouts.',
+                'images': ['Under-Construction.png'],
+            },
+            {   
+                'title': 'Conclusion and Final Remarks',
+                'text': 'React and Angular, while both effective, take different approaches. React\'s freeform development allows for personal coding style, making it ideal for solo projects, while Angular\'s structured, opinionated framework is better for collaborative settings due to its ease of comprehension. Using both provided invaluable insights into their unique strengths and nuances, enhancing my overall development skills.',
+                'images': ['Under-Construction.png'],
+            }
         ]
     },
 ];
