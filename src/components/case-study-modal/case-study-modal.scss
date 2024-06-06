@@ -67,35 +67,6 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     }
 }
 
-.csm-img-container {
-    //Positioning
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: calc($modal-height * .3);
-    height: calc($modal-height * .3);
-    overflow: hidden;
-
-    pointer-events: all;
-
-    //Styling
-    cursor: pointer;
-    border: black 2px solid;
-    border-radius: 10px;
-
-    z-index: 3;
-
-    &:hover {
-        border: 2px white solid;
-    }
-
-    img {
-        min-width: 100%;
-        min-height: 100%;
-    }
-
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-}
 
 .csm-expand-info {
     width: calc(min(95vh, calc(100vw - calc($margin-sides * 2))) * .5);
@@ -211,7 +182,7 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     right: 20%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     &>.csm-image-wrapper {
         position: relative;
@@ -244,6 +215,7 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     }
 
     text-align: center;
+    font-style: italic;
 }
 
 .csm-text {
