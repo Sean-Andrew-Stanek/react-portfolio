@@ -16,6 +16,37 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     
 }
 
+.csm-expanded-image-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+
+    background-color: rgba(0,0,0,.8);
+    cursor: pointer;
+    pointer-events: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >div {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+
+        >img {
+            
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            margin: auto;
+            outline: white 2px solid;
+        }
+    }
+    
+}
+
 .csm-info-container {
     position: absolute;
 
@@ -204,7 +235,6 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
             object-fit: contain;
             cursor: pointer;
             border: black 2px solid;
-            margin: auto;
         }
     }
 

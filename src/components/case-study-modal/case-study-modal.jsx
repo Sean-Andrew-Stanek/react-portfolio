@@ -6,7 +6,7 @@
 //- name: name of project
 
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './case-study-modal.scss';
 import '../../styles/styles.scss';
 import PropTypes from 'prop-types';
@@ -21,38 +21,10 @@ export const CaseStudyModal = ({modalData}) => {
 
     const [expandedImage, setExpandedImage] = useState(false);
 
-    const imageArrayRef = useRef(null);
-    const imageArrayContainerRef = useRef(null);
-
-    /* DELETE IF IN MAIN    
-    const maxImageHeight = '50vh';
-    const maxImageWidth = '70vw'; */
-
-    let toggleExpandImage = (() => {
-        setExpandedImage(!expandedImage);
-
-        const container = imageArrayContainerRef.current;
-        const imageArray = imageArrayRef.current;
-
-        if(!expandedImage) {
-            if (imageArray && container) {
-                container.style.width = `${imageArray.width}px`;
-                container.style.height = `${imageArray.height}px`;
-            }
-        } else {
-            if(container) {
-                container.style.width = '';
-                container.style.height = '';
-            }
-        }
-    });
-
 
     let currentPage = caseStudy.pages[pageIndex];
 
     const changeIndex = (change) => {
-        if(expandedImage)
-            toggleExpandImage();
         const desiredPage = pageIndex + change;
         if(desiredPage >= 0 && desiredPage < caseStudy.pages.length)
             setPageIndex(desiredPage);
@@ -65,6 +37,14 @@ export const CaseStudyModal = ({modalData}) => {
                     The main div will not be clickable as there is a lot of alpha
             */}
 
+            {/*
+                Expanded Image
+            */}
+            <div className='csm-expanded-image-container' style={expandedImage ? {visibility: 'visible'} : {visibility: 'hidden'}} onClick={() => setExpandedImage(!expandedImage)}>
+                <div>
+                    <img src={`${images.caseStudyImagePath}${currentPage.images[0]}`}/>
+                </div>
+            </div>
             {/*
                 Content Container
             */}
@@ -98,7 +78,7 @@ export const CaseStudyModal = ({modalData}) => {
                 */}
                 <div className='csm-image-container' style={{pointerEvents:'auto'}}>
                     <div className='csm-image-wrapper'>
-                        <img src={`${images.caseStudyImagePath}${currentPage.images[0]}`} className='csm-image' onClick = {() => toggleExpandImage()}/>
+                        <img src={`${images.caseStudyImagePath}${currentPage.images[0]}`} className='csm-image' onClick = {() => setExpandedImage(!expandedImage)}/>
                     </div>
                     <div>
                         Click to expand
