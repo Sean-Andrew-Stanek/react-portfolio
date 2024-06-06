@@ -36,7 +36,10 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
         margin: 0 auto;
 
         >img {
-            
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
