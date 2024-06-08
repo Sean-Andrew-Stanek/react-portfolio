@@ -31,6 +31,22 @@ Base Object
 */
 
 export const projects = [
+    {
+        'name': 'Portfolio Chatbot',
+        'image': 'Chatbot.png',
+        'skills': {
+            'frontend': [],
+            'backend': ['APIs', 'NodeJS', 'Python', 'Azure Functions', 'Serverless'],
+            'other': ['Git', 'Version Control', 'GiHub'],
+        },
+        'summary': 'A backend function built in Python and hosted on Azure, this project is the backend for the Chatbot functionality of my portfolio website.',
+        'links': {
+            'repository': 'https://github.com/Sean-Andrew-Stanek/PortfolioChatBot',
+            'deployed': 'https://www.sean-andrew-stanek.com'
+        },
+        'capstone': 'true',
+        'caseStudy': 'false',
+    },
     //Pokedex Project
     {
         'name': 'Pokedex Viewer',
@@ -40,7 +56,7 @@ export const projects = [
             'backend': ['APIs'],
             'other': ['Git', 'Version Control'],
         },        
-        'summary': 'Created a dynamic Pokémon information app leveraging the Pokémon API, showcasing proficiency in DOM manipulation, Ajax, and asynchronous behavior. Developed using Bootstrap, the app ensures frontloading of data for a seamless user experience—delivering instant results for all future searches.',
+        'summary': 'A simple JavaScript program utilizing the PokeAPI to fetch, sort, and display data about Pokemon. It displays my proficiency in DOM manipulation, Ajax, and asynchronous behavior.',
         'links': {
             'repository': 'https://github.com/Sean-Andrew-Stanek/pokedex-viewer',
             'deployed': 'https://sean-andrew-stanek.github.io/pokedex-viewer/'
@@ -54,10 +70,10 @@ export const projects = [
         'image': 'React Portfolio.png',
         'skills': {
             'frontend': ['SCSS', 'React', 'Vite', 'JavaScript', 'SPA', 'Node.js'],
-            'backend': ['Node.js'],
-            'other': ['AWS S3', 'GIMP', 'GitHub', 'Version Control'],
+            'backend': ['Node.js', 'AWS S3', 'Route 53', 'CloudFront', 'AWS S3'],
+            'other': ['GIMP', 'GitHub', 'Version Control'],
         },
-        'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.  As my first independent project outside of the bootcamp, it was designed to shore up my biggest weakness: SCSS/CSS.',
+        'summary': 'SPA Portfolio developed using React-Vise base learning to move away from Create-React-App.  The portfolio is designed to be dynamically created, modular-based where it can be modified through a few JSON files.',
         'links': {
             'repository': 'https://github.com/Sean-Andrew-Stanek/react-portfolio',
             'deployed': 'https://www.sean-andrew-stanek.com'
@@ -115,8 +131,8 @@ export const projects = [
             'deployed': 'https://sean-andrew-stanek.github.io/movie_api_angular_client',
             'API repository': 'https://github.com/Sean-Andrew-Stanek/movie_api'
         },
-        'capstone': 'true',
-        'caseStudy': 'true',
+        'capstone': 'false',
+        'caseStudy': 'false',
     },
     //Chatter
     {
