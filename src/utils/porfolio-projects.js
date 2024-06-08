@@ -45,7 +45,7 @@ export const projects = [
             'deployed': 'https://www.sean-andrew-stanek.com'
         },
         'capstone': 'true',
-        'caseStudy': 'false',
+        'caseStudy': 'true',
     },
     //Pokedex Project
     {

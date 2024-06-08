@@ -84,27 +84,27 @@ export const caseStudies = [
             {   
                 'title': 'Project Overview',
                 'text': 'The Portfolio Chatbot is a Python-based, Azure Functions-hosted serverless architecture.  It packages the request and then queries the OpenAI API sending back a formatted response',
-                'images': ['Under-Construction.png'],
+                'images': ['case-study-3/architecture.png'],
             },
             {   
                 'title': 'Goals and Objectives',
-                'text': 'A personal project, collaboration was my primary goal.  Jeriko Carrera, a fellow developer, and I worked together to build this project.  The secondary goal was to learn basic Python and Azure Functions.',
-                'images': ['Under-Construction.png'],
+                'text': 'A personal project, collaboration was my primary goal.  Jeriko Carrera, a fellow developer, and I worked together to build this project.  The secondary goal was to learn basic Python.  Later, Azure Functions were added as a learning objective.',
+                'images': ['case-study-3/chatting.png'],
             },
             {   
                 'title': 'Starting with Flask',
                 'text': 'Initially, we set up the function with the Flask library.  Next, we set up a frontend to test how different API calls would work.  Structuring the JSON object sent to the OpenAI API was an organic and iterative process, often resulting in many amusing outcomes.',
-                'images': ['Under-Construction.png'],
+                'images': ['case-study-3/amusing-chatbot.png'],
             },
             {   
                 'title': 'Porting to Azure Functions',
                 'text': 'Realizing that setting up a serverless architecture would be better than using an EC2 server, we ported the function to Azure Functions. We chose Azure Functions over AWS Lambda to gain experience with the Microsoft Cloud.',
-                'images': ['Under-Construction.png'],
+                'images': ['case-study-3/azure-code.png'],
             },
             {   
                 'title': 'Deploying and linking into the portfolio',
                 'text': 'After extensive tests, we deployed the function into the Azure portal.  We then linked the function into the portfolio.  The experience gave us a practical tool along with a great new toolset.',
-                'images': ['Under-Construction.png'],
+                'images': ['case-study-3/Chatbot.png'],
             },
         ]
     },
