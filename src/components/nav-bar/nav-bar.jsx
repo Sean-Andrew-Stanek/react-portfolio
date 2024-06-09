@@ -12,7 +12,6 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     const [healthBarWidth, setHealthBarWidth] = useState(0);
     const [prepRemoveChat, setPrepRemoveChat] = useState(true);
     const [chatIsVisible, setChatIsVisible] = useState(false);
-    const [isStarting, setIsStarting] = useState(true);
 
     const healthBarContainerRef = useRef(null);
     
@@ -50,13 +49,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     useEffect(() => {
         updateHealthBarWidth();
         window.addEventListener('resize', updateHealthBarWidth);
-        
-        const showAIToolTipTimer = setTimeout(() => {
-            setIsStarting(false);
-        }, 5000);
 
         return () => {
-            clearTimeout(showAIToolTipTimer);
             window.removeEventListener('resize', updateHealthBarWidth);
         };        
 
@@ -116,6 +110,20 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                         );
                     })
                 }
+                {/* //Chatbot needs to be hardcoded due to it not being a route. */}
+                <a aria-label={'Chat about Sean'} className='nb-tooltip-anchor' onClick={() => {handleChatVisible();}}  role='button'>
+                    <img alt={'Button to Chatbot'} className='nb-buffbar-image' onDragStart={cancelDefaultDrag} role='button' src={`${images.iconImagePath}Chatbot.png`} style={{cursor: 'pointer'}}/>
+                    <div className='nb-tooltip-down  nb-tooltip'>
+                        <div>
+                            Chatbot
+                        </div>
+                        <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
+                            Ask an AI about Sean and his skills, work, etc.
+                        </div>
+                        
+                    </div>
+                </a>
+                
             </div>
         );
     };
@@ -139,12 +147,6 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
             setPrepRemoveChat(false);
             setChatIsVisible(true);
         }
-    };
-
-    let showAIToolTip  = {
-        bottom: 'calc(100% + 5px)',
-        opacity: '1',
-        visibility: 'visible'
     };
 
     let bottomNavBar = () => {
@@ -183,7 +185,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
                     <img className='nb-skillbar-mid-image' src={images.chatButton} />
                     <div className='nb-skill-bar-mid-clickable-div' onClick={()=> handleChatVisible()} />
                     <div className='nb-skill-bar-mid-shimmer-mask'/>
-                    <div className='nb-tooltip-up nb-tooltip nb-chat-tooltip' style={isStarting?{...showAIToolTip}:{}}>
+                    <div className='nb-tooltip-up nb-tooltip nb-chat-tooltip'>
                         <div style={{textAlign:'center'}}>
                             Check out my Portfolio AI Chat.
                         </div>
