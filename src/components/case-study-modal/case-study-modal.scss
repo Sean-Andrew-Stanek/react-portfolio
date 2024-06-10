@@ -14,6 +14,12 @@ $modal-height: clamp(60vh, min(95vh, calc(100vw - calc($margin-sides * 2))), 90v
     align-items: center;
     justify-content: center;
     
+    opacity: 1;
+    transition: opacity .5s ease-out;
+
+    &.csm-loading {
+        opacity: 0;
+    }
 }
 
 .csm-expanded-image-container {

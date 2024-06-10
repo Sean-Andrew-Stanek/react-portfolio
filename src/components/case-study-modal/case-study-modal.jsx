@@ -6,7 +6,7 @@
 //- name: name of project
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './case-study-modal.scss';
 import '../../styles/styles.scss';
 import PropTypes from 'prop-types';
@@ -18,11 +18,19 @@ export const CaseStudyModal = ({modalData}) => {
 
     const caseStudy = caseStudies.find(obj => obj.name === modalData.data.name);
     const [pageIndex, setPageIndex] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [expandedImage, setExpandedImage] = useState(false);
 
 
     let currentPage = caseStudy.pages[pageIndex];
+
+    // Initial background
+    useEffect(() => {
+
+        setIsLoading(false);
+
+    }, []);
 
     const changeIndex = (change) => {
         const desiredPage = pageIndex + change;
@@ -32,7 +40,7 @@ export const CaseStudyModal = ({modalData}) => {
 
     return (
         
-        <div className='csm-main-container' style={{pointerEvents:'none'}}>
+        <div className={`csm-main-container ${isLoading ? 'csm-loading' : ''}`} style={{pointerEvents:'none'}}>
             {/*
                     The main div will not be clickable as there is a lot of alpha
             */}
