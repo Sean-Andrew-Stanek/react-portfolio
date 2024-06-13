@@ -35,19 +35,19 @@ export const MainView = ({iterateColor}) => {
                 // Text Intro
                 }
                 <div className='quest-text-intro'>
-                    <TypeWriter text={strings.greeting} speed={50}  onComplete={()=>setTypeWriterIndex(1)} />
+                    <TypeWriter text={strings.greeting} speed={40}  onComplete={()=>setTypeWriterIndex(1)} />
                 </div>
                 {
                 // Text Body
                 }
                 <div className='quest-text-body scrollable'>
-                    {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={5} onComplete={()=>setTypeWriterIndex(2)} />}
+                    {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={15} onComplete={()=>setTypeWriterIndex(2)} />}
                 </div>
                 {
                 // Text End
                 }   
                 <div className='quest-text-end mv-quest-end'>
-                    {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
+                    {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={10} onComplete={()=>setTypeWriterIndex(3)} />}
                     <div aria-disabled={typeWriterIndex<3} aria-label='Resume download' className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} 
                         onClick={handleResumeDownload} onKeyDown={(event) => (event.key === 'Enter' || event.key === 'Space') && handleResumeDownload()} role='button'tabIndex='0'>
                         <img alt='' src= {images.resumeButton} />
@@ -55,7 +55,7 @@ export const MainView = ({iterateColor}) => {
                             Resume
                         </span>
                     </div>
-                    {typeWriterIndex>=3 && <TypeWriter text={'or click the links above.'} speed={5} onComplete={()=>setTypeWriterIndex(3)} />}
+                    {typeWriterIndex>=3 && <TypeWriter text={'or click the links above.'} speed={10} onComplete={()=>setTypeWriterIndex(3)} />}
                 </div>
                 
             </div>
