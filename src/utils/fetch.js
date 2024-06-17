@@ -1,19 +1,8 @@
 //Local Funct
 //let azureFunctionURI = 'http://localhost:7071/api/get_message';
 
-let azureFunctionURI;
-
-try {
-    const config = await import('./config.js');
-    azureFunctionURI = config.chatbotURI;
-} catch (error) {
-    console.warn(
-        'Failed to load config.js.  Chatbot requires a working function.  See README.md for more details.',
-    );
-    azureFunctionURI = '';
-}
-
-export let chatbotFunctional = azureFunctionURI ? azureFunctionURI : false;
+let azureFunctionURI =
+    'https://portfolio-chat-bot.azurewebsites.net/api/get_message?code=McshsKnkJmUYmpJGjc7-R4Xg0J-xU1pZEmkI1OYIKoVoAzFutZgr8A%3D%3D';
 
 /*******************************************/
 /*  messages: old messages                 */
