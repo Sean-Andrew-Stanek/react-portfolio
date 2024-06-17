@@ -1,4 +1,3 @@
-
 @import '../../styles/variables';
 
 //Profile Image
@@ -10,7 +9,9 @@
     width: 25%;
     display: flex;
     flex-flow: column;
-    gap: calc(clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  8vh) *.4);
+    gap: calc(
+        clamp($skillbar-icon-size, $skillbar-icon-size * 1.25, 8vh) * 0.4
+    );
 }
 
 .cv-quest-container {
@@ -20,7 +21,11 @@
 
 .cv-charm {
     border-radius: 5px;
-    width: clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  min(7vh, 7vw));
+    width: clamp(
+        $skillbar-icon-size,
+        $skillbar-icon-size * 1.25,
+        min(7vh, 7vw)
+    );
     transform: translate(-25%, -25%);
     border: black 2px solid;
 }
@@ -29,11 +34,14 @@
     text-align: right;
     font-size: $extra-small-font;
     padding-right: 10px;
-    padding-left: calc(clamp($skillbar-icon-size, $skillbar-icon-size * 1.25,  min(7vh, 7vw)) * .75);
+    padding-left: calc(
+        clamp($skillbar-icon-size, $skillbar-icon-size * 1.25, min(7vh, 7vw)) *
+            0.75
+    );
 }
 
 .cv-box-container {
-    transition: transform .2s ease-out;
+    transition: transform 0.2s ease-out;
 }
 
 .cv-box-container:hover {

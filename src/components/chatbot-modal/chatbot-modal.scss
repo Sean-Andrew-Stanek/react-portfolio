@@ -1,4 +1,3 @@
-
 @import '../../styles/variables';
 
 .cbm-main-container {
@@ -21,10 +20,11 @@
 }
 
 .cbm-modal-background-unfade {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.cbm-spear-left, .cbm-spear-right {
+.cbm-spear-left,
+.cbm-spear-right {
     position: absolute;
     height: 100%;
     z-index: 5;
@@ -33,16 +33,15 @@
     transition: top ease-in-out 1s;
 }
 
-.cbm-spear-right{
+.cbm-spear-right {
     right: calc($margin-sides + 5vw);
     transform: translateX(50%);
 }
 
-.cbm-spear-left{
+.cbm-spear-left {
     left: calc($margin-sides + 5vw);
     transform: translateX(-50%);
 }
-
 
 .cbm-vertical-spear-end-position {
     top: 0%;
@@ -69,11 +68,15 @@
     left: calc($margin-sides + 5vw);
     top: 5vh;
     bottom: -5vh;
-    background: linear-gradient( to bottom, rgba(0,0,0,.95), rgba(0,0,0,.9) 90%, rgba(0,0,0,0)); 
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95),
+        rgba(0, 0, 0, 0.9) 90%,
+        rgba(0, 0, 0, 0)
+    );
     opacity: 0;
 
     transition: opacity ease-in-out 1s;
-
 }
 
 .cbm-chat-window-container-visible {
@@ -94,19 +97,19 @@
     font-size: $medium-font;
     font-weight: 100;
 
-    background-color: rgba(0,200,200,.1);
+    background-color: rgba(0, 200, 200, 0.1);
 
     display: flex;
     align-items: center;
     padding: 5px 10px;
     gap: 5px;
 
-    >input {
+    > input {
         border: white solid 2px;
         height: clamp(20px, 80%, 40px);
         width: 75%;
         border-radius: 5px;
-        background-color: rgba(255,255,255,.9);
+        background-color: rgba(255, 255, 255, 0.9);
         color: rgba(0, 0, 0, 255);
         font-family: 'IM Fell English', serif;
         font-size: $medium-font;
@@ -115,25 +118,24 @@
     }
 
     //Submit Button
-    >div {
+    > div {
         border: white solid 2px;
         height: clamp(20px, 80%, 40px);
         width: 25%;
         border-radius: 5px;
-        background-color: rgba(34, 45, 54, .8);
+        background-color: rgba(34, 45, 54, 0.8);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: rgba(255,255,255,.8);
-    
+        color: rgba(255, 255, 255, 0.8);
+
         &:hover {
             background-color: rgba(34, 45, 54, 1);
-            color: rgba(255,255,255,1);
+            color: rgba(255, 255, 255, 1);
             cursor: pointer;
         }
     }
 }
-
 
 /****************/
 /* Chat Log CSS */
@@ -144,7 +146,7 @@
     left: 20px;
     right: 20px;
     bottom: 20%;
-    
+
     height: calc(80% - 40px);
     display: flex;
     flex-direction: column-reverse;
@@ -157,12 +159,10 @@
     border: white double 4px;
     border-radius: 20px 20px 0 0;
 
-    background-color: rgba(0,200,200,.1);
-
+    background-color: rgba(0, 200, 200, 0.1);
 }
 
 .cbm-chat-window {
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -177,19 +177,17 @@
     font-size: $medium-font;
     font-weight: 100;
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     margin-top: 2vh;
     gap: 0;
 
     > :nth-child(2) {
-        margin-left: 5%;        
+        margin-left: 5%;
     }
-
 }
 
-
 .cbm-typing-notification {
-    color: rgba(155,155,155,1);
+    color: rgba(155, 155, 155, 1);
     font-size: $extra-small-font;
     opacity: 1;
 
@@ -201,10 +199,9 @@
         opacity: 1;
     }
     50% {
-        opacity: .2;
+        opacity: 0.2;
     }
 }
-
 
 .color-warn {
     color: rgba(255, 0, 0, 1);
@@ -215,7 +212,7 @@
 }
 
 .color-user {
-    color: rgba(255, 99, 132, 1)
+    color: rgba(255, 99, 132, 1);
 }
 
 .color-npc1 {

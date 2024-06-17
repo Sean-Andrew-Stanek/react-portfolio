@@ -15,8 +15,8 @@
 @import './variables';
 
 //Quest Background
-$quest-background-height: 650px;  //ratio will be 100%
-$quest-background-width: 700px;   //ratio will be 100%
+$quest-background-height: 650px; //ratio will be 100%
+$quest-background-width: 700px; //ratio will be 100%
 
 //Intro
 $quest-intro-height: ratio(80px, $quest-background-height);
@@ -60,7 +60,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
 @keyframes mainContainerFadeIn {
     from {
         opacity: 0;
-    }    
+    }
     to {
         opacity: 1;
     }
@@ -71,7 +71,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
 */
 
 .avatar-image {
-    width: 100%
+    width: 100%;
 }
 
 .avatar-above-image {
@@ -89,11 +89,9 @@ $quest-end-left: ratio(210px, $quest-background-width);
     z-index: 9999;
 }
 
-
 /////
 /// Text Box with Border
 /////
-
 
 .text-box-container {
     position: relative;
@@ -104,10 +102,14 @@ $quest-end-left: ratio(210px, $quest-background-width);
 .text-box-border {
     position: absolute;
     inset: 0px;
-    background: linear-gradient(to right, #E8E8E8 0%, #A9A9A9 50%, #E8E8E8 100%);
+    background: linear-gradient(
+        to right,
+        #e8e8e8 0%,
+        #a9a9a9 50%,
+        #e8e8e8 100%
+    );
     border-radius: 10px;
-    opacity: .5;
-    
+    opacity: 0.5;
 }
 
 .text-box-content {
@@ -119,7 +121,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    opacity: .8;
+    opacity: 0.8;
 }
 
 .text-box-charm {
@@ -127,12 +129,13 @@ $quest-end-left: ratio(210px, $quest-background-width);
     left: 0%;
     top: 0%;
     border-radius: 50%;
-    width:15%;
+    width: 15%;
     transform: translate(-40%, -60%);
 }
 
-.text-box-nav-down, .text-box-nav-up {
-    width:20%;
+.text-box-nav-down,
+.text-box-nav-up {
+    width: 20%;
 }
 
 .text-box-nav-down {
@@ -152,12 +155,12 @@ $quest-end-left: ratio(210px, $quest-background-width);
 }
 
 .nav-fade {
-    opacity: .5;
+    opacity: 0.5;
 }
 
 /////
 /// Quest Box
-///// 
+/////
 
 //ALL QUEST SIZE IS CHANGED HERE
 .quest-container {
@@ -203,7 +206,6 @@ $quest-end-left: ratio(210px, $quest-background-width);
 }
 
 .quest-text-body {
-    
     font-family: 'IM Fell English', serif;
     font-size: $medium-font;
     position: absolute;
@@ -211,7 +213,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
     //Column
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
 
     //Position
     top: $quest-text-top;
@@ -239,7 +241,7 @@ $quest-end-left: ratio(210px, $quest-background-width);
     z-index: 2;
 }
 
-.scrollable { 
+.scrollable {
     overflow: hidden;
     overflow-y: auto;
 }

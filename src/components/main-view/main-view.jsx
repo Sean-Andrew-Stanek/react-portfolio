@@ -1,74 +1,111 @@
-import {React, useState} from 'react';
+import { React, useState } from 'react';
 import '../../styles/styles.scss';
 import './main-view.scss';
-import { mainViewStrings as strings} from '../../utils/strings';
+import { mainViewStrings as strings } from '../../utils/strings';
 import PropTypes from 'prop-types';
 import TypeWriter from '../../utils/typewriter';
 import { images } from '../../utils/images';
 import { resumeLink } from '../../utils/strings';
 
-export const MainView = ({iterateColor}) => {
-
-
+export const MainView = ({ iterateColor }) => {
     const handleResumeDownload = () => {
         const downloadLink = document.createElement('a');
         downloadLink.href = resumeLink;
         downloadLink.target = '_blank';
         document.body.appendChild(downloadLink);
         downloadLink.click();
-        document.body.removeChild(downloadLink);        
+        document.body.removeChild(downloadLink);
     };
 
     const [typeWriterIndex, setTypeWriterIndex] = useState(0);
 
     return (
-        <div className='main-container'>
+        <div className="main-container">
             {
-            // Quest Bubble
+                // Quest Bubble
             }
-            <div className='quest-container mv-quest-container'>
+            <div className="quest-container mv-quest-container">
                 {
-                // Background Image
+                    // Background Image
                 }
-                <img alt='' className='quest-background' src={images.questBackground}/>
+                <img
+                    alt=""
+                    className="quest-background"
+                    src={images.questBackground}
+                />
                 {
-                // Text Intro
+                    // Text Intro
                 }
-                <div className='quest-text-intro'>
-                    <TypeWriter text={strings.greeting} speed={40}  onComplete={()=>setTypeWriterIndex(1)} />
+                <div className="quest-text-intro">
+                    <TypeWriter
+                        text={strings.greeting}
+                        speed={40}
+                        onComplete={() => setTypeWriterIndex(1)}
+                    />
                 </div>
                 {
-                // Text Body
+                    // Text Body
                 }
-                <div className='quest-text-body scrollable'>
-                    {typeWriterIndex>=1 && <TypeWriter text={strings.body} speed={15} onComplete={()=>setTypeWriterIndex(2)} />}
+                <div className="quest-text-body scrollable">
+                    {typeWriterIndex >= 1 && (
+                        <TypeWriter
+                            text={strings.body}
+                            speed={15}
+                            onComplete={() => setTypeWriterIndex(2)}
+                        />
+                    )}
                 </div>
                 {
-                // Text End
-                }   
-                <div className='quest-text-end mv-quest-end'>
-                    {typeWriterIndex>=2 && <TypeWriter text={'You can download my'} speed={10} onComplete={()=>setTypeWriterIndex(3)} />}
-                    <div aria-disabled={typeWriterIndex<3} aria-label='Resume download' className={`mv-link ${typeWriterIndex<3 && 'mv-loading'}`} 
-                        onClick={handleResumeDownload} onKeyDown={(event) => (event.key === 'Enter' || event.key === 'Space') && handleResumeDownload()} role='button'tabIndex='0'>
-                        <img alt='' src= {images.resumeButton} />
-                        <span>
-                            Resume
-                        </span>
+                    // Text End
+                }
+                <div className="quest-text-end mv-quest-end">
+                    {typeWriterIndex >= 2 && (
+                        <TypeWriter
+                            text={'You can download my'}
+                            speed={10}
+                            onComplete={() => setTypeWriterIndex(3)}
+                        />
+                    )}
+                    <div
+                        aria-disabled={typeWriterIndex < 3}
+                        aria-label="Resume download"
+                        className={`mv-link ${typeWriterIndex < 3 && 'mv-loading'}`}
+                        onClick={handleResumeDownload}
+                        onKeyDown={(event) =>
+                            (event.key === 'Enter' || event.key === 'Space') &&
+                            handleResumeDownload()
+                        }
+                        role="button"
+                        tabIndex="0"
+                    >
+                        <img alt="" src={images.resumeButton} />
+                        <span>Resume</span>
                     </div>
-                    {typeWriterIndex>=3 && <TypeWriter text={'or click the links above.'} speed={10} onComplete={()=>setTypeWriterIndex(3)} />}
+                    {typeWriterIndex >= 3 && (
+                        <TypeWriter
+                            text={'or click the links above.'}
+                            speed={10}
+                            onComplete={() => setTypeWriterIndex(3)}
+                        />
+                    )}
                 </div>
-                
             </div>
-            
+
             {
-            //Avatar
+                //Avatar
             }
-            <div className='avatar-container' style={{left: '10px', bottom: '10px'}}>
-                <img className='avatar-image' src = {images.avatar} onClick={iterateColor}/>
+            <div
+                className="avatar-container"
+                style={{ left: '10px', bottom: '10px' }}
+            >
+                <img
+                    className="avatar-image"
+                    src={images.avatar}
+                    onClick={iterateColor}
+                />
             </div>
         </div>
     );
-    
 };
 
 MainView.propTypes = {

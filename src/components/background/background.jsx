@@ -1,81 +1,88 @@
-
-
-import {React, useEffect, useState, useMemo} from 'react';
+import { React, useEffect, useState, useMemo } from 'react';
 import './background.scss';
 import PropTypes from 'prop-types';
 import images from '../../utils/images';
 
-export const Background = ({backgroundIndex}) => {
+export const Background = ({ backgroundIndex }) => {
+    //Images
+    const backgrounds = useMemo(
+        () => [images.backgrounds[0], images.backgrounds[1]],
+        [],
+    );
 
-
-    //Images 
-    const backgrounds = useMemo(() => [images.backgrounds[0], images.backgrounds[1]], []);
-    
-    const bgPositions = [ 'center', 'top left' ];
+    const bgPositions = ['center', 'top left'];
 
     const [firstBackground, setFirstBackground] = useState('');
     const [secondBackground, setSecondBackground] = useState('');
-    const [firstBackgroundPosition, setFirstBackgroundPosition] = useState(bgPositions[backgroundIndex%bgPositions.length]);
-    const [secondBackgroundPosition, setSecondBackgroundPosition] = useState(bgPositions[backgroundIndex%bgPositions.length]);
+    const [firstBackgroundPosition, setFirstBackgroundPosition] = useState(
+        bgPositions[backgroundIndex % bgPositions.length],
+    );
+    const [secondBackgroundPosition, setSecondBackgroundPosition] = useState(
+        bgPositions[backgroundIndex % bgPositions.length],
+    );
     const [firstImageShown, setFirstImageShown] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
     // Swaps the backgrounds
     useEffect(() => {
-
         setFirstImageShown(!firstImageShown);
-        
-        if(!firstImageShown) {
-            setFirstBackground(backgrounds[backgroundIndex%backgrounds.length]);
-            setFirstBackgroundPosition(bgPositions[backgroundIndex%bgPositions.length]);
-        } else {
-            setSecondBackground(backgrounds[backgroundIndex%backgrounds.length]);
-            setSecondBackgroundPosition(bgPositions[backgroundIndex%bgPositions.length]);
-        }
 
+        if (!firstImageShown) {
+            setFirstBackground(
+                backgrounds[backgroundIndex % backgrounds.length],
+            );
+            setFirstBackgroundPosition(
+                bgPositions[backgroundIndex % bgPositions.length],
+            );
+        } else {
+            setSecondBackground(
+                backgrounds[backgroundIndex % backgrounds.length],
+            );
+            setSecondBackgroundPosition(
+                bgPositions[backgroundIndex % bgPositions.length],
+            );
+        }
     }, [backgroundIndex, backgrounds]);
 
     // Initial background
     useEffect(() => {
-        
-        setFirstBackground(backgrounds[backgroundIndex%backgrounds.length]);
+        setFirstBackground(backgrounds[backgroundIndex % backgrounds.length]);
 
-        const timeout = setTimeout(() =>{
+        const timeout = setTimeout(() => {
             setIsLoading(false);
-        },250);
+        }, 250);
 
-        return() => clearTimeout(timeout);
-
+        return () => clearTimeout(timeout);
     }, []);
 
     //Has two backgrounds which take turns displaying and then a front image of translucent black to darken the background
     return (
-        <div className='bg-background-container'>
+        <div className="bg-background-container">
             {/* First Background */}
-            <div 
-                className={`bg-background-image ${firstImageShown ? '' : 'bg-fade-out'}`} 
-                style= {{
-                    backgroundImage: `url(${firstBackground})`, 
-                    backgroundPosition: firstBackgroundPosition
-                }} 
+            <div
+                className={`bg-background-image ${firstImageShown ? '' : 'bg-fade-out'}`}
+                style={{
+                    backgroundImage: `url(${firstBackground})`,
+                    backgroundPosition: firstBackgroundPosition,
+                }}
             />
             {/* Second Background */}
-            <div 
-                className={`bg-background-image ${firstImageShown ? 'bg-fade-out' : ''}`} 
-                style= {{ 
+            <div
+                className={`bg-background-image ${firstImageShown ? 'bg-fade-out' : ''}`}
+                style={{
                     backgroundColor: 'rgba(0,0,0,1)',
-                    backgroundImage: `url(${secondBackground})`, 
+                    backgroundImage: `url(${secondBackground})`,
                     backgroundPosition: secondBackgroundPosition,
-                }} 
+                }}
             />
             {/* Black Translucent Background */}
-            <div className={`bg-shadow-image ${isLoading && 'bg-is-loading'}`}/>
+            <div
+                className={`bg-shadow-image ${isLoading && 'bg-is-loading'}`}
+            />
         </div>
     );
-
 };
 
-Background.propTypes = 
-{
-    backgroundIndex: PropTypes.number.isRequired
+Background.propTypes = {
+    backgroundIndex: PropTypes.number.isRequired,
 };

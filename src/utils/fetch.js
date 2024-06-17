@@ -2,6 +2,8 @@
 //let azureFunctionURI = 'http://localhost:7071/api/get_message';
 
 //Azure Funct
+let azureFunctionURI =
+    'https://portfolio-chat-bot.azurewebsites.net/api/get_message?code=McshsKnkJmUYmpJGjc7-R4Xg0J-xU1pZEmkI1OYIKoVoAzFutZgr8A%3D%3D';
 
 let azureFunctionURI;
 
@@ -26,6 +28,7 @@ export const getResponseFromOpenAI = async (messages, new_message) => {
     const jsonPayload = {
         messages: messages,
         new_message: new_message,
+        new_message: new_message,
     };
 
     try {
@@ -33,7 +36,9 @@ export const getResponseFromOpenAI = async (messages, new_message) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
+            body: JSON.stringify(jsonPayload),
             body: JSON.stringify(jsonPayload),
         });
 

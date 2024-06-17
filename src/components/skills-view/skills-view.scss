@@ -24,7 +24,7 @@ $midpoint: 70%;
     font-size: $extra-large-font;
     color: skyblue;
     height: 10%;
-    display:flex;
+    display: flex;
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
@@ -33,7 +33,7 @@ $midpoint: 70%;
 .skill-tree-expander {
     height: min(2vw, 2vh);
     width: min(2vw, 2vh);
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,11 +71,11 @@ $midpoint: 70%;
 }
 
 .skill-button {
-    justify-content:'flex-start';
-    padding:'10px';
-    display:'flex';
-    flex-flow:'column';
-    align-items:'flex-start';
+    justify-content: 'flex-start';
+    padding: '10px';
+    display: 'flex';
+    flex-flow: 'column';
+    align-items: 'flex-start';
     overflow: 'hidden';
     border: white 1px solid;
 }
@@ -85,15 +85,15 @@ $midpoint: 70%;
 /////
 .skill-plus-sign {
     position: relative;
-    width: 70%; 
-    height: 70%; 
+    width: 70%;
+    height: 70%;
 }
 
 .skill-plus-sign::before,
 .skill-plus-sign::after {
     content: '';
     position: absolute;
-    background-color: rgba(0,0,0,0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Vertical line */
@@ -111,7 +111,7 @@ $midpoint: 70%;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    height: 4px; 
+    height: 4px;
 }
 
 .skill-content {
