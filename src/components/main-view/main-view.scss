@@ -3,7 +3,6 @@
 .mv-quest-container {
     inset: 0;
     bottom: 10px;
-
 }
 
 .mv-link {
@@ -23,7 +22,7 @@
         color: white;
         text-align: center;
         text-shadow: 1px 1px 2px black;
-        position: absolute;        
+        position: absolute;
     }
 
     img {
@@ -38,12 +37,12 @@
     }
 }
 
-.mv-loading{
+.mv-loading {
     opacity: 0;
 }
 
 .mv-quest-end {
-    display:flex;
+    display: flex;
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;

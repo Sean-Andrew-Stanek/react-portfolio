@@ -23,23 +23,22 @@ $midpoint: 70%;
 
 .portfolio-capstone-container {
     width: 96%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    overflow: hidden;    
+    overflow: hidden;
 }
-
 
 .portfolio-project {
     margin: min(1vw, 1vh);
     position: relative;
     height: clamp(100px, 15vh, 200px);
     width: 96%;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0, 0, 0, 0.8);
     outline: silver 3px solid;
     border-radius: 5px;
-    opacity: .9;
+    opacity: 0.9;
     cursor: pointer;
     z-index: 300;
 }
@@ -50,7 +49,7 @@ $midpoint: 70%;
 }
 
 .portfolio-project-title {
-    position:absolute;
+    position: absolute;
     top: 0;
     bottom: 60%;
     width: 100%;
@@ -66,10 +65,10 @@ $midpoint: 70%;
 }
 
 .portfolio-project-image-container {
-    position:absolute;
+    position: absolute;
     overflow: hidden;
     top: 40%;
-    bottom:0;
+    bottom: 0;
     width: 100%;
 
     img {

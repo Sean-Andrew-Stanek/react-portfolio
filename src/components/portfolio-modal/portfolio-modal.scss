@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
-
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -11,7 +10,7 @@
     left: $margin-sides;
     top: 20%;
     height: 60%;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0, 0, 0, 0.8);
     border: white 2px solid;
     display: flex;
     flex-flow: column;
@@ -38,7 +37,7 @@
 
 .portfolio-modal-info {
     position: absolute;
-    background-color: rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     top: 10%;
     bottom: 0;
@@ -47,8 +46,8 @@
     justify-content: space-between;
 }
 
-.portfolio-modal-info>div {
-    margin-left: 5%; 
+.portfolio-modal-info > div {
+    margin-left: 5%;
     margin-right: 5%;
 
     font-family: 'IM Fell English SC', serif;
@@ -61,7 +60,7 @@
     height: 100%;
     overflow: hidden;
     border-radius: 5px;
-    
+
     img {
         width: 100%;
         height: auto;
@@ -85,7 +84,12 @@
     -ms-overflow-style: none;
     border-top: 1px white double;
     border-bottom: 1px white double;
-    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(255,255,255,0));
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0)
+    );
     margin: auto auto;
     scroll-behavior: smooth;
 }
@@ -106,9 +110,9 @@
 }
 
 .portfolio-modal-skills {
-    position:relative;
+    position: relative;
     justify-content: flex-start;
-    margin:5px;
+    margin: 5px;
     flex-shrink: 0;
 }
 
@@ -116,14 +120,14 @@
     font-size: $medium-font;
 }
 
-
-.portfolio-skill, .portfolio-link {
+.portfolio-skill,
+.portfolio-link {
     position: relative;
     margin-left: 10px;
     background-size: 100% 100%;
     background-position: center;
     width: auto;
-    opacity: .8;
+    opacity: 0.8;
 
     cursor: pointer;
 
@@ -140,9 +144,8 @@
         opacity: 1;
     }
 
-    
-    >img {
-        position:absolute;
+    > img {
+        position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
@@ -152,10 +155,10 @@
 }
 
 .portfolio-skill {
-    padding: 1% 3% .5% 3%;
+    padding: 1% 3% 0.5% 3%;
 }
 
 .portfolio-link {
     font-size: $extra-small-font;
-    padding: .5% 5% 1% 5%;
+    padding: 0.5% 5% 1% 5%;
 }
