@@ -13,7 +13,7 @@ try {
     azureFunctionURI = '';
 }
 
-export let isFunction = azureFunctionURI ? azureFunctionURI : false;
+export let chatbotFunctional = azureFunctionURI ? azureFunctionURI : false;
 
 /*******************************************/
 /*  messages: old messages                 */
