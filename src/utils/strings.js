@@ -5,34 +5,35 @@ export const resumeLink = '/Sean-Andrew-Stanek-Resume.pdf';
 
 // Main View
 export const mainViewStrings = {
-    'greeting': 'Stay a while and listen!',
-    'body': 'I\'m Sean Andrew Stanek, a seasoned web designer and programmer with a teaching background. Proficient in MERN/MEAN stacks and diverse technologies like C#, GIMP, and AWS, I excel in technical challenges. My experience in education has also enhanced my problem-solving, empathy, and teamwork skills.'
+    greeting: 'Stay a while and listen!',
+    body: 'I\'m Sean Andrew Stanek, a seasoned web designer and programmer with a teaching background. Proficient in MERN/MEAN stacks and diverse technologies like C#, GIMP, and AWS, I excel in technical challenges. My experience in education has also enhanced my problem-solving, empathy, and teamwork skills.',
 };
 
 export const skillViewStrings = {
-    'greeting': 'My Capabilities',
-    'body': 'Click on a skill to view my work. My drive for innovation has honed a broad skill set, including unpublished projects. Feel free to inquire about other capabilities.',
-    'closing': 'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.'
+    greeting: 'My Capabilities',
+    body: 'Click on a skill to view my work. My drive for innovation has honed a broad skill set, including unpublished projects. Feel free to inquire about other capabilities.',
+    closing:
+        'Not seeing what you need?  I can learn it.  Have something you want to build?  I can build it.',
 };
 
 export const portfolioViewStrings = {
-    'greeting': 'My Projects',
-    'body': 'These are my capstone projects which I take pride in.  They showcase my capabilities in both frontend and backend capabiliites.',
-    'closing':  'Click on the projects to see them live or to view the repositories.'
+    greeting: 'My Projects',
+    body: 'These are my capstone projects which I take pride in.  They showcase my capabilities in both frontend and backend capabiliites.',
+    closing:
+        'Click on the projects to see them live or to view the repositories.',
 };
 
 export const contactViewStrings = {
-    'greeting': 'Want to contact me?',
-    'body': 'I would love to hear from you!  I have worked for years bringing my dreams to life and am at a point where I want to help others realize theirs!',
-    'closing': 'Find me at any of the links to the left!'
+    greeting: 'Want to contact me?',
+    body: 'I would love to hear from you!  I have worked for years bringing my dreams to life and am at a point where I want to help others realize theirs!',
+    closing: 'Find me at any of the links to the left!',
 };
 
 export const caseStudyViewStrings = {
-    'greeting': 'Check out my case studies!',
-    'body': 'Get a more in depth look at the processes I took to create high-quality projects.  See if I am a good fit for your project.',
-    'closing': 'Click on one of the projects for more information.'
+    greeting: 'Check out my case studies!',
+    body: 'Get a more in depth look at the processes I took to create high-quality projects.  See if I am a good fit for your project.',
+    closing: 'Click on one of the projects for more information.',
 };
-    
 
 export const contactRoutes = [
     ['Email', 'mailto:sean.andrew.stanek@gmail.com'],

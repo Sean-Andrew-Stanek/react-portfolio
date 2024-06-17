@@ -12,15 +12,13 @@ import { projects } from '../../utils/porfolio-projects';
 import './portfolio-modal.scss';
 import { images } from '../../utils/images';
 
-export const PortfolioModal = ({modalData, setModalData}) => {
-
-
+export const PortfolioModal = ({ modalData, setModalData }) => {
     /*****************/
     // Horizontal Scrolling
     /*****************/
 
     const horizontalScrollRef = useRef(null);
-    
+
     useEffect(() => {
         const scrollContainer = horizontalScrollRef.current;
 
@@ -32,13 +30,12 @@ export const PortfolioModal = ({modalData, setModalData}) => {
             scrollContainer.scrollLeft += e.deltaY;
         };
 
-        if(scrollContainer) {
+        if (scrollContainer) {
             scrollContainer.addEventListener('wheel', handleWheel);
         }
-        
 
         return () => {
-            if(scrollContainer)
+            if (scrollContainer)
                 scrollContainer.removeEventListener('wheel', handleWheel);
         };
     }, []);
@@ -46,44 +43,49 @@ export const PortfolioModal = ({modalData, setModalData}) => {
     /*****************/
     // Modal Project Info
     /*****************/
-    const project = projects.find(obj => obj.name === modalData.data.name);
+    const project = projects.find((obj) => obj.name === modalData.data.name);
 
     /*****************/
     // Links to Skill Modal
     /*****************/
     const skillButtons = (skills) => {
-
         const skillSet = new Set();
-        
-        for(const skillCategory of Object.values(skills))
-            skillCategory.forEach(skill => skillSet.add(skill));
 
-        const skillDivs = Array.from(skillSet).sort().map((skill, index) => {
-            return (
-                <div className='portfolio-skill' key={`${skill}${index}`} onClick={() => setModalData({'type': 'skills', 'data': skill})}>
-                    <img src = {images.skillButton} />
-                    <span>
-                        {skill}
-                    </span>
-                </div>
-            );
-        });
+        for (const skillCategory of Object.values(skills))
+            skillCategory.forEach((skill) => skillSet.add(skill));
+
+        const skillDivs = Array.from(skillSet)
+            .sort()
+            .map((skill, index) => {
+                return (
+                    <div
+                        className="portfolio-skill"
+                        key={`${skill}${index}`}
+                        onClick={() =>
+                            setModalData({ type: 'skills', data: skill })
+                        }
+                    >
+                        <img src={images.skillButton} />
+                        <span>{skill}</span>
+                    </div>
+                );
+            });
 
         return skillDivs;
-
     };
 
     /*****************/
     // Repos / Live Anchors
     /*****************/
     const linkButton = (text, target, index) => {
-
         return (
-            <div className='portfolio-link' key={`${index}${text}`} onClick={() => window.open(target, '_blank')}>
-                <img src={images.linkButton}/>
-                <span>
-                    {text}
-                </span>
+            <div
+                className="portfolio-link"
+                key={`${index}${text}`}
+                onClick={() => window.open(target, '_blank')}
+            >
+                <img src={images.linkButton} />
+                <span>{text}</span>
             </div>
         );
     };
@@ -93,34 +95,34 @@ export const PortfolioModal = ({modalData, setModalData}) => {
     /*****************/
 
     return (
-        
-        <div className='portfolio-modal-container'>
-            <div className='portfolio-modal-image-container'>
-                <img src={`${images.projectImagePath}${project.image}`}/>
+        <div className="portfolio-modal-container">
+            <div className="portfolio-modal-image-container">
+                <img src={`${images.projectImagePath}${project.image}`} />
             </div>
-            <div className = 'portfolio-modal-title'>
-                {project.name}    
-            </div>
-            <div className='portfolio-modal-info'>
-                <div ref={horizontalScrollRef} className='portfolio-modal-hbuttons portfolio-modal-skills'>
+            <div className="portfolio-modal-title">{project.name}</div>
+            <div className="portfolio-modal-info">
+                <div
+                    ref={horizontalScrollRef}
+                    className="portfolio-modal-hbuttons portfolio-modal-skills"
+                >
                     {skillButtons(project.skills)}
                 </div>
-                <div className='portfolio-modal-summary scrollable'>
+                <div className="portfolio-modal-summary scrollable">
                     {project.summary}
                 </div>
-                <div className='portfolio-modal-hbuttons portfolio-modal-links'>
-                    {Object.entries(project.links).map(([text, target], index) => { return linkButton(text, target, index);})}
+                <div className="portfolio-modal-hbuttons portfolio-modal-links">
+                    {Object.entries(project.links).map(
+                        ([text, target], index) => {
+                            return linkButton(text, target, index);
+                        },
+                    )}
                 </div>
-
-                
             </div>
-
-            
         </div>
     );
 };
 
 PortfolioModal.propTypes = {
     modalData: PropTypes.object.isRequired,
-    setModalData: PropTypes.func.isRequired
+    setModalData: PropTypes.func.isRequired,
 };

@@ -1,27 +1,23 @@
 import { useEffect, useState, React } from 'react';
 import PropTypes from 'prop-types';
 
-function TypeWriter({text, speed = 100, onComplete}) {
-    
+function TypeWriter({ text, speed = 100, onComplete }) {
     const [displayedText, setDisplayedText] = useState('');
 
     //Adds letters one at a time
     useEffect(() => {
-        if(displayedText.length < text.length) {
-
+        if (displayedText.length < text.length) {
             const timer = setTimeout(() => {
-                setDisplayedText(text.substr(0, displayedText.length+1));
+                setDisplayedText(text.substr(0, displayedText.length + 1));
             }, speed);
-         
+
             return () => clearTimeout(timer);
         } else {
             onComplete && onComplete();
         }
-
     }, [displayedText, text, speed]);
 
     return <>{displayedText}</>;
-
 }
 
 TypeWriter.propTypes = {

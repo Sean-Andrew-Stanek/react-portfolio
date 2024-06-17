@@ -1,4 +1,4 @@
-import {React, Fragment, useEffect, useState, useRef} from 'react';
+import { React, Fragment, useEffect, useState, useRef } from 'react';
 import './nav-bar.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -6,17 +6,16 @@ import { contactRoutes } from '../../utils/strings';
 import { images } from '../../utils/images';
 import { ChatBotModal } from '../chatbot-modal/chatbot-modal';
 
-export const NavBar = ({colorIndex, setBackgroundIndex}) => {
-
+export const NavBar = ({ colorIndex, setBackgroundIndex }) => {
     const [healthBarIndex, setHealthBarIndex] = useState(0);
     const [healthBarWidth, setHealthBarWidth] = useState(0);
     const [prepRemoveChat, setPrepRemoveChat] = useState(true);
     const [chatIsVisible, setChatIsVisible] = useState(false);
 
     const healthBarContainerRef = useRef(null);
-    
+
     let colors = ['black', 'red', 'yellow', 'green', 'blue'];
-    let percentageHealthBar = [0, .25, .5, .75, 1];
+    let percentageHealthBar = [0, 0.25, 0.5, 0.75, 1];
 
     /*****************/
     // Functions
@@ -28,15 +27,19 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     //Tied to a window resize listener
     let updateHealthBarWidth = () => {
-        if(healthBarContainerRef.current) {
+        if (healthBarContainerRef.current) {
             setHealthBarWidth(healthBarContainerRef.current.offsetWidth);
         }
     };
 
     let moveHealthBarLeft = () => {
-        return 0-healthBarWidth*(percentageHealthBar[healthBarIndex%percentageHealthBar.length]);
+        return (
+            0 -
+            healthBarWidth *
+                percentageHealthBar[healthBarIndex % percentageHealthBar.length]
+        );
     };
-    
+
     let cancelDefaultDrag = (event) => {
         event.preventDefault();
     };
@@ -52,9 +55,8 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
         return () => {
             window.removeEventListener('resize', updateHealthBarWidth);
-        };        
-
-    },[]);
+        };
+    }, []);
 
     /*****************/
     // Sub-Components
@@ -62,88 +64,150 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     //Link and Image strings
 
-    let routes = ['home', 'contact', 'skills', 'portfolio','case-study'];
-    let routeDetails = ['Return to the intro screen.', 'Contact me for information!', 'My skill set.', 'My projects and achievements.', 'Case studies of my projects'];
-
+    let routes = ['home', 'contact', 'skills', 'portfolio', 'case-study'];
+    let routeDetails = [
+        'Return to the intro screen.',
+        'Contact me for information!',
+        'My skill set.',
+        'My projects and achievements.',
+        'Case studies of my projects',
+    ];
 
     let namePlate = () => {
         return (
             <>
-                <img src={images.namePlateBackground} className='nb-name-plate'/>
-                <div className='nb-name-plate nb-name-plate-color-overlay' style={{backgroundColor: colors[colorIndex%colors.length], opacity: .4}}/>
-                <img src={images.namePlate} className='nb-name-plate' />
+                <img
+                    src={images.namePlateBackground}
+                    className="nb-name-plate"
+                />
+                <div
+                    className="nb-name-plate nb-name-plate-color-overlay"
+                    style={{
+                        backgroundColor: colors[colorIndex % colors.length],
+                        opacity: 0.4,
+                    }}
+                />
+                <img src={images.namePlate} className="nb-name-plate" />
             </>
         );
     };
 
     let healthBar = () => {
         return (
-            <div ref={healthBarContainerRef} className='nb-healthbar-container'>
-                <img src= {images.redHealthBar} className='nb-health-bar'/>
-                <img src= {images.greenHealthBar} className='nb-health-bar' style = {{left: `${moveHealthBarLeft()}px`}}/>
-                <img src= {images.healthBarOutline} className='nb-health-bar'/>
+            <div ref={healthBarContainerRef} className="nb-healthbar-container">
+                <img src={images.redHealthBar} className="nb-health-bar" />
+                <img
+                    src={images.greenHealthBar}
+                    className="nb-health-bar"
+                    style={{ left: `${moveHealthBarLeft()}px` }}
+                />
+                <img src={images.healthBarOutline} className="nb-health-bar" />
             </div>
         );
     };
-    
+
     let topNavBar = () => {
         return (
-            <div className='nb-buffbar'>
-                {
-                    routes.map((path, index)=> {
-                        let capPath = path.charAt(0).toUpperCase() + path.slice(1);
-                        return (
-                            <Fragment key={index}>
-                                <Link to={`./${path}`} aria-label={`Navigate to ${capPath}`} className='nb-tooltip-anchor' onClick={() => {setHealthBarIndex(index); updateBackgroundLocation(index);}}  role='link'>
-                                    <img alt={`Button to ${capPath}`} className='nb-buffbar-image' onDragStart={cancelDefaultDrag} role='link' src={`${images.iconImagePath}${capPath}.png`} />
-                                    <div className='nb-tooltip-down  nb-tooltip'>
-                                        <div>
-                                            {capPath}
-                                        </div>
-                                        <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
-                                            {routeDetails[index]}
-                                        </div>
-                                        
+            <div className="nb-buffbar">
+                {routes.map((path, index) => {
+                    let capPath = path.charAt(0).toUpperCase() + path.slice(1);
+                    return (
+                        <Fragment key={index}>
+                            <Link
+                                to={`./${path}`}
+                                aria-label={`Navigate to ${capPath}`}
+                                className="nb-tooltip-anchor"
+                                onClick={() => {
+                                    setHealthBarIndex(index);
+                                    updateBackgroundLocation(index);
+                                }}
+                                role="link"
+                            >
+                                <img
+                                    alt={`Button to ${capPath}`}
+                                    className="nb-buffbar-image"
+                                    onDragStart={cancelDefaultDrag}
+                                    role="link"
+                                    src={`${images.iconImagePath}${capPath}.png`}
+                                />
+                                <div className="nb-tooltip-down  nb-tooltip">
+                                    <div>{capPath}</div>
+                                    <div
+                                        style={{
+                                            color: 'rgba(255, 255, 255, .5)',
+                                            fontSize: '.8rem',
+                                            fontStyle: 'italic',
+                                        }}
+                                    >
+                                        {routeDetails[index]}
                                     </div>
-                                </Link>
-                            </Fragment>
-                        );
-                    })
-                }
+                                </div>
+                            </Link>
+                        </Fragment>
+                    );
+                })}
                 {/* //Chatbot needs to be hardcoded due to it not being a route. */}
-                <a aria-label={'Chat about Sean'} className='nb-tooltip-anchor' onClick={() => {handleChatVisible();}}  role='button'>
-                    <img alt={'Button to Chatbot'} className='nb-buffbar-image' onDragStart={cancelDefaultDrag} role='button' src={`${images.iconImagePath}Chatbot.png`} style={{cursor: 'pointer'}}/>
-                    <div className='nb-tooltip-down  nb-tooltip'>
-                        <div>
-                            Chatbot
-                        </div>
-                        <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
+                <a
+                    aria-label={'Chat about Sean'}
+                    className="nb-tooltip-anchor"
+                    onClick={() => {
+                        handleChatVisible();
+                    }}
+                    role="button"
+                >
+                    <img
+                        alt={'Button to Chatbot'}
+                        className="nb-buffbar-image"
+                        onDragStart={cancelDefaultDrag}
+                        role="button"
+                        src={`${images.iconImagePath}Chatbot.png`}
+                        style={{ cursor: 'pointer' }}
+                    />
+                    <div className="nb-tooltip-down  nb-tooltip">
+                        <div>Chatbot</div>
+                        <div
+                            style={{
+                                color: 'rgba(255, 255, 255, .5)',
+                                fontSize: '.8rem',
+                                fontStyle: 'italic',
+                            }}
+                        >
                             Ask an AI about Sean and his skills, work, etc.
                         </div>
-                        
                     </div>
                 </a>
-                
             </div>
         );
     };
 
     let profileImage = () => {
-        return(
+        return (
             <>
-                <img src= {images.portraitTextureBackground} className='nb-profile-image'/>
-                <div className='nb-profile-image nb-profile-background-color' style={{borderRadius: '50%', backgroundColor: colors[colorIndex%colors.length], opacity: .4}} />
-                <img src= {images.portrait} className='nb-profile-image' />
-                <img src= {images.portraitBorder} className='nb-profile-image nb-profile-border' />
+                <img
+                    src={images.portraitTextureBackground}
+                    className="nb-profile-image"
+                />
+                <div
+                    className="nb-profile-image nb-profile-background-color"
+                    style={{
+                        borderRadius: '50%',
+                        backgroundColor: colors[colorIndex % colors.length],
+                        opacity: 0.4,
+                    }}
+                />
+                <img src={images.portrait} className="nb-profile-image" />
+                <img
+                    src={images.portraitBorder}
+                    className="nb-profile-image nb-profile-border"
+                />
             </>
         );
     };
 
-        
     let handleChatVisible = () => {
-        if(chatIsVisible) {
+        if (chatIsVisible) {
             setPrepRemoveChat(true);
-        }else {
+        } else {
             setPrepRemoveChat(false);
             setChatIsVisible(true);
         }
@@ -151,50 +215,80 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
 
     let bottomNavBar = () => {
         return (
-            <div className='nb-bottom-skillbar'>
-                {chatIsVisible&&
-                    <ChatBotModal 
-                        prepRemoveChat = {prepRemoveChat} 
-                        setChatIsVisible = {setChatIsVisible}
-                    />}
-                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'} style={{ transform: 'scaleX(-1)' }}/>
+            <div className="nb-bottom-skillbar">
+                {chatIsVisible && (
+                    <ChatBotModal
+                        prepRemoveChat={prepRemoveChat}
+                        setChatIsVisible={setChatIsVisible}
+                    />
+                )}
+                <img
+                    className="nb-skillbar-end"
+                    src={'Nav-Bar-End-400-200.png'}
+                    style={{ transform: 'scaleX(-1)' }}
+                />
                 {
                     //Adhere to format rules for image and outbound link
                 }
-                {
-                    contactRoutes.map((info, index) => {
-                        return (
-                            <div className='nb-skillbar-border'  key={index}>
-                                <img src={'Nav-Bar-Icon-Border-150-200.png'}/>
-                                <Link to={info[1]} aria-label={`Navigate to Sean's ${info[1]} page`} target='_blank' key={index}style={{overflow:'hidden'}}>
-                                    <img className='nb-skillbar-icon nb-icon-bottom' onDragStart={cancelDefaultDrag} role='link' src={`${images.iconImagePath}${info[0]}.png`}/>
-                                </Link>
-                                <div className='nb-tooltip-up nb-tooltip'>
-                                    <div>
-                                        {info[0].replace('-', '')}
-                                    </div>
-                                    <div style={{color:'rgba(255, 255, 255, .5)', fontSize: '.8rem', fontStyle: 'italic'}}>
-                                        Contact me on {info[0]}!
-                                    </div>
+                {contactRoutes.map((info, index) => {
+                    return (
+                        <div className="nb-skillbar-border" key={index}>
+                            <img src={'Nav-Bar-Icon-Border-150-200.png'} />
+                            <Link
+                                to={info[1]}
+                                aria-label={`Navigate to Sean's ${info[1]} page`}
+                                target="_blank"
+                                key={index}
+                                style={{ overflow: 'hidden' }}
+                            >
+                                <img
+                                    className="nb-skillbar-icon nb-icon-bottom"
+                                    onDragStart={cancelDefaultDrag}
+                                    role="link"
+                                    src={`${images.iconImagePath}${info[0]}.png`}
+                                />
+                            </Link>
+                            <div className="nb-tooltip-up nb-tooltip">
+                                <div>{info[0].replace('-', '')}</div>
+                                <div
+                                    style={{
+                                        color: 'rgba(255, 255, 255, .5)',
+                                        fontSize: '.8rem',
+                                        fontStyle: 'italic',
+                                    }}
+                                >
+                                    Contact me on {info[0]}!
                                 </div>
                             </div>
-                        );
-                    })
-                }
-                <div className='nb-skillbar-mid'> 
-                    <img className='nb-skillbar-mid-image' src={images.chatButton} />
-                    <div className='nb-skill-bar-mid-clickable-div' onClick={()=> handleChatVisible()} />
-                    <div className='nb-skill-bar-mid-shimmer-mask'/>
-                    <div className='nb-tooltip-up nb-tooltip nb-chat-tooltip'>
-                        <div style={{textAlign:'center'}}>
+                        </div>
+                    );
+                })}
+                <div className="nb-skillbar-mid">
+                    <img
+                        className="nb-skillbar-mid-image"
+                        src={images.chatButton}
+                    />
+                    <div
+                        className="nb-skill-bar-mid-clickable-div"
+                        onClick={() => handleChatVisible()}
+                    />
+                    <div className="nb-skill-bar-mid-shimmer-mask" />
+                    <div className="nb-tooltip-up nb-tooltip nb-chat-tooltip">
+                        <div style={{ textAlign: 'center' }}>
                             Check out my Portfolio AI Chat.
                         </div>
                         <div>
-                            <img src={images.navArrow} className='nb-tooltip-arrow'/>
+                            <img
+                                src={images.navArrow}
+                                className="nb-tooltip-arrow"
+                            />
                         </div>
                     </div>
                 </div>
-                <img className='nb-skillbar-end' src={'Nav-Bar-End-400-200.png'}/>  
+                <img
+                    className="nb-skillbar-end"
+                    src={'Nav-Bar-End-400-200.png'}
+                />
             </div>
         );
     };
@@ -203,7 +297,7 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
     // Main Component
     /*****************/
     return (
-        <div className='navbar-container'>
+        <div className="navbar-container">
             {bottomNavBar()}
             {namePlate()}
             {topNavBar()}
@@ -211,7 +305,6 @@ export const NavBar = ({colorIndex, setBackgroundIndex}) => {
             {profileImage()}
         </div>
     );
-
 };
 
 NavBar.propTypes = {
