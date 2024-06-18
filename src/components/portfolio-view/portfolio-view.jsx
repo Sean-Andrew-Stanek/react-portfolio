@@ -125,7 +125,7 @@ export const PortfolioView = ({ setModalData }) => {
                 <div className="quest-text-intro">
                     <TypeWriter
                         text={strings.greeting}
-                        speed={50}
+                        speed={40}
                         onComplete={() => setTypeWriterIndex(1)}
                     />
                 </div>
@@ -136,7 +136,7 @@ export const PortfolioView = ({ setModalData }) => {
                     {typeWriterIndex >= 1 && (
                         <TypeWriter
                             text={strings.body}
-                            speed={5}
+                            speed={15}
                             onComplete={() => setTypeWriterIndex(2)}
                         />
                     )}
@@ -146,7 +146,7 @@ export const PortfolioView = ({ setModalData }) => {
                 }
                 <div className="quest-text-end">
                     {typeWriterIndex >= 2 && (
-                        <TypeWriter text={strings.closing} speed={5} />
+                        <TypeWriter text={strings.closing} speed={10} />
                     )}
                 </div>
             </div>

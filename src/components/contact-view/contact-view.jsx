@@ -57,7 +57,7 @@ export const ContactView = () => {
                 <div className="quest-text-intro">
                     <TypeWriter
                         text={strings.greeting}
-                        speed={50}
+                        speed={40}
                         onComplete={() => setTypeWriterIndex(1)}
                     />
                 </div>
@@ -68,7 +68,7 @@ export const ContactView = () => {
                     {typeWriterIndex >= 1 && (
                         <TypeWriter
                             text={strings.body}
-                            speed={5}
+                            speed={15}
                             onComplete={() => setTypeWriterIndex(2)}
                         />
                     )}
@@ -78,7 +78,7 @@ export const ContactView = () => {
                 }
                 <div className="quest-text-end">
                     {typeWriterIndex >= 2 && (
-                        <TypeWriter text={strings.closing} speed={5} />
+                        <TypeWriter text={strings.closing} speed={10} />
                     )}
                 </div>
             </div>
